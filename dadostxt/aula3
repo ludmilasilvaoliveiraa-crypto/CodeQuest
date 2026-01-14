@@ -1,0 +1,306 @@
+Banco de Questões: HTML - Aula 03 (Meta Tags, Cabeçalhos e Parágrafos)
+
+
+--------------------------------------------------------------------------------
+
+
+1. Questões de Múltipla Escolha
+
+As questões de múltipla escolha a seguir são projetadas para avaliar sua compreensão detalhada dos conceitos apresentados na Aula 03. Elas abrangem desde a função específica de cada meta tag até a aplicação correta da hierarquia de títulos, desafiando-o a identificar a opção correta entre várias alternativas plausíveis. Ao completar esta seção, você demonstrará sua capacidade de discernir as nuances de cada elemento HTML, solidificando seu conhecimento técnico. A avaliação começa com as meta tags, que são essenciais para a comunicação entre sua página e os navegadores.
+
+1.1. Sobre Meta Tags
+
+1. Qual a finalidade do atributo lang="pt-br" na tag <html>? A) Traduzir automaticamente o site para português. B) Informar ao navegador que o idioma principal do site é português do Brasil, evitando solicitações de tradução. C) Definir o sistema de caracteres para o português. D) Definir "pt-br" como palavra-chave principal para os mecanismos de busca.
+
+Resposta: B
+
+2. Para que serve a meta tag <meta charset="UTF-8">? A) Para garantir a compatibilidade com o navegador Internet Explorer. B) Para definir a descrição do site que aparece ao compartilhar um link. C) Para evitar problemas com acentuação e caracteres especiais. D) Para listar as palavras-chave do conteúdo da página.
+
+Resposta: C
+
+3. Qual é o propósito da meta tag <meta http-equiv="X-UA-Compatible" content="IE=edge">? A) Adaptar o site para dispositivos móveis. B) Descrever o conteúdo do site para os buscadores. C) Garantir a compatibilidade e a correta renderização do site no Internet Explorer. D) Definir o autor da página.
+
+Resposta: C
+
+4. A meta tag name="viewport" é crucial para qual finalidade? A) Definir o autor do site. B) Permitir que a página se adapte corretamente a diferentes tamanhos de tela, como em celulares e tablets. C) Informar ao Google as palavras-chave do site. D) Definir o título que aparece na aba do navegador.
+
+Resposta: B
+
+5. O que deve ser inserido no atributo content da meta tag name="description"? A) Uma lista de palavras-chave separadas por vírgula. B) O nome do autor do site. C) O código de compatibilidade do Internet Explorer. D) Uma breve sinopse ou descrição do conteúdo da página, com uma ou duas frases.
+
+Resposta: D
+
+6. Qual a função principal da meta tag name="keywords"? A) Descrever o site para ser exibido no WhatsApp. B) Indicar para os mecanismos de busca quais são as palavras-chave relacionadas ao conteúdo do site. C) Garantir que os acentos funcionem corretamente. D) Adaptar a visualização da página para celulares.
+
+Resposta: B
+
+7. Por que é útil utilizar a meta tag name="author"? A) Para definir o idioma do site como português do Brasil. B) Para criar um parágrafo com o nome do autor no rodapé. C) Para informar aos navegadores e mecanismos de busca quem é o autor da página, o que pode ajudar no ranqueamento. D) Para garantir que o site funcione no Internet Explorer.
+
+Resposta: C
+
+8. Em qual seção do documento HTML as meta tags devem ser inseridas? A) Dentro da tag <body>. B) Dentro da tag <head>. C) Logo após a tag <html>, mas antes do <head>. D) No final do documento, antes de fechar a tag </body>.
+
+Resposta: B
+
+9. O que são metadados no contexto das meta tags? A) São os textos e parágrafos visíveis para o usuário na página. B) São os títulos e subtítulos que estruturam o conteúdo. C) São informações sobre o documento que são lidas apenas pelos navegadores e não são exibidas ao usuário. D) São os links que conectam uma página a outra.
+
+Resposta: C
+
+10. O que o valor width=device-width na meta tag viewport instrui o navegador a fazer? A) Aumentar o zoom da página em 1.0. B) Fazer com que a largura da página se ajuste à largura do dispositivo do usuário. C) Forçar a página a ter uma largura fixa, independentemente do dispositivo. D) Definir a largura da página para a do Internet Explorer.
+
+Resposta: B
+
+11. Qual das seguintes meta tags é utilizada para definir as palavras-chave de um site sobre programação? A) <meta name="description" content="programação, HTML, CSS"> B) <meta name="author" content="programação, HTML, CSS"> C) <meta name="keywords" content="programação, HTML, CSS, JavaScript"> D) <meta name="viewport" content="keywords: programação, HTML, CSS">
+
+Resposta: C
+
+12. Se um site aparece com os caracteres de acentuação embaralhados, qual meta tag provavelmente está faltando? A) <meta name="viewport" ...> B) <meta charset="UTF-8"> C) <meta name="author" ...> D) <meta http-equiv="X-UA-Compatible" ...>
+
+Resposta: B
+
+13. Qual é o efeito de não definir o atributo lang="pt-br" na tag <html> em um site cujo conteúdo é em português? A) O site não será carregado. B) O navegador pode interpretar o site como sendo em inglês e oferecer a opção de tradução. C) Os acentos e caracteres especiais não funcionarão. D) O site não se adaptará a telas de celular.
+
+Resposta: B
+
+14. Qual tag é responsável pelo texto que aparece na aba do navegador e é diretamente visível ao usuário, em contraste com a <meta name="description">, que é lida principalmente por robôs? A) <head> B) <meta name="title"> C) <title> D) <p>
+
+Resposta: C
+
+15. A meta tag description influencia diretamente o quê? A) A aparência do site no Internet Explorer. B) A forma como os títulos <h1> são exibidos. C) A pequena sinopse que aparece sob o link quando compartilhado em redes sociais ou em resultados de busca. D) O sistema de caracteres utilizado na página.
+
+Resposta: C
+
+1.2. Sobre Tags de Cabeçalho (<h1> - <h6>)
+
+1. Qual é a ordem de importância correta das tags de cabeçalho? A) <h6> (mais importante) a <h1> (menos importante). B) Todas têm a mesma importância, apenas o tamanho da fonte é diferente. C) <h1> (mais importante) a <h6> (menos importante). D) A importância é definida pelo CSS, não pela tag HTML.
+
+Resposta: C
+
+2. Quantas vezes a tag <h1> deve ser utilizada em uma única página HTML, segundo as boas práticas? A) Quantas vezes for necessário para destacar textos. B) No máximo duas vezes, uma no topo e outra no rodapé. C) Apenas uma vez, para o título principal da página. D) Não há limite, pode ser usada livremente.
+
+Resposta: C
+
+3. Qual é o propósito semântico de usar uma tag <h2>? A) Criar o título mais importante da página. B) Criar um subtítulo, um tópico de importância secundária em relação ao <h1>. C) Apenas para deixar um texto em negrito e com fonte maior. D) Criar o item de menor relevância na hierarquia de títulos.
+
+Resposta: B
+
+4. Por que não se deve usar tags de cabeçalho (<h1>-<h6>) apenas para fins visuais (aumentar o tamanho do texto)? A) Porque o navegador não consegue renderizar mais de seis tamanhos de fonte. B) Porque elas têm um significado hierárquico (semântico) que é importante para os mecanismos de busca e acessibilidade. C) Porque é mais fácil usar a tag <p> com CSS para aumentar o texto. D) Porque as tags de cabeçalho não aceitam estilos CSS.
+
+Resposta: B
+
+5. Qual tag de cabeçalho representa o nível mais baixo de importância em uma estrutura de títulos? A) <h1> B) <h3> C) <h6> D) <h2>
+
+Resposta: C
+
+6. O que acontece se você usar mais de uma tag <h1> em uma página? A) A página não será carregada pelo navegador. B) Pode confundir os mecanismos de busca sobre qual é o tópico principal da página. C) O texto de todas as tags <h1> ficará da mesma cor. D) Automaticamente, a segunda tag <h1> se torna uma <h2>.
+
+Resposta: B
+
+7. Em uma estrutura de artigo com um título principal, seções e subseções, qual seria a combinação de tags mais apropriada? A) <h1> para o título, <h1> para as seções, <h1> para as subseções. B) <p> para o título, <h2> para as seções, <h3> para as subseções. C) <h1> para o título, <h2> para as seções, <h3> para as subseções. D) <h6> para o título, <h5> para as seções, <h4> para as subseções.
+
+Resposta: C
+
+8. As tags de cabeçalho são usadas principalmente para: A) Criar parágrafos de texto longos. B) Inserir imagens e vídeos. C) Estruturar o conteúdo em uma hierarquia de títulos e subtítulos. D) Definir metadados para o navegador.
+
+Resposta: C
+
+9. Qual a principal diferença entre <h1> e <h6>? A) <h1> é para texto e <h6> é para números. B) <h1> tem maior importância semântica que <h6>. C) <h1> só pode ser usado no <head>, enquanto <h6> vai no <body>. D) Não há diferença, são sinônimos.
+
+Resposta: B
+
+10. Para um subtítulo de um tópico que já está em <h2>, qual tag você deveria usar? A) <h1>, para dar mais destaque. B) <h2>, para manter o mesmo nível. C) <h3>, para indicar que é um sub-item do <h2>. D) <h6>, pois é o menor de todos.
+
+Resposta: C
+
+1.3. Sobre a Tag de Parágrafo (<p>)
+
+1. Qual é a função principal da tag <p>? A) Criar um título principal. B) Estruturar e delimitar um parágrafo de texto. C) Inserir uma quebra de linha simples. D) Deixar o texto em negrito.
+
+Resposta: B
+
+2. Como o navegador interpreta múltiplos espaços em branco consecutivos dentro de uma tag <p>? A) Ele converte cada espaço em uma quebra de linha. B) Ele os representa exatamente como foram digitados. C) Ele os ignora e renderiza apenas um único espaço. D) Ele gera um erro de sintaxe no HTML.
+
+Resposta: C
+
+3. Se você deseja criar dois parágrafos distintos, qual é a forma correta de fazer isso em HTML? A) Usar uma única tag <p> e pressionar "Enter" duas vezes entre os textos. B) Usar uma tag <p> e inserir &nbsp; várias vezes. C) Envolver cada bloco de texto em sua própria tag <p>, resultando em <p>Texto 1</p><p>Texto 2</p>. D) Usar a tag <h2> para o primeiro parágrafo e <p> para o segundo.
+
+Resposta: C
+
+4. A tag <p> é usada para qual tipo de conteúdo? A) Metadados que só o navegador lê. B) Conteúdo textual que forma um bloco de pensamento ou uma seção de texto. C) Títulos e subtítulos hierárquicos. D) Listas de itens.
+
+Resposta: B
+
+5. O que acontece se você escrever um texto no <body> sem envolvê-lo em uma tag <p>? A) O navegador exibirá uma mensagem de erro. B) O texto não será exibido na página. C) O texto será exibido, mas não terá a estrutura e a margem padrão de um parágrafo. D) O texto será automaticamente convertido para um título <h1>.
+
+Resposta: C
+
+
+--------------------------------------------------------------------------------
+
+
+2. Questões de Verdadeiro ou Falso
+
+As questões de "Verdadeiro ou Falso" são um método eficaz para testar a precisão do seu conhecimento sobre as afirmações-chave da Aula 03. Este formato o desafia a confirmar ou refutar declarações específicas sobre a semântica e a sintaxe do HTML, exigindo atenção aos detalhes e um entendimento claro dos conceitos. Ao final, você terá validado sua compreensão precisa das regras fundamentais. A avaliação começa com afirmações sobre as meta tags.
+
+2.1. Sobre Meta Tags
+
+1. A meta tag name="description" é utilizada para informar ao navegador que o idioma da página é português do Brasil. Resposta: Falso. O atributo lang="pt-br" na tag <html> define o idioma, enquanto name="description" fornece uma sinopse do conteúdo da página.
+
+2. A tag <meta charset="UTF-8"> ajuda a prevenir problemas com acentuação em textos. Resposta: Verdadeiro
+
+3. Todas as meta tags são visíveis para o usuário final na página renderizada. Resposta: Falso. Meta tags são metadados lidos por navegadores e robôs, não sendo exibidas no conteúdo visível da página.
+
+4. A meta tag name="viewport" é essencial para que um site se adapte a dispositivos móveis. Resposta: Verdadeiro
+
+5. O atributo lang="pt-br" deve ser colocado dentro da tag <head>. Resposta: Falso. O atributo lang é aplicado diretamente na tag <html> para definir o idioma de todo o documento.
+
+6. A meta tag name="keywords" serve para definir o autor do site. Resposta: Falso. A meta tag name="keywords" define as palavras-chave, enquanto name="author" define o autor.
+
+7. A meta tag http-equiv="X-UA-Compatible" foi criada para garantir compatibilidade com o Internet Explorer. Resposta: Verdadeiro
+
+8. O conteúdo da meta tag name="description" pode ser uma sinopse de uma ou duas frases sobre a página. Resposta: Verdadeiro
+
+9. A meta tag name="author" não tem utilidade prática e é raramente usada. Resposta: Falso. A meta tag name="author" é útil para atribuir autoria e pode influenciar a credibilidade e o ranqueamento nos mecanismos de busca.
+
+10. As meta tags são consideradas metadados, pois fornecem informações sobre o documento HTML. Resposta: Verdadeiro
+
+11. É uma boa prática colocar a meta tag charset logo no início da seção <head>. Resposta: Verdadeiro
+
+12. A meta tag name="keywords" ainda é o fator mais importante para o ranqueamento no Google hoje em dia. Resposta: Falso. Embora já tenha sido muito importante, hoje os algoritmos do Google priorizam o conteúdo real da página, tornando a tag keywords menos influente.
+
+13. O atributo content na meta tag name="author" deve conter o nome do criador da página. Resposta: Verdadeiro
+
+14. Se você não incluir a meta tag viewport, seu site pode aparecer com texto muito pequeno em um celular. Resposta: Verdadeiro
+
+15. A tag <title> é uma meta tag. Resposta: Falso. A tag <title> define o título visível na aba do navegador, enquanto meta tags são metadados para os robôs e navegadores.
+
+2.2. Sobre Tags de Cabeçalho (<h1> - <h6>)
+
+1. A tag <h1> deve ser usada apenas uma vez por página para o título principal. Resposta: Verdadeiro
+
+2. As tags de cabeçalho devem ser usadas para deixar o texto em negrito, pois esse é seu principal propósito. Resposta: Falso. As tags de cabeçalho têm propósito semântico para hierarquizar o conteúdo e não devem ser usadas apenas para formatação visual.
+
+3. A tag <h6> representa um título com maior importância semântica que a tag <h2>. Resposta: Falso. A hierarquia de importância vai de <h1> (mais importante) para <h6> (menos importante).
+
+4. A hierarquia de títulos é importante para os mecanismos de busca entenderem a estrutura do conteúdo. Resposta: Verdadeiro
+
+5. Usar um <h3> sem que haja um <h2> antes dele na estrutura é considerado uma boa prática semântica. Resposta: Falso. A hierarquia de títulos deve ser seguida de forma lógica (h1 -> h2 -> h3), e pular níveis prejudica a semântica e a acessibilidade.
+
+6. As tags de <h1> a <h6> são usadas para criar parágrafos. Resposta: Falso. As tags de <h1> a <h6> são para títulos e subtítulos; a tag <p> é usada para parágrafos.
+
+7. Visualmente, um <h1> é, por padrão, maior que um <h2>. Resposta: Verdadeiro
+
+8. O propósito das tags de cabeçalho é exclusivamente visual, para alterar o tamanho da fonte. Resposta: Falso. Seu propósito principal é semântico, para estruturar o conteúdo. A formatação visual é uma consequência padrão que pode ser alterada com CSS.
+
+9. É aceitável usar múltiplas tags <h2> em uma mesma página para diferentes seções ou subtítulos. Resposta: Verdadeiro
+
+10. Um mecanismo de busca pode ter dificuldade em identificar o tópico principal de uma página que contém cinco tags <h1>. Resposta: Verdadeiro
+
+2.3. Sobre a Tag de Parágrafo (<p>)
+
+1. A tag <p> ignora múltiplos espaços e quebras de linha inseridos no código-fonte. Resposta: Verdadeiro
+
+2. Para criar dois parágrafos, basta usar uma tag <p> e pressionar "Enter" no meio do texto. Resposta: Falso. Para criar múltiplos parágrafos, cada um deve ser envolvido em seu próprio conjunto de tags <p> e </p>.
+
+3. A tag <p> é semanticamente usada para definir um título ou subtítulo. Resposta: Falso. A tag <p> é usada para parágrafos de texto, enquanto títulos e subtítulos usam as tags <h1> a <h6>.
+
+4. Cada bloco de texto que representa um parágrafo deve ser envolvido por suas próprias tags <p> e </p>. Resposta: Verdadeiro
+
+5. O navegador adiciona automaticamente um espaçamento vertical entre duas tags <p> consecutivas. Resposta: Verdadeiro
+
+
+--------------------------------------------------------------------------------
+
+
+3. Questões de Preenchimento de Código
+
+As questões de preenchimento de código são uma excelente maneira de testar seu conhecimento prático da sintaxe HTML. Este exercício avalia sua capacidade de recordar atributos e tags específicas dentro de um contexto de código real, forçando-o a pensar de forma precisa sobre a estrutura de cada elemento. Prepare-se para completar os trechos de código a seguir.
+
+1. <________ charset="UTF-8"> Resposta: meta
+
+2. <html ________="pt-br"> Resposta: lang
+
+3. <meta name="viewport" ________="width=device-width, initial-scale=1.0"> Resposta: content
+
+4. <meta name="________" content="Dimitri Teixeira"> Resposta: author
+
+5. <meta http-equiv="X-UA-Compatible" content="________"> Resposta: IE=edge
+
+6. <________>Título Principal</________> Resposta: h1
+
+7. <meta name="description" ________="Uma breve descrição do site"> Resposta: content
+
+8. <________>Este é um parágrafo de exemplo.</________> Resposta: p
+
+9. As meta tags devem ser colocadas dentro da tag <________>. Resposta: head
+
+10. <h3________>Subtítulo de Terceiro Nível</h3> Resposta: >
+
+11. Para evitar problemas de acentuação, usamos <meta ________="UTF-8">. Resposta: charset
+
+12. <meta ________="X-UA-Compatible" content="IE=edge"> Resposta: http-equiv
+
+13. <p>Primeiro parágrafo.</p> <________>Segundo parágrafo.</________> Resposta: p
+
+14. <________>Título de menor importância</________> Resposta: h6
+
+15. <meta name="________" content="Uma descrição para a página"> Resposta: description
+
+16. <html lang="________"> Resposta: pt-br
+
+17. <meta ________="viewport" content="width=device-width, initial-scale=1.0"> Resposta: name
+
+18. <meta name="viewport" content="width=device-width, ________=1.0"> Resposta: initial-scale
+
+19. <h2>Subtítulo</h2><________> Resposta: h3
+
+20. <p>Primeiro parágrafo.</________> Resposta: </p>
+
+21. <meta name="keywords" ________="HTML, CSS, JavaScript"> Resposta: content
+
+22. <________ name="keywords" content="HTML, CSS"> Resposta: meta
+
+23. <h1>Título</h1><________>Subtítulo</________> Resposta: <h2>
+
+24. A seção que contém os metadados da página é definida pela tag <________>. Resposta: head
+
+25. As tags de cabeçalho vão de <h1> até ________. Resposta: <h6>
+
+
+--------------------------------------------------------------------------------
+
+
+4. Testes de Criação de Código
+
+Os testes de criação de código representam o desafio final, no qual o conhecimento da Aula 03 deve ser aplicado para construir blocos de código HTML a partir de uma solicitação específica. Esta seção mede a sua capacidade de traduzir requisitos de conteúdo em código HTML semântico e sintaticamente correto, um passo crucial para a proficiência prática.
+
+1. Desafio: Crie o código para la meta tag que define a descrição de um site como "Este é o meu primeiro site!". Solução:
+
+2. Desafio: Escreva o código HTML para um título principal (o mais importante) com o texto "Aula de HTML" e um subtítulo com o texto "O que são TAGS?". Solução:
+
+3. Desafio: Crie a estrutura de dois parágrafos distintos. O primeiro deve conter o texto "Primeiro parágrafo." e o segundo, "Segundo parágrafo.". Solução:
+
+4. Desafio: Escreva a meta tag que define "Dimitri Teixeira" como o autor da página. Solução:
+
+5. Desafio: Crie a meta tag para definir o conjunto de caracteres da página como UTF-8. Solução:
+
+6. Desafio: Crie um cabeçalho de terceiro nível com o texto "Hierarquia de Conteúdo". Solução:
+
+7. Desafio: Escreva a meta tag de viewport para garantir que o site se adapte a dispositivos móveis. Solução:
+
+8. Desafio: Crie a meta tag keywords com as seguintes palavras-chave: HTML, CSS, JavaScript. Solução:
+
+9. Desafio: Crie um título principal e, logo abaixo, um parágrafo explicando que naquela página só pode haver um <h1>. Solução:
+
+10. Desafio: Escreva a meta tag que garante a compatibilidade com o Internet Explorer. Solução:
+
+11. Desafio: Crie a tag <html> com o atributo que define o idioma como português do Brasil. Solução:
+
+12. Desafio: Crie uma estrutura com um título de segundo nível (<h2>) e, dentro dele, um subtítulo de terceiro nível (<h3>). Solução:
+
+13. Desafio: Escreva um parágrafo com o texto "O HTML ignora espaços extras.". Solução:
+
+14. Desafio: Crie um cabeçalho de sexto nível (<h6>) com o texto "Nota de rodapé". Solução:
+
+15. Desafio: Combine um título <h2> com o texto "Contato" e um parágrafo abaixo com o texto "Envie sua mensagem aqui.". Solução:
+

@@ -1,0 +1,789 @@
+Banco de Questões: Curso Completo de HTML
+
+1. Aula 01: Criando Novo Projeto
+
+Iniciar um projeto de desenvolvimento web com uma estrutura bem organizada não é apenas uma formalidade, é o alicerce para a eficiência e a clareza futuras. Como explorado na Aula 01, a criação de pastas e a nomeação de arquivos seguindo convenções padronizadas são o primeiro passo para construir um código manutenível e escalável. Esta seção testará seu entendimento sobre como estabelecer essa base fundamental.
+
+1.1. Questões de Múltipla Escolha
+
+1. Qual é a convenção recomendada para nomear uma pasta de projeto com nome composto, como "meu primeiro site"? A.  meu primeiro site B.  meu/primeiro/site C. meu-primeiro-site D.  meu*primeiro*site
+2. Qual é o nome padrão e universalmente aceito para o arquivo da página inicial de um site? A. index.html B.  home.html C.  main.html D.  start.html
+3. Qual é o atalho de teclado no VS Code para mostrar ou ocultar a barra lateral do "Explorer"? A.  CTRL + S B. CTRL + B C.  CTRL + P D.  CTRL + Shift + E
+4. No contexto do HTML, o que a expressão "linguagem de marcação" significa? A.  Que o HTML é uma linguagem de programação complexa. B.  Que o HTML serve para criar links entre páginas. C. Que o HTML trabalha com tags (rótulos) para estruturar o conteúdo. D.  Que o HTML define apenas a aparência visual do site.
+5. Qual das seguintes opções NÃO é uma forma válida de abrir uma pasta de projeto no Visual Studio Code, conforme mostrado na aula? A.  Usando o menu File > Open Folder. B.  Arrastando a pasta do explorador de arquivos para a janela do VS Code. C. Enviando a pasta por e-mail para o VS Code. D.  Usando o comando code . no terminal, dentro do diretório do projeto.
+
+1.2. Questões de Verdadeiro ou Falso
+
+1. A sigla HTML significa Hyper Text Markup Language. Resposta: Verdadeiro
+2. A extensão de arquivo mais comum e recomendada para documentos HTML é .htm. Resposta: Falso
+3. As tags em HTML são geralmente representadas pelo sinal de menor (<) e maior (>), como em <title>. Resposta: Verdadeiro
+4. É uma boa prática usar espaços ao nomear pastas e arquivos em projetos de desenvolvimento web. Resposta: Falso
+5. O termo "hipertexto" em HTML refere-se aos links que conectam as páginas web. Resposta: Verdadeiro
+
+1.3. Questões de Preenchimento
+
+1. Para criar um novo arquivo no VS Code, você deve clicar no ícone chamado _______. Resposta: New File
+2. Uma das formas de abrir um projeto no VS Code é arrastar a pasta do explorador de arquivos diretamente para a _______ do programa. Resposta: janela
+3. O formato de arquivo padrão para uma página HTML é _______. Resposta: .html
+4. Para fechar uma pasta aberta no VS Code, você deve ir em File e selecionar a opção _______. Resposta: Close Folder
+5. Em vez de espaços, ao criar nomes de arquivos compostos, podemos usar _______ ou underlines. Resposta: traços
+
+1.4. Testes de Criação/Comando
+
+1. Tarefa: Descreva o passo a passo para criar uma nova pasta de projeto chamada "curso-html" dentro do diretório C:\sites\ usando o explorador de arquivos do Windows. Resposta: 1. Abrir o explorador de arquivos. 2. Navegar até Disco Local C:. 3. Entrar na pasta sites. 4. Clicar com o botão direito, selecionar Novo > Pasta. 5. Digitar o nome curso-html e pressionar Enter.
+2. Tarefa: Qual é a primeira ação que você deve tomar no VS Code para começar a trabalhar em um projeto existente localizado na pasta C:\sites\aula-html? Resposta: Abrir a pasta do projeto no VS Code, seja através do menu File > Open Folder, arrastando a pasta para a janela do programa ou usando o comando code . no terminal.
+3. Tarefa: Descreva como criar o arquivo inicial index.html dentro do projeto já aberto no VS Code. Resposta: Na barra lateral do "Explorer" do VS Code, clicar no ícone "New File" e digitar index.html, pressionando Enter em seguida.
+4. Tarefa: Se você quisesse nomear um projeto como "Meu Segundo Site", qual seria a forma correta de nomear a pasta, seguindo as boas práticas apresentadas? Resposta: meu-segundo-site ou meu_segundo_site.
+5. Tarefa: Você acabou de abrir o VS Code e ele carregou o último projeto em que você trabalhou. Como você volta para a tela inicial do programa, sem nenhum projeto aberto? Resposta: Vá ao menu File e clique em Close Folder (Fechar Pasta).
+
+
+--------------------------------------------------------------------------------
+
+
+A criação da estrutura de pastas e do arquivo inicial index.html representa o nascimento de qualquer página web. Com essa fundação sólida estabelecida, o próximo passo é erguer as paredes mestras do documento, definindo seu esqueleto fundamental com a estrutura básica do HTML.
+
+2. Aula 02: Estrutura Básica
+
+Toda página na web, da mais simples à mais complexa, é construída sobre um esqueleto fundamental: a estrutura básica do HTML. Esta aula apresentou os pilares dessa estrutura, começando pela declaração <!DOCTYPE html>, que sinaliza ao navegador a versão do HTML que está sendo usada. Em seguida, a tag <html> age como o contêiner mestre, abraçando duas seções vitais: o <head>, que guarda os "pensamentos" da página (metadados e o título da aba), e o <body>, que contém tudo o que é visível para o usuário. Dominar essa estrutura é o primeiro passo real na codificação de uma página.
+
+2.1. Questões de Múltipla Escolha
+
+1. Qual atalho no VS Code gera automaticamente a estrutura básica de um documento HTML5? A.  doc:html B.  start:html5 C. html:5 D.  base:5
+2. Qual tag é usada para definir o título da página que aparece na aba do navegador? A.  <h1> B. <title> C.  <head> D.  <header>
+3. Onde deve ser colocado o conteúdo que será visível para o usuário na página? A.  Dentro da tag <head>. B. Dentro da tag <body>. C.  Diretamente dentro da tag <html>. D.  Após a tag </html>.
+4. Qual é a finalidade da declaração <!DOCTYPE html> no início do arquivo? A.  É um comentário para o desenvolvedor. B.  Define o idioma principal da página. C. Informa ao navegador que o documento é do tipo HTML. D.  Carrega os estilos CSS da página.
+5. Qual é a principal função da extensão "Live Server" para o VS Code? A.  Corrigir erros de código HTML automaticamente. B. Rodar o site em tempo real e atualizar o navegador automaticamente após salvar as alterações. C.  Hospedar o site permanentemente na internet. D.  Gerar a estrutura básica do HTML.
+
+2.2. Questões de Verdadeiro ou Falso
+
+1. Tudo o que é colocado dentro da tag <head> é exibido diretamente na área de conteúdo da página. Resposta: Falso
+2. A tag <body> contém o "corpo" do documento, ou seja, todo o conteúdo que o usuário final irá ver. Resposta: Verdadeiro
+3. O atalho CTRL+S é usado para fechar o arquivo atual no VS Code. Resposta: Falso
+4. Uma bolinha branca ao lado do nome do arquivo na aba do VS Code indica que o documento tem alterações não salvas. Resposta: Verdadeiro
+5. A tag <html> é a tag principal que envolve tanto o <head> quanto o <body>. Resposta: Verdadeiro
+
+2.3. Questões de Preenchimento de Código
+
+1. <!DOCTYPE html> <_______> <head>...</head> <body>...</body> </_______> Resposta: html
+2. <head> <title>_______ _______</title> </head> Resposta: Meu primeiro site
+3. <body> <h1>Meu primeiro site</h1> <_______>Meu primeiro parágrafo</_______> </body> Resposta: <p>
+4. Para declarar que um documento é do tipo HTML, a primeira linha do arquivo deve ser _______. Resposta: <!DOCTYPE html>
+5. O cabeçalho do documento, que contém informações para o navegador, é definido pela tag _______. Resposta: <head>
+
+2.4. Testes de Criação de Código
+
+1. Tarefa: Escreva a estrutura básica completa de um documento HTML, incluindo as tags <!DOCTYPE html>, <html>, <head>, <title>, e <body>. Resposta:
+2. Tarefa: Crie o código para uma página HTML cujo título na aba do navegador seja "Minha Página de Testes". Resposta:
+3. Tarefa: Adicione um cabeçalho de nível 1 com o texto "Bem-vindo!" e um parágrafo com o texto "Este é o meu primeiro conteúdo." dentro do corpo de um documento HTML. Resposta:
+4. Tarefa: Utilizando o atalho do VS Code, qual comando você digitaria para gerar a estrutura básica do HTML5? Resposta: Digitar html:5 e pressionar Enter ou Tab.
+5. Tarefa: Dentro da estrutura básica, qual tag você usaria para definir o "corpo" da página, onde o conteúdo visível é inserido? Escreva a tag de abertura e fechamento. Resposta: <body></body>
+
+
+--------------------------------------------------------------------------------
+
+
+Com o esqueleto montado, é hora de dar cérebro e voz à nossa página. A próxima lição nos ensina a comunicar informações cruciais aos navegadores através de meta tags e a estruturar nosso conteúdo textual com cabeçalhos e parágrafos, transformando uma estrutura vazia em uma página com propósito.
+
+3. Aula 03: Meta Tags, Cabeçalho e Parágrafo
+
+Uma página web eficaz comunica em dois níveis: com as máquinas e com as pessoas. As meta tags, inseridas no <head>, são a linguagem secreta que usamos para conversar com navegadores e mecanismos de busca, definindo o conjunto de caracteres (UTF-8), a descrição do site e as palavras-chave para otimizar a indexação. Para os leitores humanos, as tags de cabeçalho (<h1> a <h6>) e de parágrafo (<p>) são os blocos de construção essenciais, criando uma hierarquia visual e lógica que torna o conteúdo claro e legível.
+
+3.1. Questões de Múltipla Escolha
+
+1. Qual atributo é adicionado à tag <html> para especificar que o idioma da página é português do Brasil? A. lang="pt-br" B.  language="portuguese" C.  idioma="br" D.  country="brasil"
+2. Qual meta tag é usada para fornecer uma breve descrição da página, frequentemente exibida nos resultados de busca? A.  <meta name="keywords" content="..."> B. <meta name="description" content="..."> C.  <meta name="author" content="..."> D.  <meta charset="UTF-8">
+3. Qual é a regra fundamental sobre o uso da tag <h1> em uma página HTML? A.  Pode-se usar quantas tags <h1> forem necessárias. B.  A tag <h1> deve ser usada apenas no rodapé. C. Deve-se usar apenas uma tag <h1> por página, para o título principal. D.  A tag <h1> foi descontinuada e deve ser substituída por <h2>.
+4. Para que serve a meta tag <meta charset="UTF-8">? A.  Para definir a largura da página. B.  Para listar as palavras-chave do site. C. Para garantir a correta exibição de caracteres especiais e acentuação. D.  Para informar ao navegador quem é o autor do site.
+5. Se você precisa de um subtítulo para uma seção que já está sob um <h1>, qual a tag de cabeçalho mais apropriada para usar? A.  Outra tag <h1>. B. Uma tag <h2>. C.  Uma tag <h6>. D.  Uma tag <p>.
+
+3.2. Questões de Verdadeiro ou Falso
+
+1. A meta tag <meta name="author" content="..."> é usada para definir as palavras-chave de um site. Resposta: Falso
+2. As tags de cabeçalho, como <h2> e <h3>, devem ser usadas para criar uma hierarquia de conteúdo, e não apenas para alterar o tamanho do texto. Resposta: Verdadeiro
+3. A tag <p> ignora múltiplos espaços em branco e quebras de linha inseridos diretamente no código, renderizando-os como um único espaço. Resposta: Verdadeiro
+4. A tag <h6> representa o título de maior importância em uma página. Resposta: Falso
+5. O atalho p>lorem no VS Code gera um parágrafo preenchido com um texto de exemplo em latim. Resposta: Verdadeiro
+
+3.3. Questões de Preenchimento de Código
+
+1. <meta name="description" content="_______ _______ _______ _______!"> Resposta: Este é o meu primeiro site!
+2. <meta name="_______" content="Dimitri Teixeira"> Resposta: author
+3. <body> <_______>Aula de HTML</_______> <p>Nesta aula vamos aprender sobre HTML.</p> </body> Resposta: <h1>
+4. Para criar três parágrafos de uma vez no VS Code, você pode usar o atalho p*_______. Resposta: 3
+5. A tag de parágrafo é representada por <_______>. Resposta: p
+
+3.4. Testes de Criação de Código
+
+1. Tarefa: Escreva o código HTML para uma meta tag que defina as palavras-chave de um site como "programação, HTML, CSS". Resposta:
+2. Tarefa: Crie uma estrutura hierárquica de títulos. O título principal (<h1>) deve ser "Curso de Web Design". O subtítulo (<h2>) deve ser "Módulo 1: HTML". Resposta:
+3. Tarefa: Usando o atalho do VS Code, gere um parágrafo com texto de exemplo (lorem ipsum). Resposta: Digitar p>lorem e pressionar Enter ou Tab. O código gerado será:
+4. Tarefa: Escreva o código para uma meta tag que identifique "Maria Silva" como a autora da página. Resposta:
+5. Tarefa: Adicione o atributo correto na tag <html> para indicar que a página está em português do Brasil. Resposta:
+
+
+--------------------------------------------------------------------------------
+
+
+Com a estrutura e o texto básico no lugar, passamos de simplesmente apresentar informações para moldá-las. A próxima lição explora as tags de formatação do HTML, ensinando como comandar a atenção com <strong>, diferenciar ideias com <i>, e dar ao seu conteúdo uma voz semântica que tanto usuários quanto mecanismos de busca possam entender.
+
+4. Aula 04: Formatação de Texto
+
+Além de estruturar o conteúdo em blocos, o HTML oferece um arsenal de tags para formatar o texto, adicionando ênfase, significado e clareza. Esta aula diferencia a formatação puramente visual, como um simples negrito (<b>), daquela com peso semântico, como a ênfase forte (<strong>), que sinaliza importância para os navegadores. Aprender a usar essas ferramentas permite destacar informações, riscar dados obsoletos e estruturar o texto de maneira rica e expressiva.
+
+4.1. Questões de Múltipla Escolha
+
+1. Qual é a principal diferença semântica entre a tag <b> e a tag <strong>? A.  Não há diferença, ambas são idênticas. B.  A tag <b> deixa o texto maior, enquanto a tag <strong> apenas o deixa em negrito. C. A tag <strong> indica que o texto tem grande importância (ênfase), enquanto <b> é apenas um realce visual para negrito. D.  A tag <strong> é uma tag antiga e <b> é a versão moderna.
+2. Qual tag é usada para criar uma linha horizontal de divisão no conteúdo? A.  <br> B.  <line> C.  <divider> D. <hr>
+3. Se você quisesse exibir uma fórmula química como H₂O, qual tag usaria para o número "2"? A.  <sup> B. <sub> C.  <small> D.  <i>
+4. Qual tag é usada para marcar um texto como deletado ou não mais relevante, geralmente exibindo-o riscado? A.  <strike> B.  <s> C. <del> D.  <remove>
+5. Para que serve a tag <br>? A. Para inserir uma única quebra de linha. B.  Para criar um novo parágrafo. C.  Para deixar o texto em negrito. D.  Para separar seções com uma linha horizontal.
+
+4.2. Questões de Verdadeiro ou Falso
+
+1. A tag <strong> tem o mesmo efeito visual que a tag <b>, mas carrega um significado semântico de importância para o navegador. Resposta: Verdadeiro
+2. A tag <hr> precisa de uma tag de fechamento, como </hr>. Resposta: Falso
+3. A tag <i> (itálico) é semanticamente usada para indicar uma ênfase forte, assim como <strong>. Resposta: Falso
+4. A tag <small> é usada para diminuir o tamanho do texto, como em notas de rodapé ou comentários. Resposta: Verdadeiro
+5. Usar múltiplas tags <br> é a maneira correta e moderna de criar espaçamento vertical entre elementos. Resposta: Falso
+
+4.3. Questões de Preenchimento de Código
+
+1. Para deixar a palavra "urgente" em negrito e com ênfase semântica, você a envolveria com a tag <_______>. Resposta: strong
+2. Para sublinhar o texto "Termos de Serviço", você usaria a tag <_______>. Resposta: u
+3. Para exibir 2¹⁰ (dois elevado à décima potência), o número "10" deve estar dentro da tag <_______>. Resposta: sup
+4. Para marcar um texto como se tivesse sido destacado com um marcador, usa-se a tag <_______>. Resposta: mark
+5. De R 99,90 por R 79,90. Para riscar o preço antigo, o valor "R$ 99,90" deve ser envolvido pela tag <_______>. Resposta: del
+
+4.4. Testes de Criação de Código
+
+1. Tarefa: Escreva uma linha de código HTML que exiba a frase: "Atenção: Este produto é muito frágil." A palavra "muito" deve estar em negrito e com forte importância semântica. Resposta:
+2. Tarefa: Crie o código para exibir um preço promocional. O preço antigo, "De R 50,00", deve aparecer riscado, e o novo preço, "Por R 25,00", deve aparecer ao lado. Resposta:
+3. Tarefa: Crie duas linhas de texto separadas por uma quebra de linha simples, sem usar a tag <p> para a segunda linha. Use as frases "Primeira linha" e "Segunda linha". Resposta:
+4. Tarefa: Crie um parágrafo com a frase "Este texto contém uma palavra em itálico e outra em <u>sublinhado</u>." Resposta:
+5. Tarefa: Separe duas seções de conteúdo com uma linha horizontal visível. Resposta:
+
+
+--------------------------------------------------------------------------------
+
+
+Além de simplesmente formatar o texto, um bom escritor de conteúdo web precisa dar crédito às suas fontes. A próxima aula nos leva ao mundo dos elementos de citação, mostrando como o HTML nos permite atribuir obras, citar autores e definir termos de forma semanticamente rica e correta.
+
+5. Aula 05: Elementos de Citação
+
+Para construir uma web confiável e bem referenciada, o HTML fornece um conjunto de tags de citação que adicionam significado semântico ao conteúdo. Elas nos permitem marcar abreviações (<abbr>), fornecer informações de contato (<address>), citar títulos de obras (<cite>), e diferenciar entre citações curtas (<q>) e longas (<blockquote>). O uso correto dessas tags enriquece o documento, melhorando a acessibilidade e a forma como os mecanismos de busca interpretam a informação.
+
+5.1. Questões de Múltipla Escolha
+
+1. Qual tag é usada para marcar uma abreviação ou sigla, como "HTML", e fornecer seu significado completo? A.  <cite> B.  <q> C. <abbr> D.  <address>
+2. Para marcar um bloco de citação longo, que geralmente é renderizado com recuo, qual tag deve ser utilizada? A.  <q> B. <blockquote> C.  <cite> D.  <block>
+3. A tag <cite> é semanticamente usada para quê? A. Para indicar o título de uma obra, como um livro, filme ou poema. B.  Para marcar o endereço do autor. C.  Para colocar uma citação entre aspas. D.  Para criar uma abreviação.
+4. Qual a principal diferença entre as tags <q> e <blockquote>? A.  <q> é para citações de livros e <blockquote> para citações de pessoas. B. <q> é para citações curtas, inline (no meio do texto), enquanto <blockquote> é para citações longas, em bloco. C.  Não há diferença, elas são intercambiáveis. D.  <blockquote> coloca aspas automaticamente, e <q> não.
+5. Qual tag é usada para fornecer informações de contato do autor ou proprietário de um documento, como um endereço físico ou e-mail? A.  <contact> B.  <author> C. <address> D.  <info>
+
+5.2. Questões de Verdadeiro ou Falso
+
+1. A tag <q> adiciona automaticamente aspas ao redor do texto da citação. Resposta: Verdadeiro
+2. O atributo title na tag <abbr> é usado para definir o título da página. Resposta: Falso
+3. A tag <address> deve ser usada para marcar qualquer endereço postal em uma página, mesmo que não seja de contato do autor do documento. Resposta: Falso
+4. A tag <cite> geralmente renderiza o texto em itálico para indicar que se trata de um título de uma obra. Resposta: Verdadeiro
+5. A tag <bdo dir="rtl"> inverte a direção do texto, fazendo-o ser lido da direita para a esquerda. Resposta: Verdadeiro
+
+5.3. Questões de Preenchimento de Código
+
+1. <p>O filme <_______>Titanic</_______> foi um sucesso de bilheteria.</p> Resposta: cite
+2. <p>Como disse o poeta: <_______>Tudo vale a pena se a alma não é pequena.</_______></p> Resposta: q
+3. <p>A <abbr _______="Organização Mundial da Saúde">OMS</abbr> emitiu um comunicado.</p> Resposta: title
+4. Para inverter o texto "Dimitri", você usaria a tag <bdo dir="_______">Dimitri</bdo>. Resposta: rtl
+5. Para marcar um bloco de citação de um artigo, você usaria a tag _______. Resposta: <blockquote>
+
+5.4. Testes de Criação de Código
+
+1. Tarefa: Escreva o código HTML para a sigla "WWW", fornecendo seu significado completo "World Wide Web" que aparece quando o mouse passa por cima. Resposta:
+2. Tarefa: Crie uma citação curta em uma frase. A frase é: Ele disse: "Seja a mudança que você quer ver no mundo.". A parte entre aspas deve ser marcada com a tag apropriada. Resposta:
+3. Tarefa: Marque o título do livro "O Guia do Mochileiro das Galáxias" usando a tag semântica correta. Resposta:
+4. Tarefa: Escreva um bloco de informações de contato usando a tag <address>, contendo o nome "Dimitri" e o endereço "Rua do Exemplo, 123". Resposta:
+5. Tarefa: Use a tag <blockquote> para citar um parágrafo inteiro de um texto. Resposta:
+
+
+--------------------------------------------------------------------------------
+
+
+Enquanto as tags de citação comunicam significado ao navegador, os comentários comunicam intenção ao desenvolvedor. A seguir, aprenderemos a deixar notas e explicações no código que são invisíveis para o usuário final, uma prática essencial para a colaboração e a manutenção do código a longo prazo.
+
+6. Aula 06: Comentários
+
+No desenvolvimento de software, o código que não é executado é tão importante quanto o que é. Os comentários em HTML são a ferramenta estratégica para isso: eles permitem deixar notas, explicações e lembretes para futuros desenvolvedores (incluindo você mesmo), sem que nada apareça na página final. Além de documentar o código, eles são indispensáveis para desativar temporariamente blocos de HTML durante testes, uma técnica crucial para depuração.
+
+6.1. Questões de Múltipla Escolha
+
+1. Qual é a sintaxe correta para criar um comentário em HTML? A.  // Este é um comentário B.  /* Este é um comentário */ C. <!-- Este é um comentário --> D.  ## Este é um comentário
+2. Qual é o principal propósito de usar comentários no código HTML? A.  Adicionar conteúdo oculto que melhora o SEO. B.  Criar texto que só aparece quando o usuário clica em um botão. C. Deixar notas para os desenvolvedores e desativar temporariamente trechos de código. D.  Definir estilos CSS diretamente no HTML.
+3. O conteúdo dentro de um comentário HTML é processado e exibido pelo navegador? A.  Sim, mas fica com uma cor diferente. B. Não, o navegador ignora completamente o conteúdo do comentário. C.  Sim, ele é exibido no console do desenvolvedor. D.  Apenas se o comentário contiver tags HTML válidas.
+4. Como você "comenta" um bloco de código existente para que ele não apareça na página? A.  Envolvendo-o com as tags <comment> e </comment>. B.  Colocando // no início de cada linha. C. Colocando <!-- no início do bloco e --> no final. D.  Selecionando o bloco e pressionando CTRL + D.
+5. É possível ter um comentário que abrange múltiplas linhas de código? A. Sim, tudo entre <!-- e --> é considerado um comentário, independentemente do número de linhas. B.  Não, cada linha deve ter seu próprio par de delimitadores de comentário. C.  Sim, mas é preciso usar a tag <comment>. D.  Não, comentários em HTML são apenas para uma única linha.
+
+6.2. Questões de Verdadeiro ou Falso
+
+1. Comentários em HTML são visíveis no código-fonte da página (quando inspecionado), mas não na renderização visual. Resposta: Verdadeiro
+2. Um comentário em HTML começa com <!-- e termina com //-->. Resposta: Falso
+3. Você pode usar comentários para "desligar" uma parte do seu código HTML sem precisar apagá-la. Resposta: Verdadeiro
+4. É possível aninhar comentários em HTML, ou seja, colocar um comentário dentro de outro. Resposta: Falso
+5. A tag de comentário é a única tag em HTML que começa com um ponto de exclamação. Resposta: Verdadeiro
+
+6.3. Questões de Preenchimento de Código
+
+1. A sintaxe para iniciar um comentário é <!--. A sintaxe para finalizá-lo é _______. Resposta: -->
+2. <!-- _______ é a seção do cabeçalho --> <div class="header">...</div> Resposta: Esta
+3. Para ocultar um parágrafo do navegador sem excluí-lo, você o envolveria com _______ e -->. Resposta: <!--
+4. <!-- TODO: Adicionar link para a página de contato _______ Resposta: -->
+5. Os comentários ajudam a _______ o código para que outros desenvolvedores (ou você mesmo no futuro) possam entendê-lo. Resposta: documentar
+
+6.4. Testes Práticos
+
+1. Tarefa: Escreva o código para um comentário HTML simples que diga "Início da seção de produtos". Resposta:
+2. Tarefa: Você tem o seguinte bloco de código. Transforme-o em um comentário para que ele não seja exibido na página.
+3. Resposta:
+4. Tarefa: Adicione um comentário logo após a tag de fechamento </div> de uma seção para indicar o que está sendo fechado, como <!-- Fim da div.banner -->. Resposta:
+5. Tarefa: Descreva a utilidade de comentar um trecho de código em vez de simplesmente deletá-lo durante o desenvolvimento. Resposta: Comentar permite desativar o código temporariamente para testes ou porque ele pode ser útil no futuro. Deletá-lo removeria o código permanentemente, exigindo que fosse reescrito caso fosse necessário novamente.
+6. Tarefa: Crie um parágrafo visível e, logo abaixo dele, adicione um comentário explicando a função daquele parágrafo. Resposta:
+
+
+--------------------------------------------------------------------------------
+
+
+Após dominar a arte de se comunicar internamente com comentários, o próximo passo é dominar a comunicação externa. A espinha dorsal da web são os links, e a próxima aula nos ensinará a criar as conexões que transformam páginas isoladas em uma rede de informações navegável.
+
+7. Aula 07: Links
+
+Os links, criados com a tag <a>, são a essência da World Wide Web, tecendo a rede que conecta documentos e ideias. Esta aula explora a distinção crucial entre caminhos absolutos — endereços completos que nos levam a outros sites — e caminhos relativos, que nos permitem navegar com precisão dentro da estrutura de pastas do nosso próprio projeto. Dominar a sintaxe de href e atributos como target="_blank" é fundamental para construir qualquer experiência de navegação.
+
+7.1. Questões de Múltipla Escolha
+
+1. Qual atributo da tag <a> é usado para especificar o destino (URL) do link? A.  src B.  link C. href D.  dest
+2. Para fazer com que um link abra em uma nova aba do navegador, qual atributo e valor devem ser usados? A.  open="new" B. target="_blank" C.  window="external" D.  tab="new"
+3. Se você está no arquivo index.html e quer criar um link para sobre.html, que está na mesma pasta, como seria o valor do href? A.  href="/sobre.html" B.  href="../sobre.html" C. href="sobre.html" D.  href="http://sobre.html"
+4. O que é um caminho (ou URL) absoluto? A.  Um link para outra parte da mesma página. B. O endereço completo de um recurso na internet, incluindo o protocolo (http/https). C.  Um caminho que começa com ./. D.  Um caminho relativo à página atual.
+5. Estando no arquivo equipe/dimitri.html, como você criaria um link para voltar ao index.html que está na pasta raiz (um nível acima)? A.  href="index.html" B. href="../index.html" C.  href="/index.html" D.  href="./index.html"
+
+7.2. Questões de Verdadeiro ou Falso
+
+1. Um hiperlink é o termo técnico para um link que conecta páginas da web. Resposta: Verdadeiro
+2. Caminhos relativos são usados para criar links para sites externos, como o Google. Resposta: Falso
+3. Por padrão, um link sem o atributo target abrirá a página de destino na mesma aba do navegador. Resposta: Verdadeiro
+4. A tag <a> não precisa de uma tag de fechamento </a>. Resposta: Falso
+5. O texto que aparece para o usuário clicar é colocado entre as tags de abertura <a> e fechamento </a>. Resposta: Verdadeiro
+
+7.3. Questões de Preenchimento de Código
+
+1. <a _______="https://programacaoweb.com.br">Ir para o site</a> Resposta: href
+2. <a href="contato.html" target="_______">Abrir em nova aba</a> Resposta: _blank
+3. Para criar um link para o arquivo produto.html dentro de uma subpasta chamada produtos/, o href seria href="produtos/_______". Resposta: produto.html
+4. Um caminho de link que aponta para um recurso dentro do seu próprio projeto é chamado de caminho _______. Resposta: relativo
+5. Para voltar um nível de diretório em um caminho relativo, você usa a notação _______. Resposta: ../
+
+7.4. Testes de Criação de Código
+
+1. Tarefa: Crie um link que leve o usuário para o site do Google (https://www.google.com) e que abra em uma nova aba. O texto do link deve ser "Pesquisar no Google". Resposta:
+2. Tarefa: Supondo que você tenha uma página sobre.html na mesma pasta que seu index.html, crie um link na index.html para a página "Sobre". Resposta:
+3. Tarefa: Você está na página produtos/item1.html. Crie um link para voltar à página principal, index.html, que está na pasta raiz (um nível acima). Resposta:
+4. Tarefa: Crie um link para a página perfil.html que está dentro de uma subpasta chamada usuario. O texto do link deve ser "Ver Perfil". Resposta:
+5. Tarefa: Crie um link com um caminho absoluto para o site Programação Web (https://programacaoweb.com.br). Resposta:
+
+
+--------------------------------------------------------------------------------
+
+
+Enquanto links constroem as estradas da web, as imagens são a paisagem que a torna convidativa. A próxima lição nos ensinará a incorporar conteúdo visual, transformando nossas páginas baseadas em texto em experiências ricas e atraentes, e a importância de fazer isso de forma otimizada para a performance.
+
+8. Aula 08: Tudo Sobre Imagens
+
+Imagens são a alma de uma web visualmente atraente. A tag <img> é a nossa porta de entrada para este mundo, mas seu poder reside em seus atributos: src define o caminho para a imagem, enquanto o alt fornece uma descrição textual essencial para acessibilidade e SEO. Esta aula ressalta a importância de não apenas exibir imagens, mas também de otimizá-las, ajustando tamanho (width, height) e peso para garantir que as páginas carreguem rapidamente, um fator crítico para a experiência do usuário.
+
+8.1. Questões de Múltipla Escolha
+
+1. Qual atributo da tag <img> é obrigatório e especifica o caminho (URL) para o arquivo de imagem? A.  alt B.  href C. src D.  link
+2. Para que serve o atributo alt na tag <img>? A.  Para definir o alinhamento da imagem na página. B.  Para adicionar um título que aparece quando o mouse passa sobre a imagem. C. Para fornecer um texto alternativo que descreve a imagem, usado por leitores de tela e se a imagem não carregar. D.  Para especificar a altura da imagem.
+3. Qual formato de imagem é mais indicado quando se precisa de um fundo transparente? A.  JPG B. PNG C.  GIF D.  BMP
+4. Qual das seguintes afirmações sobre a tag <img> é verdadeira? A.  Ela sempre requer uma tag de fechamento, </img>. B. É uma tag de autofechamento (não precisa de </img>). C.  Ela só pode carregar imagens da mesma pasta que o arquivo HTML. D.  O atributo alt é opcional e não tem importância para SEO.
+5. Para transformar uma imagem em um link clicável, o que você deve fazer? A.  Adicionar um atributo href diretamente na tag <img>. B. Envolver a tag <img> com uma tag <a>. C.  Usar a tag <imglink>. D.  Combinar os atributos src e href na mesma tag.
+
+8.2. Questões de Verdadeiro ou Falso
+
+1. A tag <img> precisa de uma tag de fechamento (</img>). Resposta: Falso
+2. Usar caminhos absolutos para imagens hospedadas em outros sites é a prática mais recomendada, pois garante que a imagem sempre estará disponível. Resposta: Falso
+3. Otimizar o tamanho e o peso das imagens é importante para que a página carregue mais rápido. Resposta: Verdadeiro
+4. Os atributos width e height na tag <img> são definidos em centímetros. Resposta: Falso
+5. O formato GIF é usado para imagens estáticas com alta qualidade fotográfica. Resposta: Falso
+
+8.3. Questões de Preenchimento de Código
+
+1. <img src="img/logo.png" _______="Logo da empresa"> Resposta: alt
+2. Para inserir a imagem foto.jpg que está na pasta imagens/, o código seria <img src="_______/foto.jpg" alt="...">. Resposta: imagens
+3. Para definir a largura de uma imagem para 200 pixels, você adicionaria o atributo _______="200". Resposta: width
+4. A tag usada para inserir imagens em uma página HTML é <_______>. Resposta: img
+5. <a href="index.html"><img src="home-icon.png" alt="_______"></a> Resposta: Voltar para a página inicial
+
+8.4. Testes de Criação de Código
+
+1. Tarefa: Escreva o código HTML para exibir a imagem logo.png, localizada na subpasta img/. A imagem deve ter uma largura de 150 pixels e um texto alternativo descritivo "Logotipo da Minha Empresa". Resposta:
+2. Tarefa: Crie um link que, ao ser clicado, leva para produtos.html. Em vez de texto, o conteúdo clicável do link deve ser a imagem carrinho.png da pasta icones/. Resposta:
+3. Tarefa: Crie o código para uma imagem avatar.png que não pôde ser carregada. O texto alternativo "Avatar do usuário" deve ser exibido em seu lugar. Resposta:
+4. Tarefa: Escreva o código HTML para exibir a imagem banner.jpg da pasta assets/ com uma altura exata de 100 pixels, permitindo que a largura seja ajustada automaticamente pelo navegador. Resposta:
+5. Tarefa: Insira a imagem animada loading.gif da pasta assets/, com o texto alternativo "Carregando...". Resposta:
+
+
+--------------------------------------------------------------------------------
+
+
+Enquanto imagens trazem apelo visual, uma função central da web é a apresentação de dados estruturados. Agora, pivotamos da mídia visual para a organização lógica, explorando como as tabelas HTML transformam dados brutos em um formato compreensível de linhas e colunas, uma habilidade fundamental para exibir qualquer conjunto de dados.
+
+9. Aula 09: Tabelas
+
+Para exibir dados tabulares de forma clara e organizada, o HTML oferece a estrutura de tabelas. A construção é hierárquica e lógica: a tag <table> envolve toda a estrutura. Dentro dela, cada <tr> (table row) define uma nova linha. Essas linhas são preenchidas por células: <th> (table header) para os cabeçalhos das colunas, que indicam o tipo de dado, e <td> (table data) para as células de dados que preenchem a tabela.
+
+9.1. Questões de Múltipla Escolha
+
+1. Qual tag é usada para definir uma linha em uma tabela HTML? A.  <td> B.  <th> C. <tr> D.  <table-row>
+2. Para criar uma célula de cabeçalho em uma tabela, que geralmente aparece em negrito e centralizada, qual tag você usaria? A.  <td> B. <th> C.  <head> D.  <caption>
+3. Qual tag encapsula toda a estrutura de uma tabela? A. <table> B.  <tgroup> C.  <tr> D.  <tbody>
+4. Em uma tabela, a tag <td> significa: A.  Table Division B.  Table Document C.  Table Header D. Table Data
+5. Qual atributo pode ser adicionado à tag <table> para exibir uma borda simples ao redor da tabela e de suas células? A.  style="border: 1px;" B. border="1" C.  outline="true" D.  lines="all"
+
+9.2. Questões de Verdadeiro ou Falso
+
+1. A tag <th> é usada para criar células de dados comuns em uma tabela. Resposta: Falso
+2. A tag <tr> define uma coluna em uma tabela. Resposta: Falso
+3. As tags <th> são geralmente colocadas dentro da primeira tag <tr> de uma tabela para formar o cabeçalho. Resposta: Verdadeiro
+4. É obrigatório que cada linha (<tr>) de uma tabela tenha exatamente o mesmo número de células (<td> ou <th>) para que a tabela seja exibida corretamente. Resposta: Verdadeiro
+5. A tag <table> pode conter texto diretamente, sem a necessidade de <tr> e <td>. Resposta: Falso
+
+9.3. Questões de Preenchimento de Código
+
+1. <table> <_______> <th>Nome</th> <th>Idade</th> </_______> ... </table> Resposta: <tr>
+2. <tr> <_______>Dimitri</_______> <_______>30</_______> </tr> Resposta: <td>
+3. A tag que representa uma célula de dados em uma tabela é <_______>. Resposta: td
+4. A estrutura básica de uma tabela começa e termina com a tag <_______>. Resposta: table
+5. <table _______="100%"> Resposta: width
+
+9.4. Testes de Criação de Código
+
+1. Tarefa: Crie uma tabela HTML simples com 2 linhas e 2 colunas. A primeira linha deve ser o cabeçalho com "Produto" e "Preço". A segunda linha deve conter "Livro" e "R$ 50,00". Resposta:
+2. Tarefa: Adicione uma terceira coluna chamada "Linguagem" a uma tabela existente, com os dados "HTML" para a primeira linha de dados e "CSS" para a segunda. Resposta:
+3. Tarefa: Qual é a função da tag <th> em comparação com a <td>? Resposta: A <th> (table header) define uma célula de cabeçalho, indicando que é o título de uma coluna ou linha. Navegadores geralmente a estilizam em negrito e centralizada. A <td> (table data) define uma célula de dados padrão.
+4. Tarefa: Crie uma tabela que tenha apenas uma linha de dados com três células: "Maçã", "Pera" e "Uva". Resposta:
+5. Tarefa: Como você faria para que uma tabela ocupe 100% da largura disponível na página, usando um atributo HTML? Resposta: Adicionando o atributo width="100%" à tag <table>, da seguinte forma: <table width="100%">.
+
+
+--------------------------------------------------------------------------------
+
+
+Contrastando com a organização rígida de dados em tabelas, o HTML também oferece uma maneira flexível de apresentar itens em sequência. As listas, sejam elas ordenadas para passos de um processo ou não ordenadas para itens sem hierarquia, são a ferramenta perfeita para isso, e serão o foco da nossa próxima aula.
+
+10. Aula 10: Listas
+
+Para organizar sequências de itens, o HTML oferece dois tipos principais de listas. As listas não ordenadas, criadas com <ul> (unordered list), são ideais para itens onde a ordem não é importante, como uma lista de compras, e são exibidas com marcadores. Por outro lado, as listas ordenadas, criadas com <ol> (ordered list), são usadas para itens que seguem uma sequência lógica, como um passo a passo, e são numeradas automaticamente. Em ambos os casos, cada item individual é definido pela tag <li> (list item).
+
+10.1. Questões de Múltipla Escolha
+
+1. Qual tag é usada para criar uma lista não ordenada (com marcadores de bolinha)? A.  <ol> B.  <li> C. <ul> D.  <list>
+2. Para criar uma lista numerada (1, 2, 3, ...), qual tag deve ser usada como contêiner? A. <ol> B.  <ul> C.  <nl> D.  <li>
+3. Qual tag é usada para definir cada item individual dentro de uma lista, seja ela ordenada ou não ordenada? A.  <item> B. <li> C.  <point> D.  <dt>
+4. Para qual dos seguintes cenários uma lista ordenada (<ol>) seria mais apropriada? A.  Uma lista de ingredientes para uma receita. B.  Uma lista de contatos em uma agenda. C. Um ranking dos 5 melhores filmes do ano. D.  Uma lista das características de um produto.
+5. Como o navegador exibe os itens de uma lista <ul> por padrão? A. Com um marcador de ponto (bullet) antes de cada item. B.  Com números (1, 2, 3...). C.  Com letras (a, b, c...). D.  Sem nenhum marcador.
+
+10.2. Questões de Verdadeiro ou Falso
+
+1. A tag <ul> gera uma numeração automática para os itens da lista. Resposta: Falso
+2. A tag <li> deve sempre ser usada dentro de uma tag <ul> ou <ol>. Resposta: Verdadeiro
+3. A tag <ul> significa "Ordered List". Resposta: Falso
+4. A tag <ol> significa "Ordered List". Resposta: Verdadeiro
+5. Tanto <ul> quanto <ol> usam a mesma tag, <li>, para definir seus itens. Resposta: Verdadeiro
+
+10.3. Questões de Preenchimento de Código
+
+1. <ol> <_______>Primeiro item</_______> <_______>Segundo item</_______> </ol> Resposta: li
+2. Para uma lista de compras onde a ordem não importa, você usaria a tag <_______>. Resposta: ul
+3. <ul> <li>Maçã</li> <li>Banana</li> <_______>Laranja</_______> </ul> Resposta: <li>
+4. Uma lista não ordenada em inglês é chamada de _______ List. Resposta: Unordered
+5. O elemento que define um item da lista é <_______>. Resposta: li
+
+10.4. Testes de Criação de Código
+
+1. Tarefa: Crie uma lista não ordenada com três ingredientes de uma receita: "Farinha", "Ovos" e "Leite". Resposta:
+2. Tarefa: Crie uma lista ordenada com os três primeiros passos para fazer café: "Ferver a água", "Adicionar o pó de café" e "Coar o café". Resposta:
+3. Tarefa: Qual tipo de lista (<ul> ou <ol>) você usaria para mostrar as regras de um jogo em sequência? Por quê? Resposta: Usaria <ol> (lista ordenada), porque as regras de um jogo geralmente seguem uma sequência lógica ou uma ordem de importância que deve ser seguida.
+4. Tarefa: Crie uma lista não ordenada que represente os itens de um menu de navegação simples: "Home", "Sobre" e "Contato". Resposta:
+5. Tarefa: Explique a função da tag <li>. Resposta: A tag <li> (list item) é usada para definir cada item individual dentro de uma lista, seja ela uma lista ordenada (<ol>) ou não ordenada (<ul>). Ela é o elemento que contém o conteúdo de cada ponto da lista.
+
+
+--------------------------------------------------------------------------------
+
+
+Além de organizar nosso próprio conteúdo em listas, o HTML nos permite ir além: incorporar páginas inteiras de outros locais diretamente em nosso layout. Essa poderosa capacidade é realizada através dos iframes, que nos permitem criar experiências ricas e dinâmicas, como veremos a seguir.
+
+11. Aula 11: iframes
+
+A tag <iframe> é uma janela para outro mundo dentro da sua página. Ela permite incorporar um documento HTML completamente independente — seja outra página do seu site, um site de terceiros, um mapa ou um vídeo do YouTube — diretamente no seu layout. O controle sobre essa janela é feito através de atributos essenciais: src aponta para o conteúdo a ser exibido, width e height definem suas dimensões, e name permite que links na página principal controlem dinamicamente o que é exibido dentro do iframe.
+
+11.1. Questões de Múltipla Escolha
+
+1. Qual atributo da tag <iframe> especifica a URL da página a ser incorporada? A.  href B. src C.  link D.  url
+2. Como você pode fazer um link na página principal carregar seu conteúdo dentro de um iframe específico? A.  Dando ao <iframe> um id e usando-o no href do link. B.  É impossível controlar o conteúdo de um iframe através de um link. C. Dando ao <iframe> um atributo name e usando esse mesmo nome no atributo target do link. D.  Usando JavaScript para manipular o src do iframe.
+3. Qual é a maneira mais comum de incorporar um vídeo do YouTube em uma página HTML? A.  Usando a tag <video> com o link do YouTube. B.  Baixando o vídeo e hospedando-o localmente. C. Usando o código de incorporação fornecido pelo YouTube, que utiliza um <iframe>. D.  Usando a tag <embed>.
+4. Conforme ensinado na aula, qual a maneira de remover a borda padrão de um <iframe>? A.  border="0" B.  outline="none" C.  border-style="hidden" D. Usando o estilo CSS border: none; dentro de um atributo style.
+5. Qual a finalidade de se usar um <iframe>? A.  Apenas para exibir vídeos. B.  Apenas para exibir páginas do mesmo site. C. Para exibir um documento HTML externo (outra página, site, mapa, vídeo) dentro da página atual. D.  Para criar um link que abre em uma nova janela.
+
+11.2. Questões de Verdadeiro ou Falso
+
+1. Um <iframe> pode exibir conteúdo de qualquer site da internet, sem restrições. Resposta: Falso
+2. É possível definir a largura e a altura de um <iframe> usando os atributos width e height. Resposta: Verdadeiro
+3. A tag <iframe> é uma tag de autofechamento, não necessitando de </iframe>. Resposta: Falso
+4. O atributo name de um <iframe> serve para dar um nome que pode ser usado como alvo (target) de um link. Resposta: Verdadeiro
+5. Usar iframes é a única maneira de exibir vídeos em uma página HTML. Resposta: Falso
+
+11.3. Questões de Preenchimento de Código
+
+1. <iframe _______="pagina_interna.html"></iframe> Resposta: src
+2. <iframe src="mapa.html" name="janela_mapa" width="500" _______="300"></iframe> Resposta: height
+3. <a href="sobre.html" _______="meu_iframe">Carregar Sobre</a> Resposta: target
+4. Para incorporar um vídeo do YouTube, você copia o código de incorporação, que usa a tag <_______>. Resposta: iframe
+5. Para dar um nome a um iframe para que ele possa ser alvo de um link, você usa o atributo name, como em <iframe _______="meu_alvo">. Resposta: name
+
+11.4. Testes de Criação de Código
+
+1. Tarefa: Crie um iframe que exiba a página contato.html (localizada na mesma pasta) com 500 pixels de largura e 300 pixels de altura. Resposta:
+2. Tarefa: Crie uma estrutura com um link e um iframe. O iframe deve ter o nome "conteudo". O link deve ter o texto "Carregar Página de Notícias" e, ao ser clicado, deve carregar noticias.html dentro do iframe "conteudo". Resposta:
+3. Tarefa: Descreva os passos para incorporar um vídeo do YouTube em sua página. Resposta: 1. Ir até a página do vídeo no YouTube. 2. Clicar no botão "Compartilhar". 3. Selecionar a opção "Incorporar". 4. Copiar o código HTML fornecido (que contém um <iframe>). 5. Colar esse código no local desejado da página HTML.
+4. Tarefa: Crie um iframe que ocupe 100% da largura da página e tenha 500px de altura, exibindo o site programacaoweb.com.br. Resposta:
+5. Tarefa: Como você pode remover a borda visual de um iframe usando o método ensinado na aula? Resposta: Utilizando CSS inline com a propriedade border: none; dentro de um atributo style. Exemplo: <iframe src="..." style="border:none;"></iframe>.
+
+
+--------------------------------------------------------------------------------
+
+
+Após explorar como trazer conteúdo externo para dentro de nossas páginas, o próximo passo lógico é aprender a coletar informações diretamente do usuário. Os formulários são a principal ferramenta para essa interação, permitindo criar desde simples logins até complexos cadastros, e seu estudo é nosso próximo e fundamental tópico.
+
+12. Aula 12: Formulários
+
+Formulários são o coração da interatividade na web, o principal canal para coletar dados do usuário. A tag <form> serve como o contêiner para todos os elementos de entrada. Dentro dela, uma vasta gama de tipos de <input> — como text, password, email, submit, radio e checkbox — nos permite criar campos para cada necessidade. Complementados por tags como <label> para acessibilidade, <select> para listas suspensas e <textarea> для campos de texto longos, os formulários são essenciais para qualquer aplicação web dinâmica.
+
+12.1. Questões de Múltipla Escolha
+
+1. Qual tipo de <input> cria um campo de texto onde os caracteres digitados são mascarados (exibidos como pontos ou asteriscos)? A.  type="text" B. type="password" C.  type="hidden" D.  type="secure"
+2. Para criar um grupo de opções onde apenas uma pode ser selecionada (como "Masculino" ou "Feminino"), qual type de input deve ser usado? A.  checkbox B.  select C. radio D.  option
+3. Qual é a finalidade da tag <label> e seu atributo for? A.  Para criar um título para o formulário. B. Para associar um texto descritivo a um campo de formulário; o for se conecta ao id do campo. C.  Para validar os dados inseridos no campo. D.  Para definir um valor padrão para o campo.
+4. Qual a principal diferença entre os input do tipo radio e checkbox? A.  radio é redondo e checkbox é quadrado. B.  Não há diferença funcional, apenas visual. C. radio permite selecionar apenas uma opção de um grupo (com o mesmo name), enquanto checkbox permite selecionar várias. D.  checkbox é para texto e radio é para números.
+5. Qual tag é usada para criar uma caixa de texto de múltiplas linhas, ideal para mensagens ou comentários? A.  <input type="text" multiple> B.  <input type="multiline"> C. <textarea> D.  <messagebox>
+
+12.2. Questões de Verdadeiro ou Falso
+
+1. O atributo placeholder é usado para exibir um texto de exemplo dentro de um campo de input, que desaparece quando o usuário começa a digitar. Resposta: Verdadeiro
+2. Para que um grupo de botões de rádio (radio) funcione corretamente (permitindo apenas uma seleção), todos eles devem ter o mesmo valor no atributo id. Resposta: Falso
+3. O input do tipo submit cria um botão que, quando clicado, envia os dados do formulário. Resposta: Verdadeiro
+4. A tag <textarea> é usada para criar campos de senha seguros. Resposta: Falso
+5. Adicionar o atributo required a um campo de input torna seu preenchimento obrigatório antes que o formulário possa ser enviado. Resposta: Verdadeiro
+
+12.3. Questões de Preenchimento de Código
+
+1. <label for="email_usuario">Email:</label> <input type="email" id="_______"> Resposta: email_usuario
+2. <input type="_______" name="genero" value="masc"> Masculino <input type="_______" name="genero" value="fem"> Feminino Resposta: radio
+3. <input type="text" placeholder="_______ _______ _______"> Resposta: Digite seu nome aqui
+4. Para criar uma lista de opções suspensa (dropdown), você usa a tag <select> com várias tags <_______> aninhadas. Resposta: option
+5. O botão que envia o formulário é criado com <input type="_______">. Resposta: submit
+
+12.4. Testes de Criação de Código
+
+1. Tarefa: Crie um campo de texto para o nome do usuário. Ele deve ter uma label associada que diz "Nome:" e um placeholder que diz "Digite seu nome completo". Resposta:
+2. Tarefa: Crie um grupo de dois radio buttons para a pergunta "Qual animal de estimação?". As opções devem ser "Cachorro" e "Gato". Apenas uma deve poder ser selecionada. Resposta:
+3. Tarefa: Crie um checkbox que permita ao usuário concordar com os termos de serviço. O texto ao lado deve ser "Eu li e concordo com os termos." Resposta:
+4. Tarefa: Crie um botão de envio com o texto "Cadastrar" dentro dele. Resposta:
+5. Tarefa: Crie uma caixa de seleção (<select>) para escolher um estado, com as opções "São Paulo" e "Rio de Janeiro". Resposta:
+
+
+--------------------------------------------------------------------------------
+
+
+Após focar em elementos interativos, a atenção se volta para a incorporação de mídia. Começaremos explorando como adicionar som às páginas web, uma maneira poderosa de criar atmosfera, fornecer conteúdo acessível ou simplesmente tocar uma música, tudo através da tag de áudio nativa do HTML.
+
+13. Aula 13: Áudio
+
+Com o HTML5, incorporar áudio em uma página web tornou-se uma tarefa nativa e direta através da tag <audio>. O sucesso da sua implementação depende de atributos essenciais: controls é indispensável para exibir a interface do player (play, pause, volume), enquanto a tag aninhada <source> especifica o caminho do arquivo de áudio (src) e seu formato. Para um controle mais refinado, atributos como controlslist="nodownload" permitem personalizar a interface, ocultando, por exemplo, o botão de download.
+
+13.1. Questões de Múltipla Escolha
+
+1. Qual atributo é essencial adicionar à tag <audio> para que os controles de reprodução (play, pause, volume) apareçam na tela? A.  src B.  play C. controls D.  visible
+2. Dentro da tag <audio>, qual tag aninhada é usada para especificar o caminho do arquivo de áudio e seu tipo? A.  <track> B. <source> C.  <file> D.  <path>
+3. Qual é o valor correto para o atributo type na tag <source> para um arquivo de áudio no formato MP3? A.  type="audio/mp3" B. type="audio/mpeg" C.  type="sound/mp3" D.  type="music/mpeg"
+4. Para que serve o atributo controlslist="nodownload" na tag <audio>? A.  Para impedir que o áudio seja reproduzido. B.  Para iniciar o download do áudio automaticamente. C. Para ocultar o botão de download do player de áudio. D.  Para listar todos os áudios disponíveis para download.
+5. A tag <audio> é um recurso nativo de qual versão principal do HTML? A.  HTML 4 B.  XHTML C. HTML5 D.  Todas as versões anteriores.
+
+13.2. Questões de Verdadeiro ou Falso
+
+1. Se o atributo controls não for incluído na tag <audio>, o player de áudio não será visível na página. Resposta: Verdadeiro
+2. A tag <audio> só pode reproduzir arquivos de áudio que estão hospedados no mesmo servidor que o site. Resposta: Falso
+3. É possível incluir múltiplas tags <source> dentro de uma tag <audio> para oferecer formatos de áudio alternativos. Resposta: Verdadeiro
+4. O arquivo de áudio é especificado diretamente no atributo src da tag <audio>, da mesma forma que na tag <img>. Resposta: Falso
+5. O formato OGG é outro tipo de arquivo de áudio que pode ser usado com a tag <audio>. Resposta: Verdadeiro
+
+13.3. Questões de Preenchimento de Código
+
+1. <audio _______> <source src="musica.mp3" type="audio/mpeg"> </audio> Resposta: controls
+2. <audio controls> <source _______="audio/teste.mp3" type="audio/mpeg"> </audio> Resposta: src
+3. <audio controls> <source src="som.ogg" type="_______"> </audio> Resposta: audio/ogg
+4. A tag principal para incorporar som em uma página é <_______>. Resposta: audio
+5. <audio controls _______="nodownload"> Resposta: controlslist
+
+13.4. Testes de Criação de Código
+
+1. Tarefa: Escreva o código HTML completo para incorporar e exibir os controles de um arquivo de áudio chamado musica.mp3, localizado em uma subpasta audio/. Resposta:
+2. Tarefa: Adicione o atributo necessário ao código da questão anterior para remover o botão de download do player. Resposta:
+3. Tarefa: Explique por que a tag <source> é usada dentro da tag <audio>. Resposta: A tag <source> é usada para especificar o arquivo de mídia a ser reproduzido. Usá-la permite fornecer múltiplos formatos de arquivo alternativos (ex: MP3 e OGG), garantindo que o navegador possa escolher o primeiro formato que ele suporta, o que aumenta a compatibilidade.
+4. Tarefa: Crie um player de áudio para o arquivo podcast.ogg. Resposta:
+5. Tarefa: O que acontece se a tag <audio> for usada sem o atributo controls? Resposta: O áudio pode ser carregado pelo navegador, mas nenhum controle de reprodução (play, pause, volume, etc.) será visível para o usuário, tornando impossível a interação com o áudio através da interface padrão.
+
+
+--------------------------------------------------------------------------------
+
+
+A lógica por trás da incorporação de mídia em HTML é consistente e poderosa. Assim como aprendemos a controlar áudio, a próxima aula nos mostrará como a tag <video> segue princípios muito semelhantes para trazer conteúdo visual dinâmico, tutoriais e filmes para nossas páginas.
+
+14. Aula 14: Vídeos
+
+Assim como sua contraparte de áudio, a tag <video> é o método padrão do HTML5 para incorporar conteúdo de vídeo de forma nativa. Sua funcionalidade é espelhada: ela depende da tag aninhada <source> para definir o arquivo de vídeo e de atributos como controls para a interface do player. Para enriquecer a experiência do usuário, atributos como width para dimensionamento, poster para uma imagem de capa, e autoplay para reprodução automática, são ferramentas valiosas no arsenal do desenvolvedor.
+
+14.1. Questões de Múltipla Escolha
+
+1. Qual atributo da tag <video> é usado para exibir uma imagem de capa (thumbnail) antes do vídeo começar a tocar? A.  thumbnail B.  cover C.  src D. poster
+2. Para que o vídeo comece a tocar automaticamente assim que a página é carregada, qual atributo deve ser adicionado? A.  start B.  play C. autoplay D.  begin
+3. Para remover a opção de colocar o vídeo em tela cheia (fullscreen), qual valor deve ser adicionado ao atributo controlslist? A.  noscreen B. nofullscreen C.  removefullscreen D.  disablefullscreen
+4. Qual é o formato de vídeo mais recomendado e comumente utilizado na web com a tag <video>? A.  .mov B.  .avi C. .mp4 D.  .wmv
+5. O que o atributo controls faz na tag <video>? A.  Define a qualidade do vídeo. B. Exibe os controles de reprodução, como play, pause e volume. C.  Controla o acesso ao vídeo, permitindo apenas a usuários logados. D.  Define o caminho para o arquivo de vídeo.
+
+14.2. Questões de Verdadeiro ou Falso
+
+1. O atributo autoplay funciona perfeitamente em todos os navegadores modernos, especialmente em dispositivos móveis. Resposta: Falso
+2. A tag <video> utiliza a tag aninhada <source> para especificar o caminho do arquivo de vídeo, assim como a tag <audio>. Resposta: Verdadeiro
+3. Usar a tag <video> é a única maneira de exibir um vídeo em uma página HTML. Resposta: Falso
+4. Se você definir apenas o width de um vídeo, o navegador ajustará a altura proporcionalmente para manter a proporção original. Resposta: Verdadeiro
+5. O atributo poster especifica um vídeo alternativo para ser reproduzido caso o primeiro falhe. Resposta: Falso
+
+14.3. Questões de Preenchimento de Código
+
+1. <video width="100%" _______="img/capa_video.jpg" controls> Resposta: poster
+2. <video controls _______> <source src="video/intro.mp4" type="video/mp4"> </video> Resposta: autoplay
+3. <video controls controlslist="nodownload _______"> Resposta: nofullscreen
+4. <video controls> <source src="tutorial.webm" type="video/_______"> </video> Resposta: webm
+5. A tag principal para incorporar vídeos de forma nativa é <_______>. Resposta: video
+
+14.4. Testes de Criação de Código
+
+1. Tarefa: Escreva o código HTML para incorporar um vídeo chamado tutorial.mp4, localizado na pasta video/. O vídeo deve ter 100% da largura da tela, exibir os controles e ter uma imagem de capa chamada capa.jpg, localizada na pasta img/. Resposta:
+2. Tarefa: Modifique o código da questão anterior para que o vídeo comece a tocar automaticamente (considerando as limitações dos navegadores). Resposta:
+3. Tarefa: Qual a diferença entre usar a tag <video> para um arquivo local e usar um <iframe> para um vídeo do YouTube? Resposta: A tag <video> é usada para hospedar e servir o arquivo de vídeo diretamente do seu próprio servidor. O <iframe> do YouTube incorpora o player e o vídeo a partir dos servidores do YouTube, economizando sua largura de banda.
+4. Tarefa: Desabilite o botão de download e a opção de tela cheia no player de um vídeo. Resposta:
+5. Tarefa: Crie o código para um vídeo que não mostra a imagem de capa (poster), mas exibe os controles de reprodução. Resposta:
+
+
+--------------------------------------------------------------------------------
+
+
+Até agora, aprendemos a inserir diversos tipos de conteúdo. No entanto, para construir layouts modernos, precisamos agrupar e estruturar esses elementos de maneira lógica. Isso nos leva à aula final sobre <div>, o contêiner genérico, e a importância do HTML Semântico para dar verdadeiro significado à arquitetura de nossas páginas.
+
+15. Aula 15: Div e HTML Semântico
+
+A construção de layouts em HTML evoluiu da onipresente <div> — um contêiner genérico sem significado inerente — para uma abordagem mais inteligente com o HTML Semântico. Tags como <header>, <nav>, <section>, <article> e <footer> não apenas agrupam conteúdo, mas descrevem seu propósito. Adotar essa prática não muda a aparência visual inicial da página, mas melhora drasticamente a acessibilidade para leitores de tela, o SEO para mecanismos de busca e a clareza do código para desenvolvedores, estabelecendo o padrão para a construção de websites robustos e significativos.
+
+15.1. Questões de Múltipla Escolha
+
+1. Qual tag semântica é mais apropriada para agrupar os links de navegação principais de um site? A.  <header> B.  <menu> C. <nav> D.  <section>
+2. Para qual parte de uma página a tag <header> é semanticamente destinada? A. Para o cabeçalho ou topo da página, geralmente contendo o logotipo e o título principal. B.  Para qualquer título <h1>. C.  Para o rodapé da página. D.  Para uma seção de artigos.
+3. Qual é a principal característica da tag <div>? A.  Ela adiciona automaticamente uma margem ao redor do conteúdo. B. É um contêiner genérico sem significado semântico, usado para agrupar elementos para estilização. C.  É uma tag semântica para indicar uma divisão importante no conteúdo. D.  Ela só pode conter texto.
+4. A tag <footer> é comumente usada para qual tipo de conteúdo? A.  A navegação principal do site. B.  O conteúdo mais importante da página. C. Informações de rodapé, como direitos autorais, links de contato e informações do autor. D.  Uma barra lateral com widgets.
+5. Para marcar um conteúdo independente e autocontido, como um post de blog ou um artigo de notícias, qual a tag semântica mais adequada? A.  <section> B. <article> C.  <div> D.  <main>
+
+15.2. Questões de Verdadeiro ou Falso
+
+1. A tag <div> é considerada uma tag de HTML Semântico. Resposta: Falso
+2. Trocar uma <div> por uma tag <header> irá, por si só, alterar a aparência visual do elemento na página. Resposta: Falso
+3. O uso de tags semânticas como <nav> e <footer> ajuda os mecanismos de busca a entenderem melhor a estrutura do seu site. Resposta: Verdadeiro
+4. A tag <section> é usada para agrupar conteúdos que estão relacionados tematicamente. Resposta: Verdadeiro
+5. É uma boa prática usar <div> para tudo em vez de se preocupar com tags semânticas, pois o resultado visual é o mesmo. Resposta: Falso
+
+15.3. Questões de Preenchimento de Código
+
+1. Para o topo da página, que contém o logotipo e o título, a tag semântica recomendada é <_______>. Resposta: header
+2. O rodapé de um site, com informações de copyright, deve ser envolvido pela tag <_______>. Resposta: footer
+3. Um bloco de links de navegação principal deve ser colocado dentro da tag <_______>. Resposta: nav
+4. Um contêiner genérico, sem significado específico, usado para agrupar elementos, é a tag <_______>. Resposta: div
+5. Um post de blog completo, que poderia ser distribuído de forma independente, deve ser marcado com a tag <_______>. Resposta: article
+
+15.4. Testes de Criação de Código
+
+1. Tarefa: Esboce a estrutura de layout básica de uma página usando apenas tags semânticas para o cabeçalho, a navegação, uma seção principal e o rodapé. Resposta:
+2. Tarefa: Você tem uma <div> que contém o menu principal do seu site. Qual tag semântica você usaria para substituí-la e por quê? Resposta: Substituiria a <div> pela tag <nav>. A razão é que <nav> informa semanticamente aos navegadores e leitores de tela que este bloco de conteúdo é a navegação principal, melhorando a acessibilidade e o SEO.
+3. Tarefa: Crie uma seção de blog que contém dois artigos. Use as tags semânticas <section> e <article> apropriadamente. Resposta:
+4. Tarefa: Crie o código para um rodapé simples que contenha um parágrafo com o texto de direitos autorais "© 2024 Minha Empresa". Resposta:
+5. Tarefa: Explique a principal vantagem de usar <header> em vez de <div id="topo">. Resposta: A principal vantagem é o significado semântico. <header> comunica universalmente que o bloco é o cabeçalho da página. <div id="topo"> é um contêiner genérico com um nome que só faz sentido para o desenvolvedor, não tendo significado para máquinas.
+
+
+--------------------------------------------------------------------------------
+
+
+A jornada pelo HTML nos leva da criação de um simples arquivo à construção de páginas web complexas e significativas. O HTML Semântico não é apenas o fim deste curso, mas o começo da prática moderna de desenvolvimento: criar uma web que é acessível, encontrável e compreensível para todos.
+
+Gabarito
+
+Aula 01: Criando Novo Projeto
+
+* 1.1. Múltipla Escolha: 1. C, 2. A, 3. B, 4. C, 5. C
+* 1.2. Verdadeiro ou Falso: 1. Verdadeiro, 2. Falso, 3. Verdadeiro, 4. Falso, 5. Verdadeiro
+* 1.3. Preenchimento: 1. New File, 2. janela, 3. .html, 4. Close Folder, 5. traços
+* 1.4. Testes de Criação/Comando:
+    1. Abrir o explorador de arquivos. 2. Navegar até Disco Local C:. 3. Entrar na pasta sites. 4. Clicar com o botão direito, selecionar Novo > Pasta. 5. Digitar o nome curso-html e pressionar Enter.
+  1. Abrir a pasta do projeto C:\sites\aula-html no VS Code, seja através do menu File > Open Folder, arrastando a pasta para a janela do programa ou usando o comando code . no terminal.
+  2. Na barra lateral do "Explorer" do VS Code, clicar no ícone "New File" e digitar index.html, pressionando Enter em seguida.
+  3. meu-segundo-site ou meu_segundo_site.
+  4. Vá ao menu File e clique em Close Folder (Fechar Pasta).
+
+Aula 02: Estrutura Básica
+
+* 2.1. Múltipla Escolha: 1. C, 2. B, 3. B, 4. C, 5. B
+* 2.2. Verdadeiro ou Falso: 1. Falso, 2. Verdadeiro, 3. Falso, 4. Verdadeiro, 5. Verdadeiro
+* 2.3. Preenchimento de Código: 1. html, 2. Meu primeiro site, 3. <p>, 4. <!DOCTYPE html>, 5. <head>
+* 2.4. Testes de Criação de Código:
+  1. <title>Minha Página de Testes</title>
+  2. Digitar html:5 e pressionar Enter ou Tab.
+  3. <body></body>
+
+Aula 03: Meta Tags, Cabeçalho e Parágrafo
+
+* 3.1. Múltipla Escolha: 1. A, 2. B, 3. C, 4. C, 5. B
+* 3.2. Verdadeiro ou Falso: 1. Falso, 2. Verdadeiro, 3. Verdadeiro, 4. Falso, 5. Verdadeiro
+* 3.3. Preenchimento de Código: 1. Este é o meu primeiro site!, 2. author, 3. <h1>, 4. 3, 5. p
+* 3.4. Testes de Criação de Código:
+  1. <meta name="keywords" content="programação, HTML, CSS">
+  2. Digitar p>lorem e pressionar Enter ou Tab.
+  3. <meta name="author" content="Maria Silva">
+  4. <html lang="pt-br">
+
+Aula 04: Formatação de Texto
+
+* 4.1. Múltipla Escolha: 1. C, 2. D, 3. B, 4. C, 5. A
+* 4.2. Verdadeiro ou Falso: 1. Verdadeiro, 2. Falso, 3. Falso, 4. Verdadeiro, 5. Falso
+* 4.3. Preenchimento de Código: 1. strong, 2. u, 3. sup, 4. mark, 5. del
+* 4.4. Testes de Criação de Código:
+  1. <p>Atenção: Este produto é <strong>muito</strong> frágil.</p>
+  2. <p><del>De R$ 50,00</del> Por R$ 25,00</p>
+  3. Primeira linha<br>Segunda linha
+  4. <p>Este texto contém uma palavra em <i>itálico</i> e outra em <u>sublinhado</u>.</p>
+  5. <hr>
+
+Aula 05: Elementos de Citação
+
+* 5.1. Múltipla Escolha: 1. C, 2. B, 3. A, 4. B, 5. C
+* 5.2. Verdadeiro ou Falso: 1. Verdadeiro, 2. Falso, 3. Falso, 4. Verdadeiro, 5. Verdadeiro
+* 5.3. Preenchimento de Código: 1. cite, 2. q, 3. title, 4. rtl, 5. <blockquote>
+* 5.4. Testes de Criação de Código:
+  1. <abbr title="World Wide Web">WWW</abbr>
+  2. <p>Ele disse: <q>Seja a mudança que você quer ver no mundo.</q></p>
+  3. <cite>O Guia do Mochileiro das Galáxias</cite>
+
+Aula 06: Comentários
+
+* 6.1. Múltipla Escolha: 1. C, 2. C, 3. B, 4. C, 5. A
+* 6.2. Verdadeiro ou Falso: 1. Verdadeiro, 2. Falso, 3. Verdadeiro, 4. Falso, 5. Verdadeiro
+* 6.3. Preenchimento de Código: 1. -->, 2. Esta, 3. <!--, 4. -->, 5. documentar
+* 6.4. Testes Práticos:
+  1. <!-- Início da seção de produtos -->
+  2. </div><!-- Fim da div.banner -->
+  3. Comentar permite desativar o código temporariamente para testes ou para guardá-lo para uso futuro, sem removê-lo permanentemente do arquivo.
+
+Aula 07: Links
+
+* 7.1. Múltipla Escolha: 1. C, 2. B, 3. C, 4. B, 5. B
+* 7.2. Verdadeiro ou Falso: 1. Verdadeiro, 2. Falso, 3. Verdadeiro, 4. Falso, 5. Verdadeiro
+* 7.3. Preenchimento de Código: 1. href, 2. _blank, 3. produto.html, 4. relativo, 5. ../
+* 7.4. Testes de Criação de Código:
+  1. <a href="https://www.google.com" target="_blank">Pesquisar no Google</a>
+  2. <a href="sobre.html">Sobre</a>
+  3. <a href="../index.html">Voltar para a página principal</a>
+  4. <a href="usuario/perfil.html">Ver Perfil</a>
+  5. <a href="https://programacaoweb.com.br">Acessar Programação Web</a>
+
+Aula 08: Tudo Sobre Imagens
+
+* 8.1. Múltipla Escolha: 1. C, 2. C, 3. B, 4. B, 5. B
+* 8.2. Verdadeiro ou Falso: 1. Falso, 2. Falso, 3. Verdadeiro, 4. Falso, 5. Falso
+* 8.3. Preenchimento de Código: 1. alt, 2. imagens, 3. width, 4. img, 5. Voltar para a página inicial
+* 8.4. Testes de Criação de Código:
+  1. <img src="img/logo.png" alt="Logotipo da Minha Empresa" width="150">
+  2. <img src="img/avatar-quebrado.png" alt="Avatar do usuário">
+  3. <img src="assets/banner.jpg" alt="Banner promocional" height="100">
+  4. <img src="assets/loading.gif" alt="Carregando...">
+
+Aula 09: Tabelas
+
+* 9.1. Múltipla Escolha: 1. C, 2. B, 3. A, 4. D, 5. B
+* 9.2. Verdadeiro ou Falso: 1. Falso, 2. Falso, 3. Verdadeiro, 4. Verdadeiro, 5. Falso
+* 9.3. Preenchimento de Código: 1. <tr>, 2. <td>, 3. td, 4. table, 5. width
+* 9.4. Testes de Criação de Código:
+  1. A <th> define uma célula de cabeçalho, enquanto a <td> define uma célula de dados padrão.
+  2. <table width="100%">
+
+Aula 10: Listas
+
+* 10.1. Múltipla Escolha: 1. C, 2. A, 3. B, 4. C, 5. A
+* 10.2. Verdadeiro ou Falso: 1. Falso, 2. Verdadeiro, 3. Falso, 4. Verdadeiro, 5. Verdadeiro
+* 10.3. Preenchimento de Código: 1. li, 2. ul, 3. <li>, 4. Unordered, 5. li
+* 10.4. Testes de Criação de Código:
+  1. Usaria <ol>, pois as regras geralmente seguem uma sequência lógica.
+  2. A tag <li> (list item) define um item individual dentro de uma lista (<ul> ou <ol>).
+
+Aula 11: iframes
+
+* 11.1. Múltipla Escolha: 1. B, 2. C, 3. C, 4. D, 5. C
+* 11.2. Verdadeiro ou Falso: 1. Falso, 2. Verdadeiro, 3. Falso, 4. Verdadeiro, 5. Falso
+* 11.3. Preenchimento de Código: 1. src, 2. height, 3. target, 4. iframe, 5. name
+* 11.4. Testes de Criação de Código:
+  1. <iframe src="contato.html" width="500" height="300"></iframe>
+    1. Ir ao YouTube, 2. Clicar em "Compartilhar", 3. Selecionar "Incorporar", 4. Copiar o código <iframe>, 5. Colar na página HTML.
+  2. <iframe src="https://programacaoweb.com.br" width="100%" height="500"></iframe>
+  3. Usando CSS inline: <iframe src="..." style="border:none;"></iframe>.
+
+Aula 12: Formulários
+
+* 12.1. Múltipla Escolha: 1. B, 2. C, 3. B, 4. C, 5. C
+* 12.2. Verdadeiro ou Falso: 1. Verdadeiro, 2. Falso, 3. Verdadeiro, 4. Falso, 5. Verdadeiro
+* 12.3. Preenchimento de Código: 1. email_usuario, 2. radio, 3. Digite seu nome aqui, 4. option, 5. submit
+* 12.4. Testes de Criação de Código:
+  1. <input type="submit" value="Cadastrar">
+
+Aula 13: Áudio
+
+* 13.1. Múltipla Escolha: 1. C, 2. B, 3. B, 4. C, 5. C
+* 13.2. Verdadeiro ou Falso: 1. Verdadeiro, 2. Falso, 3. Verdadeiro, 4. Falso, 5. Verdadeiro
+* 13.3. Preenchimento de Código: 1. controls, 2. src, 3. audio/ogg, 4. audio, 5. controlslist
+* 13.4. Testes de Criação de Código:
+  1. <audio controls controlslist="nodownload">
+  2. Permite fornecer múltiplos formatos de arquivo para aumentar a compatibilidade com diferentes navegadores.
+  3. O áudio não será visível nem interativo para o usuário, pois a interface do player não será renderizada.
+
+Aula 14: Vídeos
+
+* 14.1. Múltipla Escolha: 1. D, 2. C, 3. B, 4. C, 5. B
+* 14.2. Verdadeiro ou Falso: 1. Falso, 2. Verdadeiro, 3. Falso, 4. Verdadeiro, 5. Falso
+* 14.3. Preenchimento de Código: 1. poster, 2. autoplay, 3. nofullscreen, 4. webm, 5. video
+* 14.4. Testes de Criação de Código:
+  1. <video width="100%" controls poster="img/capa.jpg" autoplay>
+  2. <video> usa arquivos do seu próprio servidor; <iframe> incorpora o player e o vídeo de um serviço externo como o YouTube.
+  3. <video controls controlslist="nodownload nofullscreen">
+
+Aula 15: Div e HTML Semântico
+
+* 15.1. Múltipla Escolha: 1. C, 2. A, 3. B, 4. C, 5. B
+* 15.2. Verdadeiro ou Falso: 1. Falso, 2. Falso, 3. Verdadeiro, 4. Verdadeiro, 5. Falso
+* 15.3. Preenchimento de Código: 1. header, 2. footer, 3. nav, 4. div, 5. article
+* 15.4. Testes de Criação de Código:
+  1. Usaria a tag <nav>, porque ela informa semanticamente que o bloco contém a navegação principal do site.
+  2. <header> tem significado semântico para navegadores e leitores de tela, enquanto <div id="topo"> é um contêiner genérico sem significado intrínseco.
+

@@ -1,0 +1,29 @@
+// CodeQuest - Prisma Schema
+// Database models for Bugs and Feature Requests
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Bug {
+  id          String   @id @default(uuid())
+  description String
+  location    String
+  category    String   @default("functional")
+  status      String   @default("pending")
+  createdAt   DateTime @default(now())
+}
+
+model FeatureRequest {
+  id          String   @id @default(uuid())
+  description String
+  location    String
+  category    String   @default("functional")
+  status      String   @default("considered")
+  votes       Int      @default(0)
+  createdAt   DateTime @default(now())
+}

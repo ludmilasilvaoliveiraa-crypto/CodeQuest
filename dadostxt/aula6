@@ -1,0 +1,454 @@
+Banco de Questões: Aula 06 - Comentários em HTML
+
+Introdução
+
+Este documento serve como um banco de questões avaliativas, focado exclusivamente no conteúdo apresentado na "Aula 06 - Comentários" do curso de HTML. As questões foram cuidadosamente desenhadas para testar o conhecimento sobre a sintaxe, os casos de uso práticos e as ferramentas de edição relacionadas aos comentários em HTML. O objetivo é avaliar a compreensão do aluno sobre como e por que os comentários são uma ferramenta essencial para o desenvolvimento de código organizado e de fácil manutenção.
+
+
+--------------------------------------------------------------------------------
+
+
+1. Questões de Múltipla Escolha
+
+1.1. Conceitos Fundamentais e Propósito dos Comentários
+
+Compreender o propósito fundamental dos comentários é o primeiro passo para utilizá-los de forma eficaz. Esta seção avaliará o entendimento sobre o que é um comentário, como o navegador o interpreta e para que ele serve em um nível conceitual, garantindo que a base do conhecimento esteja sólida.
+
+1. Qual é o principal objetivo de um comentário em HTML, conforme explicado na aula? A) Adicionar novas funcionalidades visuais à página. B) Deixar notas para desenvolvedores que não são exibidas na tela. C) Criar links para outras seções do código. D) Armazenar dados que serão enviados a um servidor.
+
+2. Como o navegador lida com o conteúdo inserido dentro de uma tag de comentário? A) Ele exibe o texto em uma fonte menor na parte inferior da página. B) Ele ignora o conteúdo, não o renderizando na tela para o usuário. C) Ele o executa como um script para adicionar interatividade. D) Ele o formata como um bloco de citação especial.
+
+3. De acordo com a aula, um comentário é um "texto neutro". O que isso significa? A) Que o texto não tem cor. B) Que o texto não é interpretado pelo navegador como um código a ser exibido. C) Que o texto só pode conter letras, sem números ou símbolos. D) Que o texto é traduzido automaticamente para o idioma do navegador.
+
+4. Para quem são destinados os comentários em um código HTML? A) Apenas para os usuários finais que visitam o site. B) Para os mecanismos de busca, como o Google. C) Para os desenvolvedores que leem e mantêm o código. D) Para o servidor que hospeda a página.
+
+5. Qual das seguintes afirmações melhor descreve a função de um comentário? A) É uma tag essencial para a estrutura de qualquer página HTML. B) É uma forma de ocultar permanentemente o conteúdo dos usuários. C) É uma anotação no código que não afeta a aparência ou funcionalidade da página. D) É usado para definir o título que aparece na aba do navegador.
+
+6. Por que o conteúdo de um comentário não é exibido na página? A) Porque ele é carregado após todos os outros elementos. B) Porque os navegadores são programados para não renderizar o que está dentro da sintaxe de comentário. C) Porque ele é automaticamente movido para um arquivo de log separado. D) Porque requer uma folha de estilos CSS para ser visível.
+
+7. A aula menciona que comentários ajudam a "se situar no código". O que isso implica? A) Que os comentários criam um mapa do site. B) Que eles servem como guias ou lembretes para entender a estrutura do código. C) Que eles centralizam o conteúdo da página automaticamente. D) Que eles fornecem a localização geográfica do servidor.
+
+8. Um comentário em HTML é visível para quem inspeciona o código-fonte da página? A) Não, ele é removido antes do código ser enviado ao navegador. B) Sim, qualquer pessoa que visualizar o código-fonte poderá ver os comentários. C) Apenas se o comentário contiver a palavra-chave "public". D) Somente no navegador do desenvolvedor original.
+
+9. Qual efeito visual imediato ocorre quando um trecho de código HTML é transformado em um comentário, conforme demonstrado na aula? A) O trecho fica com a cor cinza na página do usuário. B) O trecho desaparece da renderização do navegador. C) O trecho é movido para o final da página. D) Uma mensagem de alerta é exibida para o usuário.
+
+10. Qual é a principal razão apresentada na aula para um desenvolvedor comentar um trecho de código em vez de simplesmente apagá-lo? A) Para que o código continue funcionando em segundo plano. B) Para que o código possa ser facilmente reativado ou reutilizado mais tarde. C) Para que o navegador o armazene em cache separadamente. D) Para testar a velocidade de carregamento da página.
+
+11. Qual das opções descreve corretamente a natureza de um comentário HTML? A) Um elemento interativo. B) Uma instrução para o servidor. C) Um metadado para o navegador. D) Um texto não renderizado para anotações humanas.
+
+12. Segundo a aula, para que serve fazer comentários? A) Ajudar a trabalhar de forma mais fácil e organizada. B) Validar o restante do código HTML. C) Criar seções recolhíveis no editor de código. D) Substituir o uso de tags <div> para layout.
+
+13. Um comentário pode ser colocado em qualquer lugar dentro de um arquivo .html? A) Não, apenas dentro da tag <body>. B) Não, apenas dentro da tag <head>. C) Sim, pode ser usado para deixar notas em qualquer parte do documento. D) Sim, mas apenas entre as tags <script>.
+
+14. Por que um desenvolvedor deixaria uma nota para si mesmo no código? A) Para aumentar o número de linhas do arquivo. B) Para lembrar a lógica de uma seção complexa ou o propósito de um bloco de código. C) Para que o usuário final veja as intenções do desenvolvedor. D) Para testar a funcionalidade de cores do editor.
+
+15. Se você comentar uma tag <h1>, como o navegador a tratará? A) Ele ainda a considerará um título, mas a ocultará visualmente. B) Ele a tratará como "texto neutro" e a ignorará completamente, sem processá-la como uma tag. C) Ele a exibirá, mas com uma formatação de parágrafo padrão. D) Ele a converterá em uma tag <h2> automaticamente.
+
+16. Qual das seguintes opções NÃO é um propósito de um comentário HTML? A) Deixar uma nota para outro desenvolvedor. B) Explicar uma parte complexa do código. C) Desativar temporariamente um bloco de código. D) Estilizar um texto com uma cor diferente.
+
+17. O que acontece se você esquecer de fechar uma tag de comentário? A) Nada, o navegador a fecha automaticamente. B) O navegador exibirá um erro visível na página. C) Todo o código que se segue ao início do comentário será tratado como parte do comentário e não será renderizado. D) Apenas a linha onde o comentário começou será ignorada.
+
+18. A aula descreve os comentários como uma ferramenta para o desenvolvedor. Qual é a principal vantagem disso? A) Aumentar a segurança do site. B) Facilitar a manutenção e a colaboração no futuro. C) Reduzir o tamanho final do arquivo HTML. D) Garantir a compatibilidade com navegadores mais antigos.
+
+19. Um comentário é considerado um "código a ser mostrado na tela"? A) Sim, mas apenas em modo de desenvolvedor. B) Não, a aula especifica que é algo que o navegador não entende como código a ser exibido. C) Sim, ele aparece como texto pré-formatado. D) Apenas se a tag display: comment; for usada no CSS.
+
+20. Se um colega de equipe for trabalhar no seu código, como os comentários podem ajudá-lo? A) Eles podem acelerar o computador do seu colega. B) Eles não ajudam, pois apenas o autor original os entende. C) Eles podem explicar a lógica e a estrutura do código, facilitando a compreensão. D) Eles traduzem o código para a língua nativa do colega.
+
+Esta base conceitual é essencial para aplicar a sintaxe correta, que veremos a seguir.
+
+1.2. Sintaxe de Comentários
+
+A sintaxe correta é crucial para que os comentários funcionem como esperado e não causem erros de renderização na página. Esta seção testará o conhecimento preciso sobre os caracteres e a sequência usados para abrir e fechar um comentário em HTML, conforme apresentado na aula.
+
+21. Qual das seguintes opções representa a forma correta de iniciar um comentário em HTML? A) // B) /* C) <!-- D) <comment>
+
+22. Qual é a sintaxe correta para fechar um comentário em HTML? A) //--> B) */ C) --> D) </comment>
+
+23. Qual das opções a seguir representa um comentário HTML válido e completo? A) /* Meu comentário */ B) // Meu comentário C) <!-- Meu comentário --> D) <-- Meu comentário --!>
+
+24. A aula enfatiza que o ponto de exclamação (!) deve estar localizado: A) Apenas na tag de fechamento. B) Tanto na tag de abertura quanto na de fechamento. C) Apenas na tag de abertura, logo após o sinal de <. D) Em nenhum lugar, ele é opcional.
+
+25. Qual das seguintes sintaxes está INCORRETA para um comentário HTML? A) <--! Isso é um comentário --> B) <!-- Isso é um comentário --> C) <!-- <p>Um parágrafo comentado</p> --> D) <!-- Comentário em múltiplas linhas -->
+
+26. Considere a sintaxe <!- Comentário ->. Por que ela está errada? A) Falta um segundo hífen (-) tanto na abertura quanto no fechamento. B) O ponto de exclamação está no lugar errado. C) Comentários não podem ter espaços após a abertura. D) Esta é a sintaxe para XML, não HTML.
+
+27. Qual das opções abaixo usa a sintaxe de comentário de outra linguagem (como JavaScript ou CSS) e não de HTML? A) <!-- Comentário --> B) <# Comentário #> C) /* Comentário */ D) <com> Comentário </com>
+
+28. Como se escreve a tag de abertura de um comentário? A) <-- B) <!- C) <!-- D) <--!
+
+29. E a tag de fechamento de um comentário? A) --!> B) --> C) -> D) !-->
+
+30. Qual detalhe de sintaxe foi mencionado na aula como sendo exclusivo da tag de abertura? A) O uso de dois hifens. B) O sinal de maior (>). C) O ponto de exclamação (!). D) O sinal de menor (<).
+
+31. A sintaxe <!-- Comentário --!> está correta? A) Sim, é uma variação válida. B) Não, o ponto de exclamação não deve estar na tag de fechamento. C) Sim, mas apenas para comentários de uma única linha. D) Não, faltam aspas ao redor do comentário.
+
+32. Qual é a combinação exata de caracteres para abrir um comentário? A) Menor que, ponto de exclamação, hífen, hífen. B) Menor que, hífen, hífen, ponto de exclamação. C) Menor que, barra, hífen, hífen. D) Menor que, ponto de exclamação, hífen.
+
+33. Qual é a combinação exata de caracteres para fechar um comentário? A) Hífen, hífen, ponto de exclamação, maior que. B) Hífen, hífen, maior que. C) Ponto de exclamação, hífen, maior que. D) Barra, hífen, hífen, maior que.
+
+34. Se você escrever // Este é meu comentário em um arquivo HTML, o que acontecerá? A) O texto será comentado corretamente. B) O navegador exibirá o texto "// Este é meu comentário" na página. C) O navegador irá gerar um erro de script. D) A linha inteira será ignorada, mas não é a sintaxe padrão de HTML.
+
+35. A sintaxe <!--Comentário--> (sem espaços) é válida? A) Não, os espaços são obrigatórios. B) Sim, os espaços ao redor do texto do comentário são opcionais. C) Apenas se o comentário tiver menos de 10 caracteres. D) Não, isso causará um erro de parsing.
+
+36. Qual das opções a seguir é uma representação inválida de um comentário? A) <! -- Comentário --> B) <!-- Comentário -- > C) <!-- Comentário --> D) <!- Comentário ->
+
+37. O que aconteceria com o código <p>Texto <!-- visível --!> invisível</p>? A) A palavra "visível" estaria comentada. B) A sintaxe do comentário está errada, então nada seria comentado. C) A palavra "invisível" estaria comentada. D) O parágrafo inteiro geraria um erro.
+
+38. Para comentar um bloco de código, onde você deve colocar a tag de abertura <!--? A) No final do bloco. B) Em cada linha do bloco. C) Antes da primeira linha do bloco. D) Após a primeira linha do bloco.
+
+39. E onde você deve colocar a tag de fechamento --> para o mesmo bloco? A) No início do bloco. B) Após a última linha do bloco. C) Em cada linha do bloco. D) Antes da última linha do bloco.
+
+40. A estrutura <!-- <img src="logo.png"> --> é sintaticamente correta? A) Não, tags HTML não podem ser colocadas dentro de comentários. B) Sim, qualquer texto, incluindo outras tags, pode ser colocado dentro de um comentário. C) Apenas se a tag <img> não tiver atributos. D) Não, isso requer uma sintaxe de comentário especial.
+
+41. Analise: <--! Início --> Texto <-- Fim !-->. Quantos erros de sintaxe de comentário existem aqui? A) Nenhum, está correto. B) Apenas um, na tag de abertura. C) Apenas um, na tag de fechamento. D) Múltiplos erros, tanto na abertura quanto no fechamento.
+
+42. Qual é a forma correta de comentar a palavra "meio" na frase "texto meio texto"? A) texto /* meio */ texto B) texto // meio // texto C) texto <!-- meio --> texto D) texto <comment> meio </comment> texto
+
+43. O número de hifens na abertura e fechamento é: A) Um na abertura, dois no fechamento. B) Dois na abertura, dois no fechamento. C) Dois na abertura, um no fechamento. D) Um em cada.
+
+44. A sintaxe < !-- Comentário --> com um espaço após o < é válida? A) Sim, os espaços são ignorados. B) Não, não pode haver espaço entre < e !. C) Apenas em documentos XHTML. D) Sim, mas não é recomendado.
+
+45. O que está errado em: <!-- Meu comentário ->? A) Falta o ponto de exclamação. B) Falta um hífen no fechamento. C) Falta um hífen na abertura. D) Nada, está correto.
+
+46. Qual das seguintes opções mostra um erro na posição do ponto de exclamação (!) em um comentário HTML? A) <!-- Comentário --> B) <!-- Comentário --!> C) <!--! D) <! -- Comentário -->
+
+47. Qual caractere NUNCA aparece na tag de fechamento de um comentário HTML padrão? A) - (hífen) B) > (maior que) C) ! (ponto de exclamação) D) / (barra)
+
+48. Se você precisa comentar várias linhas, você deve: A) Usar <!-- e --> para cada linha. B) Usar uma única tag <!-- no início e --> no final do bloco. C) Usar a tag <multicomment>. D) Usar ''' no início e no fim do bloco.
+
+49. A sintaxe <!--> é um comentário válido? A) Sim, é um comentário vazio. B) Não, falta o texto e os hifens. C) Não, a sintaxe de abertura está incompleta. D) Sim, mas apenas para fechar uma tag anterior.
+
+50. Qual é o erro mais comum que um iniciante pode cometer com a sintaxe de comentários? A) Usar apenas um hífen em vez de dois. B) Esquecer o ponto de exclamação. C) Colocar o ponto de exclamação no fechamento. D) Todas as anteriores são erros comuns.
+
+Conhecer a sintaxe permite aplicar os comentários em cenários práticos de desenvolvimento.
+
+1.3. Casos de Uso Práticos
+
+Além de saber a sintaxe, é vital entender quando e por que usar comentários no desenvolvimento, conforme demonstrado na aula. Esta seção contextualiza a aplicação prática, avaliando a capacidade de identificar os cenários corretos para usar comentários, seja para documentação ou para depuração de código.
+
+51. De acordo com a aula, qual é uma utilidade prática de transformar um trecho de código em comentário? A) Fazer o código carregar mais rápido. B) Ocultar permanentemente uma funcionalidade. C) Deixar o código inativo temporariamente sem precisar apagá-lo. D) Validar a sintaxe do código HTML.
+
+52. Um desenvolvedor escreve <!-- Início da seção de cabeçalho -->. Qual caso de uso ele está aplicando? A) Desativação de código. B) Documentação e organização. C) Otimização de performance. D) Criação de um link âncora.
+
+53. Por que um desenvolvedor comentaria uma tag <img> em vez de simplesmente apagá-la? A) Para que a imagem ainda seja carregada em segundo plano. B) Porque ele pode querer reutilizar o código da tag mais tarde. C) Para que a imagem apareça apenas em dispositivos móveis. D) Porque é mais fácil do que usar a tecla "Delete".
+
+54. A aula menciona que, durante o processo de desenvolvimento, é comum usar comentários para: A) Publicar o site. B) Comprar um domínio. C) "Tirar" partes do código para testar outras funcionalidades. D) Adicionar animações complexas.
+
+55. Se uma parte do layout está quebrando e você suspeita de uma <div> específica, o que você poderia fazer usando comentários? A) Adicionar um comentário dentro da <div> para consertá-la. B) Envolver a <div> inteira com a sintaxe de comentário para ver se o problema desaparece. C) Comentar todas as outras <div>s da página. D) Renomear a classe da <div> para "comentario".
+
+56. "Aqui o fechamento da div x" é um exemplo de comentário para qual finalidade? A) Melhorar a localização e organização em códigos com muitas divs aninhadas. B) Indicar um erro de sintaxe. C) Fazer o navegador ignorar o fechamento da div. D) Criar uma nova div chamada "x".
+
+57. Qual é a principal vantagem de comentar um código em vez de deletá-lo durante a depuração? A) O código comentado ocupa menos espaço em disco. B) Evita a perda de trabalho e facilita a reativação do código, se necessário. C) O código comentado é executado de forma mais segura. D) Comentários são indexados por mecanismos de busca.
+
+58. Um desenvolvedor deixou o seguinte comentário: <!-- TODO: Refatorar esta lógica em uma data futura -->. Qual é o propósito? A) Desativar o código. B) Deixar um lembrete para si mesmo ou para a equipe sobre uma tarefa pendente. C) Esconder um erro do cliente. D) Criar uma variável chamada "TODO".
+
+59. Qual cenário NÃO justifica o uso de um comentário para desativar código? A) Testar como a página se comporta sem um determinado script. B) Ocultar temporariamente uma seção em desenvolvimento. C) Remover permanentemente uma funcionalidade obsoleta do site. D) Isolar um elemento para verificar se ele está causando um conflito.
+
+60. Para que serve o comentário <!-- Fim do menu principal -->? A) Para estilizar o fim do menu. B) Para indicar visualmente no código onde um bloco lógico termina, melhorando a legibilidade. C) Para remover o menu da página. D) Para adicionar um link no final do menu.
+
+61. A prática de desativar código com comentários é mais útil: A) No site já em produção. B) Apenas em arquivos CSS. C) Durante a fase de desenvolvimento e teste. D) Para criar backups do código.
+
+62. Um comentário como <!-- Autor: João Silva, Data: 20/10/2023 --> serve para: A) Desativar o código. B) Fornecer metadados sobre o código para a equipe. C) Fazer o navegador exibir o nome do autor. D) Ligar para o autor.
+
+63. Se você comentar um formulário inteiro (<form>...</form>), o que acontecerá na página? A) O formulário aparecerá, mas não poderá ser enviado. B) O formulário não será renderizado e ficará invisível para o usuário. C) Apenas o botão de envio ficará visível. D) O formulário será convertido em texto simples.
+
+64. Qual das seguintes é a melhor descrição para o uso de comentários como documentação? A) Escrever um manual de usuário completo dentro do código. B) Deixar notas breves e claras que expliquem o "porquê" do código, não o "o quê". C) Comentar cada linha de código, sem exceção. D) Usar comentários para substituir a documentação externa.
+
+65. A aula sugere que usar comentários para organização é especialmente útil quando se trabalha com: A) Tags <p> simples. B) Imagens pequenas. C) Blocos complexos de divs aninhadas. D) Links externos.
+
+66. Ao desativar um bloco de código, o que acontece com sua funcionalidade? A) Ela é pausada e pode ser resumida. B) Ela é completamente ignorada pelo navegador como se não existisse. C) Ela funciona, mas de forma mais lenta. D) Ela é movida para o final do arquivo.
+
+67. Por que um desenvolvedor pode comentar um anúncio em uma página? A) Para aumentar a receita do anúncio. B) Para testar o layout da página sem a interferência visual do anúncio. C) Para que o anúncio apareça em dobro. D) Para mudar a cor do anúncio.
+
+68. Imagine que você tem várias <div>s aninhadas e está se perdendo no código. Qual comentário, baseado no exemplo da aula, seria mais útil para organização? A) <!-- <div> --> B) <!-- Este código é uma div --> C) <!-- Aqui o fechamento da div principal --> D) <!-- Por favor, não apague esta div -->
+
+69. Qual das opções é um exemplo de uso de comentário para organização de código? A) <!-- <h1>Título</h1> --> B) <!-- ================= Seção de Serviços ================= --> C) <!-- Este código não funciona --> D) <!-- Corrigir depois -->
+
+70. O uso de comentários para desativar código é uma alternativa a qual ação? A) Copiar o código para a área de transferência. B) Mover o código para outro arquivo. C) Deletar o código e possivelmente perdê-lo. D) Renomear o arquivo HTML.
+
+A eficiência no uso dessas técnicas pode ser aprimorada com atalhos do editor de código.
+
+1.4. Atalhos do Editor (VS Code)
+
+Editores de código modernos, como o Visual Studio Code, oferecem atalhos para agilizar tarefas comuns, incluindo a criação de comentários. Dominar esses atalhos aumenta a produtividade do desenvolvedor. Esta seção foca no atalho específico do VS Code apresentado na aula para comentar e descomentar código.
+
+71. Qual atalho de teclado foi demonstrado na aula para transformar um trecho de código selecionado em um comentário no VS Code? A) Ctrl + / B) Ctrl + C C) Ctrl + K seguido por C D) Alt + Shift + A
+
+72. De acordo com a aula, o que é necessário ao usar o atalho Ctrl + K e C? A) Pressionar as teclas lentamente, com uma pausa entre elas. B) Pressionar as teclas de forma rápida, quase simultânea. C) Segurar Ctrl o tempo todo. D) Ter uma extensão específica instalada.
+
+73. O que acontece se você pressionar Ctrl + K e demorar para pressionar C? A) Nada acontece. B) O VS Code pode abrir outro menu ou não executar o comando de comentar. C) O código é deletado. D) O código é copiado.
+
+74. Para usar o atalho de comentar um bloco, o que você deve fazer primeiro? A) Clicar no início da linha. B) Salvar o arquivo. C) Selecionar o trecho de código desejado. D) Fechar todos os outros arquivos.
+
+75. Se você usar o mesmo atalho (Ctrl + K C) em um código que já está comentado, o que acontece? A) O código é descomentado. B) Um novo comentário é adicionado em volta do comentário existente (aninhado). C) O VS Code exibe um erro. D) Nada acontece.
+
+76. O atalho demonstrado na aula funciona para: A) Apenas uma única linha. B) Apenas blocos de código com mais de 5 linhas. C) Tanto para uma única linha quanto para múltiplas linhas selecionadas. D) Apenas para tags <div>.
+
+77. Qual é a principal vantagem de usar um atalho para comentar código? A) Garante que a sintaxe do comentário esteja sempre correta e economiza tempo. B) Adiciona cores diferentes aos comentários. C) Funciona em qualquer editor de texto, como o Bloco de Notas. D) Comprime o tamanho do comentário.
+
+78. O comando Ctrl + K C é um exemplo de: A) Um atalho de tecla única. B) Uma sequência de acordes de teclado (key chord). C) Um comando de mouse. D) Um comando de voz.
+
+79. Qual das seguintes combinações de teclas é um distrator comum para o atalho de comentário do VS Code? A) Ctrl + S B) Ctrl + V C) Ctrl + Shift + C D) Todas as anteriores.
+
+80. O que o "C" na sequência Ctrl + K C provavelmente significa? A) "Cut" (Recortar). B) "Copy" (Copiar). C) "Comment" (Comentar). D) "Close" (Fechar).
+
+Com o conhecimento consolidado, podemos agora passar para um formato de avaliação mais direto.
+
+
+--------------------------------------------------------------------------------
+
+
+2. Questões de Verdadeiro ou Falso
+
+Este formato de questão testa o conhecimento de forma direta, exigindo a identificação da veracidade de afirmações sobre os conceitos de comentários em HTML. Cada afirmação requer uma análise cuidadosa dos fatos apresentados na aula.
+
+81. (  ) Verdadeiro / (  ) Falso: O texto dentro de um comentário HTML é exibido na página da web para o usuário final. 82. (  ) Verdadeiro / (  ) Falso: A sintaxe para fechar um comentário em HTML é //-->. 83. (  ) Verdadeiro / (  ) Falso: Um dos principais usos dos comentários é desativar temporariamente um bloco de código sem apagá-lo. 84. (  ) Verdadeiro / (  ) Falso: A sintaxe para iniciar um comentário em HTML é <!--. 85. (  ) Verdadeiro / (  ) Falso: A sintaxe <!- ... -> com apenas um hífen na abertura é uma forma válida de criar um comentário. 86. (  ) Verdadeiro / (  ) Falso: O atalho Ctrl + K seguido rapidamente por C no VS Code transforma o código selecionado em um comentário. 87. (  ) Verdadeiro / (  ) Falso: É obrigatório colocar um comentário no início de cada arquivo HTML para que ele seja válido. 88. (  ) Verdadeiro / (  ) Falso: Um comentário é considerado um "texto neutro" porque não é renderizado pelo navegador. 89. (  ) Verdadeiro / (  ) Falso: Qualquer pessoa que visualizar o código-fonte de uma página pode ler os comentários deixados no HTML. 90. (  ) Verdadeiro / (  ) Falso: Para comentar três linhas de código, é necessário usar a sintaxe <!-- ... --> três vezes, uma para cada linha. 91. (  ) Verdadeiro / (  ) Falso: Comentários são úteis para documentar o código e facilitar a manutenção futura por você ou por outros desenvolvedores. 92. (  ) Verdadeiro / (  ) Falso: A tag de fechamento de um comentário HTML (-->) contém um ponto de exclamação. 93. (  ) Verdadeiro / (  ) Falso: O principal público-alvo dos comentários são os seres humanos (desenvolvedores), não as máquinas (navegadores). 94. (  ) Verdadeiro / (  ) Falso: O atalho Ctrl + K seguido de C no VS Code funciona tanto para uma única linha quanto para um bloco de código selecionado. 95. (  ) Verdadeiro / (  ) Falso: Um comentário pode conter outras tags HTML dentro dele, como <div> ou <p>, que serão ignoradas pelo navegador. 96. (  ) Verdadeiro / (  ) Falso: Segundo a aula, o principal motivo para transformar código em comentário, em vez de apagar, é a possibilidade de usá-lo mais tarde. 97. (  ) Verdadeiro / (  ) Falso: A aula afirma que comentários ajudam a organizar o código, especialmente em seções complexas. 98. (  ) Verdadeiro / (  ) Falso: O atalho para comentar no VS Code é Ctrl + C seguido por Ctrl + K. 99. (  ) Verdadeiro / (  ) Falso: Um comentário que não é fechado corretamente pode fazer com que o resto da página não seja exibido. 100. (  ) Verdadeiro / (  ) Falso: Ao usar o atalho Ctrl + K C, é preciso pressionar as teclas lentamente para que o comando funcione.
+
+A seguir, vamos aplicar este conhecimento de sintaxe de forma mais prática.
+
+
+--------------------------------------------------------------------------------
+
+
+3. Questões de Preenchimento de Código
+
+Esta seção tem como objetivo avaliar a capacidade de aplicar o conhecimento de sintaxe de forma prática. A tarefa consiste em completar trechos de código HTML, preenchendo as lacunas com os caracteres corretos para formar um comentário válido.
+
+101. Complete a sintaxe do comentário para ocultar o parágrafo:
+
+`_____ <p>Este parágrafo não deve aparecer.</p> -->`
+
+
+Resposta Esperada: <!--
+
+102. Complete a tag de fechamento do comentário:
+
+`<!-- <h1>Título Oculto</h1> _____`
+
+
+Resposta Esperada: -->
+
+103. Insira os caracteres que faltam na tag de abertura:
+
+`<!_____ Este é um comentário. -->`
+
+
+Resposta Esperada: --
+
+104. Insira os caracteres que faltam na tag de fechamento:
+
+`<!-- Uma nota para mim mesmo __>`
+
+
+Resposta Esperada: --
+
+105. Transforme a linha inteira em um comentário válido, preenchendo as duas lacunas:
+
+`_____ Desativando esta seção temporariamente _____`
+
+
+Resposta Esperada: <!-- e -->
+
+106. Complete a sintaxe para corrigir a tag de abertura inválida:
+
+`_____ <img src="imagem.jpg"> -->`
+
+
+Resposta Esperada: <!--
+
+107. Complete a sintaxe para corrigir a tag de fechamento inválida:
+
+`<!-- Div de navegação _____`
+
+
+Resposta Esperada: -->
+
+108. Complete a sintaxe para que apenas a palavra "oculto" seja comentada:
+
+`<p>Este texto é visível, mas este é <!-- oculto _____.</p>`
+
+
+Resposta Esperada: -->
+
+109. Preencha a lacuna para criar um comentário vazio:
+
+`<!--_____-->`
+
+
+Resposta Esperada: A lacuna deve permanecer vazia.
+
+110. Complete a sintaxe para comentar um bloco de múltiplas linhas:
+
+`_____
+  <h2>Subtítulo a ser removido</h2>
+  <p>Parágrafo também a ser removido.</p>
+-->`
+
+
+Resposta Esperada: <!--
+
+Agora, vamos ao teste final de aplicação prática.
+
+
+--------------------------------------------------------------------------------
+
+
+4. Testes de Criação de Código
+
+Esta seção representa o teste mais prático, onde o conhecimento deve ser aplicado para escrever código HTML funcional a partir de uma instrução. O desafio é manipular corretamente os blocos de código fornecidos, utilizando comentários para documentar ou desativar elementos específicos.
+
+111. Use um comentário para desativar a exibição do elemento <h1> no código abaixo.
+
+<h1>Título Principal</h1>
+<p>Este parágrafo deve continuar visível.</p>
+
+
+Resposta Esperada:
+
+<!-- <h1>Título Principal</h1> -->
+<p>Este parágrafo deve continuar visível.</p>
+
+
+112. Adicione um comentário com o texto "Início da seção de artigos" acima da tag <section>.
+
+<section>
+  <h2>Artigo 1</h2>
+</section>
+
+
+Resposta Esperada:
+
+<!-- Início da seção de artigos -->
+<section>
+  <h2>Artigo 1</h2>
+</section>
+
+
+113. Comente apenas o segundo item da lista (<li>) para que ele não apareça.
+
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+  <li>Item 3</li>
+</ul>
+
+
+Resposta Esperada:
+
+<ul>
+  <li>Item 1</li>
+  <!-- <li>Item 2</li> -->
+  <li>Item 3</li>
+</ul>
+
+
+114. Adicione um comentário após a </div> de fechamento com o texto "Fim do contêiner principal".
+
+<div class="container">
+  <p>Conteúdo...</p>
+</div>
+
+
+Resposta Esperada:
+
+<div class="container">
+  <p>Conteúdo...</p>
+</div><!-- Fim do contêiner principal -->
+
+
+115. Desative todo o bloco <div>, incluindo seu conteúdo, usando um comentário.
+
+<div>
+  <p>Parágrafo a ser ocultado.</p>
+  <a href="#">Link a ser ocultado.</a>
+</div>
+
+
+Resposta Esperada:
+
+<!--
+<div>
+  <p>Parágrafo a ser ocultado.</p>
+  <a href="#">Link a ser ocultado.</a>
+</div>
+-->
+
+
+116. Adicione um comentário de documentação explicando para que serve a tag <nav>. Use o texto "Menu de navegação principal".
+
+<nav>
+  <ul>...</ul>
+</nav>
+
+
+Resposta Esperada:
+
+<!-- Menu de navegação principal -->
+<nav>
+  <ul>...</ul>
+</nav>
+
+
+117. Comente a tag de imagem para que ela não seja carregada, mas mantenha o parágrafo visível.
+
+<div>
+  <img src="banner.png" alt="Banner">
+  <p>Texto abaixo da imagem.</p>
+</div>
+
+
+Resposta Esperada:
+
+<div>
+  <!-- <img src="banner.png" alt="Banner"> -->
+  <p>Texto abaixo da imagem.</p>
+</div>
+
+
+118. Adicione um comentário de "TODO" (tarefa a fazer) acima do formulário com o texto "Adicionar validação de campos".
+
+<form>
+  <input type="text">
+</form>
+
+
+Resposta Esperada:
+
+<!-- TODO: Adicionar validação de campos -->
+<form>
+  <input type="text">
+</form>
+
+
+119. Use comentários para desativar o segundo e o terceiro parágrafos de uma só vez.
+
+<p>Primeiro parágrafo.</p>
+<p>Segundo parágrafo.</p>
+<p>Terceiro parágrafo.</p>
+<p>Quarto parágrafo.</p>
+
+
+Resposta Esperada:
+
+<p>Primeiro parágrafo.</p>
+<!--
+<p>Segundo parágrafo.</p>
+<p>Terceiro parágrafo.</p>
+-->
+<p>Quarto parágrafo.</p>
+
+
+120. Crie um comentário explicando que a <div> abaixo é para o rodapé da página.
+
+<div>
+  &copy; 2023 Meu Site
+</div>
+
+
+Resposta Esperada:
+
+<!-- Seção do rodapé -->
+<div>
+  &copy; 2023 Meu Site
+</div>
+

@@ -1,0 +1,163 @@
+Questionário de Avaliação: HTML Aula 13 - Áudio
+
+Este documento é um questionário abrangente projetado para avaliar o conhecimento adquirido na Aula 13 do curso de HTML, focando especificamente na implementação e nos atributos da tag <audio>. O objetivo deste questionário é solidificar o aprendizado através da prática e da resolução de problemas, garantindo que os conceitos sobre a incorporação de mídias de áudio em páginas web sejam bem compreendidos.
+
+
+--------------------------------------------------------------------------------
+
+
+1.0 Questões de Múltipla Escolha
+
+Esta seção testa a compreensão conceitual e o conhecimento de sintaxe específica da tag <audio> e seus elementos associados. Para cada questão a seguir, selecione a melhor resposta entre as opções fornecidas, com base no conteúdo apresentado na aula.
+
+1. Qual é a tag principal utilizada para incorporar áudio em uma página HTML? A. <sound> B. <audio> C. <music> D. <mp3> Resposta: B
+2. Qual atributo é essencial para que os controles do player de áudio (play, volume, etc.) sejam exibidos na página? A. show B. visible C. controls D. player Resposta: C
+3. Dentro da tag <audio>, qual tag filha é usada para especificar o arquivo de áudio a ser tocado? A. <file> B. <track> C. <source> D. <path> Resposta: C
+4. Qual atributo da tag <source> é utilizado para definir o caminho (local ou URL) do arquivo de áudio? A. path B. href C. link D. src Resposta: D
+5. O que acontece se o atributo controls for omitido da tag <audio>? A. O áudio toca automaticamente. B. O player de áudio não é exibido na página. C. Aparece uma mensagem de erro. D. Os controles são exibidos em um formato mínimo. Resposta: B
+6. Qual atributo pode ser adicionado à tag <audio> para remover a opção de download do menu do player no Google Chrome? A. nodownload B. download="false" C. controlslist="nodownload" D. disable-download Resposta: C
+7. Segundo a aula, para que serve o recurso de áudio em um blog ou site de conteúdo? A. Apenas para tocar música de fundo. B. Para permitir que os usuários gravem suas próprias mensagens. C. Para oferecer a leitura do texto do conteúdo em formato de áudio. D. Para substituir completamente o texto por áudio. Resposta: C
+8. É possível ter múltiplos players de áudio na mesma página HTML? A. Não, apenas um player é permitido por página. B. Sim, mas eles tocarão o mesmo arquivo de áudio. C. Sim, é possível ter vários players independentes na mesma página. D. Sim, mas apenas um pode ter os controles visíveis. Resposta: C
+9. Na tag <source>, o atributo type especifica o quê? A. O tipo de player a ser usado. B. O formato (MIME type) do arquivo de áudio. C. O tipo de controle de volume. D. A prioridade do arquivo de áudio. Resposta: B
+10. Você precisa incorporar uma faixa de música chamada trilha.mp3. Qual das seguintes opções de código está sintaticamente correta? A. <source src="trilha.mp3" type="audio/mp3"> B. <source src="trilha.mp3" type="audio/mpeg"> C. <source path="trilha.mp3" type="audio/mpeg"> D. <source src="trilha.mpeg" type="audio/mpeg"> Resposta: B
+11. Seu cliente forneceu um arquivo de áudio narracao.ogg. Qual é a tag <source> correta para este arquivo? A. <source src="narracao.ogg" type="audio/ogg"> B. <source src="narracao.ogg" type="audio/mpeg"> C. <source src="narracao.ogg" type="sound/ogg"> D. <source href="narracao.ogg" type="audio/ogg"> Resposta: A
+12. Para um efeito sonoro salvo como efeito.wav, qual implementação da tag <source> é a mais adequada? A. <source src="efeito.wav" type="audio/wave"> B. <source src="efeito.wav" type="audio/windows"> C. <source src="efeito.wav" type="audio/wav"> D. <source link="efeito.wav" type="audio/wav"> Resposta: C
+13. Qual a função do atributo src na tag <source>? A. Definir os controles do áudio. B. Definir o título do áudio. C. Definir a localização do arquivo de áudio. D. Definir o estilo do player. Resposta: C
+14. A tag <source> requer uma tag de fechamento como </source>? A. Sim, sempre. B. Não, é uma tag que não possui fechamento. C. Apenas quando o áudio é de um link externo. D. Apenas quando o arquivo está em formato MP3. Resposta: B
+15. Como a tag <source> se relaciona com a tag <audio>? A. É uma tag independente que pode ser usada sozinha. B. É uma tag "filha", aninhada dentro da tag <audio>. C. É uma tag "mãe" que contém a tag <audio>. D. Elas são intercambiáveis e têm a mesma função. Resposta: B
+16. Se você tem um arquivo de áudio chamado musica.mp3 dentro de uma pasta audio, qual seria o caminho relativo correto no atributo src? A. src="musica.mp3" B. src="audio/musica.mp3" C. src="audio, musica.mp3" D. src="../musica.mp3" Resposta: B
+17. Qual formato de áudio é mencionado na aula como o mais comum na internet? A. WAV B. OGG C. MP3 D. AAC Resposta: C
+18. É possível usar a tag <audio> para tocar uma transmissão de rádio online? A. Não, a tag <audio> só funciona com arquivos locais. B. Não, isso requer uma tag diferente, como <stream>. C. Sim, fornecendo o link (URL absoluta) da transmissão no atributo src. D. Sim, mas apenas se a rádio transmitir em formato WAV. Resposta: C
+19. O que é um "caminho absoluto" no contexto do atributo src? A. Um caminho para um arquivo na mesma pasta. B. Um link completo de um site externo (URL). C. Um caminho que começa com a raiz do projeto. D. Um nome de arquivo sem a extensão. Resposta: B
+20. O que é um "caminho relativo" no contexto do atributo src? A. Um link completo para uma página da web. B. Um caminho para um arquivo dentro da estrutura do seu próprio projeto. C. Um caminho que não funciona em todos os navegadores. D. Um caminho que aponta para um banco de dados. Resposta: B
+21. O que o valor nodownload dentro do atributo controlslist faz? A. Impede completamente que o áudio seja tocado. B. Oculta o botão de volume. C. Remove o ícone de três pontos que contém a opção de download. D. Aumenta a velocidade de reprodução do áudio. Resposta: C
+22. De acordo com a aula, o uso de controlslist="nodownload" garante 100% que o usuário não conseguirá baixar o áudio? A. Sim, é uma proteção inviolável. B. Não, usuários com conhecimento técnico podem inspecionar o código e ainda assim baixar o arquivo. C. Sim, mas apenas no navegador Google Chrome. D. Não, ele apenas renomeia o botão de download para "Salvar". Resposta: B
+23. Onde o atributo controls deve ser inserido? A. Na tag <source>. B. Na tag <body>. C. Na tag <audio> de abertura. D. Na tag <html>. Resposta: C
+24. Onde o atributo type deve ser inserido? A. Na tag <audio>. B. Na tag <source>. C. Na tag <p>. D. Em ambas, <audio> e <source>. Resposta: B
+25. Ao usar um link de áudio externo, o que pode causar uma pequena demora antes que o player esteja pronto para tocar? A. O navegador precisa verificar se o link é seguro. B. O arquivo precisa ser carregado do servidor externo. C. O HTML precisa ser validado primeiro. D. O navegador precisa converter o formato do áudio. Resposta: B
+26. Qual a estrutura correta para implementar um player de áudio? A. <audio src="arquivo.mp3"></audio> B. <source src="arquivo.mp3"><audio controls></audio></source> C. <audio controls><source src="arquivo.mp3" type="audio/mpeg"></audio> D. <player src="arquivo.mp3" controls></player> Resposta: C
+27. O controle de volume e a linha do tempo (timeline) fazem parte de qual elemento? A. Da tag <source>. B. Do player de áudio exibido pelo atributo controls. C. De um atributo chamado timeline. D. Eles precisam ser codificados separadamente com JavaScript. Resposta: B
+
+As questões a seguir testarão sua atenção aos detalhes com afirmações de verdadeiro ou falso.
+
+2.0 Questões de Verdadeiro ou Falso
+
+Esta seção desafia você a validar a precisão do seu conhecimento. Cada afirmação a seguir testa fatos e regras específicas sobre a tag <audio>, conforme apresentados na aula. Avalie cuidadosamente cada uma e determine se é verdadeira ou falsa.
+
+1. A tag <audio> é auto-fechada, ou seja, não precisa de uma tag </audio>. Resposta: Falso. Justificativa: A tag <audio> requer uma tag de fechamento </audio> e aninha a tag <source> dentro dela.
+2. A tag <source> deve ser colocada fora da tag <audio>. Resposta: Falso. Justificativa: A tag <source> é uma tag filha e deve ser aninhada dentro da tag <audio>.
+3. É obrigatório sempre usar a tag <source> para definir o arquivo de áudio. Resposta: Verdadeiro. Justificativa: Conforme a prática ensinada na aula, a tag <audio> atua como um contêiner para o player, enquanto a tag aninhada <source> é a responsável por especificar o caminho (src) e o tipo (type) do arquivo de mídia, separando a estrutura da fonte do conteúdo.
+4. O nome da tag para incorporar áudio é <sound>. Resposta: Falso. Justificativa: A tag correta é <audio>.
+5. Se você não incluir o atributo controls, o áudio ainda aparecerá na página, mas sem botões. Resposta: Falso. Justificativa: Se o atributo controls for omitido, nada relacionado ao player de áudio será exibido na página.
+6. A tag <audio> sem o atributo controls ainda carrega o arquivo de áudio na memória do navegador, mesmo que não exiba o player. Resposta: Verdadeiro. Justificativa: O elemento de áudio é carregado no DOM do documento, mas a interface do player não é renderizada na tela sem o atributo controls.
+7. A tag <source> precisa de uma tag de fechamento </source>. Resposta: Falso. Justificativa: A tag <source> é uma das tags em HTML que não possui uma tag de fechamento.
+8. A tag <audio> pode ser usada para tocar arquivos de vídeo se o type for alterado para video/mp4. Resposta: Falso. Justificativa: A tag <audio> é específica para áudio. Para vídeos, utiliza-se a tag <video>.
+9. É possível criar uma pasta chamada audio no projeto para organizar os arquivos de som. Resposta: Verdadeiro. Justificativa: A aula demonstra exatamente essa prática, criando uma pasta audio e acessando o arquivo teste.mp3 dentro dela.
+10. A tag <audio> funciona apenas com arquivos no formato MP3. Resposta: Falso. Justificativa: A aula menciona explicitamente o suporte para outros formatos, como OGG e WAV.
+11. A estrutura <audio><source></audio> é a forma padrão demonstrada na aula. Resposta: Verdadeiro. Justificativa: Esta é a estrutura fundamental ensinada para a implementação de áudio.
+12. O atributo controls pode receber valores como true ou false. Resposta: Falso. Justificativa: O atributo controls é um atributo booleano; sua simples presença ativa os controles, não sendo necessário atribuir um valor.
+13. O atributo src na tag <source> é opcional. Resposta: Falso. Justificativa: O atributo src é essencial, pois define o caminho para o arquivo de áudio que será tocado.
+14. O MIME type para arquivos .mp3 é audio/mp3. Resposta: Falso. Justificativa: O MIME type correto para arquivos MP3, conforme ensinado na aula, é audio/mpeg.
+15. O atributo controlslist deve ser adicionado à tag <source>. Resposta: Falso. Justificativa: O atributo controlslist é adicionado à tag <audio>, pois modifica a lista de controles do player.
+16. O valor nodownload no atributo controlslist oculta o botão de play. Resposta: Falso. Justificativa: Ele remove a opção de "Fazer download" do menu de três pontos do player.
+17. O atributo type na tag <source> informa ao navegador o formato do arquivo de áudio. Resposta: Verdadeiro. Justificativa: O type especifica o MIME type do arquivo, como audio/mpeg ou audio/ogg.
+18. O atributo src pode conter tanto um caminho relativo (local) quanto um caminho absoluto (URL). Resposta: Verdadeiro. Justificativa: A aula demonstra o uso de um arquivo local (teste.mp3) e de um link externo (URL de uma música).
+19. O controlslist é um atributo padrão que funciona em todos os navegadores da mesma forma. Resposta: Falso. Justificativa: A aula menciona que o menu de três pontos é uma característica do Google Chrome, implicando que a aparência e os controles podem variar entre navegadores.
+20. O MIME type audio/wave é usado para arquivos .wav. Resposta: Falso. Justificativa: O MIME type correto mencionado na aula para arquivos .wav é audio/wav.
+21. Para o atributo controlslist, a aula menciona que a letra "L" de "list" deve ser maiúscula (controlsList). Resposta: Verdadeiro. Justificativa: O instrutor menciona verbalmente "com L maiúsculo", embora o código digitado tenha sido controlslist. A afirmação é sobre o que foi dito na aula.
+22. Usar um link de áudio de um site externo pode demorar um pouco mais para carregar do que um arquivo local. Resposta: Verdadeiro. Justificativa: O navegador precisa buscar o arquivo de um servidor externo, o que pode introduzir uma pequena latência.
+23. Um arquivo chamado radio.ogg deve ter o type definido como audio/mpeg. Resposta: Falso. Justificativa: O tipo correto para um arquivo OGG é audio/ogg.
+24. Omitir o atributo type da tag <source> é uma boa prática. Resposta: Falso. Justificativa: É uma boa prática incluir o type para ajudar o navegador a identificar o formato do arquivo rapidamente.
+25. A tag <audio> pode ser usada para criar um player de podcasts em um site. Resposta: Verdadeiro. Justificativa: A funcionalidade de ler o conteúdo de um texto, demonstrada na aula, é análoga à funcionalidade de um player de podcast.
+26. A pasta audio precisa estar obrigatoriamente na raiz do projeto para o caminho relativo funcionar. Resposta: Falso. Justificativa: O caminho relativo pode ser ajustado para encontrar a pasta em qualquer lugar na estrutura do projeto (ex: ../audio/som.mp3).
+27. O player de áudio padrão do navegador não possui controle de volume. Resposta: Falso. Justificativa: Os controles padrão incluem play, linha do tempo e controle de volume.
+28. É possível criar dois players na mesma página, um tocando um arquivo MP3 local e outro uma rádio online. Resposta: Verdadeiro. Justificativa: A aula demonstra exatamente essa implementação, criando dois players de áudio distintos.
+29. O atributo controlslist="nodownload" remove a linha do tempo do player. Resposta: Falso. Justificativa: Ele remove apenas a opção de download, mantendo os outros controles intactos.
+30. O caminho https://site.com/musica.mp3 é um exemplo de caminho relativo. Resposta: Falso. Justificativa: Este é um exemplo de caminho absoluto (URL).
+31. A tag <source> é o que efetivamente define o arquivo a ser tocado, enquanto a tag <audio> cria a interface do player. Resposta: Verdadeiro. Justificativa: Essa é a divisão de responsabilidades entre as duas tags, conforme explicado na aula.
+
+Agora, vamos testar sua habilidade de escrever o código corretamente com os exercícios de preenchimento de lacunas.
+
+3.0 Questões de Preenchimento de Código
+
+Estes exercícios de preenchimento de lacunas testam seu conhecimento prático da sintaxe do HTML para áudio. O objetivo é completar os trechos de código, reforçando a memorização de tags, atributos e valores corretos para implementar um player de áudio funcional.
+
+1. Código:
+2. Resposta: audio
+3. Código:
+4. Resposta: source
+5. Código:
+6. Resposta: audio
+7. Código:
+8. Resposta: source
+9. Código:
+10. Resposta: audio controls
+11. Código:
+12. Resposta: controls
+13. Código:
+14. Resposta: src
+15. Código:
+16. Resposta: type
+17. Código:
+18. Resposta: controls
+19. Código:
+20. Resposta: src
+21. Código:
+22. Resposta: type
+23. Código:
+24. Resposta: controlslist
+25. Código:
+26. Resposta: controls controlslist
+27. Código:
+28. Resposta: type
+29. Código:
+30. Resposta: src
+31. Código:
+32. Resposta: audio/mpeg
+33. Código:
+34. Resposta: audio/ogg
+35. Código:
+36. Resposta: audio/wav
+37. Código:
+38. Resposta: audio/musica.mp3
+39. Código:
+40. Resposta: audio/mpeg
+41. Código:
+42. Resposta: controlslist
+43. Código:
+44. Resposta: nodownload
+45. Código:
+46. Resposta: controlslist="nodownload"
+47. Código:
+48. Resposta: controlslist
+49. Código:
+50. Resposta: controls
+
+A seção final testará sua capacidade de aplicar todo o conhecimento adquirido para criar código do zero.
+
+4.0 Testes de Criação de Código
+
+Esta é a parte mais prática do questionário, onde seu conhecimento teórico deve ser aplicado para construir soluções de código funcionais a partir do zero, com base em requisitos específicos. Escreva o código HTML completo para cada desafio proposto.
+
+1. Desafio: Crie um player de áudio que toque o arquivo musica.mp3, localizado na pasta raiz do projeto. Os controles do player devem estar visíveis. Solução:
+2. Desafio: Crie um player de áudio para o arquivo podcast.ogg, que está localizado dentro de uma pasta chamada media. Solução:
+3. Desafio: Crie um player de áudio que toque o arquivo efeito_sonoro.wav. O arquivo está em uma pasta chamada assets/audio. Solução:
+4. Desafio: Crie um player de áudio para o arquivo trilha_fundo.mp3. O player não deve exibir os controles. Solução:
+5. Desafio: Crie um player de áudio completo para o arquivo entrevista.ogg, localizado na pasta podcasts. Solução:
+6. Desafio: Crie um player de áudio que toque a música do link https://somdeexemplo.com/musica_pop.mp3. Solução:
+7. Desafio: Crie um player para uma rádio online que transmite no endereço http://radio.online/stream. Solução:
+8. Desafio: Crie um player que toque um áudio externo no formato OGG: https://arquivos.web/audio.ogg. Solução:
+9. Desafio: Implemente um player de áudio para um arquivo MP3 hospedado em https://cdn.mysite.com/opening.mp3 e oculte a opção de download. Solução:
+10. Desafio: Em uma única página, crie dois players de áudio. O primeiro deve tocar um arquivo local chamado intro.wav, localizado em uma pasta assets, e não deve exibir o botão de download. O segundo deve tocar uma transmissão de rádio ao vivo de https://radio.stream/live e deve ter os controles padrão. Solução:
+11. Desafio: Crie um player de áudio para o arquivo local narracao.mp3, localizado na pasta audio, e desabilite o botão de download. Solução:
+12. Desafio: Na mesma página, crie dois players de áudio distintos. O primeiro deve tocar local.mp3 da pasta sons. O segundo deve tocar a rádio de http://streaming.com/radio. Solução:
+13. Desafio: Crie um player de áudio para o arquivo aula.ogg, localizado na pasta conteudo. O player deve ter os controles visíveis, mas a opção de download deve ser removida. Solução:
+14. Desafio: Crie um player para o arquivo bonus_track.mp3 e outro para b_side.mp3, ambos na pasta musicas. O primeiro deve ter a opção de download, mas o segundo não. Solução:
+15. Desafio: Crie um player para tocar o áudio de uma leitura de texto, leitura.mp3 da pasta textos, e remova a opção de download para incentivar a navegação no site. Solução:
+
+
+--------------------------------------------------------------------------------
+
+
+Parabéns por completar esta avaliação! Revisar os conceitos abordados aqui é uma excelente forma de garantir que seu conhecimento sobre a incorporação de mídias de áudio em HTML está sólido. Continue praticando para aprimorar ainda mais suas habilidades de desenvolvimento web.
+

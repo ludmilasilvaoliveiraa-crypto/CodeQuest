@@ -1,0 +1,203 @@
+Avaliação de Conhecimentos: HTML - Aula 11 (iframes)
+
+Introdução
+
+Este documento foi elaborado como uma ferramenta de avaliação para consolidar seu aprendizado sobre o uso da tag <iframe> em HTML. O objetivo é verificar sua compreensão dos conceitos apresentados exclusivamente na Aula 11 do curso de HTML Completo do canal "Programação Web". A avaliação abrange desde a sintaxe fundamental e atributos básicos até a implementação de funcionalidades dinâmicas, como o carregamento de conteúdo a partir de links. Encare este teste como uma oportunidade para solidificar seu conhecimento e ganhar confiança. Bom trabalho!
+
+
+--------------------------------------------------------------------------------
+
+
+1. Questões de Múltipla Escolha
+
+Esta seção testa seu conhecimento fundamental sobre a teoria e a sintaxe dos iframes. Leia cada pergunta com atenção e selecione a única alternativa correta, com base no conteúdo apresentado na aula.
+
+1. Qual é a principal função da tag <iframe> em HTML, de acordo com a aula? A) Criar um formulário interativo. B) Exibir uma página web dentro de outra página web. C) Inserir um arquivo de áudio na página. D) Definir o cabeçalho principal de um documento.
+
+2. Qual atributo é utilizado para especificar o endereço (URL) que será exibido dentro de um <iframe>? A) link B) href C) src D) source
+
+3. Para que servem os atributos width e height na tag <iframe>? A) Para definir a cor de fundo e a cor do texto do iframe. B) Para definir a largura e a altura do iframe, respectivamente. C) Para definir a margem interna e externa do iframe. D) Para controlar a velocidade de carregamento do conteúdo.
+
+4. Como é possível remover a borda padrão de um <iframe> utilizando CSS inline, conforme demonstrado na aula? A) border="0" B) style="border:none;" C) frameborder="false" D) outline="hidden"
+
+5. Qual é o propósito principal do atributo title em um <iframe>? A) Definir o texto que aparece na aba do navegador. B) Criar um título visível acima do iframe. C) Fornecer uma descrição do conteúdo do iframe para fins de acessibilidade. D) Estilizar a borda do iframe com um texto personalizado.
+
+6. De acordo com a aula, qual é uma aplicação comum para iframes relacionada a plataformas de vídeo como o YouTube? A) Fazer o download de vídeos diretamente da página. B) Incorporar vídeos do YouTube para serem exibidos dentro da sua própria página. C) Acelerar o carregamento de vídeos do YouTube. D) Criar playlists de vídeos que rodam em segundo plano.
+
+7. Um desenvolvedor criou o código <a href="pagina.html" target="conteudo"> e <iframe id="conteudo"></iframe>, mas o link não carrega no iframe. Qual é o erro no código do <iframe>, segundo a Aula 11? A) O <iframe> deveria usar o atributo name="conteudo" em vez de id. B) O <iframe> deveria usar o atributo src="conteudo". C) A tag <a> deveria usar link="conteudo". D) O <iframe> não pode ser alvo de um link, apenas a página principal.
+
+8. No código <code><iframe src="contato.html" width="100%" height="600"></iframe></code>, o que o valor 100% no atributo width significa? A) O iframe terá 100 pixels de largura. B) O iframe ocupará 100% da largura da tela disponível. C) O iframe carregará 100% do conteúdo da página antes de ser exibido. D) O iframe terá uma borda de 100 pixels.
+
+9. Qual era um uso antigo para iframes, mencionado na aula como uma prática que hoje não é mais recomendada? A) Para criar animações em Flash. B) Para exibir anúncios pop-up. C) Para estruturar o layout completo de um site, com menus e conteúdo em iframes separados. D) Para tocar músicas de fundo em um site.
+
+10. Ao incorporar um vídeo do YouTube, onde você encontra o código <iframe> pronto para ser copiado? A) Na descrição do vídeo. B) Nas configurações do seu canal do YouTube. C) No botão "Compartilhar" e, em seguida, na opção "Incorporar". D) Clicando com o botão direito do mouse sobre o vídeo e selecionando "Copiar código".
+
+11. Qual das seguintes afirmações sobre a tag <iframe> está correta, segundo a aula? A) É uma tag que não necessita de fechamento, como <img>. B) É uma tag que possui abertura (<iframe>) e fechamento (</iframe>). C) É uma tag exclusiva para exibir imagens. D) É uma tag que só funciona com arquivos locais.
+
+12. Para que a página dimitri.html seja carregada dinamicamente no iframe <code><iframe name="conteudo"></iframe></code>, qual seria a sintaxe correta do link? A) <a href="dimitri.html" name="conteudo">Dimitri</a> B) <a src="dimitri.html" target="conteudo">Dimitri</a> C) <a href="dimitri.html" target="conteudo">Dimitri</a> D) <a target="conteudo" link="dimitri.html">Dimitri</a>
+
+13. O que a expressão "uma página HTML dentro de uma página HTML" descreve? A) O conceito de tabelas aninhadas. B) O funcionamento básico de um <iframe>. C) A estrutura de listas ordenadas. D) A utilização de comentários no código.
+
+14. Por que a prática de usar iframes para montar todo o layout de um site foi sendo abandonada, segundo a aula? A) Porque os iframes foram descontinuados no HTML5. B) Porque surgiram recursos mais eficientes para criar sites dinâmicos, como PHP e bancos de dados. C) Porque iframes não são compatíveis com navegadores modernos. D) Porque iframes consomem muita memória RAM.
+
+15. Se um <iframe> não tiver os atributos width e height definidos, como ele será exibido? A) Ocupando a tela inteira. B) Com um tamanho padrão mínimo definido pelo navegador. C) Não será exibido. D) Com o mesmo tamanho da página que ele está carregando.
+
+16. A interação entre <a> e <iframe> permite criar sites com conteúdo que muda: A) Apenas com o uso de JavaScript. B) Apenas se o usuário atualizar a página. C) Dinamicamente, sem a necessidade de recarregar a página inteira. D) Apenas para carregar imagens.
+
+17. O que acontece se você clicar em um link dentro de um <iframe> que está exibindo um site externo (ex: programacaoweb.com.br)? A) A navegação ocorre dentro do próprio <iframe>, como se fosse um mini-navegador. B) A página principal é redirecionada para o link clicado. C) O link é aberto em uma nova aba do navegador obrigatoriamente. D) Nada acontece, pois os links dentro de um iframe são desabilitados.
+
+18. Qual das opções abaixo representa a estrutura mínima e correta para exibir a página "teste.html" em um iframe? A) <iframe page="teste.html"> B) <iframe src="teste.html"> C) <iframe src="teste.html"></iframe> D) <iframe link="teste.html"></iframe link>
+
+19. Ao deixar o atributo src de um <iframe> vazio (src=""), qual é o resultado esperado, conforme a aula? A) Ele exibirá a mesma página em que está inserido (recursivamente). B) Ele aparecerá como um quadro vazio, sem conteúdo carregado. C) O navegador exibirá uma página de erro 404. D) O iframe tentará carregar a página principal do projeto.
+
+20. O que o name do <iframe> e o target do <a> estabelecem? A) Uma relação de estilo via CSS. B) Uma conexão visual através de uma borda. C) Um vínculo funcional para carregamento de conteúdo. D) Uma hierarquia de elementos pai e filho.
+
+
+--------------------------------------------------------------------------------
+
+
+2. Questões de Verdadeiro ou Falso
+
+Esta seção avalia a precisão do seu conhecimento. Marque se cada afirmação é Verdadeira ou Falsa com base no que foi ensinado na Aula 11.
+
+1. A tag <iframe> serve para criar um formulário de contato. ( ) Verdadeiro ( ) Falso
+2. O atributo src em um iframe define o caminho do arquivo ou URL a ser exibido. ( ) Verdadeiro ( ) Falso
+3. Para remover a borda de um iframe, deve-se usar o atributo borderless="true". ( ) Verdadeiro ( ) Falso
+4. O atributo title de um iframe é importante para a acessibilidade. ( ) Verdadeiro ( ) Falso
+5. O código para incorporar um vídeo do YouTube não utiliza a tag <iframe>. ( ) Verdadeiro ( ) Falso
+6. Para carregar o conteúdo de um link em um iframe, o atributo target do link deve corresponder ao atributo name do iframe. ( ) Verdadeiro ( ) Falso
+7. A tag <iframe> é uma tag "self-closing", que não precisa de </iframe> no final. ( ) Verdadeiro ( ) Falso
+8. O atributo height controla a largura de um iframe. ( ) Verdadeiro ( ) Falso
+9. É possível definir a largura de um iframe em porcentagem, como width="100%". ( ) Verdadeiro ( ) Falso
+10. Iframes são considerados uma prática moderna e recomendada para construir todo o layout de um site. ( ) Verdadeiro ( ) Falso
+11. Um <iframe> pode exibir tanto páginas do mesmo projeto quanto sites externos. ( ) Verdadeiro ( ) Falso
+12. O atributo que nomeia um iframe para ser usado como alvo de um link é target. ( ) Verdadeiro ( ) Falso
+13. O atributo name é colocado na tag <a> para definir onde o link será aberto. ( ) Verdadeiro ( ) Falso
+14. A propriedade CSS border:none; aplicada via style oculta a borda do iframe. ( ) Verdadeiro ( ) Falso
+15. Ao clicar em "Incorporar" no YouTube, você obtém um código HTML que contém um <iframe>. ( ) Verdadeiro ( ) Falso
+16. A navegação dentro de um iframe (clicar em links) afeta apenas o conteúdo do próprio iframe. ( ) Verdadeiro ( ) Falso
+17. Um <iframe> funciona como um "mini-navegador" dentro da sua página. ( ) Verdadeiro ( ) Falso
+18. A funcionalidade de carregar links dinamicamente em um iframe dispensa a necessidade de recarregar a página inteira. ( ) Verdadeiro ( ) Faltro
+19. É possível ter múltiplos iframes em uma única página HTML. ( ) Verdadeiro ( ) Falso
+20. Antigamente, era comum usar um iframe para o menu e outro para o conteúdo principal do site. ( ) Verdadeiro ( ) Falso
+
+
+--------------------------------------------------------------------------------
+
+
+3. Questões de Preenchimento de Código
+
+Esta seção foca no seu conhecimento prático da sintaxe de HTML. Complete os trechos de código com a tag, atributo ou valor correto, conforme os exemplos da aula.
+
+1. Complete o nome da tag para exibir uma página dentro de outra.
+2. Complete o nome do atributo que define a URL a ser carregada.
+3. Complete o valor para que o iframe ocupe 100% da largura.
+4. Complete o nome do atributo que define a altura em pixels.
+5. Complete a declaração de estilo inteira para remover a borda do iframe.
+6. Complete o nome do atributo usado para dar um nome ao iframe, tornando-o um alvo.
+7. Complete o nome do atributo no link que aponta para o nome do iframe.
+8. Complete o valor do atributo target para que corresponda ao name do iframe.
+9. Complete o nome da tag usada para criar o link.
+10. Complete o atributo que define o destino do link.
+11. Complete o nome do atributo que fornece uma descrição para acessibilidade.
+12. Complete o trecho para carregar o arquivo dimitri.html localizado na pasta equipe.
+13. Complete o nome da pasta no caminho para o arquivo dimitri.html.
+14. Complete a tag <iframe> com o fechamento correto.
+15. Complete o código com o atributo para definir uma largura de 500 pixels.
+
+
+--------------------------------------------------------------------------------
+
+
+4. Testes de Criação de Código
+
+Esta seção final é um desafio prático que requer que você escreva trechos de código HTML do zero, aplicando os conceitos da Aula 11 para resolver problemas específicos.
+
+1. Escreva o código HTML completo para um iframe que exiba a página "home.html".
+2. Crie um iframe que exiba o site "https://programacaoweb.com.br", com 800 pixels de largura e 600 pixels de altura.
+3. Escreva o código para um iframe que ocupe 100% da largura da tela e tenha 500 pixels de altura, exibindo a página "galeria.html".
+4. Crie um iframe que exiba "contato.html" e não tenha nenhuma borda visível.
+5. Escreva o código de um iframe que exiba "perfil.html" e inclua um title com o texto "Perfil do Usuário".
+6. Crie um link com o texto "Página 1" que, ao ser clicado, abra o arquivo "pagina1.html" em um iframe com o nome "conteudo".
+7. Agora, crie o <iframe> correspondente ao desafio anterior. Ele deve se chamar "conteudo", ter 100% de largura, 400px de altura e não ter bordas. O src deve estar vazio inicialmente.
+8. Crie um iframe que carregue o arquivo dimitri.html de dentro da pasta equipe.
+9. Crie um <iframe> sem o atributo src, mas com width="100%", height="200", name="display" e sem borda.
+10. Desafio Final: Crie um sistema de navegação completo. Ele deve conter:
+  1. Dois links: 'Sobre Nós' (para sobre.html) e 'Contato' (para contato.html).
+  2. Um <iframe> que será o alvo de ambos os links.
+  3. O iframe deve ter o name 'principal', ocupar 100% da largura, ter 500px de altura, não possuir borda e ter um title descritivo 'Área de Conteúdo Principal'. Escreva o código HTML completo dos links e do iframe.
+
+
+--------------------------------------------------------------------------------
+
+
+5. Gabarito
+
+Esta seção contém as respostas para todas as questões da avaliação, permitindo que você verifique seu desempenho.
+
+1. Questões de Múltipla Escolha
+
+1. B
+2. C
+3. B
+4. B
+5. C
+6. B
+7. A
+8. B
+9. C
+10. C
+11. B
+12. C
+13. B
+14. B
+15. B
+16. C
+17. A
+18. C
+19. B
+20. C
+
+2. Questões de Verdadeiro ou Falso
+
+1. Falso. A tag <iframe> serve para exibir uma página web dentro de outra.
+2. Verdadeiro.
+3. Falso. Para remover a borda, utiliza-se style="border:none;", conforme demonstrado na aula.
+4. Verdadeiro.
+5. Falso. O código de incorporação do YouTube utiliza a tag <iframe> para exibir o vídeo.
+6. Verdadeiro.
+7. Falso. A tag <iframe> necessita de uma tag de fechamento (</iframe>).
+8. Falso. O atributo height controla a altura. width controla a largura.
+9. Verdadeiro.
+10. Falso. A aula menciona que essa era uma prática antiga, substituída por recursos mais eficientes como PHP e bancos de dados.
+11. Verdadeiro.
+12. Falso. O atributo que nomeia um iframe para ser alvo é name. target é usado no link.
+13. Falso. O atributo target é colocado na tag <a>, e seu valor deve corresponder ao name do iframe.
+14. Verdadeiro.
+15. Verdadeiro.
+16. Verdadeiro.
+17. Verdadeiro.
+18. Verdadeiro.
+19. Verdadeiro.
+20. Verdadeiro.
+
+3. Questões de Preenchimento de Código
+
+1. iframe
+2. src
+3. 100%
+4. height
+5. style
+6. name
+7. target
+8. janela-principal
+9. a
+10. href
+11. title
+12. dimitri.html
+13. equipe
+14. </iframe>
+15. width
+
+4. Testes de Criação de Código
+
