@@ -7,16 +7,14 @@ const globalForPrisma = globalThis as unknown as {
     prisma: PrismaClient | undefined;
 };
 
-// @ts-ignore
-export const prisma =
-    globalForPrisma.prisma ??
-    new PrismaClient({
-        datasources: {
-            db: {
-                url: process.env.DATABASE_URL,
-            },
-        },
-    });
+// Debug: Check if DATABASE_URL is loaded
+if (!process.env.DATABASE_URL) {
+    console.warn('⚠️  DATABASE_URL is missing in this environment!');
+} else {
+    console.log('✅ DATABASE_URL is loaded');
+}
+
+export const prisma = globalForPrisma.prisma ?? new PrismaClient();
 
 if (process.env.NODE_ENV !== 'production') {
     globalForPrisma.prisma = prisma;
