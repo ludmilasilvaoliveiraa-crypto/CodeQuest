@@ -1,0 +1,206 @@
+Avaliação de Conhecimentos: HTML - Aula 08 (Imagens)
+
+Este documento é uma avaliação abrangente projetada para testar seu conhecimento sobre a inserção e manipulação de imagens em HTML, com base exclusivamente no conteúdo da "Aula 08 - Tudo Sobre Imagens". A avaliação está dividida em quatro seções, cobrindo desde conceitos fundamentais até aplicações práticas, e utiliza diferentes formatos de questão para uma verificação completa do seu aprendizado: múltipla escolha, verdadeiro/falso, preenchimento de código e criação de código.
+
+Desejamos sucesso em sua avaliação!
+
+
+--------------------------------------------------------------------------------
+
+
+1. Seção 1: Conceitos Fundamentais da Tag <img> (30 Questões)
+
+1.1. Introdução à Seção
+
+A tag <img> é o elemento principal para incorporar conteúdo visual em uma página web, sendo uma das tags mais importantes do HTML. Dominar sua estrutura e a forma correta de referenciar arquivos de imagem é um passo fundamental para qualquer desenvolvedor. Esta seção avaliará sua compreensão dos conceitos mais básicos, garantindo que a base do seu conhecimento sobre imagens seja sólida.
+
+1.2. Questões de Múltipla Escolha (15 questões)
+
+Selecione a única alternativa correta para cada questão.
+
+1. Qual é a finalidade principal da tag <img> em HTML? A. Criar um link para outra página. B. Exibir uma imagem em uma página web. C. Formatar um parágrafo de texto. D. Inserir um vídeo do YouTube.
+2. Qual das seguintes sintaxes para a tag <img> está correta? A. <img src="caminho/imagem.jpg">...</img> B. <imagem src="caminho/imagem.jpg"> C. <img src="caminho/imagem.jpg"> D. <img>caminho/imagem.jpg</img>
+3. Por que a tag <img> é considerada uma tag que "não tem fechamento"? A. Porque ela sempre precisa de um atributo alt. B. Porque ela não contém outros elementos dentro dela, sendo auto-contida. C. Porque o fechamento é opcional e depende do navegador. D. Porque ela só pode ser usada dentro da tag <head>.
+4. Qual atributo é obrigatório para que a tag <img> funcione corretamente? A. alt B. width C. src D. title
+5. A sintaxe <img>...</img> é válida em HTML? A. Sim, é a forma padrão de fechar a tag. B. Não, a tag <img> não possui uma tag de fechamento correspondente. C. Sim, mas apenas para imagens no formato SVG. D. Apenas em versões antigas do HTML.
+6. O que o atributo src define? A. O tamanho da imagem. B. O texto alternativo da imagem. C. O caminho (fonte) do arquivo de imagem. D. O título que aparece ao passar o mouse.
+7. O que é um "caminho absoluto" no atributo src? A. Um caminho para uma imagem na mesma pasta do arquivo HTML. B. Um caminho que começa com /. C. Uma URL completa para uma imagem hospedada em um servidor na internet. D. Um caminho que aponta para a pasta img do projeto.
+8. Qual dos seguintes é um exemplo de um "caminho relativo"? A. https://www.google.com/images/logo.png B. img/carro.jpg C. C:/Users/Documentos/imagem.png D. ftp://servidor/imagem.gif
+9. Se uma imagem foto.jpg está na mesma pasta que o arquivo index.html, como você a referenciaria? A. <img src="/foto.jpg"> B. <img src="foto.jpg"> C. <img src="./foto.jpg"> D. <img src="https://meusite.com/foto.jpg">
+10. Se a imagem logo.png está dentro de uma pasta img, qual seria o caminho relativo correto a partir da raiz do projeto? A. <img src="logo.png"> B. <img src="/logo.png"> C. <img src="img/logo.png"> D. <img src="./logo.png/img">
+11. Qual é um dos principais riscos de usar um caminho absoluto para uma imagem de um site de terceiros? A. A imagem carregará mais rápido que o normal. B. O dono do site pode remover a imagem, fazendo com que ela "quebre" em sua página. C. O seu site ficará automaticamente associado ao site de origem. D. É impossível redimensionar imagens de fontes externas.
+12. Além da imagem poder ser removida, qual outro problema é comum ao usar imagens de sites de terceiros? A. O navegador sempre bloqueará a imagem por segurança. B. O site pode carregar mais lentamente por depender de outro servidor. C. O site de origem pode cobrar pelo uso da imagem. D. O HTML se torna inválido.
+13. Usar imagens de outros sites sem permissão pode levar a problemas com: A. O servidor de hospedagem. B. A velocidade da internet do usuário. C. Direitos autorais. D. A compatibilidade do navegador.
+14. Qual é a principal função do atributo alt? A. Definir as dimensões da imagem. B. Fornecer um texto alternativo que descreve a imagem. C. Criar um link na imagem. D. Adicionar uma borda colorida.
+15. Por que o atributo alt é crucial para acessibilidade? A. Porque ele permite que a imagem seja impressa corretamente. B. Porque leitores de tela o utilizam para descrever a imagem para usuários com deficiência visual. C. Porque ele traduz o texto da imagem para outros idiomas. D. Porque ele otimiza a imagem para dispositivos móveis.
+
+1.3. Questões de Verdadeiro ou Falso (15 questões)
+
+Classifique as seguintes afirmações como Verdadeiro (V) ou Falso (F).
+
+1. ( ) A tag <img> é usada para incorporar áudio e vídeo em uma página.
+2. ( ) Para que uma imagem seja exibida, a tag <img> deve ser fechada com </img>.
+3. ( ) A tag <img> é uma das poucas tags em HTML que não possui uma tag de fechamento.
+4. ( ) O atributo src é opcional na tag <img>.
+5. ( ) A estrutura <img src="logo.png"> é uma implementação válida e funcional.
+6. ( ) Um caminho relativo aponta para um arquivo dentro da estrutura do seu próprio projeto.
+7. ( ) A sintaxe src="img/foto.png" indica que o arquivo foto.png está localizado dentro de uma pasta chamada img.
+8. ( ) Usar caminhos relativos é a prática recomendada para imagens que fazem parte do seu site.
+9. ( ) O atributo alt não tem impacto na forma como os mecanismos de busca, como o Google, entendem o conteúdo de uma imagem.
+10. ( ) Se você mover a pasta de imagens, os caminhos relativos não precisarão ser atualizados.
+11. ( ) O atributo alt é lido por mecanismos de busca como o Google para entender o conteúdo de uma imagem.
+12. ( ) Preencher o atributo alt é considerado uma boa prática de SEO (Otimização para Mecanismos de Busca).
+13. ( ) O texto do atributo alt é exibido no lugar da imagem caso ela não possa ser carregada.
+14. ( ) O principal objetivo do atributo alt é estético, para exibir um texto abaixo da imagem.
+15. ( ) Para usuários com deficiência visual que usam leitores de tela, o atributo alt é irrelevante.
+
+1.4. Transição
+
+Compreender os conceitos básicos é o primeiro passo. Agora, vamos avançar para a aplicação de atributos mais específicos que controlam a aparência e o comportamento das imagens, além de explorar as boas práticas que garantem um projeto organizado e legalmente seguro.
+
+
+--------------------------------------------------------------------------------
+
+
+2. Seção 2: Atributos, Formatação e Boas Práticas (30 Questões)
+
+2.1. Introdução à Seção
+
+Além de apenas exibir uma imagem, é crucial saber como controlar seu tamanho, organizá-la de forma eficiente dentro do projeto e garantir que seu uso esteja em conformidade com as leis de direitos autorais. Esta seção se aprofunda nos atributos de dimensionamento (width, height) e nas práticas recomendadas para obter e gerenciar imagens em um projeto web profissional.
+
+2.2. Questões de Múltipla Escolha (15 questões)
+
+Selecione a única alternativa correta para cada questão.
+
+1. Quais atributos são usados para definir as dimensões de uma imagem? A. size e dimension B. x e y C. width e height D. largura e altura
+2. A unidade de medida padrão para width e height em HTML é: A. Centímetros (cm) B. Pixels (px) C. Porcentagem (%) D. Pontos (pt)
+3. O que acontece se você definir apenas o atributo width em uma imagem? A. A imagem não será exibida. B. A imagem ficará com a altura original, distorcendo a proporção. C. O navegador não aplicará a largura e usará o tamanho original. D. O navegador ajustará a altura automaticamente para manter a proporção da imagem.
+4. Se uma imagem original tem 400x200 pixels, e você define width="200" e height="200", o que acontecerá? A. A imagem será exibida com 200x100 pixels para manter a proporção. B. A imagem será cortada para caber no novo tamanho. C. A imagem ficará distorcida (achatada ou esticada) para se ajustar às novas dimensões. D. O navegador ignorará o atributo height.
+5. Qual a principal vantagem de definir apenas um dos atributos de dimensão (width ou height)? A. A página carrega mais rápido. B. Garante que a imagem não ficará distorcida. C. Melhora o SEO da imagem. D. Permite que a imagem se torne clicável.
+6. Qual é a prática recomendada para organizar os arquivos de imagem em um projeto web? A. Deixar todas as imagens na mesma pasta que os arquivos HTML. B. Criar uma pasta dedicada para imagens, comumente chamada de img ou images. C. Colocar cada imagem em sua própria pasta separada. D. Renomear todas as imagens com números sequenciais.
+7. Qual benefício a criação de uma pasta img oferece? A. Melhora a performance de carregamento das imagens. B. Reduz o tamanho dos arquivos de imagem automaticamente. C. Aumenta a segurança do site. D. Mantém o projeto organizado e facilita a manutenção.
+8. Se você tem uma pasta img, qual seria o caminho relativo correto para logo.png dentro dela? A. src="logo.png/img" B. src="img logo.png" C. src="img/logo.png" D. src="img-logo.png"
+9. Por que é arriscado usar imagens aleatórias encontradas no Google Imagens? A. Elas geralmente são de baixa qualidade. B. Muitas delas podem estar protegidas por direitos autorais. C. Elas não são compatíveis com todos os navegadores. D. Elas aumentam a complexidade do código HTML.
+10. O que são sites como Pexels, Pixabay e Freepik? A. Ferramentas para editar imagens online. B. Redes sociais focadas em fotografia. C. Bancos de imagens que oferecem fotos gratuitas e livres de direitos autorais para uso. D. Plataformas para vender suas próprias fotos.
+11. Qual é a principal vantagem de usar imagens de bancos de imagens gratuitos? A. As imagens já vêm otimizadas e com tamanho pequeno. B. Evita problemas legais relacionados a direitos autorais. C. As imagens sempre têm fundo transparente. D. Não é necessário usar o atributo alt.
+12. O que significa a sigla "px" no contexto de width="300"? A. Polegadas (inches) B. Pontos (points) C. Pixels D. Proporção (proportion)
+13. Se você não especificar width ou height, como a imagem será exibida? A. Com um tamanho padrão de 100x100 pixels. B. Em seu tamanho original. C. O navegador tentará adivinhar o tamanho ideal. D. A imagem não será exibida.
+14. A organização de arquivos em pastas é importante apenas para projetos grandes? A. Sim, em projetos pequenos não faz diferença. B. Não, é uma boa prática para qualquer projeto, independentemente do tamanho. C. Sim, apenas quando há mais de 100 imagens. D. Não, mas só se você estiver trabalhando em equipe.
+15. Ao baixar uma imagem de um banco de imagens, o que você deve fazer antes de usá-la no projeto? A. Renomeá-la para um nome relevante e movê-la para a pasta img. B. Convertê-la para o formato GIF. C. Carregá-la em uma rede social primeiro. D. Verificar se o seu monitor exibe as cores corretamente.
+
+2.3. Questões de Preenchimento de Código (15 questões)
+
+Complete os trechos de código com o atributo, valor ou caminho correto.
+
+1. <img src="caminho/imagem.jpg" [___]="Carro azul na estrada">
+2. <img [___]="img/logo.png" alt="Logotipo da empresa">
+3. <img src="foto.jpg" alt="Retrato" [___]="300">
+4. <img src="banner.png" alt="Banner promocional" width="800" [___]="200">
+5. <img src="icone.svg" [___]="Ícone de usuário">
+6. <img src="img/avatar.jpg" alt="Avatar do perfil" width="[___]"> (Preencha com um valor numérico válido, ex: 150)
+7. <img src="img/produto.jpg" alt="Foto do produto" height="[___]"> (Preencha com um valor numérico válido, ex: 400)
+8. <img src="logo.png" alt="Logo" height="[___]" width="100"> (Preencha com um valor numérico válido, ex: 50)
+9. <img src="imagem.jpg" width="500" height="[___]"> (Preencha com um valor que distorceria a imagem se a original for 1000x500)
+10. <img src="[___]/imagem.jpg" alt="Descrição"> (Preencha com o nome da pasta padrão para imagens)
+11. <img src="img/[___].jpg" alt="Carro vermelho"> (Preencha com o nome do arquivo, que deve ser 'carro-vermelho' para corresponder ao texto alternativo)
+12. <img src="img/logotipo.[___]" alt="Logotipo da empresa"> (Preencha com a extensão de arquivo de imagem correta, ex: png)
+13. <img src="[___]/fundo.jpg" alt="Fundo"> (Preencha com o nome da pasta recomendada para imagens)
+14. <a><img [___]="img/botao.png" alt="Botão"></a> (Preencha com o atributo que define a fonte da imagem)
+15. <img src="foto.jpg" [___]="350" alt="Paisagem"> (Preencha com o atributo para largura)
+
+2.4. Transição
+
+Agora que você sabe como formatar e organizar suas imagens, o próximo passo é garantir que elas não prejudiquem a performance do seu site. A otimização é crucial para um carregamento rápido, e vamos explorar como fazer isso na próxima seção.
+
+
+--------------------------------------------------------------------------------
+
+
+3. Seção 3: Otimização e Formatos de Imagem (20 Questões)
+
+3.1. Introdução à Seção
+
+O "peso" (tamanho do arquivo) das imagens tem um impacto direto no tempo de carregamento de uma página. Um site lento pode frustrar os usuários e prejudicar seu ranqueamento em mecanismos de busca. Esta seção se concentra nos diferentes formatos de imagem e nas técnicas de otimização essenciais para garantir um site rápido, eficiente e com uma ótima experiência do usuário.
+
+3.2. Questões de Múltipla Escolha (10 questões)
+
+Selecione a única alternativa correta para cada questão.
+
+1. Qual formato de imagem é mais indicado para fotografias complexas e com muitas cores, mas não suporta transparência? A. PNG B. GIF C. JPG (ou JPEG) D. SVG
+2. Para qual finalidade o formato PNG é a melhor escolha? A. Animações curtas. B. Fotos de alta resolução para impressão. C. Imagens que precisam de um fundo transparente, como logotipos e ícones. D. Vídeos curtos.
+3. O formato GIF é primariamente utilizado para: A. Imagens com fundo transparente. B. Fotos com qualidade máxima. C. Gráficos vetoriais. D. Pequenas animações.
+4. Qual formato geralmente oferece a melhor compressão para fotos, resultando em arquivos menores? A. PNG B. GIF C. JPG D. BMP
+5. O que significa "comprimir" uma imagem? A. Aumentar suas dimensões em pixels. B. Reduzir o tamanho do arquivo (em KB ou MB) com a menor perda de qualidade possível. C. Adicionar uma marca d'água. D. Mudar a proporção da imagem.
+6. Por que a compressão de imagens é importante para o desenvolvimento web? A. Para tornar as imagens mais coloridas. B. Para que a página carregue mais rapidamente. C. Para garantir a compatibilidade com navegadores antigos. D. Para adicionar efeitos especiais às imagens.
+7. Qual é o principal problema de usar uma imagem com dimensões de 2160x2160 pixels para exibi-la em um espaço de 300x300 pixels? A. A imagem ficará com baixa qualidade. B. O navegador não conseguirá exibi-la. C. O arquivo será desnecessariamente pesado, tornando o carregamento do site mais lento. D. Isso pode causar um erro de JavaScript na página.
+8. O que significa "redimensionar" uma imagem? A. Mudar seu formato de JPG para PNG. B. Alterar suas dimensões em pixels (ex: de 1920x1080 para 800x450). C. Girar a imagem em 90 graus. D. Aplicar um filtro de cor.
+9. Ferramentas online como "compress jpg" e "easy-resize" servem para: A. Criar novas imagens do zero. B. Otimizar imagens, reduzindo seu tamanho em pixels e/ou em kilobytes. C. Vender imagens para bancos de dados. D. Adicionar texto a imagens existentes.
+10. A otimização de imagens afeta principalmente qual aspecto da experiência do usuário? A. A segurança da navegação. B. A velocidade de carregamento da página. C. A quantidade de anúncios exibidos. D. A capacidade de imprimir a página.
+
+3.3. Questões de Verdadeiro ou Falso (10 questões)
+
+Classifique as seguintes afirmações como Verdadeiro (V) ou Falso (F).
+
+1. ( ) O formato PNG é ideal para fotos de alta qualidade, mas não suporta fundo transparente.
+2. ( ) O formato GIF é a melhor escolha para logotipos estáticos que precisam de fundo transparente.
+3. ( ) O formato JPG é o padrão para imagens animadas na web.
+4. ( ) O tamanho de um arquivo de imagem (em KB) não tem relação com suas dimensões (em pixels).
+5. ( ) Reduzir as dimensões de uma imagem (ex: de 2000px para 500px) geralmente também reduzirá o peso do arquivo.
+6. ( ) A compressão de imagem sempre resulta em uma perda visível de qualidade.
+7. ( ) Imagens pesadas podem fazer com que os usuários abandonem um site antes mesmo de ele carregar completamente.
+8. ( ) O tempo de carregamento de uma página não é um fator importante para SEO.
+9. ( ) Para otimizar uma imagem, deve-se sempre escolher as maiores dimensões possíveis.
+10. ( ) Uma imagem de 35 KB é considerada mais otimizada (mais leve) do que uma de 300 KB.
+
+3.4. Transição
+
+Com o conhecimento sobre otimização, suas imagens agora estão prontas para serem usadas de forma eficiente. A próxima e última seção levará suas habilidades a um novo nível, explorando como tornar as imagens interativas e funcionais, transformando-as em elementos clicáveis e até mesmo em mapas interativos.
+
+
+--------------------------------------------------------------------------------
+
+
+4. Seção 4: Aplicações Práticas e Avançadas (20 Questões)
+
+4.1. Introdução à Seção
+
+Imagens em HTML podem ser muito mais do que elementos visuais estáticos. Elas podem se tornar portais para outras páginas ou até mesmo conter múltiplas áreas clicáveis (hotspots) em um único gráfico. Esta seção final testará sua habilidade de aplicar conceitos para criar interatividade, transformando imagens em links e utilizando mapas de imagem para funcionalidades avançadas.
+
+4.2. Questões de Preenchimento de Código (10 questões)
+
+Complete os trechos de código com a tag ou o atributo correto para criar a funcionalidade descrita.
+
+1. <[___] href="pagina.html"><img src="botao.png" alt="Botão"></[___]>
+2. <a [___]="https://google.com"><img src="banner.jpg" alt="Banner"></a>
+3. <img src="mapa.png" [___]="#mapa-regioes" alt="Mapa">
+4. <map [___]="mapa-regioes"> ... </map>
+5. <area shape="rect" coords="0,0,82,126" [___]="produto.html">
+6. <area [___]="circle" coords="90,58,3" href="ponto.html">
+7. <area shape="poly" [___]="2,41,4,35,8,25" href="area.html">
+8. <a href="perfil.html">[___]</a> (Preencha com uma tag de imagem completa)
+9. <img src="planta.jpg" usemap="#[___]"> (Preencha com o nome do mapa a ser usado)
+10. <map name="locais"> <[___] shape="rect" coords="..."></map> (Preencha com a tag que define uma área clicável)
+
+4.3. Testes de Criação de Código (10 questões)
+
+Escreva o bloco de código HTML completo para cada um dos desafios a seguir.
+
+1. Desafio 1: Escreva o código para exibir a imagem logo.png, localizada na pasta img. Ela deve ter uma largura de 200px e o texto alternativo "Logotipo da Empresa".
+2. Desafio 2: Crie uma tag de imagem para o arquivo perfil.jpg (na mesma pasta do HTML), com altura de 150px e o texto alternativo "Foto de Perfil".
+3. Desafio 3: Exiba a imagem header.png da pasta img, com largura de 900px e o texto alternativo "Cabeçalho do Site".
+4. Desafio 4: Transforme a imagem botao-comprar.png em um link que leva o usuário para a página carrinho.html.
+5. Desafio 5: Escreva o código para exibir a imagem logo.png da pasta img, definir sua largura como 150px, atribuir o texto alternativo 'Logotipo da Empresa' e torná-la um link clicável para index.html.
+6. Desafio 6: Faça com que a imagem icone-contato.svg, localizada na pasta img, se torne um link para a página contato.html.
+7. Desafio 7: Associe a imagem planta-baixa.jpg a um mapa de imagem chamado zonas.
+8. Desafio 8: Escreva o código de uma imagem mapa-mundi.png que utilizará um mapa de imagem chamado paises.
+9. Desafio 9: Dentro de um mapa de imagem, escreva o código para uma única área (<area>) que seja um retângulo (rect). As coordenadas são 34,44,270,350 e o link deve apontar para brasil.html.
+10. Desafio 10: Escreva o código para uma área de mapa de imagem circular (circle). As coordenadas são 100,100,50 (centro x, centro y, raio) e deve levar para europa.html.
+
+
+--------------------------------------------------------------------------------
+
+
+Conclusão
+
+Parabéns por completar esta avaliação! A maestria no uso de imagens é uma habilidade fundamental para o desenvolvimento web moderno, impactando desde a estética e a experiência do usuário até a acessibilidade e a performance. Continuar praticando esses conceitos garantirá que seus projetos sejam visualmente atraentes, rápidos e inclusivos.
+

@@ -1,0 +1,59 @@
+[
+  {
+    "id": "8f344704-d3ec-4ac7-b0b1-4d1555bf07ba",
+    "description": "Test suggestion via curl",
+    "location": "/test",
+    "status": "considered",
+    "votes": 0,
+    "createdAt": "2026-01-13T13:29:52.586Z"
+  },
+  {
+    "id": "27bbf6e3-4e44-40da-9544-c83982848cee",
+    "description": "em bugs reports, permitir escolher qual a categoria do bug, se e visual, de funcionalidade ou outra coisa, adicione o que for necessário",
+    "location": "/dashboard",
+    "status": "implemented",
+    "votes": 0,
+    "createdAt": "2026-01-13T13:30:22.215Z"
+  },
+  {
+    "id": "0049bbad-f2b7-4f9d-ae08-65484d84bef7",
+    "description": "trazer as mesmas funcionalidades de bugs reportas para sugestao de novas ideias ",
+    "location": "/dashboard",
+    "status": "implemented",
+    "votes": 0,
+    "createdAt": "2026-01-13T13:51:37.975Z"
+  },
+  {
+    "id": "84e6ee90-aef7-4e71-af0e-2ff02cbad148",
+    "description": "melhorar o visual de funcionalidades das configuracoes sem sair das regras de design do app",
+    "location": "/settings",
+    "status": "implemented",
+    "votes": 0,
+    "createdAt": "2026-01-13T13:52:24.497Z"
+  },
+  {
+    "id": "67c29456-83ee-49d4-a649-969e95756576",
+    "description": "permitir clicar em conquista e ver todas",
+    "location": "/profile",
+    "status": "implemented",
+    "votes": 0,
+    "createdAt": "2026-01-13T13:53:59.276Z"
+  },
+  {
+    "id": "95aa6341-64d5-435a-9bbc-059a9decb228",
+    "description": "permitir que todos os cards sejam clicaveis e mostrem os historicos, como licoes, questoes, precisao, streak... Todas as paginas novam usar as regras de design para criar\n",
+    "location": "/profile",
+    "status": "implemented",
+    "votes": 0,
+    "createdAt": "2026-01-13T13:54:53.887Z"
+  },
+  {
+    "id": "666cdaa6-0ceb-44eb-ad42-07e93927c63d",
+    "description": "Teste de categoria funcionalidade final",
+    "location": "/dashboard",
+    "category": "functional",
+    "status": "considered",
+    "votes": 0,
+    "createdAt": "2026-01-13T14:12:06.305Z"
+  }
+]

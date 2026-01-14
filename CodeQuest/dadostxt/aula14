@@ -1,0 +1,461 @@
+Avaliação de Conhecimentos: HTML - Aula 14 (Vídeos)
+
+Introdução
+
+Este questionário foi elaborado para testar rigorosamente sua compreensão dos conceitos apresentados na "Aula 14 - Vídeos" do "Curso de HTML Completo". As perguntas abrangem a estrutura, os atributos e a aplicação prática da tag <video> em HTML, divididas em múltiplos formatos para garantir uma avaliação abrangente do seu conhecimento.
+
+
+--------------------------------------------------------------------------------
+
+
+1. Questões de Múltipla Escolha
+
+Estas questões de múltipla escolha foram desenhadas para avaliar o conhecimento fundamental sobre a tag <video> e seus atributos associados. Cada questão possui apenas uma resposta correta, baseada exclusivamente no conteúdo da Aula 14.
+
+1.1. Estrutura Básica da Tag <video>
+
+1. Qual é a tag principal utilizada para incorporar um vídeo diretamente em uma página HTML, conforme demonstrado na aula? A. <media> B. <movie> C. <video> D. <iframe>
+
+2. Dentro da tag <video>, qual tag filha é utilizada para especificar o caminho e o tipo do arquivo de vídeo? A. <source> B. <track> C. <path> D. <file>
+
+3. Para incorporar um vídeo do YouTube em uma página, qual método foi mencionado na aula como o correto? A. Usar a tag <video> com o link do YouTube no atributo src. B. Usar a tag <iframe> fornecida pelo YouTube. C. Usar a tag <youtube> com o ID do vídeo. D. Usar a tag <source> diretamente no <body> da página.
+
+4. A tag <video> necessita de uma tag de fechamento </video>? A. Não, é uma tag de auto-fechamento como <img>. B. Sim, e a tag <source> é colocada dentro dela. C. Sim, mas apenas quando se utiliza um vídeo do YouTube. D. Não, o fechamento é opcional e ignorado pelos navegadores.
+
+5. Qual é a principal diferença estrutural entre incorporar um vídeo local com a tag <video> e um vídeo do YouTube? A. Vídeos locais usam <video>, enquanto vídeos do YouTube usam <iframe>. B. Vídeos locais requerem um atributo poster, enquanto vídeos do YouTube não. C. Ambos usam a tag <video>, mas o atributo type é diferente. D. Não há diferença; ambos os métodos usam a tag <video>.
+
+6. Qual é a função da tag <source> dentro da tag <video>? A. Definir o título do vídeo. B. Adicionar legendas ao vídeo. C. Indicar o caminho (URL ou local) e o tipo do arquivo de vídeo para o navegador. D. Criar um botão de play personalizado.
+
+1.2. Atributos Essenciais (src, type, poster, width)
+
+7. Qual atributo é utilizado na tag <source> para definir o caminho (local ou URL) do arquivo de vídeo? A. href B. path C. link D. src
+
+8. O atributo type na tag <source> serve para: A. Definir o tipo de player de vídeo a ser usado. B. Especificar o formato do arquivo de vídeo para o navegador (ex: "video/mp4"). C. Indicar o tipo de legenda associada ao vídeo. D. Definir o tipo de controle de volume.
+
+9. Qual é a função do atributo poster na tag <video>? A. Exibir uma imagem (thumbnail) antes do vídeo começar a tocar. B. Definir o autor do vídeo. C. Adicionar um cartaz publicitário ao lado do vídeo. D. Especificar um vídeo alternativo caso o principal falhe.
+
+10. Ao definir width="100%" na tag <video>, o que acontece com o vídeo? A. O vídeo ocupa 100 pixels de largura. B. O vídeo ocupa 100% da altura da tela. C. O vídeo ocupa 100% da largura do contêiner onde está inserido. D. O vídeo toca a 100% de sua velocidade original.
+
+11. Se a altura (height) não for especificada, mas a largura (width) for, o que acontece com a altura do vídeo? A. O navegador define a altura para o mesmo valor da largura. B. O navegador ajusta a altura automaticamente para manter a proporção original do vídeo. C. O navegador define uma altura padrão de 800 pixels. D. O vídeo não é exibido até que a altura seja definida.
+
+12. Para exibir uma imagem de capa chamada "capa.jpg" que está na pasta "img", qual seria a sintaxe correta? A. thumbnail="img/capa.jpg" B. poster="img/capa.jpg" C. image="img/capa.jpg" D. cover="img/capa.jpg"
+
+1.3. Atributos de Controle e Comportamento (controls, autoplay)
+
+13. O que o atributo controls adiciona à tag <video>? A. Controles de edição de vídeo. B. Controles de reprodução padrão do navegador (play, pause, volume, etc.). C. Um link para a página de controle dos pais. D. Apenas um botão de play.
+
+14. Qual é a função do atributo autoplay? A. Fazer com que o vídeo comece a tocar automaticamente assim que a página é carregada. B. Exibir automaticamente os controles do player. C. Abrir o vídeo em um reprodutor de mídia externo. D. Pausar o vídeo automaticamente após 10 segundos.
+
+15. Qual limitação importante sobre o atributo autoplay foi mencionada na aula? A. Ele só funciona em vídeos com menos de 30 segundos. B. Ele só funciona se o atributo controls também estiver presente. C. Alguns navegadores bloqueiam o autoplay para não incomodar o usuário. D. Ele só funciona em computadores, não em dispositivos móveis.
+
+16. Para que um vídeo seja interativo para o usuário (pausar, ajustar volume), qual atributo é essencial? A. interactive B. controls C. useraction D. player
+
+17. A presença do atributo autoplay garante que o vídeo sempre tocará automaticamente em todos os navegadores? A. Sim, sem exceções. B. Não, pois alguns navegadores podem bloquear essa funcionalidade. C. Sim, mas apenas em computadores desktop. D. Não, ele só funciona se o vídeo estiver no formato WebM.
+
+18. Como se adicionam os controles de reprodução padrão do navegador a um vídeo? A. Escrevendo controls="true" na tag <video>. B. Adicionando apenas o atributo controls à tag <video>. C. Usando a tag <controls> dentro da tag <video>. D. Adicionando o atributo player="default" à tag <video>.
+
+1.4. Atributos de Restrição (controlslist, disablepictureinpicture)
+
+19. Para que serve o atributo controlslist? A. Para criar uma lista de reprodução de vídeos. B. Para remover funcionalidades específicas dos controles padrão do navegador. C. Para listar os atalhos de teclado para controlar o vídeo. D. Para alterar a cor dos controles do player.
+
+20. Qual valor deve ser usado em controlslist para remover o botão de download? A. nodownload B. hidedownload C. removedownload D. disable_dl
+
+21. Para impedir que o usuário visualize o vídeo em tela cheia (fullscreen), qual valor é usado em controlslist? A. blockfullscreen B. nofullscreen C. disablefullscreen D. smallscreenonly
+
+22. Qual atributo desabilita a funcionalidade "Picture-in-Picture"? A. nopictureinpicture B. disablepip C. disablepictureinpicture D. hidepictureinpicture
+
+23. Se você quisesse desabilitar tanto o download quanto o modo de tela cheia, como escreveria o atributo controlslist? A. controlslist="nodownload, nofullscreen" B. controlslist="nodownload nofullscreen" C. controlslist="nodownload" controlslist="nofullscreen" D. controlslist="disable: download fullscreen"
+
+24. O que acontece se você usar o atributo disablepictureinpicture? A. O vídeo inteiro fica desabilitado. B. O botão de Picture-in-Picture nos controles do vídeo desaparece ou fica desativado. C. A qualidade da imagem do vídeo é reduzida. D. O vídeo não pode ser movido pela página.
+
+1.5. Formatos de Vídeo e Conceitos Gerais
+
+25. Qual o formato de vídeo mais comum e recomendado para uso na web, conforme mencionado na aula? A. .avi B. .mov C. .mp4 D. .wmv
+
+26. Além do MP4, qual outro formato de vídeo foi mencionado como funcional na web? A. AVI B. WMV C. WebM D. MOV
+
+27. É possível usar uma URL completa de um vídeo da internet no atributo src da tag <source>? A. Não, o atributo src só aceita caminhos relativos a arquivos locais. B. Sim, a aula demonstra o uso de um link direto da internet. C. Sim, mas apenas para vídeos no formato WebM. D. Apenas se o vídeo estiver hospedado no mesmo domínio do site.
+
+28. Qual é o type correto para um vídeo no formato MP4? A. video/mp4 B. video/mpeg4 C. media/mp4 D. video/x-mp4
+
+29. Para um vídeo chamado "teste.mp4" localizado dentro de uma pasta "video", qual é a sintaxe correta do caminho relativo no src? A. src="/teste.mp4" B. src="video/teste.mp4" C. src="video-teste.mp4" D. src="caminho: video/teste.mp4"
+
+30. A tag <video> é usada para incorporar vídeos de quais fontes, de acordo com a aula? A. Apenas de arquivos locais. B. Apenas de plataformas como YouTube e Vimeo. C. De arquivos de vídeo locais ou de URLs diretas para arquivos de vídeo na internet. D. Apenas de vídeos no formato .webm.
+
+Agora, vamos testar sua capacidade de identificar afirmações corretas e incorretas.
+
+
+--------------------------------------------------------------------------------
+
+
+2. Questões de Verdadeiro ou Falso
+
+As seguintes afirmações testam sua capacidade de identificar informações corretas e incorretas sobre a implementação de vídeos em HTML. Determine se cada afirmação é Verdadeiro (V) ou Falso (F) com base nos ensinamentos da Aula 14.
+
+2.1. Estrutura e Tags
+
+1. ( ) A tag <video> é a forma correta para incorporar um vídeo do YouTube.
+2. ( ) A tag <source> deve ser colocada dentro da tag <video>.
+3. ( ) A tag <video> é uma tag de auto-fechamento e não precisa de </video>.
+4. ( ) A tag <video> funciona sem a tag <source> se o atributo src for definido diretamente na tag <video>.
+5. ( ) É uma boa prática colocar a tag <video> dentro da tag <head> da página.
+6. ( ) Para incorporar um vídeo do Vimeo, deve-se usar a tag <video>, conforme a aula.
+
+2.2. Atributos de Definição (width, poster, src)
+
+1. ( ) O atributo poster define um vídeo curto que serve como trailer.
+2. ( ) width="100%" faz o vídeo ocupar 100% da altura da tela.
+3. ( ) O atributo src na tag <source> pode conter tanto um caminho local quanto uma URL da internet.
+4. ( ) O atributo type na tag <source> é opcional e não afeta a forma como o navegador tenta reproduzir o vídeo.
+5. ( ) É possível definir uma largura para o vídeo, e o navegador ajustará a altura proporcionalmente.
+6. ( ) O atributo poster exibe uma imagem que permanece visível até o usuário clicar no botão de play.
+
+2.3. Atributos de Interação (controls, autoplay)
+
+1. ( ) O atributo controls é obrigatório para que qualquer vídeo possa ser reproduzido.
+2. ( ) O atributo autoplay garante que o vídeo começará a tocar automaticamente em todos os navegadores e dispositivos.
+3. ( ) Sem o atributo controls, o usuário não verá os botões de play, pause ou volume.
+4. ( ) O bloqueio do autoplay por navegadores é uma medida para melhorar a experiência do usuário, conforme mencionado na aula.
+5. ( ) Para que os controles apareçam, é preciso escrever controls="true".
+6. ( ) O atributo autoplay faz com que os controles de vídeo apareçam automaticamente.
+
+2.4. Restrições e Funcionalidades Adicionais
+
+1. ( ) controlslist="nodownload" oculta o botão de tela cheia.
+2. ( ) O atributo disablepictureinpicture remove a opção de Picture-in-Picture dos controles.
+3. ( ) Para desabilitar o download e a tela cheia, a sintaxe correta é controlslist="nodownload nofullscreen".
+4. ( ) nofullscreen é um valor válido para o atributo controlslist.
+5. ( ) O atributo controlslist altera a aparência visual dos botões, como cor e tamanho.
+6. ( ) Os três pontos (...) nos controles de vídeo desaparecem se nodownload e disablepictureinpicture forem usados.
+
+2.5. Formatos e Boas Práticas
+
+1. ( ) MP4 é o único formato de vídeo que funciona na web.
+2. ( ) O formato WebM foi mencionado como uma alternativa viável ao MP4 para vídeos na web.
+3. ( ) A principal razão para usar links de vídeos hospedados no seu próprio projeto é ter controle sobre o arquivo.
+4. ( ) Para incorporar um vídeo do YouTube, deve-se usar <iframe>, como explicado na aula.
+5. ( ) O atributo width só aceita valores em pixels (px).
+6. ( ) O tipo MIME para um vídeo MP4 é video/mp4.
+
+A seguir, testaremos seu conhecimento prático de sintaxe.
+
+
+--------------------------------------------------------------------------------
+
+
+3. Questões de Preenchimento de Código
+
+Estas questões foram criadas para testar sua capacidade de lembrar a sintaxe específica de HTML, incluindo tags e atributos. Preencha o espaço em branco, representado por [___], com o elemento de código correto, conforme ensinado na Aula 14.
+
+1. <[___] controls width="100%"> Qual é a tag principal para incorporar um vídeo?
+2. <video controls poster="[___]"> Qual atributo é usado para definir uma imagem de capa (thumbnail) para o vídeo?
+3. <source src="video/tutorial.mp4" [___]="video/mp4"> Qual atributo especifica o tipo MIME do arquivo de vídeo?
+4. <video width="100%" [___]> Qual atributo adiciona os controles de reprodução do navegador?
+5. <video controls [___]="nodownload"> Qual atributo é usado para remover funcionalidades específicas dos controles?
+6. <video controls [___]> Qual atributo faz o vídeo tocar automaticamente ao carregar a página?
+7. <[___] src="video/intro.webm" type="video/webm"> Qual tag é usada para especificar uma fonte de vídeo dentro da tag <video>?
+8. <video controls controlslist="[___]"> Qual valor remove a opção de download dos controles?
+9. <video controls controlslist="[___]"> Qual valor desativa o botão de tela cheia?
+10. <video controls [___]> Qual atributo completo desativa a funcionalidade Picture-in-Picture?
+11. <video controls controlslist="nodownload [___]"> Qual valor, adicionado à lista, também removeria o botão de tela cheia?
+12. <source src="https://example.com/video.mp4" type="video/[___]"> O que preenche a lacuna para o tipo MIME de um vídeo MP4?
+13. <video width="[___]"> Qual valor define a largura para ocupar todo o espaço horizontal disponível do contêiner?
+14. <video controls> <source [___]="videos/aula.mp4" type="video/mp4"> </video> Qual atributo define o caminho para o arquivo de vídeo?
+15. <video src="video.mp4" [___]="500"> Qual atributo define a largura do vídeo para 500 (sem a necessidade da unidade "px")?
+16. <video controls [___]="nodownload" [___]> Quais dois atributos, adicionados aqui, desabilitariam o download e o Picture-in-Picture?
+17. <video poster="img/capa.jpg" [___]> Qual atributo é necessário para que os controles de reprodução sejam exibidos?
+18. <[___] src="video/arquivo.mp4" type="video/mp4"> Qual é a tag de abertura que está faltando para definir a fonte do vídeo?
+19. <video [___] [___]="nodownload nofullscreen"> Quais dois atributos são necessários para exibir controles e, ao mesmo tempo, desabilitar o download e a tela cheia?
+20. <video poster="capa.png" [___]="100%"> Qual atributo define a largura do vídeo para ocupar 100% do espaço disponível?
+
+Esta última seção desafiará você a construir soluções completas a partir do zero.
+
+
+--------------------------------------------------------------------------------
+
+
+4. Testes de Criação de Código
+
+Este conjunto final de desafios exige que você aplique seu conhecimento escrevendo trechos completos de HTML para resolver problemas específicos. Cada cenário é baseado nas funcionalidades demonstradas na Aula 14.
+
+Cenário 1: Crie o código para exibir um vídeo chamado "tutorial.mp4", que está na pasta "media". O vídeo deve mostrar os controles padrão do navegador.
+
+Solução:
+
+<video controls>
+  <source src="media/tutorial.mp4" type="video/mp4">
+</video>
+
+
+Cenário 2: Incorpore um vídeo chamado "intro.mp4" (na pasta "assets/video") com uma largura que ocupe 100% do seu contêiner e que exiba os controles.
+
+Solução:
+
+<video controls width="100%">
+  <source src="assets/video/intro.mp4" type="video/mp4">
+</video>
+
+
+Cenário 3: Exiba um vídeo chamado "destaque.mp4" que está na raiz do projeto. Antes de tocar, ele deve mostrar uma imagem de capa chamada "capa.jpg" (localizada na pasta "img"). Os controles devem estar visíveis.
+
+Solução:
+
+<video controls poster="img/capa.jpg">
+  <source src="destaque.mp4" type="video/mp4">
+</video>
+
+
+Cenário 4: Crie o código para um vídeo chamado "background.mp4" (na pasta "video") que comece a tocar automaticamente assim que a página carregar.
+
+Solução:
+
+<video autoplay>
+  <source src="video/background.mp4" type="video/mp4">
+</video>
+
+
+Cenário 5: Incorpore um vídeo chamado "produto.mp4". O player deve ter os controles, mas a opção de download deve ser desabilitada.
+
+Solução:
+
+<video controls controlslist="nodownload">
+  <source src="produto.mp4" type="video/mp4">
+</video>
+
+
+Cenário 6: Exiba um vídeo chamado "trailer.mp4" com controles, mas impeça o usuário de usar o modo de tela cheia (fullscreen).
+
+Solução:
+
+<video controls controlslist="nofullscreen">
+  <source src="trailer.mp4" type="video/mp4">
+</video>
+
+
+Cenário 7: Crie o código para um vídeo chamado "demonstracao.mp4" que tenha controles, mas com a funcionalidade Picture-in-Picture desativada.
+
+Solução:
+
+<video controls disablepictureinpicture>
+  <source src="demonstracao.mp4" type="video/mp4">
+</video>
+
+
+Cenário 8: Combine os requisitos: um vídeo ("apresentacao.mp4") com controles, largura de "500", e uma imagem de capa ("thumb.png").
+
+Solução:
+
+<video controls width="500" poster="thumb.png">
+  <source src="apresentacao.mp4" type="video/mp4">
+</video>
+
+
+Cenário 9: Crie um vídeo ("loop.mp4") que toque automaticamente e tenha o botão de download desabilitado nos controles (que também devem estar visíveis).
+
+Solução:
+
+<video controls autoplay controlslist="nodownload">
+  <source src="loop.mp4" type="video/mp4">
+</video>
+
+
+Cenário 10: Incorpore um vídeo ("conteudo.mp4") com controles, mas desabilite tanto o download quanto o modo de tela cheia.
+
+Solução:
+
+<video controls controlslist="nodownload nofullscreen">
+  <source src="conteudo.mp4" type="video/mp4">
+</video>
+
+
+Cenário 11: Exiba um vídeo que está hospedado externamente na URL "https://cdn.example.com/movie.mp4". O vídeo deve ter controles.
+
+Solução:
+
+<video controls>
+  <source src="https://cdn.example.com/movie.mp4" type="video/mp4">
+</video>
+
+
+Cenário 12: Crie o código para um vídeo com a maior restrição possível: com controles, mas sem download, sem tela cheia e sem Picture-in-Picture. Use o arquivo "secure.mp4".
+
+Solução:
+
+<video controls controlslist="nodownload nofullscreen" disablepictureinpicture>
+  <source src="secure.mp4" type="video/mp4">
+</video>
+
+
+Cenário 13: Faça um vídeo ("banner.mp4") ocupar 100% da largura e iniciar automaticamente.
+
+Solução:
+
+<video width="100%" autoplay>
+  <source src="banner.mp4" type="video/mp4">
+</video>
+
+
+Cenário 14: Mostre um vídeo com uma imagem de capa ("capa_video.png") e controles, mas oculte o botão de download. Use o arquivo "aula.mp4".
+
+Solução:
+
+<video controls poster="capa_video.png" controlslist="nodownload">
+  <source src="aula.mp4" type="video/mp4">
+</video>
+
+
+Cenário 15: Incorpore um vídeo ("vinheta.mp4") com 800 pixels de largura, que toque automaticamente e exiba controles.
+
+Solução:
+
+<video controls autoplay width="800">
+  <source src="vinheta.mp4" type="video/mp4">
+</video>
+
+
+Cenário 16: Crie um player para "clipe.webm" (formato WebM) com controles e a funcionalidade de tela cheia desabilitada.
+
+Solução:
+
+<video controls controlslist="nofullscreen">
+  <source src="clipe.webm" type="video/webm">
+</video>
+
+
+Cenário 17: Exiba um vídeo ("tutorial.mp4") com controles, uma capa ("start.jpg") e a função Picture-in-Picture desativada.
+
+Solução:
+
+<video controls poster="start.jpg" disablepictureinpicture>
+  <source src="tutorial.mp4" type="video/mp4">
+</video>
+
+
+Cenário 18: Faça um vídeo ("entrevista.mp4") com controles, sem o botão de download e sem a opção Picture-in-Picture.
+
+Solução:
+
+<video controls controlslist="nodownload" disablepictureinpicture>
+  <source src="entrevista.mp4" type="video/mp4">
+</video>
+
+
+Cenário 19: Incorpore um vídeo ("evento.mp4") de uma URL externa, com largura de "640" e que inicie automaticamente.
+
+Solução:
+
+<video width="640" autoplay>
+  <source src="https://servidor.com/evento.mp4" type="video/mp4">
+</video>
+
+
+Cenário 20: Crie um player de vídeo para "final.mp4" com controles, mas desabilite a opção de tela cheia e a de Picture-in-Picture simultaneamente.
+
+Solução:
+
+<video controls controlslist="nofullscreen" disablepictureinpicture>
+  <source src="final.mp4" type="video/mp4">
+</video>
+
+
+
+--------------------------------------------------------------------------------
+
+
+5. Gabarito
+
+Esta seção contém as respostas para todas as questões das seções anteriores para autoavaliação.
+
+5.1. Respostas: Múltipla Escolha
+
+1. C. <video>
+2. A. <source>
+3. B. Usar a tag <iframe> fornecida pelo YouTube.
+4. B. Sim, e a tag <source> é colocada dentro dela.
+5. A. Vídeos locais usam <video>, enquanto vídeos do YouTube usam <iframe>.
+6. C. Indicar o caminho (URL ou local) e o tipo do arquivo de vídeo para o navegador.
+7. D. src
+8. B. Especificar o formato do arquivo de vídeo para o navegador (ex: "video/mp4").
+9. A. Exibir uma imagem (thumbnail) antes do vídeo começar a tocar.
+10. C. O vídeo ocupa 100% da largura do contêiner onde está inserido.
+11. B. O navegador ajusta a altura automaticamente para manter a proporção original do vídeo.
+12. B. poster="img/capa.jpg"
+13. B. Controles de reprodução padrão do navegador (play, pause, volume, etc.).
+14. A. Fazer com que o vídeo comece a tocar automaticamente assim que a página é carregada.
+15. C. Alguns navegadores bloqueiam o autoplay para não incomodar o usuário.
+16. B. controls
+17. B. Não, pois alguns navegadores podem bloquear essa funcionalidade.
+18. B. Adicionando apenas o atributo controls à tag <video>.
+19. B. Para remover funcionalidades específicas dos controles padrão do navegador.
+20. A. nodownload
+21. B. nofullscreen
+22. C. disablepictureinpicture
+23. B. controlslist="nodownload nofullscreen"
+24. B. O botão de Picture-in-Picture nos controles do vídeo desaparece ou fica desativado.
+25. C. .mp4
+26. C. WebM
+27. B. Sim, a aula demonstra o uso de um link direto da internet.
+28. A. video/mp4
+29. B. src="video/teste.mp4"
+30. C. De arquivos de vídeo locais ou de URLs diretas para arquivos de vídeo na internet.
+
+5.2. Respostas: Verdadeiro ou Falso
+
+1. Falso
+2. Verdadeiro
+3. Falso
+4. Verdadeiro
+5. Falso
+6. Falso
+7. Falso
+8. Falso
+9. Verdadeiro
+10. Falso
+11. Verdadeiro
+12. Verdadeiro
+13. Falso
+14. Falso
+15. Verdadeiro
+16. Verdadeiro
+17. Falso
+18. Falso
+19. Falso
+20. Verdadeiro
+21. Verdadeiro
+22. Verdadeiro
+23. Falso
+24. Verdadeiro
+25. Falso
+26. Verdadeiro
+27. Verdadeiro
+28. Verdadeiro
+29. Falso
+30. Verdadeiro
+
+5.3. Respostas: Preenchimento de Código
+
+1. video
+2. poster
+3. type
+4. controls
+5. controlslist
+6. autoplay
+7. source
+8. nodownload
+9. nofullscreen
+10. disablepictureinpicture
+11. nofullscreen
+12. mp4
+13. 100%
+14. src
+15. width
+16. controlslist, disablepictureinpicture
+17. controls
+18. source
+19. controls, controlslist
+20. width
+
+5.4. Respostas: Testes de Criação de Código
+
+As soluções para os testes de criação de código são fornecidas diretamente abaixo de cada cenário na Seção 4.
+

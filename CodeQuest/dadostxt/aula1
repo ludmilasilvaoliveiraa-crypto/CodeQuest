@@ -1,0 +1,270 @@
+Banco de Questões: Fundamentos de HTML e Criação de Projetos (Aula 01)
+
+1.0 Introdução e Objetivos de Aprendizagem
+
+Este documento foi elaborado para avaliar a compreensão dos conceitos fundamentais de HTML e do processo de configuração de um projeto de desenvolvimento web, conforme apresentado na "Aula 01 - Criando novo projeto" do curso de HTML Completo. O objetivo é solidificar o conhecimento sobre a terminologia essencial, as convenções de nomenclatura e as etapas iniciais para a criação de um arquivo HTML. Dominar esses conceitos iniciais é crucial para construir uma base sólida para todo o aprendizado subsequente em desenvolvimento web, garantindo que as boas práticas sejam aplicadas desde o primeiro momento. A seguir, apresentamos uma série de questões de múltipla escolha para testar seu conhecimento conceitual.
+
+2.0 Questões de Múltipla Escolha
+
+As questões de múltipla escolha são uma excelente ferramenta para testar o conhecimento conceitual e a memorização da terminologia chave. Elas foram projetadas para cobrir as definições, as siglas e os princípios básicos apresentados na aula, garantindo que os alicerces do seu aprendizado estejam bem firmes.
+
+
+--------------------------------------------------------------------------------
+
+
+1. O que significa a sigla HTML? A) Hyper Tool Markup Language B) Hyper Text Markup Language C) Home Tool Management Language D) Hyperlink and Text Management Logic
+2. Qual é o formato de arquivo padrão e mais comum para documentos da web? A) .htm B) .web C) .html D) .doc
+3. A expressão "Hipertexto" em "Linguagem de Marcação de Hipertexto" refere-se a quê? A) Textos com formatação especial, como negrito e itálico. B) Textos que contêm imagens e vídeos. C) A capacidade de um texto ser interpretado por múltiplos navegadores. D) Aos links que conectam as páginas da web entre si.
+4. De acordo com a aula, qual componente do HTML é responsável pela sua designação como 'Linguagem de Marcação'? A) A capacidade de criar links para outras páginas. B) O uso de tags (rótulos) para definir a estrutura e o significado do conteúdo. C) A sua compatibilidade com múltiplos navegadores de internet. D) A sua origem como uma linguagem para formatar documentos de texto.
+5. Qual é a principal função da tag <title>? A) Definir o título principal que aparece no corpo da página. B) Criar um link para outra página. C) Definir o título do site que aparece na aba do navegador. D) Adicionar uma imagem de título no topo do site.
+6. Qual é o nome de arquivo padrão para a página inicial de um site? A) main.html B) home.html C) start.html D) index.html
+7. Qual das seguintes convenções de nomenclatura para pastas é a recomendada? A) meu primeiro site B) meu-primeiro-site C) meu%primeiro%site D) meu&primeiro&site
+8. Por que a aula recomenda criar a pasta "sites" no Disco Local C:/? A) Para que o acesso aos arquivos seja mais rápido. B) Porque é o único local onde o VS Code consegue encontrar os projetos. C) Para que os projetos fiquem independentes do usuário do Windows. D) Para economizar espaço na Área de Trabalho.
+9. Qual o atalho de teclado no VS Code para mostrar ou esconder a barra lateral "Explorer"? A) CTRL + S B) CTRL + B C) CTRL + E D) ALT + B
+10. Como se abre um projeto no VS Code através do terminal de comando? A) Navegando até a pasta do projeto e digitando open . B) Navegando até a pasta do projeto e digitando vscode folder C) Navegando até a pasta do projeto e digitando code . D) Navegando até a pasta do projeto e digitando start project
+11. As tags em HTML são representadas por quais símbolos? A) ( ) B) { } C) [ ] D) < >
+12. Qual visual indicador no VS Code mostra que um arquivo possui alterações não salvas? A) O nome do arquivo fica em vermelho. B) Um ícone de disquete aparece ao lado do nome. C) Uma bolinha branca aparece na aba do arquivo. D) A linha de código alterada fica sublinhada.
+13. Qual é o propósito de usar nomes de pasta sem espaços, como meu-primeiro-site ou meuPrimeiroSite? A) Para economizar espaço no disco rígido. B) Para evitar problemas com links e caminhos de arquivos no futuro. C) Apenas para tornar o nome da pasta mais legível. D) Porque sistemas operacionais não permitem espaços em nomes de pasta.
+14. Além de usar hífens, qual outra forma mencionada na aula é válida para nomear uma pasta com nome composto? A) meu.primeiro.site B) meu/primeiro/site C) meu_primeiro_site (usando underline) D) meu*primeiro*site
+15. Qual é a estrutura de uma tag de fechamento em HTML? A) < tag / > B) < /tag > C) </ tag> D) < \tag >
+16. Qual método para abrir uma pasta de projeto no VS Code foi demonstrado além do menu "File" e do terminal? A) Clicando com o botão direito na pasta e selecionando "Abrir com VS Code". B) Enviando a pasta por e-mail para o VS Code. C) Arrastando a pasta e soltando-a na janela do VS Code. D) Digitndo o caminho da pasta diretamente na barra de endereço do navegador.
+17. Quantas tags HTML existem aproximadamente, segundo mencionado na aula? A) 50 B) 140 C) 210 D) 300
+18. Para criar um novo arquivo dentro de um projeto aberto no VS Code, qual ícone você deve procurar na aba "Explorer"? A) New Window B) New Folder C) New File D) Add Item
+19. Se você fechar o VS Code e abri-lo novamente, o que geralmente acontece? A) Ele abre em uma tela inicial vazia. B) Ele abre a última pasta ou projeto em que você estava trabalhando. C) Ele pede para você selecionar um projeto para abrir. D) Ele abre o último arquivo que você salvou em tela cheia.
+20. Qual é o comando no menu do VS Code para fechar uma pasta de projeto aberta? A) Close Project B) Exit Folder C) Close Folder D) Unload Project
+21. As tags <img>, <video> e <audio> são consideradas "óbvias" por qual motivo? A) Porque são as únicas tags que funcionam em todos os navegadores. B) Porque seus nomes são muito parecidos com as palavras em português. C) Porque são as tags mais antigas do HTML. D) Porque elas não precisam de atributos adicionais para funcionar.
+22. O que o HTML define, como bloco de construção mais básico da web? A) A aparência visual e as cores de uma página. B) A interatividade e as animações de uma página. C) O significado e a estrutura do conteúdo de uma página. D) A segurança e a criptografia de uma página.
+23. Qual alternativa de nomenclatura de pasta utiliza o padrão "camelCase"? A) meu-primeiro-site B) meuPrimeiroSite C) meu_primeiro_site D) MEU-PRIMEIRO-SITE
+24. O que é um "hiperlink"? A) Um tipo especial de imagem com alta resolução. B) O nome em inglês para "Hipertexto". C) Um link que conecta uma página web a outra. D) Um texto que se move pela tela.
+25. Qual o primeiro passo recomendado para organizar seus projetos de site no computador? A) Criar uma pasta para cada projeto na Área de Trabalho. B) Criar uma única pasta chamada "sites" no Disco Local C:/. C) Salvar todos os arquivos HTML diretamente na pasta Documentos. D) Criar um atalho para cada projeto na barra de tarefas.
+26. No terminal, o que o . representa no comando code .? A) O arquivo index.html. B) O diretório (pasta) atual. C) Um comando para fechar o terminal. D) Uma abreviação para "projeto".
+27. Qual a consequência de não seguir as convenções de nomenclatura para pastas e arquivos? A) O site ficará mais lento. B) O VS Code não conseguirá abrir o projeto. C) Poderão ocorrer problemas com links e caminhos de arquivos. D) O código HTML não será validado pelo navegador.
+28. Qual opção de menu é usada para abrir uma pasta de projeto no VS Code? A) File > New Project B) File > Open Folder C) Project > Open Existing D) Edit > Open Folder
+29. Segundo o instrutor, por que o curso se concentrará nas tags mais utilizadas em vez de abordar todas as 140 existentes? A) Porque as outras tags são muito difíceis para iniciantes. B) Porque muitas tags estão em desuso e não são usadas com frequência. C) Porque as outras tags só funcionam em navegadores específicos. D) Porque o tempo do curso é insuficiente para cobrir todas elas.
+30. HTML é considerado a base da programação web porque: A) É a linguagem mais difícil de aprender. B) Define a estrutura e o conteúdo fundamentais de uma página. C) Controla todas as animações e a interatividade de um site. D) É a única linguagem que os servidores de internet conseguem ler.
+
+2.1 Gabarito - Múltipla Escolha
+
+1. B
+2. C
+3. D
+4. B
+5. C
+6. D
+7. B
+8. C
+9. B
+10. C
+11. D
+12. C
+13. B
+14. C
+15. B
+16. C
+17. B
+18. C
+19. B
+20. C
+21. B
+22. C
+23. B
+24. C
+25. B
+26. B
+27. C
+28. B
+29. B
+30. B
+
+
+--------------------------------------------------------------------------------
+
+
+Agora que testamos os conceitos fundamentais, a próxima seção focará em identificar e corrigir equívocos comuns sobre as práticas recomendadas.
+
+3.0 Questões de Verdadeiro ou Falso
+
+As questões de Verdadeiro ou Falso são projetadas para testar sua atenção aos detalhes e para identificar e corrigir equívocos comuns sobre as práticas recomendadas na criação de projetos e na sintaxe fundamental do HTML. Analise cada afirmação cuidadosamente.
+
+
+--------------------------------------------------------------------------------
+
+
+1. O uso de espaços em nomes de arquivos, como "meu site.html", é uma boa prática em desenvolvimento web.
+2. O arquivo index.html é o nome padrão universalmente aceito para a página inicial de um projeto.
+3. Recomenda-se criar la pasta "sites" na Área de Trabalho para facilitar o acesso.
+4. O atalho CTRL + B no VS Code serve para salvar o arquivo atual.
+5. "Hipertexto" refere-se aos links que conectam diferentes páginas da web.
+6. O formato de arquivo .htm é mais moderno e mais utilizado que o .html.
+7. A tag <title> é usada para definir o título que aparece na aba do navegador.
+8. É possível abrir uma pasta de projeto no VS Code arrastando-a para dentro da janela do programa.
+9. HTML é uma sigla para "Hyper Text Markup Language".
+10. Usar traços (-) para separar palavras em nomes de pastas é uma prática recomendada.
+11. A expressão "Linguagem de Marcação" se deve ao fato de o HTML usar tags para estruturar o conteúdo.
+12. O comando code . no terminal fecha o projeto que está aberto no VS Code.
+13. A pasta "sites" é criada no Disco Local C:/ para ser independente do usuário do Windows.
+14. As tags em HTML são também chamadas de "rótulos".
+15. Todas as 140 tags HTML mencionadas na aula são usadas com frequência hoje em dia.
+16. Para criar uma nova pasta dentro do projeto no VS Code, utiliza-se o ícone "New File".
+17. O VS Code automaticamente reabre o último projeto em que você trabalhou ao ser iniciado.
+18. Um fechamento de tag em HTML é feito com < /nome-da-tag >.
+19. O principal objetivo do HTML é definir a aparência e o estilo de uma página.
+20. Utilizar "camelCase", como em meuPrimeiroSite, é uma alternativa válida para nomear pastas.
+21. O ícone do VS Code pode ser fixado na barra de tarefas para acesso rápido.
+22. O comando para fechar uma pasta no VS Code está no menu "File" (Arquivo).
+23. O conteúdo da tag <title> é visível diretamente no corpo da página web.
+24. As tags <img> e <video> são exemplos de tags cujos nomes não são óbvios em português.
+25. O HTML é considerado a base de toda a aprendizagem no mundo da programação web.
+26. Para abrir um projeto via terminal, primeiro é necessário navegar até a pasta do projeto.
+27. O curso de HTML apresentado no vídeo é um material pago.
+28. Usar underlines (_) é uma forma válida de separar palavras em nomes de arquivos e pastas.
+29. A convenção de nomenclatura meu-primeiro-site é recomendada primariamente por razões estéticas.
+30. No VS Code, a ausência de uma bolinha branca na aba de um arquivo indica que todas as alterações recentes foram salvas.
+
+3.1 Gabarito - Verdadeiro ou Falso
+
+1. Falso
+2. Verdadeiro
+3. Falso
+4. Falso
+5. Verdadeiro
+6. Falso
+7. Verdadeiro
+8. Verdadeiro
+9. Verdadeiro
+10. Verdadeiro
+11. Verdadeiro
+12. Falso
+13. Verdadeiro
+14. Verdadeiro
+15. Falso
+16. Falso
+17. Verdadeiro
+18. Verdadeiro
+19. Falso
+20. Verdadeiro
+21. Verdadeiro
+22. Verdadeiro
+23. Falso
+24. Falso
+25. Verdadeiro
+26. Verdadeiro
+27. Falso
+28. Verdadeiro
+29. Falso
+30. Verdadeiro
+
+
+--------------------------------------------------------------------------------
+
+
+Após avaliar a compreensão dos fatos, a próxima etapa testará a aplicação prática da sintaxe e dos comandos.
+
+4.0 Questões de Preenchimento de Código e Comandos
+
+Esta seção tem como objetivo avaliar seu conhecimento prático da sintaxe de tags e comandos essenciais para a configuração de projetos. Na codificação, a precisão é fundamental, portanto, preste atenção aos detalhes ao preencher as lacunas.
+
+
+--------------------------------------------------------------------------------
+
+
+1. A sigla HTML significa Hyper Text ________ Language.
+2. Para abrir o projeto atual no VS Code via terminal, navega-se até a pasta e digita-se o comando code ________.
+3. O formato de arquivo mais comum e recomendado para páginas web é .________.
+4. Em HTML, as tags são rótulos representados pelo sinal de menor < e o sinal de ________.
+5. O nome de arquivo padrão para a página inicial de um site é ________.html.
+6. Para separar palavras em um nome de pasta, pode-se usar hífens ou o padrão ________Case.
+7. O atalho de teclado para alternar a visibilidade da aba "Explorer" no VS Code é CTRL + ________.
+8. Uma tag de fechamento em HTML começa com </ e termina com ________.
+9. O conteúdo inserido na tag <________> é exibido na aba do navegador.
+10. Para criar um novo arquivo no VS Code, clica-se no ícone New ________.
+11. Para evitar problemas, nunca use ________ em nomes de pastas de projetos web.
+12. O menu para abrir uma pasta no VS Code é File > Open ________.
+13. A pasta raiz recomendada para armazenar todos os projetos de sites é a C:\________.
+14. Uma tag de fechamento contém uma ________ (/) antes do nome da tag.
+15. No terminal, para entrar em um diretório, usa-se o comando cd seguido do ________ do diretório.
+16. Para fechar a pasta atual no VS Code, o comando de menu é File > ________ Folder.
+17. HTML é a linguagem de programação ________ de toda a internet.
+18. O comando ________ . abre a pasta atual no VS Code.
+19. O indicador visual de um arquivo não salvo no VS Code é uma ________ branca na aba do arquivo.
+20. A recomendação para criar a pasta sites no Disco Local C:/ visa tornar os projetos independentes do ________ do Windows.
+
+4.1 Gabarito - Preenchimento
+
+1. Markup
+2. .
+3. html
+4. index
+5. camel
+6. B
+7. title
+8. File
+9. espaços
+10. Folder
+11. sites
+12. barra
+13. caminho
+14. Close
+15. base
+16. code
+17. bolinha
+18. usuário
+
+
+--------------------------------------------------------------------------------
+
+
+Com a sintaxe e os comandos básicos reforçados, o desafio agora se eleva, passando do preenchimento para a criação completa de código e a descrição de processos.
+
+5.0 Testes de Criação de Código e Comandos
+
+Esta seção final é o teste prático definitivo, exigindo que você recupere e aplique o conhecimento da aula para resolver problemas e executar tarefas de configuração do mundo real. Suas respostas devem ser claras, precisas e seguir as melhores práticas apresentadas.
+
+
+--------------------------------------------------------------------------------
+
+
+1. Qual é o nome completo, incluindo a extensão, que você deve dar ao arquivo da página inicial de qualquer site?
+2. Seu projeto se chama "meu novo projeto web". Escreva três variações válidas para o nome da pasta deste projeto, seguindo as convenções de nomenclatura recomendadas.
+3. Descreva o processo para criar um novo arquivo chamado sobre.html dentro de um projeto que já está aberto no VS Code.
+4. Qual é a tag completa (abertura e fechamento) usada para definir o título "Minha Primeira Página" que aparece na aba do navegador?
+5. Explique em uma frase o que significa o termo "Hipertexto" no contexto do HTML.
+6. Descreva as três maneiras distintas de abrir uma pasta de projeto no VS Code que foram demonstradas na aula.
+7. Qual comando de terminal é usado para abrir o diretório atual como um projeto no VS Code e o que o símbolo . representa nesse comando?
+8. Por que a aula recomenda criar a pasta principal de projetos ("sites") no diretório C:/?
+9. Se você nomear uma pasta como "meu projeto", que tipo de problema isso pode causar no futuro?
+10. Qual é o propósito do atalho CTRL + B no VS Code?
+11. Descreva o passo a passo para fechar um projeto que está aberto no VS Code e voltar para a tela inicial do programa.
+12. O que são "tags" ou "rótulos" em HTML?
+13. Como o VS Code se comporta por padrão ao ser iniciado após ter sido fechado?
+14. Para que serve o ícone "New Folder" na aba "Explorer" do VS Code?
+15. Explique por que é importante conhecer o significado das tags em HTML, mesmo as menos óbvias.
+16. Você está prestes a criar um novo projeto chamado "relatórios anuais da empresa". Com base nas convenções de nomenclatura ensinadas, escreva duas formas válidas para o nome da pasta e explique brevemente por que o nome "relatórios anuais da empresa" (com espaços) deve ser evitado.
+17. Você acabou de fazer várias edições no seu arquivo index.html e precisa salvá-lo. Qual o atalho de teclado para salvar e qual mudança visual na interface do VS Code confirma que a ação foi bem-sucedida?
+18. Explique a diferença fundamental entre um "hipertexto" e uma "linguagem de marcação", com base nos conceitos apresentados na aula.
+19. Se você precisasse criar uma subpasta chamada "imagens" dentro do seu projeto "aula-html" no VS Code, qual ícone na barra "Explorer" você usaria?
+20. Qual é a primeira etapa a ser realizada no computador para começar a organizar todos os seus projetos web de acordo com a aula?
+
+5.1 Gabarito - Testes de Criação
+
+1. O nome completo deve ser index.html.
+2. meu-novo-projeto-web, meuNovoProjetoWeb, meu_novo_projeto_web.
+3. Com o projeto aberto no VS Code, na barra lateral "Explorer", clica-se no ícone "New File" (Novo Arquivo) e digita-se o nome sobre.html, pressionando Enter em seguida.
+4. <title>Minha Primeira Página</title>
+5. "Hipertexto" refere-se aos links (ou hiperlinks) que conectam uma página da web a outra, permitindo a navegação entre documentos.
+6. Método 1: Ir ao menu File > Open Folder. Método 2: Arrastar a pasta do projeto e soltá-la na janela do VS Code. Método 3: Navegar até a pasta pelo terminal e usar o comando code ..
+7. O comando é code .. O símbolo . representa o diretório (a pasta) atual em que o terminal está operando.
+8. Para que o projeto fique independente do usuário do sistema operacional (Windows), garantindo que ele possa ser acessado sem problemas mesmo que haja múltiplos usuários no computador.
+9. O uso de espaços pode causar problemas na interpretação de caminhos de arquivos por servidores e navegadores, quebrando links e o acesso a recursos como imagens e outras páginas.
+10. O atalho CTRL + B serve para mostrar ou esconder a barra lateral "Explorer", que exibe a estrutura de arquivos e pastas do projeto.
+11. Para fechar um projeto, deve-se ir ao menu File e selecionar a opção Close Folder. Isso retornará o VS Code à sua tela inicial ou a um estado sem pastas abertas.
+12. São "rótulos" que definem a estrutura e o significado do conteúdo, indicando ao navegador como exibir textos, imagens, links, etc.
+13. Por padrão, o VS Code reabre a última pasta de projeto que estava sendo utilizada.
+14. O ícone "New Folder" serve para criar uma nova pasta (subdiretório) dentro da estrutura do projeto atual.
+15. Conhecer o significado das tags permite montar o site da forma correta, garantindo que o navegador interprete e exiba o conteúdo exatamente como planejado estruturalmente.
+16. Formas válidas: relatorios-anuais-da-empresa e relatoriosAnuaisDaEmpresa. O nome com espaços deve ser evitado porque pode causar quebras em links e caminhos de arquivos, já que muitos sistemas na web não interpretam espaços corretamente em URLs e referências de arquivos.
+17. O atalho para salvar é CTRL + S. A confirmação visual é o desaparecimento da bolinha branca que fica na aba do arquivo, indicando que não há mais alterações pendentes de salvamento.
+18. "Hipertexto" é o conceito de ter textos conectados por links (hiperlinks), permitindo a navegação entre páginas. "Linguagem de Marcação" refere-se ao método de usar tags (rótulos) para dar estrutura e significado ao conteúdo dentro de uma página.
+19. Você usaria o ícone "New Folder".
+20. A primeira etapa é ir ao Disco Local C:/ e criar uma pasta chamada "sites", que servirá como o diretório principal para todos os projetos desenvolvidos.
+

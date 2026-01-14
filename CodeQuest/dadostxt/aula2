@@ -1,0 +1,437 @@
+Questionário de Avaliação: HTML - Aula 02 (Estrutura Básica)
+
+Introdução
+
+Este questionário foi elaborado para avaliar a sua compreensão dos conceitos fundamentais da estrutura básica de um documento HTML, conforme apresentado na Aula 02 do curso. O objetivo é consolidar o conhecimento sobre a sintaxe das tags, a função dos elementos estruturais principais e o uso de ferramentas essenciais como o VS Code e a extensão Live Server. As questões a seguir abordarão esses tópicos de forma progressiva, partindo de conceitos teóricos para a aplicação prática.
+
+
+--------------------------------------------------------------------------------
+
+
+1. Questões de Múltipla Escolha
+
+Compreender os componentes básicos de um documento HTML é o primeiro passo para construir qualquer página web. Cada tag estrutural tem um propósito específico, e o domínio dessas finalidades é crucial para um desenvolvimento correto e semântico. Esta seção testa o seu conhecimento conceitual sobre a função de cada tag, bem como sua familiaridade com as ferramentas e atalhos de desenvolvimento abordados na aula.
+
+1. Qual é a primeira declaração que deve existir em qualquer documento HTML moderno para indicar ao navegador o tipo de documento? A.  <html version="5"> B.  <!DOCTYPE html> C.  <head type="html5"> D.  <body> Resposta Correta: B
+2. Qual tag é considerada a "raiz" de um documento HTML, envolvendo todos os outros elementos? A.  <body> B.  <head> C.  <html> D.  <main> Resposta Correta: C
+3. Onde deve ser inserido o conteúdo visível da página, como textos, títulos e imagens? A.  Dentro da tag <head>. B.  Dentro da tag <body>. C.  Logo após a declaração <!DOCTYPE html>. D.  Dentro da tag <title>. Resposta Correta: B
+4. Qual é a principal função da tag <head> em um documento HTML? A.  Exibir o cabeçalho principal (H1) da página. B.  Organizar todo o conteúdo em parágrafos. C.  Conter metadados e informações sobre o documento que não são exibidos diretamente na página. D.  Definir o idioma principal do site. Resposta Correta: C
+5. A tag <title> define qual elemento de uma página web? A.  O título principal que aparece no corpo da página (H1). B.  O nome do arquivo HTML. C.  O texto que aparece na aba ou na barra de título do navegador. D.  Um comentário no topo do código. Resposta Correta: C
+6. Qual atalho de teclado é usado no VS Code para salvar as alterações em um arquivo? A.  CTRL+C B.  ALT+S C.  CTRL+V D.  CTRL+S Resposta Correta: D
+7. No VS Code, qual indicador visual na aba de um arquivo mostra que ele possui alterações não salvas? A.  Um cadeado fechado. B.  Uma bolinha branca. C.  Um asterisco (*). D.  O nome do arquivo fica em vermelho. Resposta Correta: B
+8. Qual é a principal funcionalidade da extensão Live Server para o VS Code? A.  Corrigir erros de sintaxe no código HTML automaticamente. B.  Permitir a edição do site diretamente no navegador. C.  Criar um servidor local que atualiza a página no navegador em tempo real a cada salvamento. D.  Publicar o site na internet com um único clique. Resposta Correta: C
+9. Qual atalho no VS Code é utilizado para gerar rapidamente a estrutura básica de um documento HTML5? A.  ! + Enter B.  doc + Enter C.  html:5 + Enter D.  start:html + Enter Resposta Correta: C
+10. Você está escrevendo uma linha longa de código HTML e precisa rolar horizontalmente para vê-la por inteiro. Qual atalho do VS Code você pode usar para quebrar a linha visualmente e ajustá-la à largura da tela sem alterar o código? A.  CTRL+Z B.  CTRL+SHIFT+P C.  ALT+Z D.  TAB Resposta Correta: C
+11. Qual é o atalho para mostrar ou esconder a barra lateral "Explorer" (visualizador de arquivos) no VS Code? A.  CTRL+E B.  CTRL+B C.  ALT+F D.  SHIFT+P Resposta Correta: B
+12. Como se digita o caractere < (sinal de menor que) na maioria dos teclados padrão ABNT2? A.  SHIFT + . (ponto) B.  CTRL + , (vírgula) C.  SHIFT + , (vírgula) D.  ALT + < Resposta Correta: C
+13. E como se digita o caractere > (sinal de maior que)? A.  SHIFT + . (ponto) B.  CTRL + . (ponto) C.  SHIFT + / (barra) D.  ALT + > Resposta Correta: A
+14. Dentro de qual tag estrutural a tag <title> deve ser colocada? A.  <body> B.  <html> C.  <footer> D.  <head> Resposta Correta: D
+15. Qual tag foi utilizada na aula para criar o título "Meu primeiro site" visível no corpo da página? A.  <title> B.  <h1> C.  <header> D.  <p> Resposta Correta: B
+16. Qual tag foi utilizada para criar o texto "Meu primeiro parágrafo"? A.  <h1> B.  <text> C.  <p> D.  <paragraph> Resposta Correta: C
+17. O que acontece se você esquecer de salvar o arquivo (usando CTRL+S) antes de verificar o site aberto pelo Live Server? A.  O site exibe uma mensagem de erro. B.  O Live Server para de funcionar. C.  As alterações mais recentes não aparecerão no navegador. D.  O VS Code salva o arquivo automaticamente. Resposta Correta: C
+18. Qual é a diferença fundamental entre o conteúdo da tag <head> e da tag <body>? A.  O <head> contém o texto principal e o <body> contém os links. B.  O <head> contém informações para o navegador, enquanto o <body> contém o conteúdo visível para o usuário. C.  O <head> é para scripts e o <body> é para estilos CSS. D.  Não há diferença funcional, apenas organizacional. Resposta Correta: B
+19. Ao clicar no botão "Go Live" na barra inferior do VS Code, o que é iniciado? A.  A depuração do código. B.  O servidor da extensão Live Server. C.  O envio do site para a nuvem. D.  A formatação automática do código. Resposta Correta: B
+20. Qual das opções abaixo representa corretamente a estrutura de aninhamento das tags básicas? A.  <html><head><body></body></head></html> B.  <html><head></head><body></body></html> C.  <head><html></html><body></body></head> D.  <body><head></head><html></html></body> Resposta Correta: B
+21. A declaração <!DOCTYPE html> informa ao navegador que o documento é de qual tipo? A.  XML B.  HTML (especificamente HTML5) C.  XHTML D.  CSS Resposta Correta: B
+22. O VS Code ajuda na produtividade ao... A.  ...escrever o conteúdo do site automaticamente. B.  ...sugerir e autocompletar tags enquanto você digita. C.  ...hospedar o site gratuitamente. D.  ...criar designs visuais para a página. Resposta Correta: B
+23. O que o atalho html:5 gera além das tags <html>, <head> e <body>? A.  Um parágrafo de exemplo. B.  Um título H1 padrão. C.  A declaração DOCTYPE e algumas meta tags úteis. D.  Um link para a documentação do HTML. Resposta Correta: C
+24. Qual é o propósito do conteúdo que fica entre a tag de abertura <h1> e a de fechamento </h1>? A.  É o texto que será formatado como o título principal da seção. B.  É um comentário que só o desenvolvedor vê. C.  É o nome de uma classe CSS. D.  É o link para outra página. Resposta Correta: A
+25. O que a "quebra de linha automática" (ativada por ALT+Z) faz visualmente no editor de código? A.  Insere quebras de linha (<br>) no arquivo HTML. B.  Divide uma linha longa em várias linhas visuais para que todo o texto caiba na tela. C.  Apaga linhas de código em excesso. D.  Cria parágrafos automaticamente. Resposta Correta: B
+26. Ao iniciar o Live Server pela primeira vez, que tipo de permissão o sistema operacional pode solicitar? A.  Uma chave de licença. B.  O login em uma conta. C.  A permissão do Firewall do Windows. D.  A instalação de um plugin para o navegador. Resposta Correta: C
+27. Onde o texto "Meu primeiro site", inserido na tag <title>, é exibido? A.  No rodapé da página. B.  Como um alerta ao abrir o site. C.  No centro da tela em letras grandes. D.  Na aba do navegador. Resposta Correta: D
+28. HTML é uma linguagem baseada em: A.  Funções e variáveis. B.  Tags (etiquetas) que marcam o conteúdo. C.  Comandos de banco de dados. D.  Desenho vetorial. Resposta Correta: B
+29. Qual a sintaxe correta para uma tag de fechamento de parágrafo? A.  </p> B.  <p/> C.  <\p> D.  <close p> Resposta Correta: A
+30. Para que serve a tag <h1>? A.  Para criar um parágrafo. B.  Para definir o título de maior importância na página. C.  Para inserir uma linha horizontal. D.  Para ocultar um conteúdo. Resposta Correta: B
+31. Se a bolinha branca na aba do arquivo desaparecer após você pressionar CTRL+S, isso significa que: A.  O arquivo foi fechado. B.  O arquivo foi salvo com sucesso. C.  O VS Code encontrou um erro. D.  O Live Server foi desconectado. Resposta Correta: B
+32. A principal vantagem de usar o Live Server é: A.  A segurança aprimorada do site. B.  A compressão automática de imagens. C.  Ver as mudanças no código refletidas instantaneamente no navegador. D.  A tradução automática do conteúdo. Resposta Correta: C
+33. O esqueleto básico de um documento HTML é composto por: A.  <!DOCTYPE html>, <html>, <head> e <body>. B.  html, css e javascript. C.  header, main e footer. D.  div, span e p. Resposta Correta: A
+34. O que acontece quando você digita "p" em um arquivo HTML no VS Code e pressiona Enter? A.  O VS Code cria um novo arquivo chamado "p.html". B.  O VS Code formata o parágrafo anterior. C.  Nada acontece, pois é um caractere comum. D.  O VS Code sugere e autocompleta a tag <p></p>, agilizando o desenvolvimento. Resposta Correta: D
+35. Qual dos seguintes elementos é projetado para ser colocado diretamente dentro da tag <body> para ser visível ao usuário? A.  <title> B.  <h1> C.  <html> D.  <!DOCTYPE html> Resposta Correta: B
+36. O atalho CTRL+B é útil para: A.  Deixar o texto em negrito. B.  Salvar uma cópia do arquivo. C.  Ganhar mais espaço horizontal para visualização do código, ocultando o painel de arquivos. D.  Abrir o terminal integrado. Resposta Correta: C
+37. Qual das ações abaixo NÃO é uma função do VS Code mencionada na aula? A.  Autocompletar tags HTML. B.  Salvar arquivos com CTRL+S. C.  Hospedar o site final em um servidor público. D.  Integrar-se com extensões como o Live Server. Resposta Correta: C
+38. Para que serve um parágrafo (<p>) em HTML? A.  Para destacar um texto com importância. B.  Para agrupar um bloco de texto, separando-o de outros blocos. C.  Para criar um link. D.  Para definir o título da aba. Resposta Correta: B
+39. Se você digitar html:5 e pressionar Enter no VS Code, o que é criado? A.  Apenas a tag <html>. B.  Uma estrutura HTML5 completa e pronta para uso. C.  Um comentário explicando o que é HTML5. D.  Um link para a especificação do HTML5. Resposta Correta: B
+40. Onde é o lugar correto para colocar o título "Minha Página" que aparecerá na aba do navegador? A.  <body><title>Minha Página</title></body> B.  <h1><title>Minha Página</title></h1> C.  <html><title>Minha Página</title></html> D.  <head><title>Minha Página</title></head> Resposta Correta: D
+
+Essa primeira etapa focou em validar os conceitos essenciais. Agora, vamos solidificar esses fatos.
+
+
+--------------------------------------------------------------------------------
+
+
+2. Questões de Verdadeiro ou Falso
+
+As questões de verdadeiro ou falso são uma excelente forma de reforçar fatos importantes e corrigir equívocos comuns sobre a estrutura do HTML e as ferramentas de desenvolvimento. Avalie cada uma das afirmações a seguir com base no que foi apresentado na Aula 02.
+
+1. O conteúdo da tag <body> é onde se coloca o conteúdo visível do site, como textos e títulos. (V) Verdadeira
+2. A tag <title> define o título principal que aparece no topo do conteúdo da página. (F) Falsa
+3. O atalho CTRL+S é usado para abrir um novo arquivo no VS Code. (F) Falsa
+4. A extensão Live Server permite ver as alterações no site em tempo real sem precisar recarregar a página manualmente. (V) Verdadeira
+5. O conteúdo da tag <head> é renderizado visualmente no centro da página. (F) Falsa
+6. <!DOCTYPE html> é uma tag opcional em documentos HTML5 modernos. (F) Falsa
+7. O atalho html:5 no VS Code preenche automaticamente a estrutura básica de um documento HTML. (V) Verdadeira
+8. O símbolo > é digitado pressionando SHIFT + PONTO. (V) Verdadeira
+9. A bolinha branca na aba de um arquivo no VS Code indica que o arquivo foi salvo com sucesso. (F) Falsa
+10. O atalho ALT+Z no VS Code serve para quebrar a linha do código e ajustá-lo à largura da tela. (V) Verdadeira
+11. A tag <p> é usada para criar o título mais importante de uma página. (F) Falsa
+12. A tag <html> é o elemento pai que contém tanto o <head> quanto o <body>. (V) Verdadeira
+13. O botão "Go Live" está localizado na barra lateral de arquivos do VS Code. (F) Falsa
+14. Para criar o caractere <, você deve pressionar SHIFT + VÍRGULA. (V) Verdadeira
+15. As tags <h1> e <p> devem ser colocadas dentro da tag <head>. (F) Falsa
+16. O VS Code é um navegador web usado para visualizar sites. (F) Falsa
+17. O atalho CTRL+B alterna a visibilidade da barra de status inferior. (F) Falsa
+18. O atalho html:5 no VS Code funciona apenas se a extensão Live Server estiver instalada. (F) Falsa
+19. O Live Server funciona mesmo que o VS Code esteja fechado. (F) Falsa
+20. Ao usar html:5, o VS Code já insere a declaração <!DOCTYPE html> no início do arquivo. (V) Verdadeira
+21. Um documento HTML pode ter múltiplas tags <body>. (F) Falsa
+22. A tag <h1> deve ser colocada dentro da tag <head>. (F) Falsa
+23. Salvar o arquivo é uma etapa necessária para que o Live Server mostre as atualizações. (V) Verdadeira
+24. A declaração <!DOCTYPE html> deve vir depois da tag <html>. (F) Falsa
+25. O botão "Go Live" para iniciar o Live Server está localizado na barra de status inferior do VS Code. (V) Verdadeira
+26. A "bolinha branca" indica que o Live Server está ativo. (F) Falsa
+27. O atalho ALT+Z altera permanentemente o código do arquivo, inserindo quebras de linha. (F) Falsa
+28. A tag <p> representa o título de maior importância na página. (F) Falsa
+29. Um documento HTML pode funcionar corretamente sem a tag <body>. (F) Falsa
+30. O Live Server abre o site no navegador padrão do sistema operacional. (V) Verdadeira
+31. A tag <h1> é usada para criar o texto de menor importância em uma página. (F) Falsa
+32. O atalho CTRL+S serve para fechar o VS Code. (F) Falsa
+33. O texto dentro da tag <body> é com o que o usuário final interage. (V) Verdadeira
+34. A tag <body> contém metadados, como o título que aparece na aba do navegador. (F) Falsa
+35. O atalho html:5 é um recurso do Emmet, que já vem integrado ao VS Code. (V) Verdadeira
+36. Pressionar ALT+Z insere quebras de linha permanentes no arquivo HTML, modificando sua estrutura. (F) Falsa
+37. O caractere > é formado pela combinação CTRL + PONTO. (F) Falsa
+38. A estrutura de um HTML se assemelha a uma árvore, com elementos aninhados dentro de outros. (V) Verdadeira
+39. A declaração <!DOCTYPE html> é o elemento raiz que envolve todo o conteúdo do documento. (F) Falsa
+40. O único propósito da tag <head> é conter a tag <title>. (F) Falsa
+
+Agora que os conceitos estão mais firmes, vamos verificar a habilidade de escrita de código.
+
+
+--------------------------------------------------------------------------------
+
+
+3. Questões de Preenchimento de Código
+
+A sintaxe em HTML é rigorosa. Um caractere fora do lugar pode impedir que uma página seja renderizada corretamente. Esta seção visa testar sua familiaridade com a escrita das tags estruturais básicas. Preencha as lacunas [___] em cada trecho de código com a tag ou o fechamento correto.
+
+81.
+
+[___]
+<html>
+...
+</html>
+
+
+Resposta: <!DOCTYPE html>
+
+82.
+
+<!DOCTYPE html>
+<[___]>
+  <head></head>
+  <body></body>
+</html>
+
+
+Resposta: <html>
+
+83.
+
+<html>
+  <head>
+    <title>Título</title>
+  </[___]>
+  ...
+</html>
+
+
+Resposta: </head>
+
+84.
+
+<head>
+  <[___]>Minha Página</title>
+</head>
+
+
+Resposta: <title>
+
+85.
+
+<html>
+  <head>
+  </head>
+  <[___]>
+    <h1>Olá!</h1>
+  </body>
+</html>
+
+
+Resposta: <body>
+
+86.
+
+<body>
+  <h1>Meu Site</h1>
+  <p>Bem-vindo.</p>
+</[___]>
+
+
+Resposta: </body>
+
+87.
+
+<body>
+  <[___]>Título Principal</[___]>
+</body>
+
+
+Respostas: <h1>, </h1>
+
+88.
+
+<head>
+  <title>Título da Página</[___]>
+</head>
+
+
+Resposta: </title>
+
+89.
+
+<body>
+  <p>Primeiro parágrafo.</[___]>
+</body>
+
+
+Resposta: </p>
+
+90.
+
+[___]
+<html>
+  <[___]>
+    <title>Teste Completo</title>
+  </head>
+  <[___]>
+    <h1>Olá</h1>
+  </body>
+</html>
+
+
+Respostas: <!DOCTYPE html>, <head>, <body>
+
+91.
+
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body></body>
+</[___]>
+
+
+Resposta: </html>
+
+92.
+
+<body>
+  <h1>Subtítulo</h1>
+  <[___]>Um texto explicativo sobre o subtítulo.</p>
+</body>
+
+
+Resposta: <p>
+
+93.
+
+<[___]>
+  <title>Documento</title>
+</head>
+
+
+Resposta: <head>
+
+94.
+
+<body>
+  <[___]>Este é meu primeiro título</h1>
+</body>
+
+
+Resposta: <h1>
+
+95.
+
+<html>
+  <head>
+    <[___]>Meu Título</[___]>
+  </head>
+  ...
+</html>
+
+
+Respostas: <title>, </title>
+
+96.
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercício</title>
+  </head>
+  [___]
+    <h1>Conteúdo</h1>
+  </body>
+</html>
+
+
+Resposta: <body>
+
+97.
+
+<body>
+  <h1>Título</h1>
+  <p>Parágrafo 1</p>
+  <p>Parágrafo 2</[___]>
+</body>
+
+
+Resposta: </p>
+
+98.
+
+...
+  </head>
+  <body>
+    <h1>Seja bem-vindo</h1>
+  </[___]>
+</html>
+
+
+Resposta: </body>
+
+99.
+
+<head>
+  [___]Meu Site Pessoal[___]
+</head>
+
+
+Respostas: <title>, </title>
+
+100.
+
+<body>
+  <h1>Introdução</[___]>
+  <p>Este é o primeiro parágrafo da introdução.</p>
+</body>
+
+
+Resposta: </h1>
+
+Com a sintaxe em mente, o próximo passo é aplicar todo o conhecimento de forma integrada.
+
+
+--------------------------------------------------------------------------------
+
+
+4. Testes de Criação de Código
+
+Esta seção é o teste final de aplicação prática. O objetivo é construir, do zero, estruturas HTML completas e funcionais com base em requisitos específicos. Demonstre sua capacidade de integrar todos os conceitos aprendidos na Aula 02 para criar documentos HTML válidos.
+
+Desafio 101: Crie a estrutura básica completa de um documento HTML. O título na aba do navegador deve ser "Minha Primeira Página". Dentro do corpo, adicione um cabeçalho de nível 1 com o texto "Bem-vindo ao meu site!".
+
+Solução:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Minha Primeira Página</title>
+</head>
+<body>
+  <h1>Bem-vindo ao meu site!</h1>
+</body>
+</html>
+
+
+
+--------------------------------------------------------------------------------
+
+
+Desafio 102: Elabore um documento HTML completo cujo título seja "Estrutura". No corpo da página, inclua um cabeçalho <h1> com o texto "Aprendendo HTML" e, logo abaixo, um parágrafo <p> com o texto "Esta é a estrutura básica de uma página web.".
+
+Solução:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Estrutura</title>
+</head>
+<body>
+  <h1>Aprendendo HTML</h1>
+  <p>Esta é a estrutura básica de uma página web.</p>
+</body>
+</html>
+
+
+
+--------------------------------------------------------------------------------
+
+
+Desafio 103: Construa a estrutura de um documento HTML. Não adicione nada ao corpo (<body>), mas defina o título da página na aba do navegador como "Página em Construção".
+
+Solução:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página em Construção</title>
+</head>
+<body>
+</body>
+</html>
+
+
+
+--------------------------------------------------------------------------------
+
+
+Desafio 104: Crie um documento HTML. Dentro da tag <head>, defina o título como "Documento Simples". Dentro da tag <body>, adicione apenas um parágrafo com o texto "Conteúdo da página.".
+
+Solução:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Documento Simples</title>
+</head>
+<body>
+  <p>Conteúdo da página.</p>
+</body>
+</html>
+
+
+
+--------------------------------------------------------------------------------
+
+
+Desafio 105: Escreva a estrutura básica de um documento HTML5, incluindo a declaração DOCTYPE, as tags <html>, <head> com um <title>, e um <body> vazio. O título da página deve ser "Esqueleto HTML".
+
+Solução:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Esqueleto HTML</title>
+</head>
+<body>
+</body>
+</html>
+
+
+
+--------------------------------------------------------------------------------
+
+
+Parabéns por completar esta avaliação detalhada sobre a estrutura básica do HTML. Dominar esses fundamentos é o alicerce para todo o desenvolvimento web que virá a seguir.
+

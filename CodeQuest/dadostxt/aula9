@@ -1,0 +1,269 @@
+Avaliação de Conhecimentos: HTML - Aula 09 (Tabelas)
+
+1.0 Questões de Múltipla Escolha
+
+1.1. Análise Conceitual: Fundamentos de Tabelas HTML
+
+Bem-vindo(a) à primeira etapa da nossa avaliação! As questões a seguir foram cuidadosamente desenhadas para testar não apenas sua memorização da sintaxe, mas sua real compreensão da lógica por trás das tabelas HTML, como vimos na Aula 09. O objetivo é solidificar a base que permitirá a construção de estruturas de dados complexas e semânticas. Vamos começar!
+
+
+--------------------------------------------------------------------------------
+
+
+1. Qual é a finalidade principal do uso de tabelas em HTML, conforme mencionado na aula? A. Criar layouts complexos para páginas inteiras. B. Apenas para inserir imagens de forma organizada. C. Para visualização de dados e criação de painéis administrativos. D. Para criar listas ordenadas e não ordenadas.
+2. Qual é a tag principal utilizada para iniciar a criação de uma tabela em HTML? A. <tabela> B. <tbl> C. <table> D. <tab>
+3. Qual é a função da tag <tr> dentro de uma tabela? A. Definir uma coluna da tabela (Table Column). B. Criar o cabeçalho da tabela (Table Header). C. Inserir um dado individual na tabela (Table Data). D. Criar uma linha na tabela (Table Row).
+4. Para que serve a tag <th> e em qual contexto ela é tipicamente utilizada? A. Para inserir dados comuns, utilizada em qualquer <tr>. B. Para criar o título de uma coluna (Table Header), utilizada na primeira <tr>. C. Para dividir a tabela em seções, utilizada fora de uma <tr>. D. Para adicionar uma nova linha de dados à tabela.
+5. Qual é a função da tag <td>? A. Definir o título de uma coluna. B. Inserir um dado ou uma informação em uma célula da tabela. C. Criar uma nova linha completa na tabela. D. Definir o rodapé da tabela.
+6. Qual a principal diferença conceitual entre <th> e <td>? A. Não há diferença, ambas inserem dados da mesma forma. B. <th> é para títulos de colunas (cabeçalho) e <td> é para dados comuns. C. <th> só aceita texto, enquanto <td> aceita imagens. D. <th> cria uma linha e <td> cria uma coluna.
+7. Como se adiciona uma nova linha de dados (por exemplo, para um novo cliente) a uma tabela existente? A. Adicionando uma nova tag <table>. B. Adicionando uma nova tag <tr> contendo as tags <td>. C. Adicionando novas tags <th> na primeira linha. D. Usando a tag <newline>.
+8. Para adicionar uma nova coluna chamada "Linguagem" à tabela do exemplo da aula, o que foi feito? A. Apenas se adicionou uma tag <td>Linguagem</td> no final. B. Adicionou-se uma tag <th>Linguagem</th> na primeira <tr> e uma tag <td> correspondente em cada uma das outras linhas de dados. C. Adicionou-se uma nova tag <tr> com o conteúdo "Linguagem". D. Utilizou-se um atributo columns="4" na tag <table>.
+9. Qual o propósito do atributo width na tag <table>, conforme demonstrado? A. Definir a altura da tabela. B. Definir a largura da tabela, podendo usar valores em porcentagem. C. Definir a cor da borda da tabela. D. Definir a espessura da fonte do texto.
+10. Qual o propósito e o efeito do atributo border na tag <table>? A. Adicionar uma imagem de fundo à tabela. B. Arredondar as bordas da tabela. C. Definir a espessura da borda da tabela em pixels, como em border="1". D. Ocultar a tabela da visualização.
+11. Qual foi o efeito do estilo text-align: center aplicado à tabela no exemplo? A. Centralizou a tabela inteira na página. B. Aumentou o tamanho da fonte do texto. C. Alinhou todo o texto dentro das células ao centro. D. Alterou a cor de fundo da tabela para cinza.
+12. Por padrão, como a tag <th> alinha o texto dentro dela? A. À direita. B. À esquerda. C. Justificado. D. Centralizado.
+13. Na estrutura de uma tabela, o que a sigla "TR" representa? A. Table Readout B. Table Row (Linha da Tabela) C. Text Right D. Table Rule
+14. Na estrutura de uma tabela, o que a sigla "TH" representa? A. Table Height B. Text Highlight C. Table Header (Cabeçalho da Tabela) D. Text Header
+15. Na estrutura de uma tabela, o que a sigla "TD" representa? A. Table Division B. Table Data (Dado da Tabela) C. Text Decoration D. Table Depth
+16. Qual tag define uma única célula de dados padrão em uma tabela? A. <cell> B. <tr> C. <th> D. <td>
+17. Para tornar a borda de uma tabela visível com 1 pixel de espessura, qual atributo e valor devem ser usados na tag <table>? A. border-style="solid" B. border="1" C. outline="1px" D. line="true"
+18. Para fazer uma tabela ocupar 100% da largura disponível na página, qual atributo e valor são utilizados? A. size="100%" B. length="full" C. width="100%" D. style="width: full;"
+19. O conteúdo da primeira <tr> em uma tabela de dados é tipicamente composto por: A. Células de dados com a tag <td>. B. Células de cabeçalho com a tag <th>. C. Outras tags <table> aninhadas. D. Apenas um parágrafo de texto.
+20. Para inserir os dados de "Dimitri", "30" e "85kg" na tabela da aula, qual conjunto de tags foi utilizado dentro de uma <tr>? A. <th>Dimitri</th><th>30</th><th>85kg</th> B. <data>Dimitri</data><data>30</data><data>85kg</data> C. <td>Dimitri</td><td>30</td><td>85kg</td> D. <p>Dimitri</p><p>30</p><p>85kg</p>
+21. O desafio proposto no final da aula foi criar que tipo de tabela? A. Uma tabela de horários de aula. B. Uma tabela de clientes de uma loja. C. Uma tabela nutricional de um produto. D. Uma tabela de linguagens de programação.
+22. O atributo border é descrito na aula como: A. Um atributo que só funciona com CSS. B. Um atributo nativo da tag <table>. C. Um atributo obsoleto que não deve ser usado. D. Um atributo para definir a cor da borda.
+23. A estilização com text-align foi apresentada como: A. Um atributo nativo do HTML. B. Uma propriedade CSS. C. Uma tag HTML chamada <align>. D. Uma funcionalidade automática das tabelas.
+24. Qual tag é usada para englobar um conjunto de células que formam uma única linha? A. <td> B. <line> C. <tr> D. <th>
+25. De acordo com a aula, qual é o padrão para construir uma tabela? A. Criar todas as colunas primeiro com <td> e depois as linhas com <tr>. B. Começar com a tag <table>, depois criar linhas com <tr> e, dentro delas, as células com <th> ou <td>. C. Usar a tag <table> e colocar todo o conteúdo diretamente dentro dela, sem outras tags. D. Definir o número de linhas e colunas usando atributos na tag <table>.
+
+
+--------------------------------------------------------------------------------
+
+
+Excelente! Com os conceitos fundamentais revisados, vamos agora aprimorar a precisão do seu conhecimento. A seção seguinte apresenta uma série de afirmações diretas. Sua tarefa é separar os fatos da ficção, garantindo que cada detalhe da sintaxe e estrutura das tabelas esteja cristalino em sua mente.
+
+2.0 Questões de Verdadeiro ou Falso
+
+2.1. Validação de Afirmações: Sintaxe e Estrutura
+
+Dominar a sintaxe é como aprender o vocabulário de um novo idioma: a precisão é fundamental. Nesta seção, vamos testar seu conhecimento factual com afirmações diretas sobre a estrutura e os elementos de tabelas que exploramos na aula. Analise cada declaração e determine se ela é verdadeira ou falsa. Este exercício é essencial para evitar erros comuns e construir código limpo e funcional.
+
+
+--------------------------------------------------------------------------------
+
+
+1. A tag correta para iniciar uma tabela é <tablet>. ( ) Verdadeiro ( ) Falso
+2. A tag <tr> é utilizada para definir uma linha da tabela. ( ) Verdadeiro ( ) Falso
+3. A tag <th> serve para inserir dados comuns, não os títulos das colunas. ( ) Verdadeiro ( ) Falso
+4. A primeira <tr> de uma tabela de dados é tipicamente usada para conter as células <th>. ( ) Verdadeiro ( ) Falso
+5. Para adicionar uma nova linha de informações, deve-se criar uma nova tag <tr>. ( ) Verdadeiro ( ) Falso
+6. <td> é a abreviação para "Table Header". ( ) Verdadeiro ( ) Falso
+7. O atributo border="1" na tag <table> cria uma borda com 1 pixel de espessura. ( ) Verdadeiro ( ) Falso
+8. O atributo width="100%" faz com que a tabela ocupe toda a largura disponível na página. ( ) Verdadeiro ( ) Falso
+9. CSS não pode ser utilizado para estilizar tabelas HTML. ( ) Verdadeiro ( ) Falso
+10. A tag <th> automaticamente centraliza o texto contido nela. ( ) Verdadeiro ( ) Falso
+11. A tag <td> alinha o texto à esquerda por padrão, antes de qualquer estilização CSS. ( ) Verdadeiro ( ) Falso
+12. Para adicionar uma nova coluna, basta adicionar uma tag <th> na primeira linha, sem alterar as outras linhas. ( ) Verdadeiro ( ) Falso
+13. Os atributos width e border são considerados atributos nativos da tag <table>. ( ) Verdadeiro ( ) Falso
+14. <td> e <th> são tags que devem ser colocadas diretamente dentro da tag <table>. ( ) Verdadeiro ( ) Falso
+15. A estrutura de uma tabela HTML é análoga a uma tabela em papel, com linhas e colunas. ( ) Verdadeiro ( ) Falso
+16. A tag <tr> significa "coluna da tabela". ( ) Verdadeiro ( ) Falso
+17. O conteúdo visível de uma tabela é definido entre as tags <table-content>. ( ) Verdadeiro ( ) Falso
+18. O exemplo da aula mostrou como adicionar uma coluna "Linguagem" à tabela. ( ) Verdadeiro ( ) Falso
+19. text-align: center é um atributo HTML, não uma propriedade CSS. ( ) Verdadeiro ( ) Falso
+20. A tag <td> é usada para os títulos e a <th> para os dados. ( ) Verdadeiro ( ) Falso
+21. Uma tabela pode ser criada sem a tag <tr>. ( ) Verdadeiro ( ) Falso
+22. A tag <table> por si só, sem tags aninhadas, não exibe nenhum conteúdo estruturado. ( ) Verdadeiro ( ) Falso
+23. O exemplo da aula utilizou os dados "João", "34 anos" e "95 kg". ( ) Verdadeiro ( ) Falso
+24. A tag <table-data> é o nome completo para a tag <td>. ( ) Verdadeiro ( ) Falso
+25. É possível ter múltiplas linhas de dados usando múltiplas tags <tr> com <td>s dentro. ( ) Verdadeiro ( ) Falso
+
+
+--------------------------------------------------------------------------------
+
+
+Ótimo trabalho na verificação dos fatos! Agora que a teoria está afiada, é hora de colocar as mãos no código. A próxima seção foca na aplicação prática, desafiando você a completar estruturas de tabela incompletas. Este é o momento de provar que você não apenas conhece as tags, mas sabe exatamente onde e como aplicá-las.
+
+3.0 Questões de Preenchimento de Código
+
+3.1. Aplicação Sintática: Completando Estruturas de Tabela
+
+A transição da teoria para a prática é onde o verdadeiro aprendizado acontece. Aqui, seu desafio é preencher as lacunas em diversos trechos de código HTML, demonstrando sua fluência na sintaxe de tabelas. O objetivo é testar sua capacidade de aplicar as tags e atributos corretos no contexto adequado, solidificando sua memória muscular de codificação.
+
+
+--------------------------------------------------------------------------------
+
+
+1. Complete a tag principal que inicia e finaliza uma tabela.
+2. Insira a tag que define a primeira linha da tabela.
+3. Complete as tags que definem as células de cabeçalho.
+4. Complete as tags que definem as células de dados.
+5. Insira o atributo correto para definir a borda da tabela.
+6. Insira o atributo correto para definir a largura da tabela.
+7. Complete a tag de célula de dados que está faltando.
+8. Complete com a tag e o atributo que definem uma tabela com borda de 1 pixel.
+9. Insira o valor que faz a tabela ocupar toda a largura disponível.
+10. Complete a tag que inicia uma nova linha de dados.
+11. Complete a tag de cabeçalho para a coluna "Peso".
+12. Complete a estrutura para adicionar a célula com o dado "95kg".
+13. Qual tag está faltando para criar a linha que conterá os dados de "Dimitri"?
+14. Complete a linha de cabeçalho com as tags de abertura e fechamento corretas.
+15. Complete a linha de dados com as tags que estão faltando.
+16. Complete a tag <table> com os atributos corretos para definir uma borda e uma largura de 50%.
+17. Preencha as lacunas para criar uma estrutura de tabela válida.
+18. Complete a tag da tabela com os valores corretos para a borda e a largura.
+19. Insira a tag correta para a célula de cabeçalho "Linguagem".
+20. Insira a tag correta para a célula de dados "HTML".
+21. Qual é a primeira tag que deve aparecer dentro de uma <table> para criar a primeira linha?
+22. Complete a estrutura com as tags corretas para o cabeçalho e uma célula de dados.
+23. Preencha as lacunas para estruturar corretamente esta tabela.
+24. Complete a declaração de uma tabela com 100% de largura.
+25. Complete a célula de dados que falta nesta linha de uma tabela nutricional.
+
+
+--------------------------------------------------------------------------------
+
+
+Você demonstrou um excelente domínio da sintaxe ao completar os trechos de código. Agora, vamos para o teste final de fluência: construir tabelas completas do zero. A seção a seguir eleva o desafio, exigindo que você traduza requisitos claros em código HTML funcional, exatamente como faria em um projeto real.
+
+4.0 Testes de Criação de Código
+
+4.1. Desafios Práticos: Construção de Tabelas Completas
+
+Chegamos ao ápice da nossa avaliação, onde você aplicará todo o conhecimento adquirido de forma integrada. Esta seção é o seu sandbox para simular tarefas de desenvolvimento do mundo real. Cada desafio exigirá que você construa tabelas completas a partir de um conjunto de especificações, testando sua habilidade de planejar e executar a estrutura de dados do início ao fim. Vamos construir!
+
+
+--------------------------------------------------------------------------------
+
+
+1. Crie uma tabela HTML completa, mas vazia, usando apenas a tag <table>.
+2. Crie uma tabela com uma única linha e uma única célula de cabeçalho contendo o texto "Produto".
+3. Crie uma tabela com uma única linha e uma única célula de dados contendo o texto "Notebook".
+4. Crie uma tabela com uma linha de cabeçalho contendo as colunas: "Nome" e "Idade".
+5. À tabela do exercício anterior, adicione uma linha de dados para "Dimitri", com "30" anos.
+6. Crie uma tabela completa com as colunas "Nome", "Idade" e "Peso".
+7. Adicione à tabela do exercício anterior a primeira linha de dados: "Dimitri", "30", "85kg".
+8. Adicione à tabela do exercício anterior uma segunda linha de dados para "João", com "34" anos e "95kg".
+9. Crie uma tabela e aplique o atributo necessário para que ela tenha uma borda de 1 pixel.
+10. Crie uma tabela e aplique o atributo para que ela ocupe 100% da largura da página.
+11. Crie uma tabela que tenha tanto uma borda de 1 pixel quanto 100% de largura.
+12. Crie a estrutura de uma tabela com as colunas "Nome", "Idade", "Peso" e "Linguagem", mas sem linhas de dados.
+13. Adicione os dados completos da tabela da aula: ("Dimitri", "30", "85kg", "HTML") e ("João", "34", "95kg", "CSS").
+14. Desafio da Aula: Tabela Nutricional Completa: Simule a tarefa proposta no final da Aula 09. Crie uma tabela nutricional completa para um produto à sua escolha (ex: pacote de bolachas). A estrutura deve conter:
+  * Uma linha de cabeçalho com as colunas: "Informação Nutricional", "Quantidade por porção" e "% Valor Diário".
+  * No mínimo três linhas de dados para nutrientes (ex: Calorias, Carboidratos, Proteínas), com valores fictícios.
+  * A tabela deve ter uma borda de 1 pixel e ocupar 100% da largura disponível.
+15. Crie uma tabela com 2 colunas ("País", "Capital") e 3 linhas de dados.
+16. Crie uma tabela com 4 colunas e 1 linha de dados.
+17. Crie uma tabela com 1 coluna ("Tarefas") e 5 linhas de dados.
+18. Crie uma tabela com borda de "1" e os cabeçalhos "ID", "Produto" e "Status".
+19. Adicione duas linhas de dados à tabela do exercício anterior.
+20. Crie uma tabela que ocupe 50% da largura da tela (use width="50%").
+21. Crie uma tabela com 3 colunas e 3 linhas de dados, e adicione o atributo border="1".
+22. Crie a tabela completa do exemplo da aula, com as colunas "Nome", "Idade", "Peso", "Linguagem" e os dados de Dimitri e João, aplicando width="100%" e border="1".
+23. Crie uma tabela de horários com 3 colunas ("Horário", "Segunda", "Terça") e 2 linhas de dados.
+24. Crie uma tabela com border="1" e adicione uma linha de cabeçalho e três linhas de dados. A primeira coluna deve conter nomes e a segunda, profissões.
+25. Construa uma tabela que ocupe 75% da largura da página e tenha uma borda. Ela deve ter duas colunas ("Produto", "Quantidade em Estoque") e quatro linhas de dados.
+
+
+--------------------------------------------------------------------------------
+
+
+Parabéns por concluir os desafios práticos! A autoavaliação é uma parte crucial do processo de aprendizagem. A seção final fornecerá o gabarito para que você possa verificar suas respostas, corrigir eventuais equívocos e reforçar os conceitos onde for necessário. Vamos conferir seu progresso.
+
+5.0 Gabarito de Respostas
+
+5.1. Verificação e Aprendizagem
+
+Chegou a hora de verificar seu trabalho. Esta seção contém o gabarito completo para as três primeiras partes da avaliação. Use estas respostas não apenas para corrigir, mas para entender o porquê de cada solução. A autoanálise é uma ferramenta poderosa para solidificar o conhecimento e transformar dúvidas em certezas. Vamos lá!
+
+5.1.1 Respostas: Múltipla Escolha
+
+1. C
+2. C
+3. D
+4. B
+5. B
+6. B
+7. B
+8. B
+9. B
+10. C
+11. C
+12. D
+13. B
+14. C
+15. B
+16. D
+17. B
+18. C
+19. B
+20. C
+21. C
+22. B
+23. B
+24. C
+25. B
+
+5.1.2 Respostas: Verdadeiro ou Falso
+
+1. Falso
+2. Verdadeiro
+3. Falso
+4. Verdadeiro
+5. Verdadeiro
+6. Falso
+7. Verdadeiro
+8. Verdadeiro
+9. Falso
+10. Verdadeiro
+11. Verdadeiro
+12. Falso
+13. Verdadeiro
+14. Falso
+15. Verdadeiro
+16. Falso
+17. Falso
+18. Verdadeiro
+19. Falso
+20. Falso
+21. Falso
+22. Verdadeiro
+23. Verdadeiro
+24. Falso
+25. Verdadeiro
+
+5.1.3 Respostas: Preenchimento de Código
+
+1. table
+2. tr
+3. th
+4. td
+5. border
+6. width
+7. <td>
+8. table border
+9. 100%
+10. <tr>
+11. <th>
+12. <td>
+13. <tr>
+14. tr, </tr>
+15. tr, <td>
+16. border, width
+17. <tr>, <td>, </td>
+18. 1, 100%
+19. <th>
+20. <td>
+21. <tr>
+22. th, th, <td>
+23. <table>, <tr>
+24. width
+25. <td>
+
+
+--------------------------------------------------------------------------------
+
+
+Nota sobre a Seção 4.0: As soluções para os 'Testes de Criação de Código' são abertas, permitindo variações no espaçamento ou na ordem dos atributos. Para validar seu trabalho, não busque uma correspondência exata, mas sim a correção estrutural. Verifique se você utilizou a hierarquia <table> > <tr> > <th>/<td> corretamente e se os atributos border e width foram aplicados conforme solicitado em cada desafio. Compare sua lógica com os exemplos construídos ao longo da Aula 09 para garantir que você dominou a estrutura fundamental.
+
