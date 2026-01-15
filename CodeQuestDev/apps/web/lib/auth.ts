@@ -46,6 +46,16 @@ export const authConfig: NextAuthConfig = {
             }
             return token;
         },
+        async signIn({ user, account, profile }) {
+            // Allow all sign ins
+            return true;
+        },
+        async redirect({ url, baseUrl }) {
+            // After login, redirect to dashboard
+            if (url.startsWith(baseUrl)) return url;
+            if (url.startsWith('/')) return `${baseUrl}${url}`;
+            return baseUrl + '/dashboard';
+        },
         authorized({ auth, request: { nextUrl } }) {
             const isLoggedIn = !!auth?.user;
             const isOnDashboard = nextUrl.pathname.startsWith('/dashboard');
@@ -62,7 +72,9 @@ export const authConfig: NextAuthConfig = {
     },
     session: {
         strategy: 'jwt',
+        maxAge: 30 * 24 * 60 * 60, // 30 days
     },
+    secret: process.env.AUTH_SECRET || process.env.NEXTAUTH_SECRET,
     trustHost: true,
 };
 
