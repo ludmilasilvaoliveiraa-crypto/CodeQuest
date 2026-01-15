@@ -78,80 +78,17 @@ export const CHALLENGE_TYPES = {
     },
 };
 
-// Mock data for development
-const MOCK_CHALLENGES: Challenge[] = [
-    {
-        id: '1',
-        type: 'speed_quiz',
-        title: 'Quiz Rápido - 10 Perguntas',
-        description: 'O primeiro a responder 10 perguntas vence!',
-        goal: 10,
-        reward: { xp: 150 },
-        challenger: {
-            id: 'me',
-            name: 'Você',
-            progress: 6,
-            completed: false,
-        },
-        opponent: {
-            id: '1',
-            name: 'Ana Silva',
-            progress: 4,
-            completed: false,
-        },
-        status: 'active',
-        expiresAt: new Date(Date.now() + 2 * 60 * 60 * 1000).toISOString(),
-        createdAt: new Date(Date.now() - 30 * 60 * 1000).toISOString(),
-    },
-    {
-        id: '2',
-        type: 'lessons',
-        title: 'Maratona - 5 Lições',
-        description: 'Complete 5 lições antes do seu amigo!',
-        goal: 5,
-        reward: { xp: 200, badge: 'challenger' },
-        challenger: {
-            id: '3',
-            name: 'Maria Oliveira',
-            progress: 5,
-            completed: true,
-            completedAt: new Date(Date.now() - 60 * 60 * 1000).toISOString(),
-        },
-        opponent: {
-            id: 'me',
-            name: 'Você',
-            progress: 3,
-            completed: false,
-        },
-        status: 'completed',
-        expiresAt: new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString(),
-        createdAt: new Date(Date.now() - 3 * 60 * 60 * 1000).toISOString(),
-    },
-];
-
-const MOCK_INVITES: ChallengeInvite[] = [
-    {
-        id: '1',
-        from: {
-            id: '2',
-            name: 'Carlos Santos',
-            level: 5,
-        },
-        type: 'accuracy',
-        goal: 10,
-        reward: { xp: 250 },
-        createdAt: new Date(Date.now() - 15 * 60 * 1000).toISOString(),
-        expiresAt: new Date(Date.now() + 2 * 60 * 60 * 1000).toISOString(),
-    },
-];
+// Mock data removed - will be replaced with real API calls
 
 // Service functions
 export async function getChallenges(): Promise<Challenge[]> {
-    return MOCK_CHALLENGES;
+    // TODO: Replace with API call to fetch real challenges
+    return [];
 }
 
 export async function getChallengeInvites(): Promise<ChallengeInvite[]> {
-    return MOCK_INVITES;
+    // TODO: Replace with API call to fetch real invites
+    return [];
 }
 
 export async function sendChallenge(
