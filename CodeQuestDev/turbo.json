@@ -10,7 +10,8 @@
     "NEXTAUTH_SECRET",
     "GOOGLE_CLIENT_ID",
     "GOOGLE_CLIENT_SECRET",
-    "JWT_SECRET"
+    "JWT_SECRET",
+    "FRONTEND_URL"
   ],
   "tasks": {
     "build": {
