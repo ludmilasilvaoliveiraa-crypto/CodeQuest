@@ -3,15 +3,63 @@
 
 import { useSession } from 'next-auth/react';
 import { redirect } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { NotificationSettings } from '@/components/settings/notification-settings';
+import { clearAllData } from '@/lib/storage';
 
 export default function SettingsPage() {
     const { data: session, status } = useSession();
+    const [isResetting, setIsResetting] = useState(false);
+
+    const handleResetData = async () => {
+        const confirmed = confirm(
+            '⚠️ ATENÇÃO! Esta ação irá apagar:\n\n' +
+            '• Todo seu progresso (XP, Level)\n' +
+            '• Todas as lições completadas\n' +
+            '• Todos os badges conquistados\n' +
+            '• Todo o histórico de atividades\n\n' +
+            'Esta ação é IRREVERSÍVEL!\n\n' +
+            'Deseja realmente continuar?'
+        );
+
+        if (!confirmed) return;
+
+        // Double confirm
+        const doubleConfirm = confirm(
+            '🚨 ÚLTIMA CHANCE!\n\n' +
+            'Tem CERTEZA ABSOLUTA que deseja resetar TODO o seu progresso?\n\n' +
+            'Digite OK para confirmar ou Cancelar para voltar.'
+        );
+
+        if (!doubleConfirm) return;
+
+        try {
+            setIsResetting(true);
+
+            // Clear IndexedDB
+            await clearAllData();
+
+            // Clear localStorage
+            localStorage.removeItem('codequest-progress');
+            localStorage.removeItem('flashcard-progress');
+            localStorage.removeItem('flashcard-stats');
+            localStorage.removeItem('onboarding-completed');
+
+            alert('✅ Todos os dados foram apagados com sucesso!\n\nA página será recarregada.');
+
+            // Reload page
+            window.location.reload();
+        } catch (error) {
+            console.error('Error resetting data:', error);
+            alert('❌ Erro ao resetar dados. Tente novamente.');
+        } finally {
+            setIsResetting(false);
+        }
+    };
 
     useEffect(() => {
         if (status === 'unauthenticated') {
@@ -102,13 +150,27 @@ export default function SettingsPage() {
 
                                 <div className="p-4 border-2 border-red-500 bg-red-50 dark:bg-red-950/20 rounded-sm hover:translate-x-1 transition-transform cursor-pointer group">
                                     <div className="flex items-center justify-between mb-2">
-                                        <h4 className="font-black uppercase text-lg text-red-600 dark:text-red-400">Zona de Perigo</h4>
+                                        <h4 className="font-black uppercase text-lg text-red-600 dark:text-red-400 ">Zona de Perigo</h4>
                                         <span className="text-2xl">☢️</span>
                                     </div>
                                     <p className="text-sm font-medium text-red-800/70 dark:text-red-300/70 mb-4">Ações irreversíveis para sua conta.</p>
-                                    <Button variant="outline" className="w-full border-2 border-red-500 text-red-600 hover:bg-red-600 hover:text-white font-bold uppercase">
-                                        Excluir Conta
-                                    </Button>
+
+                                    <div className="space-y-3">
+                                        <Button
+                                            onClick={handleResetData}
+                                            variant="outline"
+                                            className="w-full border-2 border-orange-500 text-orange-600 hover:bg-orange-600 hover:text-white font-bold uppercase"
+                                        >
+                                            Resetar Todo Progresso
+                                        </Button>
+
+                                        <Button
+                                            variant="outline"
+                                            className="w-full border-2 border-red-500 text-red-600 hover:bg-red-600 hover:text-white font-bold uppercase"
+                                        >
+                                            Excluir Conta
+                                        </Button>
+                                    </div>
                                 </div>
                             </CardContent>
                         </Card>
