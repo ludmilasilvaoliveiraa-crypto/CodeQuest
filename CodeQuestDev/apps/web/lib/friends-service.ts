@@ -35,74 +35,12 @@ export interface FriendActivity {
     createdAt: string;
 }
 
-// Mock data for development (will be replaced with API calls)
-const MOCK_FRIENDS: Friend[] = [
-    {
-        id: '1',
-        name: 'Ana Silva',
-        email: 'ana@example.com',
-        image: undefined,
-        level: 8,
-        xp: 2450,
-        streak: 12,
-        status: 'online',
-        lastActive: new Date().toISOString(),
-    },
-    {
-        id: '2',
-        name: 'Carlos Santos',
-        email: 'carlos@example.com',
-        image: undefined,
-        level: 5,
-        xp: 1200,
-        streak: 3,
-        status: 'offline',
-        lastActive: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
-    },
-    {
-        id: '3',
-        name: 'Maria Oliveira',
-        email: 'maria@example.com',
-        image: undefined,
-        level: 12,
-        xp: 4800,
-        streak: 45,
-        status: 'away',
-        lastActive: new Date(Date.now() - 30 * 60 * 1000).toISOString(),
-    },
-];
-
-const MOCK_ACTIVITIES: FriendActivity[] = [
-    {
-        id: '1',
-        friendId: '1',
-        friendName: 'Ana Silva',
-        type: 'lesson_completed',
-        data: { lessonName: 'Formulários HTML' },
-        createdAt: new Date(Date.now() - 10 * 60 * 1000).toISOString(),
-    },
-    {
-        id: '2',
-        friendId: '3',
-        friendName: 'Maria Oliveira',
-        type: 'streak_milestone',
-        data: { streakDays: 45 },
-        createdAt: new Date(Date.now() - 45 * 60 * 1000).toISOString(),
-    },
-    {
-        id: '3',
-        friendId: '2',
-        friendName: 'Carlos Santos',
-        type: 'badge_earned',
-        data: { badgeName: 'Estudante Dedicado' },
-        createdAt: new Date(Date.now() - 2 * 60 * 60 * 1000).toISOString(),
-    },
-];
-
+// Mock data removed - will be replaced with real API calls
 // Friend Service Functions
 export async function getFriends(): Promise<Friend[]> {
-    // TODO: Replace with API call
-    return MOCK_FRIENDS;
+    // TODO: Replace with API call to fetch real friends
+    // For now, return empty until real users add friends
+    return [];
 }
 
 export async function getFriendRequests(): Promise<FriendRequest[]> {
@@ -132,8 +70,9 @@ export async function removeFriend(friendId: string): Promise<void> {
 }
 
 export async function getFriendActivities(): Promise<FriendActivity[]> {
-    // TODO: Replace with API call
-    return MOCK_ACTIVITIES;
+    // TODO: Replace with API call to fetch real activities
+    // For now, return empty until real user activities exist
+    return [];
 }
 
 // Utility functions
