@@ -87,8 +87,8 @@ export default function FriendsPage() {
             id: session?.user?.id || 'me',
             name: session?.user?.name || 'Você',
             image: session?.user?.image || undefined,
-            xp: 1250, // Mock data
-            level: 5,
+            xp: 0, // Real XP will come from backend when implemented
+            level: 1,
             isCurrentUser: true,
         },
         ...friends.map(f => ({
