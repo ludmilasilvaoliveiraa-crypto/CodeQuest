@@ -8,19 +8,24 @@ import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { FriendCard, ActivityFeed, Leaderboard } from '@/components/social';
+import { FriendCard, FriendRequestCard, ActivityFeed, Leaderboard } from '@/components/social';
 import {
     getFriends,
     getFriendActivities,
+    getFriendRequests,
     sendFriendRequest,
+    acceptFriendRequest,
+    rejectFriendRequest,
     removeFriend,
     type Friend,
-    type FriendActivity
+    type FriendActivity,
+    type FriendRequest
 } from '@/lib/friends-service';
 
 export default function FriendsPage() {
     const { data: session, status } = useSession();
     const [friends, setFriends] = useState<Friend[]>([]);
+    const [friendRequests, setFriendRequests] = useState<FriendRequest[]>([]);
     const [activities, setActivities] = useState<FriendActivity[]>([]);
     const [email, setEmail] = useState('');
     const [isLoading, setIsLoading] = useState(true);
@@ -35,11 +40,13 @@ export default function FriendsPage() {
     useEffect(() => {
         async function loadData() {
             try {
-                const [friendsData, activitiesData] = await Promise.all([
+                const [friendsData, requestsData, activitiesData] = await Promise.all([
                     getFriends(),
+                    getFriendRequests(),
                     getFriendActivities(),
                 ]);
                 setFriends(friendsData);
+                setFriendRequests(requestsData);
                 setActivities(activitiesData);
             } catch (error) {
                 console.error('[Friends] Failed to load:', error);
@@ -78,6 +85,35 @@ export default function FriendsPage() {
     const handleChallenge = (friendId: string) => {
         // TODO: Implement challenge system
         alert('Sistema de desafios em breve!');
+    };
+
+    const handleAcceptRequest = async (requestId: string) => {
+        try {
+            await acceptFriendRequest(requestId);
+            // Reload data to reflect changes
+            const [friendsData, requestsData] = await Promise.all([
+                getFriends(),
+                getFriendRequests(),
+            ]);
+            setFriends(friendsData);
+            setFriendRequests(requestsData);
+            setMessage({ type: 'success', text: 'Solicitação aceita!' });
+        } catch (error) {
+            setMessage({ type: 'error', text: 'Erro ao aceitar solicitação' });
+        }
+        setTimeout(() => setMessage(null), 3000);
+    };
+
+    const handleRejectRequest = async (requestId: string) => {
+        try {
+            await rejectFriendRequest(requestId);
+            // Remove from list
+            setFriendRequests(friendRequests.filter(r => r.id !== requestId));
+            setMessage({ type: 'success', text: 'Solicitação rejeitada' });
+        } catch (error) {
+            setMessage({ type: 'error', text: 'Erro ao rejeitar solicitação' });
+        }
+        setTimeout(() => setMessage(null), 3000);
     };
 
     // Create leaderboard from friends + current user
@@ -155,6 +191,25 @@ export default function FriendsPage() {
                                 )}
                             </CardContent>
                         </Card>
+
+                        {/* Friend Requests */}
+                        {friendRequests.length > 0 && (
+                            <div>
+                                <h2 className="text-2xl font-black uppercase tracking-tighter mb-6 flex items-center gap-2">
+                                    📬 Solicitações <span className="text-sm bg-yellow-500 text-black px-2 py-1 rounded-full align-middle">{friendRequests.length}</span>
+                                </h2>
+                                <div className="space-y-4">
+                                    {friendRequests.map(request => (
+                                        <FriendRequestCard
+                                            key={request.id}
+                                            request={request}
+                                            onAccept={handleAcceptRequest}
+                                            onReject={handleRejectRequest}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+                        )}
 
                         {/* Friends List */}
                         <div>

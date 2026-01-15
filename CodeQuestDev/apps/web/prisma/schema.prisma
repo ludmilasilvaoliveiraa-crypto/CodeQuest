@@ -1,5 +1,5 @@
 // CodeQuest - Prisma Schema
-// Database models for Bugs and Feature Requests
+// Database models for Authentication, Friends System, Bugs and Feature Requests
 
 generator client {
   provider = "prisma-client-js"
@@ -9,6 +9,129 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+// ============================================
+// NextAuth.js Models
+// ============================================
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+
+  // Gamification fields
+  level      Int      @default(1)
+  xp         Int      @default(0)
+  streak     Int      @default(0)
+  lastActive DateTime @default(now())
+
+  // Relations
+  accounts Account[]
+  sessions Session[]
+
+  // Friends relations
+  friendsInitiated Friendship[]    @relation("UserInitiatedFriendships")
+  friendsReceived  Friendship[]    @relation("UserReceivedFriendships")
+  sentRequests     FriendRequest[] @relation("SentRequests")
+  receivedRequests FriendRequest[] @relation("ReceivedRequests")
+  activities       UserActivity[]
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Account {
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([provider, providerAccountId])
+}
+
+model Session {
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+
+  @@id([identifier, token])
+}
+
+// ============================================
+// Friends System Models
+// ============================================
+
+model Friendship {
+  id       String @id @default(cuid())
+  userId   String
+  friendId String
+
+  user   User @relation("UserInitiatedFriendships", fields: [userId], references: [id], onDelete: Cascade)
+  friend User @relation("UserReceivedFriendships", fields: [friendId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@unique([userId, friendId])
+  @@index([userId])
+  @@index([friendId])
+}
+
+model FriendRequest {
+  id     String @id @default(cuid())
+  fromId String
+  toId   String
+  status String @default("pending") // pending, accepted, rejected
+
+  from User @relation("SentRequests", fields: [fromId], references: [id], onDelete: Cascade)
+  to   User @relation("ReceivedRequests", fields: [toId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([fromId, toId])
+  @@index([toId, status])
+}
+
+model UserActivity {
+  id     String @id @default(cuid())
+  userId String
+  type   String // lesson_completed, badge_earned, level_up, challenge_won, streak_milestone
+  data   Json // Flexible data for different activity types
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+
+  @@index([userId, createdAt])
+}
+
+// ============================================
+// Bug Tracking Models
+// ============================================
 
 model Bug {
   id          String   @id @default(uuid())

@@ -38,41 +38,132 @@ export interface FriendActivity {
 // Mock data removed - will be replaced with real API calls
 // Friend Service Functions
 export async function getFriends(): Promise<Friend[]> {
-    // TODO: Replace with API call to fetch real friends
-    // For now, return empty until real users add friends
-    return [];
+    try {
+        const response = await fetch('/api/friends', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch friends');
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error('[Friends Service] Error fetching friends:', error);
+        return [];
+    }
 }
 
 export async function getFriendRequests(): Promise<FriendRequest[]> {
-    // TODO: Replace with API call
-    return [];
+    try {
+        const response = await fetch('/api/friends/requests', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch friend requests');
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error('[Friends Service] Error fetching requests:', error);
+        return [];
+    }
 }
 
 export async function sendFriendRequest(email: string): Promise<{ success: boolean; message: string }> {
-    // TODO: Replace with API call
-    console.log('[Friends] Sending request to:', email);
-    return { success: true, message: 'Solicitação enviada!' };
+    try {
+        const response = await fetch('/api/friends/request', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email }),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+            return { success: false, message: data.error || 'Erro ao enviar solicitação' };
+        }
+
+        return { success: true, message: data.message };
+    } catch (error) {
+        console.error('[Friends Service] Error sending request:', error);
+        return { success: false, message: 'Erro ao enviar solicitação' };
+    }
 }
 
 export async function acceptFriendRequest(requestId: string): Promise<void> {
-    // TODO: Replace with API call
-    console.log('[Friends] Accepting request:', requestId);
+    try {
+        const response = await fetch('/api/friends/accept', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ requestId }),
+        });
+
+        if (!response.ok) {
+            const data = await response.json();
+            throw new Error(data.error || 'Failed to accept request');
+        }
+    } catch (error) {
+        console.error('[Friends Service] Error accepting request:', error);
+        throw error;
+    }
 }
 
 export async function rejectFriendRequest(requestId: string): Promise<void> {
-    // TODO: Replace with API call
-    console.log('[Friends] Rejecting request:', requestId);
+    try {
+        const response = await fetch('/api/friends/reject', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ requestId }),
+        });
+
+        if (!response.ok) {
+            const data = await response.json();
+            throw new Error(data.error || 'Failed to reject request');
+        }
+    } catch (error) {
+        console.error('[Friends Service] Error rejecting request:', error);
+        throw error;
+    }
 }
 
 export async function removeFriend(friendId: string): Promise<void> {
-    // TODO: Replace with API call
-    console.log('[Friends] Removing friend:', friendId);
+    try {
+        const response = await fetch('/api/friends', {
+            method: 'DELETE',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ friendId }),
+        });
+
+        if (!response.ok) {
+            const data = await response.json();
+            throw new Error(data.error || 'Failed to remove friend');
+        }
+    } catch (error) {
+        console.error('[Friends Service] Error removing friend:', error);
+        throw error;
+    }
 }
 
 export async function getFriendActivities(): Promise<FriendActivity[]> {
-    // TODO: Replace with API call to fetch real activities
-    // For now, return empty until real user activities exist
-    return [];
+    try {
+        const response = await fetch('/api/friends/activities', {
+            method: 'GET',
+            headers: { 'Content-Type': 'application/json' },
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to fetch friend activities');
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error('[Friends Service] Error fetching activities:', error);
+        return [];
+    }
 }
 
 // Utility functions
