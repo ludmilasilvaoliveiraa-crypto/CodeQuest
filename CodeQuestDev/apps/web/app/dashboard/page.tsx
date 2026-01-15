@@ -16,15 +16,15 @@ export default async function DashboardPage() {
 
     const user = session.user;
 
-    // Mock data (will come from database)
+    // User stats (will load from IndexedDB/API in the future)
     const stats = {
-        xp: 1250,
-        level: 5,
-        streak: 7,
-        lessonsCompleted: 5,
+        xp: 0,
+        level: 1,
+        streak: 0,
+        lessonsCompleted: 0,
         totalLessons: 15,
-        accuracy: 87,
-        badges: 4
+        accuracy: 0,
+        badges: 0
     };
 
     return (
