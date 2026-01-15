@@ -51,7 +51,7 @@ export default function ProfilePage() {
             <div className="max-w-4xl mx-auto space-y-8">
                 {/* Profile Header */}
                 <Card className="border-2 border-black dark:border-zinc-700 neo-shadow overflow-hidden">
-                    <div className="h-32 bg-primary border-b-2 border-black relative">
+                    <div className="h-32 bg-gradient-to-r from-zinc-800 to-zinc-900 dark:from-zinc-900 dark:to-black border-b-2 border-black relative">
                         <div className="absolute -bottom-12 left-8">
                             <Avatar className="h-32 w-32 border-4 border-black dark:border-zinc-500 shadow-[4px_4px_0px_0px_#000]">
                                 <AvatarImage src={user?.image || ''} alt={user?.name || 'User'} className="object-cover" />
@@ -158,7 +158,7 @@ export default function ProfilePage() {
                             <CardContent>
                                 <div className="grid grid-cols-4 md:grid-cols-8 gap-2">
                                     {earnedBadges.slice(0, 8).map(badge => (
-                                        <div key={badge.id} className="aspect-square bg-zinc-100 border-2 border-black flex items-center justify-center text-2xl" title={badge.name['pt-BR']}>
+                                        <div key={badge.id} className="aspect-square bg-card border-2 border-black flex items-center justify-center text-2xl" title={badge.name['pt-BR']}>
                                             {badge.icon}
                                         </div>
                                     ))}
@@ -195,7 +195,7 @@ export default function ProfilePage() {
                                 <ScrollArea className="h-full pr-4">
                                     <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                                         {earnedBadges.map(badge => (
-                                            <div key={badge.id} className="border-2 border-black p-4 rounded-sm bg-green-50 hover:bg-green-100 transition-colors text-center shadow-[4px_4px_0px_#22c55e]">
+                                            <div key={badge.id} className="border-2 border-black p-4 rounded-sm bg-card hover:bg-accent transition-colors text-center shadow-[4px_4px_0px_#22c55e]">
                                                 <div className="text-5xl mb-3">{badge.icon}</div>
                                                 <h3 className="font-black uppercase text-sm mb-1">{badge.name['pt-BR']}</h3>
                                                 <p className="text-xs text-muted-foreground font-medium leading-tight">{badge.description['pt-BR']}</p>
