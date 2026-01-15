@@ -39,3 +39,23 @@ export async function POST(req: Request) {
         return NextResponse.json({ error: 'Failed to create feature request' }, { status: 500 });
     }
 }
+
+export async function PATCH(req: Request) {
+    try {
+        const body = await req.json();
+        const { id, status } = body;
+
+        if (!id || !status) {
+            return NextResponse.json({ error: 'ID and status are required' }, { status: 400 });
+        }
+
+        const updatedFeature = await prisma.featureRequest.update({
+            where: { id },
+            data: { status },
+        });
+
+        return NextResponse.json(updatedFeature);
+    } catch (error) {
+        return NextResponse.json({ error: 'Failed to update feature' }, { status: 500 });
+    }
+}
