@@ -922,23 +922,49 @@ export const CSS_BOX_MODEL: LearningModule = {
             xpReward: 120,
             estimatedTime: 18,
             content: {
-                introduction: 'Todo elemento HTML é uma "caixa" composta por: conteúdo, padding, border e margin. Entender o Box Model é essencial.',
+                introduction: 'Todo elemento HTML é uma "caixa" composta por: conteúdo, padding, border e margin. Entender o Box Model é fundamental para layouts precisos. Com box-sizing: border-box, o cálculo de tamanhos fica muito mais intuitivo.',
                 sections: [
                     {
                         title: 'Componentes do Box Model',
-                        text: 'Content: o conteúdo do elemento. Padding: espaço interno. Border: borda ao redor. Margin: espaço externo.',
-                        code: '.box {\n  width: 200px;\n  padding: 20px;\n  border: 2px solid black;\n  margin: 10px;\n}',
-                    },
-                    {
-                        title: 'Width e Height',
-                        text: 'Define a largura e altura do conteúdo. Por padrão, padding e border são adicionados.',
-                        code: 'div {\n  width: 100%;\n  max-width: 800px;\n  height: auto;\n  min-height: 200px;\n}',
+                        text: 'De dentro para fora: Content (conteúdo), Padding (espaço interno), Border (borda) e Margin (espaço externo). DevTools mostra isso visualmente.',
+                        code: '.box {\n  /* Content: área do conteúdo */\n  width: 200px;\n  height: 100px;\n  \n  /* Padding: espaço interno */\n  padding: 20px;\n  \n  /* Border: borda ao redor */\n  border: 2px solid #333;\n  \n  /* Margin: espaço externo */\n  margin: 10px;\n}\n\n/* Largura total (content-box padrão):\n   200 + 20*2 + 2*2 + 10*2 = 264px\n   \n   Com border-box:\n   200px (padding e border inclusos) + 20px margin = 220px */\n',
                     },
                     {
                         title: 'Box-Sizing',
-                        text: 'box-sizing: border-box inclui padding e border no cálculo de width/height.',
-                        code: '* {\n  box-sizing: border-box;\n}\n\n.card {\n  width: 300px; /* inclui padding e border */\n  padding: 20px;\n}',
+                        text: 'box-sizing muda como width/height são calculados. content-box (padrão): só conteúdo. border-box: inclui padding e border. Sempre use border-box!',
+                        code: '/* Reset universal (RECOMENDADO) */\n*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\n/* Diferença prática */\n.content-box {\n  box-sizing: content-box; /* padrão */\n  width: 200px;\n  padding: 20px;\n  /* Largura real: 240px! */\n}\n\n.border-box {\n  box-sizing: border-box;\n  width: 200px;\n  padding: 20px;\n  /* Largura real: 200px ✓ */\n}\n\n/* Por isso border-box é melhor:\n   width: 100% funciona sem "estourar" */\n.full-width {\n  width: 100%;\n  padding: 20px; /* continua 100% */\n}',
                     },
+                    {
+                        title: 'Width, Height e Limites',
+                        text: 'Use min/max-width e min/max-height para layouts responsivos. auto deixa o navegador calcular. Porcentagens são relativas ao pai.',
+                        code: '.container {\n  width: 100%;          /* 100% do pai */\n  max-width: 1200px;    /* nunca maior que */\n  min-width: 320px;     /* nunca menor que */\n  margin: 0 auto;       /* centraliza */\n}\n\n.card {\n  width: auto;          /* calcula automaticamente */\n  height: auto;         /* expande com conteúdo */\n  min-height: 200px;    /* pelo menos 200px */\n  max-height: 80vh;     /* máximo 80% da viewport */\n}\n\n/* Cuidado com height: 100% */\n.fill-parent {\n  height: 100%;  /* só funciona se pai tiver height definido! */\n}\n\n/* Alternativa: viewport units */\n.full-screen {\n  height: 100vh;  /* 100% da viewport */\n  width: 100vw;   /* 100% da viewport */\n}',
+                    },
+                    {
+                        title: 'Overflow',
+                        text: 'overflow controla o que acontece quando conteúdo é maior que a caixa. visible (padrão), hidden, scroll, auto. overflow-x e overflow-y para controle separado.',
+                        code: '.scrollable {\n  width: 300px;\n  height: 200px;\n  overflow: auto;  /* scroll se necessário */\n}\n\n.hidden {\n  overflow: hidden;  /* corta conteúdo */\n}\n\n.always-scroll {\n  overflow: scroll;  /* sempre mostra scrollbar */\n}\n\n/* Controle separado */\n.horizontal-scroll {\n  overflow-x: auto;\n  overflow-y: hidden;\n  white-space: nowrap;  /* evita quebra de linha */\n}\n\n/* Texto com ellipsis */\n.truncate {\n  width: 200px;\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis; /* ... no fim */\n}\n\n/* Scroll suave */\nhtml {\n  scroll-behavior: smooth;\n}',
+                    },
+                    {
+                        title: 'Display Types',
+                        text: 'display define como o elemento se comporta. block ocupa linha inteira, inline fica na linha, inline-block combina ambos, none esconde.',
+                        code: '/* Block: ocupa linha toda, aceita width/height */\ndiv, p, h1, section { display: block; }\n\n/* Inline: fica na linha, NÃO aceita width/height */\nspan, a, strong { display: inline; }\n\n/* Inline-block: combo! fica na linha + aceita dimensões */\n.badge {\n  display: inline-block;\n  width: 100px;\n  height: 30px;\n  padding: 5px;\n}\n\n/* None: remove do fluxo completamente */\n.hidden {\n  display: none;  /* não ocupa espaço */\n}\n\n/* vs visibility: hidden */\n.invisible {\n  visibility: hidden;  /* esconde mas OCUPA espaço */\n}\n\n/* Modernos: flex e grid */\n.container {\n  display: flex;  /* ou grid */\n}',
+                    },
+                    {
+                        title: 'Margin Collapse',
+                        text: 'Margins verticais de elementos adjacentes "colapsam" - apenas o maior é aplicado. Isso NÃO ocorre com padding, borders, ou em flex/grid.',
+                        code: '/* Margin collapse */\n.box1 {\n  margin-bottom: 30px;\n}\n.box2 {\n  margin-top: 20px;\n}\n/* Espaço entre eles: 30px (não 50px!) */\n\n/* Como evitar collapse */\n\n/* 1. Use flexbox/grid */\n.parent {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;  /* espaçamento consistente */\n}\n\n/* 2. Adicione padding ao pai */\n.parent {\n  padding-top: 1px;  /* quebra o collapse */\n}\n\n/* 3. Use border (invisível) */\n.parent {\n  border-top: 1px solid transparent;\n}\n\n/* Margin negativo (útil para overlaps) */\n.overlap {\n  margin-top: -20px;  /* sobe 20px */\n}',
+                    },
+                    {
+                        title: 'aspect-ratio e Dimensionamento Moderno',
+                        text: 'aspect-ratio mantém proporção (ex: 16/9 para vídeos). object-fit controla como imagens preenchem seu container. Recursos modernos e poderosos!',
+                        code: '/* aspect-ratio - proporção fixa */\n.video {\n  width: 100%;\n  aspect-ratio: 16 / 9;  /* mantém proporção */\n}\n\n.square {\n  width: 200px;\n  aspect-ratio: 1;  /* quadrado */\n}\n\n/* object-fit para imagens */\n.cover {\n  width: 300px;\n  height: 200px;\n  object-fit: cover;     /* preenche, corta se necessário */\n  object-position: center; /* centraliza o corte */\n}\n\n.contain {\n  object-fit: contain;   /* mostra tudo, pode ter espaço */\n}\n\n/* Largura intrínseca */\n.intrinsic {\n  width: fit-content;    /* tamanho do conteúdo */\n  width: min-content;    /* menor largura possível */\n  width: max-content;    /* sem quebra de linha */\n}\n\n/* Container queries (futuro) */\n.card {\n  container-type: inline-size;\n}',
+                    },
+                ],
+                tips: [
+                    'Sempre use box-sizing: border-box globalmente',
+                    'max-width: 100% em imagens evita overflow',
+                    'Margin collapse só ocorre verticalmente',
+                    'Use gap em flex/grid em vez de margin para espaçamento',
                 ],
             },
             quiz: [

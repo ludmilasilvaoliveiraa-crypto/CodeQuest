@@ -320,28 +320,49 @@ export const PHP_TIPOS: LearningModule = {
             xpReward: 120,
             estimatedTime: 18,
             content: {
-                introduction: 'PHP suporta vários tipos de dados: String, Integer, Float, Boolean, Array, Object e NULL.',
+                introduction: 'PHP suporta vários tipos de dados nativos. Os tipos primitivos incluem String, Integer, Float e Boolean. Tipos compostos são Array e Object. E há também NULL. PHP é fracamente tipado, convertendo automaticamente entre tipos quando necessário.',
                 sections: [
                     {
-                        title: 'String',
-                        text: 'Texto entre aspas simples ou duplas.',
-                        code: '<?php\n$texto = "Olá, mundo!";\n$outra = \'Aspas simples\';\necho strlen($texto); // 12\necho strtoupper($texto); // OLÁÁÁÁÁÁÁ, MUNDO!\n?>',
+                        title: 'Strings e Métodos',
+                        text: 'Strings são sequências de caracteres. PHP tem dezenas de funções para manipular strings. strlen() para tamanho, substr() para fatiar, str_replace() para substituir.',
+                        code: '<?php\n$texto = "Olá, Mundo!";\n\n// Tamanho e posição\necho strlen($texto);         // 13\necho strpos($texto, "Mundo"); // 5\n\n// Transformações\necho strtoupper($texto);     // OLÁ, MUNDO!\necho strtolower($texto);     // olá, mundo!\necho ucfirst("ola");         // Ola\necho ucwords("ola mundo");   // Ola Mundo\n\n// Fatiar e substituir\necho substr($texto, 0, 3);   // Olá\necho str_replace("Mundo", "PHP", $texto); // Olá, PHP!\n\n// Dividir e juntar\n$partes = explode(",", "a,b,c"); // ["a","b","c"]\n$junto = implode("-", $partes);  // "a-b-c"\n\n// Limpar espaços\necho trim("  texto  ");      // "texto"\n?>',
                     },
                     {
-                        title: 'Números',
-                        text: 'Integer (inteiros) e Float (decimais).',
-                        code: '<?php\n$inteiro = 42;\n$decimal = 3.14;\n$negativo = -10;\necho $inteiro + $decimal; // 45.14\n?>',
+                        title: 'Números: Integer e Float',
+                        text: 'Integer são números inteiros, Float são decimais. PHP converte automaticamente entre eles. Use funções como abs(), round(), ceil(), floor() para manipulação.',
+                        code: '<?php\n// Inteiros\n$int = 42;\n$negativo = -10;\n$hex = 0xFF;     // 255 em hexadecimal\n$bin = 0b1010;   // 10 em binário\n\n// Floats (decimais)\n$preco = 19.99;\n$cientifico = 2.5e3;  // 2500\n\n// Operações\necho abs(-5);         // 5\necho round(3.7);      // 4\necho ceil(3.1);       // 4\necho floor(3.9);      // 3\necho pow(2, 3);       // 8\necho sqrt(16);        // 4\necho max(1, 5, 3);    // 5\necho min(1, 5, 3);    // 1\n\n// Formatação\necho number_format(1234.56, 2, ",", "."); // 1.234,56\n\n// Verificações\nis_int($int);      // true\nis_float($preco);  // true\nis_numeric("42");  // true\n?>',
                     },
                     {
-                        title: 'Boolean',
-                        text: 'Verdadeiro (true) ou falso (false).',
-                        code: '<?php\n$ativo = true;\n$logado = false;\nif ($ativo) {\n  echo "Está ativo";\n}\n?>',
+                        title: 'Boolean e NULL',
+                        text: 'Boolean tem dois valores: true e false. NULL representa ausência de valor. Valores "falsy": false, 0, 0.0, "", "0", [], null. Todo o resto é "truthy".',
+                        code: '<?php\n// Boolean\n$ativo = true;\n$logado = false;\n\n// Comparações retornam boolean\n$maior = (10 > 5);   // true\n$igual = (1 == "1"); // true (comparação fraca)\n$identico = (1 === "1"); // false (comparação estrita)\n\n// NULL\n$nulo = null;\n$indefinido;  // também é null\n\n// Verificações\nis_null($nulo);     // true\nisset($nulo);       // false\nempty($nulo);       // true\n\n// Valores Falsy (avaliados como false)\n$falsy = [\n  false,    // óbvio\n  0,        // zero int\n  0.0,      // zero float\n  "",       // string vazia\n  "0",      // string "0"\n  [],       // array vazio\n  null      // nulo\n];\n\nforeach ($falsy as $v) {\n  if (!$v) echo "falsy! ";\n}\n?>',
                     },
                     {
-                        title: 'Array',
-                        text: 'Lista de valores indexados ou associativos.',
-                        code: '<?php\n$frutas = ["maçã", "banana", "laranja"];\necho $frutas[0]; // maçã\n\n$pessoa = [\n  "nome" => "Maria",\n  "idade" => 30\n];\necho $pessoa["nome"]; // Maria\n?>',
+                        title: 'Arrays Indexados',
+                        text: 'Arrays indexados usam índices numéricos começando em 0. Crie com [] ou array(). Adicione com [], remova com unset(). Itere com foreach.',
+                        code: '<?php\n// Criar arrays\n$frutas = ["maçã", "banana", "laranja"];\n$numeros = array(1, 2, 3, 4, 5);\n\n// Acessar\necho $frutas[0];  // maçã\necho $frutas[2];  // laranja\n\n// Adicionar\n$frutas[] = "uva";           // adiciona no final\narray_push($frutas, "kiwi"); // também adiciona\narray_unshift($frutas, "morango"); // no início\n\n// Remover\nunset($frutas[1]);           // remove índice 1\narray_pop($frutas);          // remove último\narray_shift($frutas);        // remove primeiro\n\n// Funções úteis\necho count($frutas);         // tamanho\nprint_r($frutas);            // debug\n\n// Iterar\nforeach ($frutas as $fruta) {\n  echo $fruta . "\\n";\n}\n\nforeach ($frutas as $indice => $fruta) {\n  echo "$indice: $fruta\\n";\n}\n?>',
                     },
+                    {
+                        title: 'Arrays Associativos',
+                        text: 'Arrays associativos usam chaves string com =>. Perfeitos para representar objetos/registros. Chaves são únicas - repetir sobrescreve.',
+                        code: '<?php\n// Criar\n$pessoa = [\n  "nome" => "Maria",\n  "idade" => 30,\n  "email" => "maria@email.com"\n];\n\n// Acessar\necho $pessoa["nome"];  // Maria\necho $pessoa["idade"]; // 30\n\n// Modificar\n$pessoa["idade"] = 31;\n$pessoa["telefone"] = "1234-5678";  // adiciona\n\n// Verificar chave\nif (isset($pessoa["email"])) {\n  echo "Tem email";\n}\nif (array_key_exists("cpf", $pessoa)) {\n  echo "Tem CPF";\n}\n\n// Iterar\nforeach ($pessoa as $chave => $valor) {\n  echo "$chave: $valor\\n";\n}\n\n// Funções úteis\n$chaves = array_keys($pessoa);   // ["nome", "idade", ...]\n$valores = array_values($pessoa); // ["Maria", 30, ...]\n$existe = in_array("Maria", $pessoa); // true\n?>',
+                    },
+                    {
+                        title: 'Funções de Array',
+                        text: 'PHP tem muitas funções para arrays: sort/rsort ordenam, array_map/filter transformam, array_merge junta, array_slice fatia. Domine essas funções!',
+                        code: '<?php\n$nums = [3, 1, 4, 1, 5, 9];\n\n// Ordenação\nsort($nums);   // [1, 1, 3, 4, 5, 9] crescente\nrsort($nums);  // [9, 5, 4, 3, 1, 1] decrescente\n\n// Associativos\n$arr = ["b" => 2, "a" => 1];\nasort($arr);   // ordena por valor\nksort($arr);   // ordena por chave\n\n// Transformar\n$dobro = array_map(fn($n) => $n * 2, $nums);\n$pares = array_filter($nums, fn($n) => $n % 2 == 0);\n$soma = array_reduce($nums, fn($acc, $n) => $acc + $n, 0);\n\n// Combinar e fatiar\n$merged = array_merge([1, 2], [3, 4]); // [1,2,3,4]\n$slice = array_slice($nums, 1, 3);     // 3 itens a partir do índice 1\n$unique = array_unique([1, 1, 2, 3]);  // [1, 2, 3]\n\n// Buscar\n$pos = array_search(5, $nums);  // índice do 5\n$tem = in_array(5, $nums);      // true\n\n// Reverter e embaralhar\n$rev = array_reverse($nums);\nshuffle($nums);  // ordem aleatória\n?>',
+                    },
+                    {
+                        title: 'Type Juggling e Comparações',
+                        text: 'PHP converte tipos automaticamente (type juggling). Use === para comparação estrita (valor E tipo). == faz comparação fraca e pode surpreender.',
+                        code: '<?php\n// Type juggling (conversão automática)\n$a = "5";      // string\n$b = 10;\necho $a + $b;  // 15 (string vira número)\n\n// Comparação fraca (==) - converte antes\nvar_dump(1 == "1");     // true\nvar_dump(0 == "hello"); // true! (string vira 0)\nvar_dump(null == false); // true\n\n// Comparação estrita (===) - tipo E valor\nvar_dump(1 === "1");    // false (tipos diferentes)\nvar_dump(0 === false);  // false\n\n// Spaceship operator (<=>)\necho 1 <=> 2;  // -1 (menor)\necho 2 <=> 2;  //  0 (igual)\necho 3 <=> 2;  //  1 (maior)\n\n// Null coalescing\n$nome = $_GET["nome"] ?? "Anônimo";\n\n// Null safe operator (PHP 8+)\n$length = $user?->getName()?->length();\n\n// DICA: Sempre use === para comparações!\n?>',
+                    },
+                ],
+                tips: [
+                    'Use === em vez de == para evitar surpresas',
+                    'array_map e array_filter são muito úteis',
+                    'isset() vs empty(): isset verifica se existe, empty se está vazio',
+                    'Strings com aspas duplas interpretam variáveis',
                 ],
             },
             quiz: [
