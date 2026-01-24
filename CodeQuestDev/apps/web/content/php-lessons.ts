@@ -17,31 +17,53 @@ export const PHP_FUNDAMENTOS: LearningModule = {
         {
             id: 'intro-php',
             title: 'Introdução ao PHP',
-            description: 'O que é PHP e como ele funciona',
-            xpReward: 100,
-            estimatedTime: 15,
+            description: 'O que é PHP, como funciona no servidor e por que é popular',
+            xpReward: 150,
+            estimatedTime: 25,
             content: {
-                introduction: 'PHP (PHP: Hypertext Preprocessor) é uma linguagem de script do lado do servidor usada para desenvolvimento web.',
+                introduction: 'PHP (PHP: Hypertext Preprocessor) é a linguagem de script do lado do servidor mais popular da web. Diferente de JavaScript que roda no navegador, PHP é executado no servidor e gera HTML dinamicamente. WordPress, Facebook, Wikipedia e milhões de sites usam PHP. É gratuito, open source e fácil de aprender.',
                 sections: [
                     {
                         title: 'O que é PHP?',
-                        text: 'PHP é uma linguagem de programação popular para desenvolvimento web. Roda no servidor e gera HTML dinâmico. É gratuito, open source e funciona em diversos sistemas operacionais.',
+                        text: 'PHP é uma linguagem de programação criada especificamente para desenvolvimento web. Roda no servidor (não no navegador), processa requisições, acessa bancos de dados e gera páginas HTML dinâmicas. O nome é um acrônimo recursivo: PHP Hypertext Preprocessor.',
+                        code: '<?php\n// PHP roda no servidor\n// O usuário NUNCA vê o código PHP\n// Ele só recebe o HTML gerado\n\n$nome = "Maria";\necho "<h1>Olá, $nome!</h1>";\n\n// O navegador recebe apenas:\n// <h1>Olá, Maria!</h1>\n?>',
+                    },
+                    {
+                        title: 'Por que usar PHP?',
+                        text: 'PHP é popular por várias razões: é gratuito e open source, fácil de aprender, roda em qualquer servidor (Linux, Windows, Mac), tem excelente integração com MySQL e outras bases de dados, possui grande comunidade e documentação, e alimenta mais de 75% dos sites da web.',
+                        code: '<?php\n// PHP pode fazer muitas coisas:\n\n// 1. Gerar conteúdo dinâmico\necho "Hoje é " . date("d/m/Y");\n\n// 2. Acessar banco de dados\n$usuarios = buscarUsuarios();\n\n// 3. Processar formulários\n$email = $_POST["email"];\n\n// 4. Gerenciar sessões (login)\nsession_start();\n$_SESSION["usuario"] = $email;\n\n// 5. Enviar emails\nmail($email, "Assunto", "Mensagem");\n?>',
                     },
                     {
                         title: 'Sintaxe Básica',
-                        text: 'Código PHP fica entre <?php e ?>. Todo comando termina com ponto e vírgula.',
-                        code: '<?php\n  echo "Olá, mundo!";\n?>',
+                        text: 'Código PHP fica entre as tags <?php e ?>. Todo comando termina com ponto e vírgula (;). PHP é case-sensitive para variáveis ($nome ≠ $Nome), mas não para funções. Arquivos PHP têm extensão .php.',
+                        code: '<?php\n// Arquivo: index.php\n\n// Comandos terminam com ;\necho "Olá, mundo!";\nprint "Também funciona";\n\n// Variáveis são case-sensitive\n$nome = "Ana";\n$Nome = "João";  // Variável diferente!\n\n// Funções NÃO são case-sensitive\nECHO "funciona";  // Funciona, mas evite\necho "melhor";    // Padrão: minúsculas\n?>',
                     },
                     {
                         title: 'Comentários',
-                        text: 'PHP suporta comentários de linha única (//) e múltiplas linhas (/* */).',
-                        code: '<?php\n// Comentário de linha\n/* Comentário\n   de múltiplas\n   linhas */\necho "Teste";\n?>',
+                        text: 'PHP suporta três tipos de comentários: linha única com // ou #, e múltiplas linhas com /* */. Use comentários para explicar código complexo, não para descrever o óbvio.',
+                        code: '<?php\n// Comentário de linha única\n# Também linha única (estilo shell)\n\n/*\n  Comentário de\n  múltiplas linhas\n  para explicações longas\n*/\n\n// Bom comentário:\n// Calcula desconto progressivo baseado na fidelidade\n$desconto = calcularDesconto($cliente);\n\n// Comentário ruim (óbvio):\n$total = 100;  // Define total como 100\n?>',
                     },
                     {
                         title: 'echo e print',
-                        text: 'echo e print exibem texto. echo é mais rápido e aceita múltiplos argumentos.',
-                        code: '<?php\necho "Olá";\necho "PHP", " é ", "legal";\nprint "Também funciona";\n?>',
+                        text: 'echo e print exibem conteúdo na página. echo é mais usado: é um pouco mais rápido e aceita múltiplos argumentos. print retorna 1, podendo ser usado em expressões (raro). Para interpolar variáveis, use aspas duplas.',
+                        code: '<?php\n// echo - mais comum e versátil\necho "Olá, mundo!";\necho "Linha 1", " - ", "Linha 2";  // Múltiplos args\n\n// print - retorna 1\nprint "Também funciona";\n$sucesso = print "Retorna 1";  // $sucesso = 1\n\n// Aspas duplas vs simples\n$nome = "Ana";\necho "Olá, $nome!";      // Olá, Ana! (interpola)\necho \'Olá, $nome!\';     // Olá, $nome! (literal)\n\n// Concatenação com ponto\necho "Nome: " . $nome . "<br>";\n?>',
                     },
+                    {
+                        title: 'PHP e HTML',
+                        text: 'A grande força do PHP é gerar HTML dinâmico. Você pode alternar entre PHP e HTML no mesmo arquivo, inserir variáveis PHP no HTML, ou gerar HTML completo com echo. O servidor processa o PHP e envia apenas HTML ao navegador.',
+                        code: '<!DOCTYPE html>\n<html>\n<head>\n  <title>Minha Página</title>\n</head>\n<body>\n  <h1>Bem-vindo!</h1>\n  \n  <?php\n    // Variáveis PHP\n    $usuario = "Maria";\n    $produtos = ["Camiseta", "Calça", "Tênis"];\n  ?>\n  \n  <p>Olá, <?php echo $usuario; ?>!</p>\n  \n  <h2>Produtos:</h2>\n  <ul>\n    <?php foreach($produtos as $p): ?>\n      <li><?php echo $p; ?></li>\n    <?php endforeach; ?>\n  </ul>\n</body>\n</html>',
+                    },
+                    {
+                        title: 'Configuração e Servidor',
+                        text: 'Para rodar PHP localmente, você precisa de um servidor como XAMPP (Windows/Mac), MAMP (Mac), ou o servidor embutido do PHP (php -S). Em produção, PHP roda em servidores Apache ou Nginx. O arquivo principal geralmente é index.php.',
+                        code: '# Iniciando servidor embutido do PHP\n# No terminal, na pasta do projeto:\nphp -S localhost:8000\n\n# Acesse: http://localhost:8000\n\n# Estrutura típica de projeto:\nproject/\n├── index.php        # Página inicial\n├── about.php        # Outras páginas\n├── includes/\n│   ├── header.php   # Cabeçalho comum\n│   └── footer.php   # Rodapé comum\n├── css/\n│   └── style.css\n└── config.php       # Configurações',
+                    },
+                ],
+                tips: [
+                    'Sempre termine comandos com ponto e vírgula',
+                    'Use aspas duplas para interpolar variáveis',
+                    'Nunca mostre erros em produção (display_errors = Off)',
+                    'Separe lógica (PHP) de apresentação (HTML)',
                 ],
             },
             quiz: [
