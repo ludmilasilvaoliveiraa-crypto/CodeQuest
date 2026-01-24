@@ -680,28 +680,49 @@ export const PHP_FUNCOES: LearningModule = {
             xpReward: 120,
             estimatedTime: 18,
             content: {
-                introduction: 'Funções são blocos de código reutilizáveis.',
+                introduction: 'Funções são blocos de código reutilizáveis. PHP suporta funções nomeadas, anônimas (closures) e arrow functions. Com type hints e parâmetros variádicos, você pode escrever código mais robusto e flexível.',
                 sections: [
                     {
                         title: 'Declarando Funções',
-                        text: 'Use function para criar funções.',
-                        code: '<?php\nfunction saudacao($nome) {\n  return "Olá, " . $nome . "!";\n}\n\necho saudacao("Maria"); // Olá, Maria!\n?>',
+                        text: 'Use function para criar funções. O nome segue as mesmas regras de variáveis. Funções podem ser chamadas antes de serem declaradas (hoisting).',
+                        code: '<?php\n// Função básica\nfunction saudacao($nome) {\n  return "Olá, " . $nome . "!";\n}\n\necho saudacao("Maria"); // Olá, Maria!\n\n// Função sem retorno (void implícito)\nfunction logMessage($msg) {\n  echo "[LOG] $msg\\n";\n  // sem return\n}\n\n// Chamada antes da declaração funciona!\necho cumprimentar(); // funciona!\n\nfunction cumprimentar() {\n  return "Olá!";\n}\n?>',
                     },
                     {
-                        title: 'Parâmetros e Return',
-                        text: 'Funções recebem parâmetros e retornam valores.',
-                        code: '<?php\nfunction soma($a, $b) {\n  return $a + $b;\n}\n\n$resultado = soma(5, 3); // 8\n?>',
+                        title: 'Parâmetros e Retorno',
+                        text: 'Funções recebem parâmetros e retornam valores com return. Return encerra a função imediatamente. Sem return, retorna NULL.',
+                        code: '<?php\n// Múltiplos parâmetros\nfunction soma($a, $b) {\n  return $a + $b;\n}\n$resultado = soma(5, 3); // 8\n\n// Return encerra a função\nfunction verificar($n) {\n  if ($n < 0) {\n    return "Negativo";\n  }\n  return "Positivo ou zero";\n}\n\n// Retornar múltiplos valores (array)\nfunction minMax($arr) {\n  return [\n    "min" => min($arr),\n    "max" => max($arr)\n  ];\n}\n[$min, $max] = minMax([1, 5, 3]); // desestruturação\n?>',
                     },
                     {
-                        title: 'Parâmetros Padrão',
-                        text: 'Defina valores padrão para parâmetros opcionais.',
-                        code: '<?php\nfunction saudar($nome = "Visitante") {\n  return "Olá, " . $nome;\n}\n\necho saudar(); // Olá, Visitante\necho saudar("Ana"); // Olá, Ana\n?>',
+                        title: 'Parâmetros Padrão e Nomeados',
+                        text: 'Parâmetros com valor padrão são opcionais. PHP 8 introduziu argumentos nomeados para maior clareza. Parâmetros opcionais vêm depois dos obrigatórios.',
+                        code: '<?php\n// Valor padrão\nfunction saudar($nome = "Visitante", $prefixo = "Sr.") {\n  return "Olá, $prefixo $nome!";\n}\n\necho saudar();              // Olá, Sr. Visitante!\necho saudar("Ana");         // Olá, Sr. Ana!\necho saudar("Ana", "Dra."); // Olá, Dra. Ana!\n\n// Argumentos nomeados (PHP 8+)\necho saudar(prefixo: "Dra.", nome: "Maria");\n// Ordem não importa com nomes!\n\n// Útil para funções com muitos parâmetros\nfunction criarUsuario(\n  string $nome,\n  string $email,\n  bool $ativo = true,\n  ?string $telefone = null\n) { /* ... */ }\n\ncriarUsuario(\n  nome: "João",\n  email: "joao@email.com",\n  telefone: "1234-5678"\n);\n?>',
                     },
                     {
                         title: 'Type Hints',
-                        text: 'Especifique tipos de parâmetros e retorno.',
-                        code: '<?php\nfunction soma(int $a, int $b): int {\n  return $a + $b;\n}\n?>',
+                        text: 'Especifique tipos de parâmetros e retorno para código mais seguro. Use ? para nullable. void para funções sem retorno. mixed para qualquer tipo.',
+                        code: '<?php\n// Tipos básicos\nfunction soma(int $a, int $b): int {\n  return $a + $b;\n}\n\n// Nullable (pode ser null)\nfunction buscarUsuario(?int $id): ?array {\n  if ($id === null) return null;\n  return ["id" => $id];\n}\n\n// Void - sem retorno\nfunction log(string $msg): void {\n  echo $msg;\n  // return; // ok, mas não return $valor;\n}\n\n// Union types (PHP 8+)\nfunction processar(int|float $n): int|float {\n  return $n * 2;\n}\n\n// Array com tipo (PHPDoc)\n/** @param string[] $items */\nfunction listar(array $items): void {\n  foreach ($items as $item) {\n    echo $item;\n  }\n}\n?>',
                     },
+                    {
+                        title: 'Funções Anônimas e Closures',
+                        text: 'Funções anônimas são funções sem nome, atribuídas a variáveis. Use use() para capturar variáveis do escopo externo (closure). Muito úteis como callbacks.',
+                        code: '<?php\n// Função anônima\n$dobrar = function($n) {\n  return $n * 2;\n};\necho $dobrar(5); // 10\n\n// Closure - captura variável externa\n$multiplicador = 3;\n$multiplicar = function($n) use ($multiplicador) {\n  return $n * $multiplicador;\n};\necho $multiplicar(5); // 15\n\n// Captura por referência\n$contador = 0;\n$incrementar = function() use (&$contador) {\n  $contador++;\n};\n$incrementar();\n$incrementar();\necho $contador; // 2\n\n// Como callback\n$numeros = [1, 2, 3, 4];\n$dobrados = array_map(function($n) {\n  return $n * 2;\n}, $numeros); // [2, 4, 6, 8]\n?>',
+                    },
+                    {
+                        title: 'Arrow Functions (PHP 7.4+)',
+                        text: 'Sintaxe curta: fn($params) => expressão. Capturam variáveis automaticamente (sem use). Só uma expressão - o resultado é retornado automaticamente.',
+                        code: '<?php\n// Arrow function básica\n$dobrar = fn($n) => $n * 2;\necho $dobrar(5); // 10\n\n// Captura automática (sem use!)\n$multiplicador = 3;\n$multiplicar = fn($n) => $n * $multiplicador;\necho $multiplicar(5); // 15\n\n// Com array_map\n$numeros = [1, 2, 3, 4];\n$dobrados = array_map(fn($n) => $n * 2, $numeros);\n\n// Com array_filter\n$pares = array_filter($numeros, fn($n) => $n % 2 === 0);\n\n// Encadeamento\n$resultado = array_filter(\n  array_map(fn($n) => $n * 2, $numeros),\n  fn($n) => $n > 4\n); // [6, 8]\n\n// Limitação: só uma expressão\n// Para múltiplas linhas, use function tradicional\n?>',
+                    },
+                    {
+                        title: 'Parâmetros Variádicos e Spread',
+                        text: '...args coleta parâmetros extras em array (variadic). Spread operator (...) expande array em argumentos. Muito útil para funções flexíveis.',
+                        code: '<?php\n// Variadic - coleta argumentos\nfunction soma(...$numeros): int {\n  return array_sum($numeros);\n}\necho soma(1, 2, 3, 4); // 10\n\n// Com parâmetros fixos primeiro\nfunction log(string $nivel, ...$mensagens): void {\n  foreach ($mensagens as $msg) {\n    echo "[$nivel] $msg\\n";\n  }\n}\nlog("INFO", "Iniciando", "Processando", "Concluído");\n\n// Spread - expande array\n$nums = [1, 2, 3];\necho soma(...$nums); // 6\n\n// Combinar arrays\n$arr1 = [1, 2];\n$arr2 = [3, 4];\n$todos = [...$arr1, ...$arr2]; // [1, 2, 3, 4]\n\n// Named args com spread (PHP 8+)\n$params = ["nome" => "Ana", "email" => "ana@email.com"];\ncriarUsuario(...$params);\n?>',
+                    },
+                ],
+                tips: [
+                    'Use type hints para código mais seguro',
+                    'Arrow functions são ótimas para callbacks curtos',
+                    'Parâmetros opcionais sempre vêm por último',
+                    '...args para variadic, ...$arr para spread',
                 ],
             },
             quiz: [

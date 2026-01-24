@@ -1290,28 +1290,54 @@ export const CSS_FLEXBOX: LearningModule = {
             xpReward: 150,
             estimatedTime: 25,
             content: {
-                introduction: 'Flexbox é um sistema de layout unidimensional que facilita a distribuição de espaço entre itens.',
+                introduction: 'Flexbox é o sistema de layout unidimensional mais poderoso do CSS. Permite distribuir espaço e alinhar itens com facilidade, seja horizontal ou verticalmente. Dominar Flexbox é essencial para layouts modernos e responsivos.',
                 sections: [
                     {
-                        title: 'Container Flex',
-                        text: 'Aplique display: flex ao container para ativar o Flexbox.',
-                        code: '.container {\n  display: flex;\n  gap: 20px;\n}',
+                        title: 'Container Flex e Eixos',
+                        text: 'display: flex transforma o elemento em flex container. Tem dois eixos: principal (main axis) e cruzado (cross axis). flex-direction define qual é o principal.',
+                        code: '.container {\n  display: flex;  /* ativa flexbox */\n  gap: 20px;      /* espaço entre itens */\n}\n\n/* Eixos:\n   - row (padrão): principal = horizontal\n   - column: principal = vertical\n*/\n\n.horizontal {\n  flex-direction: row;  /* → padrão */\n}\n\n.vertical {\n  flex-direction: column;  /* ↓ */\n}\n\n.reverso {\n  flex-direction: row-reverse;  /* ← */\n}\n\n/* inline-flex: flex que não ocupa linha toda */\n.inline {\n  display: inline-flex;\n}',
                     },
                     {
-                        title: 'Justify-Content',
-                        text: 'Alinha itens no eixo principal (horizontal por padrão).',
-                        code: '.container {\n  display: flex;\n  justify-content: center; /* center, space-between, space-around */\n}',
+                        title: 'justify-content (Eixo Principal)',
+                        text: 'Distribui espaço no eixo principal. flex-start, flex-end, center, space-between (espaço entre), space-around (espaço ao redor), space-evenly (espaço igual).',
+                        code: '.container {\n  display: flex;\n  justify-content: flex-start;    /* início (padrão) */\n  justify-content: flex-end;      /* fim */\n  justify-content: center;        /* centraliza */\n  justify-content: space-between; /* [item    item    item] */\n  justify-content: space-around;  /* [ item  item  item ] */\n  justify-content: space-evenly;  /* [  item  item  item  ] */\n}\n\n/* Exemplo prático: navbar */\n.navbar {\n  display: flex;\n  justify-content: space-between;\n}\n/* Logo à esquerda, menu à direita */\n.navbar .logo { /* fica no início */ }\n.navbar .menu { /* fica no fim */ }',
                     },
                     {
-                        title: 'Align-Items',
-                        text: 'Alinha itens no eixo cruzado (vertical por padrão).',
-                        code: '.container {\n  display: flex;\n  align-items: center; /* center, flex-start, flex-end, stretch */\n}',
+                        title: 'align-items (Eixo Cruzado)',
+                        text: 'Alinha itens no eixo cruzado. stretch (padrão, estica), flex-start, flex-end, center, baseline (alinha pela linha de texto).',
+                        code: '.container {\n  display: flex;\n  height: 200px;\n  \n  align-items: stretch;     /* estica (padrão) */\n  align-items: flex-start;  /* topo */\n  align-items: flex-end;    /* base */\n  align-items: center;      /* meio */\n  align-items: baseline;    /* alinha texto */\n}\n\n/* CENTRALIZAÇÃO PERFEITA */\n.center-all {\n  display: flex;\n  justify-content: center;  /* horizontal */\n  align-items: center;      /* vertical */\n}\n\n/* place-content: shorthand */\n.center-short {\n  display: flex;\n  place-content: center;  /* ambos */\n}',
                     },
                     {
-                        title: 'Flex-Direction',
-                        text: 'Define a direção dos itens: row, row-reverse, column, column-reverse.',
-                        code: '.vertical {\n  flex-direction: column;\n}',
+                        title: 'flex-wrap',
+                        text: 'Por padrão, itens nunca quebram linha (nowrap). flex-wrap: wrap permite quebra. align-content controla alinhamento de múltiplas linhas.',
+                        code: '.container {\n  display: flex;\n  flex-wrap: nowrap;  /* padrão: uma linha */\n  flex-wrap: wrap;    /* quebra para nova linha */\n  flex-wrap: wrap-reverse; /* quebra para cima */\n}\n\n/* Exemplo: galeria de cards */\n.gallery {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 16px;\n}\n\n.gallery .card {\n  flex: 0 0 calc(33.33% - 16px);  /* 3 por linha */\n}\n\n/* align-content: quando há múltiplas linhas */\n.multi-line {\n  display: flex;\n  flex-wrap: wrap;\n  align-content: flex-start;  /* agrupa no topo */\n  align-content: center;      /* centraliza linhas */\n  align-content: space-between; /* espaça linhas */\n}',
                     },
+                    {
+                        title: 'flex-grow, flex-shrink, flex-basis',
+                        text: 'Propriedades dos ITENS. flex-grow: quanto cresce. flex-shrink: quanto encolhe. flex-basis: tamanho base. Shorthand: flex: grow shrink basis.',
+                        code: '.item {\n  flex-grow: 0;     /* não cresce (padrão) */\n  flex-shrink: 1;   /* encolhe se necessário (padrão) */\n  flex-basis: auto; /* tamanho inicial (padrão) */\n}\n\n/* Shorthand flex */\n.item {\n  flex: 1;          /* grow:1, shrink:1, basis:0 */\n  flex: 0 0 200px;  /* não cresce/encolhe, 200px fixo */\n  flex: 1 0 auto;   /* cresce, não encolhe, auto */\n}\n\n/* Exemplo: sidebar + content */\n.sidebar {\n  flex: 0 0 250px;  /* largura fixa 250px */\n}\n.content {\n  flex: 1;  /* ocupa resto do espaço */\n}\n\n/* Dividir igualmente */\n.equal > * {\n  flex: 1;  /* todos crescem igual */\n}\n\n/* Proporções 1:2:1 */\n.col-small { flex: 1; }\n.col-large { flex: 2; }',
+                    },
+                    {
+                        title: 'order e align-self',
+                        text: 'order reordena itens visualmente (padrão 0). align-self sobrescreve align-items para um item específico. Ambas aplicadas aos ITENS.',
+                        code: '/* order: reordenar visualmente */\n.first {\n  order: -1;  /* aparece primeiro */\n}\n.last {\n  order: 99;  /* aparece por último */\n}\n\n/* Exemplo: footer no fim em mobile */\n@media (max-width: 768px) {\n  .sidebar { order: 2; }  /* vai para baixo */\n  .content { order: 1; }  /* fica em cima */\n}\n\n/* align-self: alinhamento individual */\n.container {\n  display: flex;\n  align-items: flex-start; /* todos no topo */\n}\n\n.special {\n  align-self: flex-end;   /* este no fim */\n  align-self: center;     /* este no centro */\n  align-self: stretch;    /* este esticado */\n}',
+                    },
+                    {
+                        title: 'Gap e Espaçamento',
+                        text: 'gap (ou row-gap + column-gap) define espaço entre itens. Muito melhor que margins! Funciona em flex e grid.',
+                        code: '.container {\n  display: flex;\n  gap: 20px;              /* espaço igual em tudo */\n  gap: 10px 20px;         /* row-gap column-gap */\n  row-gap: 10px;          /* só entre linhas */\n  column-gap: 20px;       /* só entre colunas */\n}\n\n/* ❌ Antigo: margin com hack */\n.old-way > * {\n  margin: 10px;\n}\n.old-way {\n  margin: -10px;  /* compensar */\n}\n\n/* ✅ Moderno: gap */\n.modern {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 20px;  /* limpo e previsível */\n}\n\n/* Gap responsivo */\n.responsive {\n  gap: clamp(10px, 2vw, 30px);\n}',
+                    },
+                    {
+                        title: 'Padrões Comuns de Flexbox',
+                        text: 'Flexbox resolve layouts clássicos facilmente: navbar, holy grail, sticky footer, cards iguais, centralização. Estes são padrões que você usará muito!',
+                        code: '/* 1. Navbar com logo + menu */\n.navbar {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem;\n}\n\n/* 2. Cards de altura igual */\n.cards {\n  display: flex;\n  gap: 1rem;\n}\n.card {\n  flex: 1;  /* todos crescem igual */\n  display: flex;\n  flex-direction: column;\n}\n.card-content {\n  flex: 1;  /* empurra footer para baixo */\n}\n\n/* 3. Sticky footer */\nbody {\n  min-height: 100vh;\n  display: flex;\n  flex-direction: column;\n}\nmain {\n  flex: 1;  /* ocupa espaço, footer fica embaixo */\n}\n\n/* 4. Centralização absoluta */\n.center {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n}',
+                    },
+                ],
+                tips: [
+                    'justify-content = eixo principal, align-items = eixo cruzado',
+                    'flex: 1 faz o item crescer e ocupar espaço disponível',
+                    'Use gap em vez de margins para espaçar itens',
+                    'flex-direction: column inverte os eixos!',
                 ],
             },
             quiz: [
