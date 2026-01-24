@@ -17,34 +17,58 @@ export const CSS_FUNDAMENTOS: LearningModule = {
         {
             id: 'intro-css',
             title: 'Introdução ao CSS',
-            description: 'O que é CSS e como ele funciona com HTML',
-            xpReward: 100,
-            estimatedTime: 15,
+            description: 'O que é CSS, como funciona e por que é essencial para web',
+            xpReward: 150,
+            estimatedTime: 25,
             content: {
-                introduction: 'CSS (Cascading Style Sheets) é a linguagem usada para estilizar páginas web. Enquanto o HTML define a estrutura, o CSS define a aparência visual.',
+                introduction: 'CSS (Cascading Style Sheets) é a linguagem que dá vida visual às páginas web. Enquanto HTML define a estrutura e o conteúdo, CSS controla toda a aparência: cores, fontes, espaçamentos, layouts e animações. Junto com HTML e JavaScript, CSS forma a base do desenvolvimento front-end moderno. Toda página web que você visita usa CSS.',
                 sections: [
                     {
                         title: 'O que é CSS?',
-                        text: 'CSS significa Cascading Style Sheets (Folhas de Estilo em Cascata). É a linguagem que descreve como os elementos HTML devem ser exibidos na tela. Com CSS você pode controlar cores, fontes, espaçamentos, layouts e muito mais.',
+                        text: 'CSS significa Cascading Style Sheets (Folhas de Estilo em Cascata). É a linguagem que descreve como os elementos HTML devem ser exibidos na tela. Com CSS você pode controlar cores, fontes, espaçamentos, layouts, animações e criar designs responsivos que se adaptam a diferentes dispositivos.',
+                        code: '/* Exemplo básico de CSS */\nbody {\n  background-color: #f5f5f5;\n  font-family: Arial, sans-serif;\n}\n\nh1 {\n  color: #333;\n  text-align: center;\n}\n\np {\n  line-height: 1.6;\n  margin: 20px;\n}',
                     },
                     {
                         title: 'Por que usar CSS?',
-                        text: 'CSS separa o conteúdo (HTML) da apresentação visual. Isso permite: reutilizar estilos em várias páginas, fazer mudanças globais facilmente, criar layouts responsivos e manter o código organizado.',
+                        text: 'CSS separa o conteúdo (HTML) da apresentação visual, trazendo várias vantagens: reutilização de estilos em múltiplas páginas, mudanças globais com uma única alteração, código mais organizado e fácil de manter, layouts responsivos para todos os dispositivos, e páginas mais rápidas (CSS é cacheado).',
+                        code: '/* Um arquivo CSS pode estilizar todo o site */\n/* styles.css */\n\n/* Estilos globais */\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\n/* Tipografia do site inteiro */\nbody {\n  font-family: "Segoe UI", sans-serif;\n  font-size: 16px;\n  color: #333;\n}\n\n/* Todos os links do site */\na {\n  color: #0066cc;\n  text-decoration: none;\n}',
                     },
                     {
-                        title: 'Como adicionar CSS ao HTML',
-                        text: 'Existem 3 formas de adicionar CSS: Inline (no atributo style), Interno (na tag <style> no head), e Externo (arquivo .css separado). O método externo é o mais recomendado.',
-                        code: '<!-- CSS Externo (recomendado) -->\n<link rel="stylesheet" href="styles.css">\n\n<!-- CSS Interno -->\n<style>\n  p { color: blue; }\n</style>\n\n<!-- CSS Inline -->\n<p style="color: blue;">Texto</p>',
+                        title: 'CSS Externo (Recomendado)',
+                        text: 'O método mais usado é criar um arquivo .css separado e vinculá-lo ao HTML com a tag <link>. Isso permite reutilizar os mesmos estilos em várias páginas, facilita manutenção e permite cache pelo navegador (páginas carregam mais rápido).',
+                        code: '<!-- index.html -->\n<!DOCTYPE html>\n<html>\n<head>\n  <title>Meu Site</title>\n  <!-- Vinculando CSS externo -->\n  <link rel="stylesheet" href="css/styles.css">\n  <link rel="stylesheet" href="css/responsive.css">\n</head>\n<body>\n  <h1>Olá Mundo!</h1>\n</body>\n</html>\n\n/* css/styles.css */\nh1 {\n  color: navy;\n  font-size: 2rem;\n}',
                     },
                     {
-                        title: 'Cascata e Especificidade',
-                        text: 'O "Cascading" em CSS significa que estilos podem ser herdados e sobrepostos. Quando há conflito, o CSS usa regras de especificidade para decidir qual estilo aplicar. Inline > ID > Classe > Elemento.',
+                        title: 'CSS Interno e Inline',
+                        text: 'CSS interno usa a tag <style> no head - útil para estilos únicos de uma página. CSS inline usa o atributo style diretamente no elemento - evite pois mistura estrutura com estilo. Use inline apenas para testes rápidos ou estilos dinâmicos via JavaScript.',
+                        code: '<!-- CSS Interno (no head) -->\n<head>\n  <style>\n    .destaque {\n      background: yellow;\n      padding: 10px;\n    }\n  </style>\n</head>\n\n<!-- CSS Inline (evite!) -->\n<p style="color: red; font-size: 18px;">Texto vermelho</p>\n\n<!-- Melhor: use classes -->\n<p class="texto-erro">Texto vermelho</p>',
+                    },
+                    {
+                        title: 'Cascata e Herança',
+                        text: 'O "Cascading" em CSS significa que estilos podem ser herdados de elementos pai e sobrepostos. Elementos filhos herdam certas propriedades (como color e font). Quando há conflito, a regra mais específica ou a última declarada vence.',
+                        code: '/* Herança: filhos herdam estilos do pai */\nbody {\n  font-family: Arial;  /* todos elementos herdam */\n  color: #333;         /* todos textos ficam cinza */\n}\n\n/* Cascata: última regra vence (com mesma especificidade) */\np {\n  color: blue;\n}\np {\n  color: red;  /* Esta vence! */\n}\n\n/* Herança pode ser explícita */\n.container {\n  border: 1px solid black;\n}\n.item {\n  border: inherit;  /* herda borda do pai */\n}',
+                    },
+                    {
+                        title: 'Especificidade CSS',
+                        text: 'Quando múltiplas regras se aplicam ao mesmo elemento, CSS usa especificidade para decidir qual aplicar. A ordem (menor para maior): elementos (1) < classes (10) < ID (100) < inline (1000) < !important. Evite !important - indica problema no código.',
+                        code: '/* Especificidade em ordem crescente */\np { color: black; }           /* 1 ponto */\n.texto { color: blue; }        /* 10 pontos */\n#principal { color: green; }   /* 100 pontos */\n/* inline style = 1000 pontos */\n\n/* Combinações somam */\ndiv p { }                      /* 2 pontos */\ndiv.container p.texto { }     /* 22 pontos */\n#main .content p { }          /* 112 pontos */\n\n/* !important vence tudo (evite!) */\np {\n  color: red !important;  /* vence qualquer outra regra */\n}',
+                    },
+                    {
+                        title: 'Sintaxe Básica CSS',
+                        text: 'Uma regra CSS tem: seletor (o que estilizar), propriedade (o que mudar) e valor (como mudar). Múltiplas propriedades ficam dentro de chaves {}. Cada declaração termina com ponto e vírgula. Comentários usam /* */.',
+                        code: '/* Anatomia de uma regra CSS */\nseletor {\n  propriedade: valor;\n  propriedade2: valor2;\n}\n\n/* Exemplo real */\n.botao {\n  /* Cores */\n  background-color: #3498db;\n  color: white;\n  \n  /* Espaçamento */\n  padding: 12px 24px;\n  margin: 10px;\n  \n  /* Bordas */\n  border: none;\n  border-radius: 5px;\n  \n  /* Tipografia */\n  font-size: 16px;\n  font-weight: bold;\n}',
+                    },
+                    {
+                        title: 'Organizando seu CSS',
+                        text: 'Boas práticas para organizar CSS: agrupe regras relacionadas, use comentários para separar seções, siga uma ordem consistente de propriedades (posicionamento > display > box model > visual > texto), e considere metodologias como BEM para projetos grandes.',
+                        code: '/* ========================================\n   RESET / BASE\n   ======================================== */\n* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\n/* ========================================\n   LAYOUT\n   ======================================== */\n.container {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 20px;\n}\n\n/* ========================================\n   COMPONENTES\n   ======================================== */\n.card {\n  /* Posicionamento */\n  position: relative;\n  \n  /* Box Model */\n  padding: 20px;\n  margin-bottom: 20px;\n  \n  /* Visual */\n  background: white;\n  border-radius: 8px;\n  box-shadow: 0 2px 4px rgba(0,0,0,0.1);\n}',
                     },
                 ],
                 tips: [
                     'Sempre use CSS externo para projetos reais',
-                    'Organize seu CSS em seções lógicas',
-                    'Evite CSS inline sempre que possível',
+                    'Evite !important - indica problema de especificidade',
+                    'Organize CSS em seções com comentários',
+                    'Use classes em vez de IDs para estilização',
                 ],
             },
             quiz: [
