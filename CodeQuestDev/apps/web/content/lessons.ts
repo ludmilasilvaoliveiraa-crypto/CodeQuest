@@ -1127,24 +1127,74 @@ export const ALL_MODULES: LearningModule[] = [
     MODULE_ADVANCED,
 ];
 
+// Import other course modules
+import { CSS_MODULES } from './css-lessons';
+import { JS_MODULES } from './js-lessons';
+import { PHP_MODULES } from './php-lessons';
+
+// Re-export for compatibility
+export { CSS_MODULES, CSS_FUNDAMENTOS, CSS_CORES, CSS_TIPOGRAFIA, CSS_BOX_MODEL, CSS_FLEXBOX, CSS_EFEITOS } from './css-lessons';
+export { JS_MODULES } from './js-lessons';
+export { PHP_MODULES } from './php-lessons';
+
+// Combined modules from all courses for global search
+const GLOBAL_MODULES: LearningModule[] = [
+    ...ALL_MODULES,
+    ...CSS_MODULES,
+    ...JS_MODULES,
+    ...PHP_MODULES,
+];
+
 // Get total lesson count
-export function getTotalLessons(): number {
+function getTotalLessons(): number {
     return ALL_MODULES.reduce((total, mod) => total + mod.lessons.length, 0);
 }
 
 // Get total questions count
-export function getTotalQuestions(): number {
+function getTotalQuestions(): number {
     return ALL_MODULES.reduce((total, mod) =>
         total + mod.lessons.reduce((lt, lesson) => lt + lesson.quiz.length, 0), 0);
 }
 
-// Get module by ID
-export function getModuleById(id: string): LearningModule | undefined {
-    return ALL_MODULES.find(m => m.id === id);
+// Get module by ID - searches all courses
+function getModuleById(id: string): LearningModule | undefined {
+    return GLOBAL_MODULES.find(m => m.id === id);
 }
 
-// Get lesson by ID
-export function getLessonById(moduleId: string, lessonId: string): Lesson | undefined {
+// Get lesson by ID - searches all courses
+function getLessonById(moduleId: string, lessonId: string): Lesson | undefined {
     const module = getModuleById(moduleId);
     return module?.lessons.find(l => l.id === lessonId);
 }
+
+export { getTotalLessons, getTotalQuestions, getModuleById, getLessonById };
+
+// Course type for navigation
+export type CourseType = 'html' | 'css' | 'javascript' | 'php';
+
+// Get modules by course
+export async function getModulesByCourse(course: CourseType): Promise<LearningModule[]> {
+    switch (course) {
+        case 'html':
+            return ALL_MODULES;
+        case 'css':
+            const { CSS_MODULES } = await import('./css-lessons');
+            return CSS_MODULES;
+        case 'javascript':
+            const { JS_MODULES } = await import('./js-lessons');
+            return JS_MODULES;
+        case 'php':
+            const { PHP_MODULES } = await import('./php-lessons');
+            return PHP_MODULES;
+        default:
+            return ALL_MODULES;
+    }
+}
+
+// Course metadata
+export const COURSES = {
+    html: { name: 'HTML', icon: '📄', color: 'bg-orange-500' },
+    css: { name: 'CSS', icon: '🎨', color: 'bg-blue-500' },
+    javascript: { name: 'JavaScript', icon: '⚡', color: 'bg-yellow-500' },
+    php: { name: 'PHP', icon: '🐘', color: 'bg-purple-500' },
+};

@@ -2,6 +2,7 @@
 import { NextResponse } from 'next/server';
 import { auth } from '@/lib/auth';
 import { prisma } from '@/lib/db';
+import { getOrCreateUser } from '@/lib/user-helpers';
 
 // GET /api/friends/activities - Get friend activities
 export async function GET() {
@@ -12,14 +13,13 @@ export async function GET() {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
 
-        // Get current user
-        const currentUser = await prisma.user.findUnique({
-            where: { email: session.user.email },
-        });
+        // Get or create current user (handles guest users)
+        const currentUser = await getOrCreateUser(
+            session.user.email,
+            session.user.name,
+            session.user.image
+        );
 
-        if (!currentUser) {
-            return NextResponse.json({ error: 'User not found' }, { status: 404 });
-        }
 
         // Get all friend IDs
         const friendships = await prisma.friendship.findMany({

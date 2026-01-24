@@ -1,0 +1,1186 @@
+// CodeQuest - CSS Learning Content
+// Curso completo em Português com módulos bem categorizados
+
+import { LearningModule, Lesson, QuizQuestion } from './lessons';
+
+// ============================================
+// MÓDULO 1: FUNDAMENTOS CSS
+// ============================================
+
+export const CSS_FUNDAMENTOS: LearningModule = {
+    id: 'css-fundamentos',
+    name: 'Fundamentos CSS',
+    description: 'Aprenda a base do CSS: sintaxe, seletores e como aplicar estilos',
+    icon: '🎨',
+    difficulty: 'beginner',
+    lessons: [
+        {
+            id: 'intro-css',
+            title: 'Introdução ao CSS',
+            description: 'O que é CSS e como ele funciona com HTML',
+            xpReward: 100,
+            estimatedTime: 15,
+            content: {
+                introduction: 'CSS (Cascading Style Sheets) é a linguagem usada para estilizar páginas web. Enquanto o HTML define a estrutura, o CSS define a aparência visual.',
+                sections: [
+                    {
+                        title: 'O que é CSS?',
+                        text: 'CSS significa Cascading Style Sheets (Folhas de Estilo em Cascata). É a linguagem que descreve como os elementos HTML devem ser exibidos na tela. Com CSS você pode controlar cores, fontes, espaçamentos, layouts e muito mais.',
+                    },
+                    {
+                        title: 'Por que usar CSS?',
+                        text: 'CSS separa o conteúdo (HTML) da apresentação visual. Isso permite: reutilizar estilos em várias páginas, fazer mudanças globais facilmente, criar layouts responsivos e manter o código organizado.',
+                    },
+                    {
+                        title: 'Como adicionar CSS ao HTML',
+                        text: 'Existem 3 formas de adicionar CSS: Inline (no atributo style), Interno (na tag <style> no head), e Externo (arquivo .css separado). O método externo é o mais recomendado.',
+                        code: '<!-- CSS Externo (recomendado) -->\n<link rel="stylesheet" href="styles.css">\n\n<!-- CSS Interno -->\n<style>\n  p { color: blue; }\n</style>\n\n<!-- CSS Inline -->\n<p style="color: blue;">Texto</p>',
+                    },
+                    {
+                        title: 'Cascata e Especificidade',
+                        text: 'O "Cascading" em CSS significa que estilos podem ser herdados e sobrepostos. Quando há conflito, o CSS usa regras de especificidade para decidir qual estilo aplicar. Inline > ID > Classe > Elemento.',
+                    },
+                ],
+                tips: [
+                    'Sempre use CSS externo para projetos reais',
+                    'Organize seu CSS em seções lógicas',
+                    'Evite CSS inline sempre que possível',
+                ],
+            },
+            quiz: [
+                {
+                    id: 'q1',
+                    type: 'multiple-choice',
+                    question: 'O que significa CSS?',
+                    options: ['Cascading Style Sheets', 'Computer Style Sheets', 'Creative Style System', 'Colorful Style Sheets'],
+                    correctAnswer: 0,
+                    explanation: 'CSS significa Cascading Style Sheets (Folhas de Estilo em Cascata)',
+                    points: 10,
+                },
+                {
+                    id: 'q2',
+                    type: 'multiple-choice',
+                    question: 'Qual método de CSS é mais recomendado para projetos?',
+                    options: ['Inline', 'Interno', 'Externo', 'Todos são iguais'],
+                    correctAnswer: 2,
+                    explanation: 'CSS externo (arquivo .css) é o mais recomendado por separar estrutura de estilo',
+                    points: 10,
+                },
+                {
+                    id: 'q3',
+                    type: 'multiple-choice',
+                    question: 'Qual tag é usada para vincular um arquivo CSS externo?',
+                    options: ['<style>', '<css>', '<link>', '<stylesheet>'],
+                    correctAnswer: 2,
+                    explanation: 'A tag <link> com rel="stylesheet" vincula arquivos CSS externos',
+                    points: 10,
+                },
+                {
+                    id: 'q4',
+                    type: 'true-false',
+                    question: 'CSS inline tem maior prioridade que CSS externo',
+                    correctAnswer: 'true',
+                    explanation: 'CSS inline tem a maior especificidade, sobrepondo estilos externos',
+                    points: 10,
+                },
+                {
+                    id: 'q5',
+                    type: 'fill-blank',
+                    question: 'Complete: <link rel="____" href="styles.css">',
+                    correctAnswer: 'stylesheet',
+                    explanation: 'O atributo rel="stylesheet" indica que o arquivo é uma folha de estilos',
+                    points: 15,
+                },
+            ],
+        },
+        {
+            id: 'sintaxe-css',
+            title: 'Sintaxe CSS',
+            description: 'Aprenda a estrutura de regras CSS: seletores, propriedades e valores',
+            xpReward: 100,
+            estimatedTime: 15,
+            content: {
+                introduction: 'Uma regra CSS é composta por seletor, propriedade e valor. Entender essa sintaxe é fundamental para escrever CSS corretamente.',
+                sections: [
+                    {
+                        title: 'Estrutura de uma Regra CSS',
+                        text: 'Uma regra CSS tem: Seletor (qual elemento estilizar), Propriedade (o que mudar) e Valor (como mudar). A sintaxe é: seletor { propriedade: valor; }',
+                        code: 'p {\n  color: blue;\n  font-size: 16px;\n}',
+                    },
+                    {
+                        title: 'Múltiplas Propriedades',
+                        text: 'Você pode definir várias propriedades para o mesmo seletor. Cada declaração termina com ponto e vírgula (;).',
+                        code: 'h1 {\n  color: red;\n  font-size: 24px;\n  text-align: center;\n  margin-bottom: 20px;\n}',
+                    },
+                    {
+                        title: 'Comentários em CSS',
+                        text: 'Comentários ajudam a documentar seu código. Em CSS, usamos /* para abrir e */ para fechar comentários.',
+                        code: '/* Este é um comentário */\np {\n  color: blue; /* cor do texto */\n}',
+                    },
+                ],
+                tips: [
+                    'Sempre termine declarações com ponto e vírgula',
+                    'Use comentários para organizar seções do CSS',
+                    'Mantenha uma propriedade por linha para legibilidade',
+                ],
+            },
+            quiz: [
+                {
+                    id: 'q1',
+                    type: 'multiple-choice',
+                    question: 'Qual é a sintaxe correta de uma regra CSS?',
+                    options: ['seletor { propriedade: valor; }', 'seletor (propriedade = valor)', 'seletor: propriedade, valor', '{seletor} propriedade: valor'],
+                    correctAnswer: 0,
+                    explanation: 'A sintaxe correta usa chaves {} e dois pontos : para separar propriedade do valor',
+                    points: 10,
+                },
+                {
+                    id: 'q2',
+                    type: 'multiple-choice',
+                    question: 'Como se faz um comentário em CSS?',
+                    options: ['// comentário', '<!-- comentário -->', '/* comentário */', '# comentário'],
+                    correctAnswer: 2,
+                    explanation: 'Comentários CSS usam /* para abrir e */ para fechar',
+                    points: 10,
+                },
+                {
+                    id: 'q3',
+                    type: 'true-false',
+                    question: 'O ponto e vírgula (;) é obrigatório após cada declaração CSS',
+                    correctAnswer: 'true',
+                    explanation: 'O ponto e vírgula separa declarações e é necessário (exceto na última)',
+                    points: 10,
+                },
+                {
+                    id: 'q4',
+                    type: 'fill-blank',
+                    question: 'Complete: p { color: ____; }',
+                    correctAnswer: 'blue',
+                    explanation: 'O valor define a cor do texto, neste caso "blue" (azul)',
+                    points: 15,
+                },
+                {
+                    id: 'q5',
+                    type: 'multiple-choice',
+                    question: 'Em "h1 { font-size: 24px; }", qual é a propriedade?',
+                    options: ['h1', 'font-size', '24px', 'px'],
+                    correctAnswer: 1,
+                    explanation: 'font-size é a propriedade que define o tamanho da fonte',
+                    points: 10,
+                },
+            ],
+        },
+        {
+            id: 'seletores-css',
+            title: 'Seletores CSS',
+            description: 'Domine os diferentes tipos de seletores para selecionar elementos',
+            xpReward: 120,
+            estimatedTime: 20,
+            content: {
+                introduction: 'Seletores determinam quais elementos HTML serão estilizados. Existem vários tipos de seletores, cada um com suas características.',
+                sections: [
+                    {
+                        title: 'Seletor de Elemento',
+                        text: 'Seleciona todos os elementos de um tipo específico. Basta usar o nome da tag.',
+                        code: 'p {\n  color: blue;\n}\n\nh1 {\n  font-size: 32px;\n}',
+                    },
+                    {
+                        title: 'Seletor de Classe',
+                        text: 'Seleciona elementos com uma classe específica. Use ponto (.) antes do nome da classe.',
+                        code: '.destaque {\n  background-color: yellow;\n}\n\n.btn-primary {\n  background: blue;\n  color: white;\n}',
+                    },
+                    {
+                        title: 'Seletor de ID',
+                        text: 'Seleciona um elemento único com um ID específico. Use cerquilha (#) antes do nome.',
+                        code: '#cabecalho {\n  background: black;\n  color: white;\n}\n\n#menu-principal {\n  display: flex;\n}',
+                    },
+                    {
+                        title: 'Seletor Universal',
+                        text: 'O asterisco (*) seleciona todos os elementos da página.',
+                        code: '* {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n}',
+                    },
+                    {
+                        title: 'Combinando Seletores',
+                        text: 'Você pode combinar seletores para maior especificidade ou selecionar múltiplos elementos.',
+                        code: '/* Múltiplos seletores */\nh1, h2, h3 {\n  font-family: Arial;\n}\n\n/* Elemento com classe */\np.intro {\n  font-size: 18px;\n}',
+                    },
+                ],
+                tips: [
+                    'Use classes para estilos reutilizáveis',
+                    'Use IDs apenas para elementos únicos',
+                    'Prefira classes a IDs para estilização',
+                ],
+            },
+            quiz: [
+                {
+                    id: 'q1',
+                    type: 'multiple-choice',
+                    question: 'Como seleciona-se uma classe em CSS?',
+                    options: ['#nome', '.nome', 'nome', '@nome'],
+                    correctAnswer: 1,
+                    explanation: 'Classes são selecionadas com ponto (.) antes do nome',
+                    points: 10,
+                },
+                {
+                    id: 'q2',
+                    type: 'multiple-choice',
+                    question: 'Como seleciona-se um ID em CSS?',
+                    options: ['.nome', '#nome', '*nome', '&nome'],
+                    correctAnswer: 1,
+                    explanation: 'IDs são selecionados com cerquilha (#) antes do nome',
+                    points: 10,
+                },
+                {
+                    id: 'q3',
+                    type: 'multiple-choice',
+                    question: 'Qual seletor seleciona todos os elementos?',
+                    options: ['all', '*', '#all', '.all'],
+                    correctAnswer: 1,
+                    explanation: 'O asterisco (*) é o seletor universal que seleciona tudo',
+                    points: 10,
+                },
+                {
+                    id: 'q4',
+                    type: 'fill-blank',
+                    question: 'Complete: ____destaque { color: red; } (seletor de classe)',
+                    correctAnswer: '.',
+                    explanation: 'Classes usam ponto (.) como prefixo no seletor',
+                    points: 15,
+                },
+                {
+                    id: 'q5',
+                    type: 'true-false',
+                    question: 'IDs podem ser reutilizados em múltiplos elementos',
+                    correctAnswer: 'false',
+                    explanation: 'IDs devem ser únicos na página. Use classes para reutilização',
+                    points: 10,
+                },
+                {
+                    id: 'q6',
+                    type: 'multiple-choice',
+                    question: 'Como selecionar múltiplos elementos diferentes?',
+                    options: ['h1 + h2', 'h1 h2', 'h1, h2', 'h1 > h2'],
+                    correctAnswer: 2,
+                    explanation: 'Vírgula (,) separa múltiplos seletores independentes',
+                    points: 10,
+                },
+            ],
+        },
+    ],
+};
+
+// ============================================
+// MÓDULO 2: CORES E BACKGROUNDS
+// ============================================
+
+export const CSS_CORES: LearningModule = {
+    id: 'css-cores',
+    name: 'Cores e Backgrounds',
+    description: 'Domine cores, gradientes e imagens de fundo',
+    icon: '🖌️',
+    difficulty: 'beginner',
+    requiredXP: 200,
+    lessons: [
+        {
+            id: 'cores-css',
+            title: 'Cores em CSS',
+            description: 'Aprenda as diferentes formas de definir cores',
+            xpReward: 100,
+            estimatedTime: 15,
+            content: {
+                introduction: 'CSS oferece várias formas de definir cores: nomes, hexadecimal (HEX), RGB, RGBA, HSL e HSLA.',
+                sections: [
+                    {
+                        title: 'Cores por Nome',
+                        text: 'CSS reconhece 140 nomes de cores em inglês como red, blue, green, yellow, etc.',
+                        code: 'p {\n  color: red;\n  background-color: lightblue;\n}',
+                    },
+                    {
+                        title: 'Cores Hexadecimais (HEX)',
+                        text: 'Formato #RRGGBB onde cada par representa vermelho, verde e azul de 00 a FF.',
+                        code: 'h1 {\n  color: #ff0000; /* vermelho */\n  background: #3498db; /* azul */\n}\n\n/* Forma curta */\np {\n  color: #f00; /* vermelho */\n}',
+                    },
+                    {
+                        title: 'RGB e RGBA',
+                        text: 'RGB usa valores de 0-255 para vermelho, verde e azul. RGBA adiciona transparência (alpha) de 0 a 1.',
+                        code: '.box {\n  background: rgb(255, 0, 0);\n}\n\n.transparent {\n  background: rgba(0, 0, 0, 0.5); /* 50% transparente */\n}',
+                    },
+                    {
+                        title: 'HSL e HSLA',
+                        text: 'HSL define cores por Matiz (0-360), Saturação (0-100%) e Luminosidade (0-100%).',
+                        code: '.hsl-example {\n  color: hsl(120, 100%, 50%); /* verde */\n  background: hsla(240, 100%, 50%, 0.3);\n}',
+                    },
+                ],
+                tips: [
+                    'Use HEX para cores simples',
+                    'Use RGBA quando precisar de transparência',
+                    'HSL é mais intuitivo para ajustes de cor',
+                ],
+            },
+            quiz: [
+                {
+                    id: 'q1',
+                    type: 'multiple-choice',
+                    question: 'Qual é o formato correto de cor hexadecimal?',
+                    options: ['#RRGGBB', 'rgb(r,g,b)', 'hsl(h,s,l)', 'color(red)'],
+                    correctAnswer: 0,
+                    explanation: 'Cores hexadecimais usam # seguido de 6 dígitos (RRGGBB)',
+                    points: 10,
+                },
+                {
+                    id: 'q2',
+                    type: 'multiple-choice',
+                    question: 'O que o "A" representa em RGBA?',
+                    options: ['Azul', 'Amarelo', 'Alpha (transparência)', 'Amplitude'],
+                    correctAnswer: 2,
+                    explanation: 'Alpha controla a transparência, de 0 (invisível) a 1 (opaco)',
+                    points: 10,
+                },
+                {
+                    id: 'q3',
+                    type: 'fill-blank',
+                    question: 'Complete: rgba(255, 0, 0, ____) para 50% transparente',
+                    correctAnswer: '0.5',
+                    explanation: 'O valor 0.5 representa 50% de opacidade/transparência',
+                    points: 15,
+                },
+                {
+                    id: 'q4',
+                    type: 'true-false',
+                    question: '#000000 representa a cor preta',
+                    correctAnswer: 'true',
+                    explanation: '#000000 é preto (todos zeros) e #FFFFFF é branco',
+                    points: 10,
+                },
+                {
+                    id: 'q5',
+                    type: 'multiple-choice',
+                    question: 'Qual cor é #FF0000?',
+                    options: ['Azul', 'Verde', 'Vermelho', 'Preto'],
+                    correctAnswer: 2,
+                    explanation: 'FF no primeiro par (vermelho) com zeros nos outros = vermelho puro',
+                    points: 10,
+                },
+            ],
+        },
+        {
+            id: 'backgrounds-css',
+            title: 'Backgrounds',
+            description: 'Imagens de fundo, gradientes e propriedades de background',
+            xpReward: 120,
+            estimatedTime: 18,
+            content: {
+                introduction: 'A propriedade background permite adicionar cores, imagens e gradientes ao fundo dos elementos.',
+                sections: [
+                    {
+                        title: 'Background Color',
+                        text: 'Define a cor de fundo de um elemento.',
+                        code: 'div {\n  background-color: #f0f0f0;\n}',
+                    },
+                    {
+                        title: 'Background Image',
+                        text: 'Adiciona uma imagem como fundo do elemento.',
+                        code: '.hero {\n  background-image: url("imagem.jpg");\n  background-size: cover;\n  background-position: center;\n}',
+                    },
+                    {
+                        title: 'Gradientes',
+                        text: 'Cria transições suaves entre cores com linear-gradient ou radial-gradient.',
+                        code: '.gradient {\n  background: linear-gradient(to right, red, blue);\n}\n\n.radial {\n  background: radial-gradient(circle, white, black);\n}',
+                    },
+                    {
+                        title: 'Background Shorthand',
+                        text: 'Combine todas as propriedades de background em uma única declaração.',
+                        code: '.box {\n  background: #333 url("bg.jpg") no-repeat center/cover;\n}',
+                    },
+                ],
+            },
+            quiz: [
+                {
+                    id: 'q1',
+                    type: 'multiple-choice',
+                    question: 'Qual propriedade define uma imagem de fundo?',
+                    options: ['background-color', 'background-image', 'background-src', 'image-background'],
+                    correctAnswer: 1,
+                    explanation: 'background-image define a imagem de fundo com url()',
+                    points: 10,
+                },
+                {
+                    id: 'q2',
+                    type: 'multiple-choice',
+                    question: 'O que background-size: cover faz?',
+                    options: ['Esconde o fundo', 'Preenche todo o elemento', 'Remove a imagem', 'Centraliza a imagem'],
+                    correctAnswer: 1,
+                    explanation: 'cover redimensiona a imagem para cobrir todo o elemento',
+                    points: 10,
+                },
+                {
+                    id: 'q3',
+                    type: 'fill-blank',
+                    question: 'Complete: background: linear-____(to right, red, blue);',
+                    correctAnswer: 'gradient',
+                    explanation: 'linear-gradient cria um gradiente em linha reta',
+                    points: 15,
+                },
+                {
+                    id: 'q4',
+                    type: 'true-false',
+                    question: 'É possível ter múltiplas imagens de fundo',
+                    correctAnswer: 'true',
+                    explanation: 'CSS permite múltiplos backgrounds separados por vírgula',
+                    points: 10,
+                },
+                {
+                    id: 'q5',
+                    type: 'multiple-choice',
+                    question: 'Qual valor de background-repeat impede a repetição?',
+                    options: ['repeat', 'no-repeat', 'stop', 'once'],
+                    correctAnswer: 1,
+                    explanation: 'no-repeat impede que a imagem de fundo se repita',
+                    points: 10,
+                },
+            ],
+        },
+    ],
+};
+
+// ============================================
+// MÓDULO 3: TIPOGRAFIA
+// ============================================
+
+export const CSS_TIPOGRAFIA: LearningModule = {
+    id: 'css-tipografia',
+    name: 'Tipografia',
+    description: 'Fontes, tamanhos, espaçamentos e estilização de texto',
+    icon: '✒️',
+    difficulty: 'beginner',
+    requiredXP: 400,
+    lessons: [
+        {
+            id: 'fontes-css',
+            title: 'Fontes e Famílias',
+            description: 'Escolha e aplique fontes em seus projetos',
+            xpReward: 100,
+            estimatedTime: 15,
+            content: {
+                introduction: 'A tipografia é essencial para a legibilidade e estética de um site. CSS oferece controle total sobre fontes.',
+                sections: [
+                    {
+                        title: 'Font-Family',
+                        text: 'Define a família de fontes. Sempre inclua fontes de fallback.',
+                        code: 'body {\n  font-family: "Helvetica Neue", Arial, sans-serif;\n}',
+                    },
+                    {
+                        title: 'Font-Size',
+                        text: 'Define o tamanho da fonte em px, em, rem ou outras unidades.',
+                        code: 'p {\n  font-size: 16px;\n}\n\nh1 {\n  font-size: 2rem;\n}',
+                    },
+                    {
+                        title: 'Font-Weight',
+                        text: 'Define a espessura da fonte: normal, bold, ou valores numéricos (100-900).',
+                        code: '.bold {\n  font-weight: bold;\n}\n\n.light {\n  font-weight: 300;\n}',
+                    },
+                    {
+                        title: 'Google Fonts',
+                        text: 'Use fontes gratuitas do Google Fonts para mais variedade.',
+                        code: '/* No HTML */\n<link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">\n\n/* No CSS */\nbody {\n  font-family: "Roboto", sans-serif;\n}',
+                    },
+                ],
+            },
+            quiz: [
+                {
+                    id: 'q1',
+                    type: 'multiple-choice',
+                    question: 'Qual propriedade define a família de fontes?',
+                    options: ['font-name', 'font-family', 'font-type', 'text-font'],
+                    correctAnswer: 1,
+                    explanation: 'font-family define a família de fontes a ser usada',
+                    points: 10,
+                },
+                {
+                    id: 'q2',
+                    type: 'multiple-choice',
+                    question: 'O que font-weight: bold faz?',
+                    options: ['Deixa o texto itálico', 'Deixa o texto em negrito', 'Aumenta o tamanho', 'Sublinha o texto'],
+                    correctAnswer: 1,
+                    explanation: 'font-weight: bold deixa o texto em negrito (mais grosso)',
+                    points: 10,
+                },
+                {
+                    id: 'q3',
+                    type: 'fill-blank',
+                    question: 'Complete: font-____: 16px;',
+                    correctAnswer: 'size',
+                    explanation: 'font-size define o tamanho da fonte',
+                    points: 15,
+                },
+                {
+                    id: 'q4',
+                    type: 'true-false',
+                    question: 'Sans-serif é uma fonte específica, não um tipo',
+                    correctAnswer: 'false',
+                    explanation: 'Sans-serif é uma categoria genérica de fontes sem serifas',
+                    points: 10,
+                },
+                {
+                    id: 'q5',
+                    type: 'multiple-choice',
+                    question: 'Qual unidade é relativa ao tamanho da fonte raiz?',
+                    options: ['px', 'em', 'rem', '%'],
+                    correctAnswer: 2,
+                    explanation: 'rem (root em) é relativo ao font-size do elemento raiz (html)',
+                    points: 10,
+                },
+            ],
+        },
+        {
+            id: 'texto-css',
+            title: 'Estilização de Texto',
+            description: 'Alinhamento, decoração e espaçamento de texto',
+            xpReward: 100,
+            estimatedTime: 15,
+            content: {
+                introduction: 'Além de fontes, CSS permite controlar alinhamento, espaçamento e decoração de texto.',
+                sections: [
+                    {
+                        title: 'Text-Align',
+                        text: 'Alinha o texto horizontalmente: left, center, right ou justify.',
+                        code: '.centered {\n  text-align: center;\n}\n\n.justified {\n  text-align: justify;\n}',
+                    },
+                    {
+                        title: 'Text-Decoration',
+                        text: 'Adiciona ou remove decorações como sublinhado e riscado.',
+                        code: 'a {\n  text-decoration: none; /* remove sublinhado */\n}\n\n.strike {\n  text-decoration: line-through;\n}',
+                    },
+                    {
+                        title: 'Line-Height',
+                        text: 'Define a altura da linha, afetando o espaçamento vertical.',
+                        code: 'p {\n  line-height: 1.6; /* 1.6x o tamanho da fonte */\n}',
+                    },
+                    {
+                        title: 'Letter e Word Spacing',
+                        text: 'Controla o espaço entre letras e palavras.',
+                        code: '.spaced {\n  letter-spacing: 2px;\n  word-spacing: 4px;\n}',
+                    },
+                ],
+            },
+            quiz: [
+                {
+                    id: 'q1',
+                    type: 'multiple-choice',
+                    question: 'Qual propriedade centraliza texto horizontalmente?',
+                    options: ['text-center', 'align: center', 'text-align: center', 'horizontal-align'],
+                    correctAnswer: 2,
+                    explanation: 'text-align: center centraliza o texto horizontalmente',
+                    points: 10,
+                },
+                {
+                    id: 'q2',
+                    type: 'multiple-choice',
+                    question: 'Como remover o sublinhado de links?',
+                    options: ['underline: none', 'text-decoration: none', 'text-line: none', 'decoration: off'],
+                    correctAnswer: 1,
+                    explanation: 'text-decoration: none remove qualquer decoração de texto',
+                    points: 10,
+                },
+                {
+                    id: 'q3',
+                    type: 'fill-blank',
+                    question: 'Complete: line-____: 1.5;',
+                    correctAnswer: 'height',
+                    explanation: 'line-height define a altura da linha do texto',
+                    points: 15,
+                },
+                {
+                    id: 'q4',
+                    type: 'true-false',
+                    question: 'text-transform: uppercase deixa todas as letras maiúsculas',
+                    correctAnswer: 'true',
+                    explanation: 'uppercase transforma todo o texto em letras maiúsculas',
+                    points: 10,
+                },
+                {
+                    id: 'q5',
+                    type: 'multiple-choice',
+                    question: 'O que letter-spacing controla?',
+                    options: ['Espaço entre linhas', 'Espaço entre letras', 'Espaço entre parágrafos', 'Tamanho das letras'],
+                    correctAnswer: 1,
+                    explanation: 'letter-spacing define o espaço entre cada letra',
+                    points: 10,
+                },
+            ],
+        },
+    ],
+};
+
+// Continua no próximo módulo...
+
+// ============================================
+// MÓDULO 4: BOX MODEL
+// ============================================
+
+export const CSS_BOX_MODEL: LearningModule = {
+    id: 'css-box-model',
+    name: 'Box Model e Espaçamento',
+    description: 'Margin, padding, border e dimensões',
+    icon: '📦',
+    difficulty: 'intermediate',
+    requiredXP: 600,
+    lessons: [
+        {
+            id: 'box-model',
+            title: 'O Box Model',
+            description: 'Entenda como o CSS calcula o tamanho dos elementos',
+            xpReward: 120,
+            estimatedTime: 18,
+            content: {
+                introduction: 'Todo elemento HTML é uma "caixa" composta por: conteúdo, padding, border e margin. Entender o Box Model é essencial.',
+                sections: [
+                    {
+                        title: 'Componentes do Box Model',
+                        text: 'Content: o conteúdo do elemento. Padding: espaço interno. Border: borda ao redor. Margin: espaço externo.',
+                        code: '.box {\n  width: 200px;\n  padding: 20px;\n  border: 2px solid black;\n  margin: 10px;\n}',
+                    },
+                    {
+                        title: 'Width e Height',
+                        text: 'Define a largura e altura do conteúdo. Por padrão, padding e border são adicionados.',
+                        code: 'div {\n  width: 100%;\n  max-width: 800px;\n  height: auto;\n  min-height: 200px;\n}',
+                    },
+                    {
+                        title: 'Box-Sizing',
+                        text: 'box-sizing: border-box inclui padding e border no cálculo de width/height.',
+                        code: '* {\n  box-sizing: border-box;\n}\n\n.card {\n  width: 300px; /* inclui padding e border */\n  padding: 20px;\n}',
+                    },
+                ],
+            },
+            quiz: [
+                {
+                    id: 'q1',
+                    type: 'multiple-choice',
+                    question: 'Quais são os 4 componentes do Box Model?',
+                    options: ['Top, Right, Bottom, Left', 'Content, Padding, Border, Margin', 'Width, Height, Depth, Margin', 'Header, Body, Footer, Aside'],
+                    correctAnswer: 1,
+                    explanation: 'O Box Model é: Content (conteúdo), Padding, Border e Margin',
+                    points: 10,
+                },
+                {
+                    id: 'q2',
+                    type: 'multiple-choice',
+                    question: 'O que box-sizing: border-box faz?',
+                    options: ['Remove bordas', 'Inclui padding/border no width', 'Adiciona sombra', 'Centraliza o elemento'],
+                    correctAnswer: 1,
+                    explanation: 'border-box faz width/height incluir padding e border no cálculo',
+                    points: 10,
+                },
+                {
+                    id: 'q3',
+                    type: 'true-false',
+                    question: 'Margin é o espaço interno do elemento',
+                    correctAnswer: 'false',
+                    explanation: 'Margin é externo. Padding é o espaço interno.',
+                    points: 10,
+                },
+                {
+                    id: 'q4',
+                    type: 'fill-blank',
+                    question: 'Complete: ____-sizing: border-box;',
+                    correctAnswer: 'box',
+                    explanation: 'box-sizing controla como width/height são calculados',
+                    points: 15,
+                },
+                {
+                    id: 'q5',
+                    type: 'multiple-choice',
+                    question: 'Qual propriedade define a largura máxima?',
+                    options: ['width-max', 'max-width', 'limit-width', 'top-width'],
+                    correctAnswer: 1,
+                    explanation: 'max-width define a largura máxima que um elemento pode ter',
+                    points: 10,
+                },
+            ],
+        },
+        {
+            id: 'margin-padding',
+            title: 'Margin e Padding',
+            description: 'Controle espaçamentos internos e externos',
+            xpReward: 100,
+            estimatedTime: 15,
+            content: {
+                introduction: 'Margin controla espaço externo, Padding controla espaço interno. Ambos aceitam 1 a 4 valores.',
+                sections: [
+                    {
+                        title: 'Padding',
+                        text: 'Espaço entre o conteúdo e a borda. Pode ser definido para cada lado.',
+                        code: '.box {\n  padding: 20px; /* todos os lados */\n  padding: 10px 20px; /* vertical | horizontal */\n  padding: 10px 20px 30px 40px; /* top right bottom left */\n}',
+                    },
+                    {
+                        title: 'Margin',
+                        text: 'Espaço externo ao elemento. Mesma sintaxe do padding.',
+                        code: '.card {\n  margin: 20px auto; /* centraliza horizontalmente */\n  margin-bottom: 30px;\n}',
+                    },
+                    {
+                        title: 'Margin Auto',
+                        text: 'margin: auto centraliza elementos de bloco horizontalmente.',
+                        code: '.container {\n  width: 800px;\n  margin: 0 auto; /* centralizado */\n}',
+                    },
+                ],
+            },
+            quiz: [
+                {
+                    id: 'q1',
+                    type: 'multiple-choice',
+                    question: 'O que padding: 10px 20px significa?',
+                    options: ['10px em todos os lados', '10px vertical, 20px horizontal', '10px top, 20px bottom', '10px left, 20px right'],
+                    correctAnswer: 1,
+                    explanation: 'Com 2 valores: primeiro é vertical (top/bottom), segundo é horizontal (left/right)',
+                    points: 10,
+                },
+                {
+                    id: 'q2',
+                    type: 'multiple-choice',
+                    question: 'Como centralizar um elemento horizontalmente?',
+                    options: ['margin: center', 'margin: 0 auto', 'align: center', 'position: center'],
+                    correctAnswer: 1,
+                    explanation: 'margin: 0 auto centraliza elementos de bloco com largura definida',
+                    points: 10,
+                },
+                {
+                    id: 'q3',
+                    type: 'fill-blank',
+                    question: 'Complete: margin-____: 20px; (para o lado inferior)',
+                    correctAnswer: 'bottom',
+                    explanation: 'margin-bottom define a margem inferior',
+                    points: 15,
+                },
+                {
+                    id: 'q4',
+                    type: 'true-false',
+                    question: 'Padding pode ter valores negativos',
+                    correctAnswer: 'false',
+                    explanation: 'Padding não aceita valores negativos. Margin sim.',
+                    points: 10,
+                },
+                {
+                    id: 'q5',
+                    type: 'multiple-choice',
+                    question: 'margin: 10px 20px 30px 40px. Qual é o valor do right?',
+                    options: ['10px', '20px', '30px', '40px'],
+                    correctAnswer: 1,
+                    explanation: 'A ordem é: top right bottom left (sentido horário)',
+                    points: 10,
+                },
+            ],
+        },
+        {
+            id: 'borders-css',
+            title: 'Borders',
+            description: 'Bordas, arredondamentos e estilos',
+            xpReward: 100,
+            estimatedTime: 15,
+            content: {
+                introduction: 'A propriedade border adiciona bordas aos elementos. Você pode controlar estilo, largura e cor.',
+                sections: [
+                    {
+                        title: 'Border Básico',
+                        text: 'A shorthand border aceita: largura, estilo e cor.',
+                        code: '.box {\n  border: 2px solid black;\n}\n\n.dashed {\n  border: 1px dashed gray;\n}',
+                    },
+                    {
+                        title: 'Border-Radius',
+                        text: 'Arredonda os cantos do elemento.',
+                        code: '.rounded {\n  border-radius: 8px;\n}\n\n.circle {\n  border-radius: 50%;\n}',
+                    },
+                    {
+                        title: 'Bordas Individuais',
+                        text: 'Defina bordas para cada lado separadamente.',
+                        code: '.custom {\n  border-top: 3px solid blue;\n  border-bottom: 1px dotted gray;\n}',
+                    },
+                ],
+            },
+            quiz: [
+                {
+                    id: 'q1',
+                    type: 'multiple-choice',
+                    question: 'Qual é a ordem da shorthand border?',
+                    options: ['cor estilo largura', 'largura estilo cor', 'estilo cor largura', 'cor largura estilo'],
+                    correctAnswer: 1,
+                    explanation: 'A ordem é: largura estilo cor (ex: 2px solid black)',
+                    points: 10,
+                },
+                {
+                    id: 'q2',
+                    type: 'multiple-choice',
+                    question: 'Como criar um círculo perfeito com CSS?',
+                    options: ['border-radius: 100px', 'border-radius: 50%', 'shape: circle', 'round: true'],
+                    correctAnswer: 1,
+                    explanation: 'border-radius: 50% em um quadrado cria um círculo',
+                    points: 10,
+                },
+                {
+                    id: 'q3',
+                    type: 'fill-blank',
+                    question: 'Complete: border-____: 10px;',
+                    correctAnswer: 'radius',
+                    explanation: 'border-radius arredonda os cantos',
+                    points: 15,
+                },
+                {
+                    id: 'q4',
+                    type: 'true-false',
+                    question: 'border: none remove todas as bordas',
+                    correctAnswer: 'true',
+                    explanation: 'border: none ou border: 0 remove todas as bordas',
+                    points: 10,
+                },
+                {
+                    id: 'q5',
+                    type: 'multiple-choice',
+                    question: 'Qual NÃO é um estilo de borda válido?',
+                    options: ['solid', 'dashed', 'dotted', 'striped'],
+                    correctAnswer: 3,
+                    explanation: 'striped não existe. Válidos: solid, dashed, dotted, double, etc.',
+                    points: 10,
+                },
+            ],
+        },
+    ],
+};
+
+// ============================================
+// MÓDULO 5: FLEXBOX E LAYOUT
+// ============================================
+
+export const CSS_FLEXBOX: LearningModule = {
+    id: 'css-flexbox',
+    name: 'Flexbox e Layout',
+    description: 'Crie layouts flexíveis e responsivos',
+    icon: '📐',
+    difficulty: 'intermediate',
+    requiredXP: 800,
+    lessons: [
+        {
+            id: 'display-css',
+            title: 'Display e Position',
+            description: 'Controle como elementos são exibidos',
+            xpReward: 120,
+            estimatedTime: 18,
+            content: {
+                introduction: 'Display controla o tipo de caixa de renderização. Position controla o posicionamento.',
+                sections: [
+                    {
+                        title: 'Display',
+                        text: 'block, inline, inline-block, flex, grid, none.',
+                        code: '.block { display: block; }\n.inline { display: inline; }\n.flex { display: flex; }\n.hidden { display: none; }',
+                    },
+                    {
+                        title: 'Position',
+                        text: 'static (padrão), relative, absolute, fixed, sticky.',
+                        code: '.absolute {\n  position: absolute;\n  top: 0;\n  right: 0;\n}\n\n.fixed {\n  position: fixed;\n  bottom: 20px;\n}',
+                    },
+                ],
+            },
+            quiz: [
+                {
+                    id: 'q1',
+                    type: 'multiple-choice',
+                    question: 'Qual display oculta completamente o elemento?',
+                    options: ['hidden', 'none', 'invisible', 'off'],
+                    correctAnswer: 1,
+                    explanation: 'display: none remove o elemento do fluxo da página',
+                    points: 10,
+                },
+                {
+                    id: 'q2',
+                    type: 'multiple-choice',
+                    question: 'Qual position é relativo à janela do navegador?',
+                    options: ['relative', 'absolute', 'fixed', 'static'],
+                    correctAnswer: 2,
+                    explanation: 'fixed posiciona relativo à viewport (janela)',
+                    points: 10,
+                },
+                {
+                    id: 'q3',
+                    type: 'fill-blank',
+                    question: 'Complete: display: ____;',
+                    correctAnswer: 'flex',
+                    explanation: 'display: flex ativa o Flexbox no elemento',
+                    points: 15,
+                },
+                {
+                    id: 'q4',
+                    type: 'true-false',
+                    question: 'position: static é o valor padrão',
+                    correctAnswer: 'true',
+                    explanation: 'Elementos têm position: static por padrão',
+                    points: 10,
+                },
+                {
+                    id: 'q5',
+                    type: 'multiple-choice',
+                    question: 'Qual display permite definir width/height em elementos inline?',
+                    options: ['inline', 'block', 'inline-block', 'flex'],
+                    correctAnswer: 2,
+                    explanation: 'inline-block combina características de inline e block',
+                    points: 10,
+                },
+            ],
+        },
+        {
+            id: 'flexbox-basico',
+            title: 'Flexbox Básico',
+            description: 'Crie layouts flexíveis facilmente',
+            xpReward: 150,
+            estimatedTime: 25,
+            content: {
+                introduction: 'Flexbox é um sistema de layout unidimensional que facilita a distribuição de espaço entre itens.',
+                sections: [
+                    {
+                        title: 'Container Flex',
+                        text: 'Aplique display: flex ao container para ativar o Flexbox.',
+                        code: '.container {\n  display: flex;\n  gap: 20px;\n}',
+                    },
+                    {
+                        title: 'Justify-Content',
+                        text: 'Alinha itens no eixo principal (horizontal por padrão).',
+                        code: '.container {\n  display: flex;\n  justify-content: center; /* center, space-between, space-around */\n}',
+                    },
+                    {
+                        title: 'Align-Items',
+                        text: 'Alinha itens no eixo cruzado (vertical por padrão).',
+                        code: '.container {\n  display: flex;\n  align-items: center; /* center, flex-start, flex-end, stretch */\n}',
+                    },
+                    {
+                        title: 'Flex-Direction',
+                        text: 'Define a direção dos itens: row, row-reverse, column, column-reverse.',
+                        code: '.vertical {\n  flex-direction: column;\n}',
+                    },
+                ],
+            },
+            quiz: [
+                {
+                    id: 'q1',
+                    type: 'multiple-choice',
+                    question: 'Qual propriedade ativa o Flexbox?',
+                    options: ['flex: on', 'display: flex', 'flexbox: true', 'layout: flex'],
+                    correctAnswer: 1,
+                    explanation: 'display: flex no container ativa o Flexbox',
+                    points: 10,
+                },
+                {
+                    id: 'q2',
+                    type: 'multiple-choice',
+                    question: 'O que justify-content: space-between faz?',
+                    options: ['Centraliza itens', 'Espaço igual entre itens', 'Agrupa à esquerda', 'Empilha verticalmente'],
+                    correctAnswer: 1,
+                    explanation: 'space-between distribui espaço igual ENTRE os itens',
+                    points: 10,
+                },
+                {
+                    id: 'q3',
+                    type: 'multiple-choice',
+                    question: 'Qual propriedade centraliza verticalmente em Flexbox?',
+                    options: ['justify-content', 'align-items', 'text-align', 'vertical-align'],
+                    correctAnswer: 1,
+                    explanation: 'align-items alinha no eixo cruzado (vertical por padrão)',
+                    points: 10,
+                },
+                {
+                    id: 'q4',
+                    type: 'fill-blank',
+                    question: 'Complete: flex-____: column;',
+                    correctAnswer: 'direction',
+                    explanation: 'flex-direction define a direção do eixo principal',
+                    points: 15,
+                },
+                {
+                    id: 'q5',
+                    type: 'true-false',
+                    question: 'gap funciona em Flexbox para espaçar itens',
+                    correctAnswer: 'true',
+                    explanation: 'gap define espaço entre itens flex/grid',
+                    points: 10,
+                },
+                {
+                    id: 'q6',
+                    type: 'multiple-choice',
+                    question: 'Como centralizar um item horizontal E verticalmente?',
+                    options: ['margin: auto', 'justify-content: center + align-items: center', 'text-align: center', 'center: true'],
+                    correctAnswer: 1,
+                    explanation: 'Combine justify-content e align-items com center',
+                    points: 10,
+                },
+            ],
+        },
+    ],
+};
+
+// ============================================
+// MÓDULO 6: EFEITOS E ANIMAÇÕES
+// ============================================
+
+export const CSS_EFEITOS: LearningModule = {
+    id: 'css-efeitos',
+    name: 'Efeitos e Animações',
+    description: 'Transitions, transforms e animações CSS',
+    icon: '✨',
+    difficulty: 'advanced',
+    requiredXP: 1000,
+    lessons: [
+        {
+            id: 'transitions',
+            title: 'Transitions',
+            description: 'Crie transições suaves entre estados',
+            xpReward: 120,
+            estimatedTime: 18,
+            content: {
+                introduction: 'Transitions animam mudanças de propriedades CSS de forma suave.',
+                sections: [
+                    {
+                        title: 'Transition Básico',
+                        text: 'Defina quais propriedades animar e a duração.',
+                        code: '.button {\n  background: blue;\n  transition: background 0.3s ease;\n}\n\n.button:hover {\n  background: darkblue;\n}',
+                    },
+                    {
+                        title: 'Múltiplas Propriedades',
+                        text: 'Anime várias propriedades ou use all.',
+                        code: '.card {\n  transition: all 0.3s ease;\n}\n\n.card:hover {\n  transform: scale(1.05);\n  box-shadow: 0 10px 20px rgba(0,0,0,0.2);\n}',
+                    },
+                ],
+            },
+            quiz: [
+                {
+                    id: 'q1',
+                    type: 'multiple-choice',
+                    question: 'Qual propriedade cria transições suaves?',
+                    options: ['animation', 'transition', 'smooth', 'ease'],
+                    correctAnswer: 1,
+                    explanation: 'transition define transições entre estados',
+                    points: 10,
+                },
+                {
+                    id: 'q2',
+                    type: 'fill-blank',
+                    question: 'Complete: transition: background ____s ease;',
+                    correctAnswer: '0.3',
+                    explanation: 'O segundo valor é a duração em segundos',
+                    points: 15,
+                },
+                {
+                    id: 'q3',
+                    type: 'multiple-choice',
+                    question: 'O que transition: all faz?',
+                    options: ['Anima todas as propriedades', 'Desativa animações', 'Anima todos os elementos', 'Reseta estilos'],
+                    correctAnswer: 0,
+                    explanation: 'all anima qualquer propriedade que mudar',
+                    points: 10,
+                },
+                {
+                    id: 'q4',
+                    type: 'true-false',
+                    question: 'Transitions precisam de um trigger como :hover',
+                    correctAnswer: 'true',
+                    explanation: 'Transitions animam mudanças de estado (hover, focus, etc.)',
+                    points: 10,
+                },
+                {
+                    id: 'q5',
+                    type: 'multiple-choice',
+                    question: 'Qual timing function começa devagar e acelera?',
+                    options: ['ease-out', 'ease-in', 'linear', 'ease'],
+                    correctAnswer: 1,
+                    explanation: 'ease-in começa devagar e acelera no final',
+                    points: 10,
+                },
+            ],
+        },
+        {
+            id: 'transforms',
+            title: 'Transforms',
+            description: 'Rotacione, escale e mova elementos',
+            xpReward: 120,
+            estimatedTime: 18,
+            content: {
+                introduction: 'Transform permite modificar elementos visualmente sem afetar o layout.',
+                sections: [
+                    {
+                        title: 'Scale',
+                        text: 'Aumenta ou diminui o tamanho do elemento.',
+                        code: '.zoom {\n  transform: scale(1.2); /* 120% do tamanho */\n}',
+                    },
+                    {
+                        title: 'Rotate',
+                        text: 'Rotaciona o elemento em graus.',
+                        code: '.spin {\n  transform: rotate(45deg);\n}',
+                    },
+                    {
+                        title: 'Translate',
+                        text: 'Move o elemento sem afetar outros.',
+                        code: '.move {\n  transform: translateX(50px);\n  transform: translate(20px, 30px);\n}',
+                    },
+                    {
+                        title: 'Combinando Transforms',
+                        text: 'Aplique múltiplas transformações.',
+                        code: '.complex {\n  transform: scale(1.1) rotate(5deg) translateY(-10px);\n}',
+                    },
+                ],
+            },
+            quiz: [
+                {
+                    id: 'q1',
+                    type: 'multiple-choice',
+                    question: 'Qual transform dobra o tamanho do elemento?',
+                    options: ['scale(2)', 'size(200%)', 'zoom(2x)', 'grow(double)'],
+                    correctAnswer: 0,
+                    explanation: 'scale(2) aumenta para 200% (o dobro)',
+                    points: 10,
+                },
+                {
+                    id: 'q2',
+                    type: 'multiple-choice',
+                    question: 'Qual unidade é usada em rotate?',
+                    options: ['px', 'deg', 'rem', '%'],
+                    correctAnswer: 1,
+                    explanation: 'rotate usa deg (graus) como unidade',
+                    points: 10,
+                },
+                {
+                    id: 'q3',
+                    type: 'fill-blank',
+                    question: 'Complete: transform: ____X(100px);',
+                    correctAnswer: 'translate',
+                    explanation: 'translateX move horizontalmente',
+                    points: 15,
+                },
+                {
+                    id: 'q4',
+                    type: 'true-false',
+                    question: 'Transform afeta o espaço ocupado pelo elemento no layout',
+                    correctAnswer: 'false',
+                    explanation: 'Transform é visual apenas, não afeta o layout',
+                    points: 10,
+                },
+                {
+                    id: 'q5',
+                    type: 'multiple-choice',
+                    question: 'O que rotate(180deg) faz?',
+                    options: ['Vira de cabeça para baixo', 'Gira 180 pixels', 'Move 180 graus para direita', 'Aumenta 180%'],
+                    correctAnswer: 0,
+                    explanation: '180 graus = meio giro = de cabeça para baixo',
+                    points: 10,
+                },
+            ],
+        },
+    ],
+};
+
+// ============================================
+// EXPORTAÇÃO DOS MÓDULOS CSS
+// ============================================
+
+export const CSS_MODULES: LearningModule[] = [
+    CSS_FUNDAMENTOS,
+    CSS_CORES,
+    CSS_TIPOGRAFIA,
+    CSS_BOX_MODEL,
+    CSS_FLEXBOX,
+    CSS_EFEITOS,
+];

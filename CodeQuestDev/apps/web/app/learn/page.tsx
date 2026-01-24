@@ -9,13 +9,27 @@ import { Progress } from '@/components/ui/progress';
 import { cn } from '@/lib/utils';
 import { Onboarding, useOnboarding } from '@/components/onboarding/onboarding';
 import { ThemeToggle } from '@/components/settings/theme-toggle';
-import { ALL_MODULES, type LearningModule, type Lesson } from '@/content/lessons';
+import { ALL_MODULES, COURSES, type LearningModule, type Lesson, type CourseType } from '@/content/lessons';
+import { CSS_MODULES } from '@/content/css-lessons';
+import { JS_MODULES } from '@/content/js-lessons';
+import { PHP_MODULES } from '@/content/php-lessons';
+
+const COURSE_MODULES: Record<CourseType, LearningModule[]> = {
+    html: ALL_MODULES,
+    css: CSS_MODULES,
+    javascript: JS_MODULES,
+    php: PHP_MODULES,
+};
 
 export default function LearnPage() {
     const { showOnboarding, complete } = useOnboarding();
+    const [selectedCourse, setSelectedCourse] = useState<CourseType>('html');
     const [selectedModule, setSelectedModule] = useState<LearningModule | null>(null);
     const [completedLessons, setCompletedLessons] = useState<string[]>([]);
     const [userXP, setUserXP] = useState(0);
+
+    const currentModules = COURSE_MODULES[selectedCourse];
+    const currentCourse = COURSES[selectedCourse];
 
     useEffect(() => {
         // Load progress from localStorage
@@ -64,16 +78,44 @@ export default function LearnPage() {
                 {showOnboarding && <Onboarding onComplete={complete} />}
 
                 <main className="container mx-auto p-6 pt-10">
+                    {/* Course Selector Tabs */}
+                    <div className="flex flex-wrap gap-3 mb-8">
+                        {(Object.keys(COURSES) as CourseType[]).map((courseKey) => {
+                            const course = COURSES[courseKey];
+                            const isActive = selectedCourse === courseKey;
+                            return (
+                                <button
+                                    key={courseKey}
+                                    onClick={() => {
+                                        setSelectedCourse(courseKey);
+                                        setSelectedModule(null);
+                                    }}
+                                    className={cn(
+                                        'px-6 py-3 font-bold uppercase text-sm tracking-wide border-2 border-black transition-all',
+                                        isActive
+                                            ? 'bg-primary text-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]'
+                                            : 'bg-white dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-zinc-800'
+                                    )}
+                                >
+                                    <span className="mr-2">{course.icon}</span>
+                                    {course.name}
+                                </button>
+                            );
+                        })}
+                    </div>
+
                     <div className="mb-12 text-center md:text-left">
-                        <h1 className="text-4xl font-black uppercase mb-4 tracking-tighter">📚 Aprenda HTML</h1>
+                        <h1 className="text-4xl font-black uppercase mb-4 tracking-tighter">
+                            {currentCourse.icon} Aprenda {currentCourse.name}
+                        </h1>
                         <p className="text-muted-foreground text-lg">
-                            {ALL_MODULES.length} módulos · {ALL_MODULES.reduce((t, m) => t + m.lessons.length, 0)} lições
+                            {currentModules.length} módulos · {currentModules.reduce((t, m) => t + m.lessons.length, 0)} lições
                         </p>
                     </div>
 
                     {/* Modules Grid */}
                     <div className="grid md:grid-cols-2 gap-8">
-                        {ALL_MODULES.map((module, index) => {
+                        {currentModules.map((module, index) => {
                             const progress = getModuleProgress(module);
                             const locked = isModuleLocked(module);
 

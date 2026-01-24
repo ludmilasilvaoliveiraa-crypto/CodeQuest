@@ -2,6 +2,7 @@
 import { NextResponse } from 'next/server';
 import { auth } from '@/lib/auth';
 import { prisma } from '@/lib/db';
+import { getOrCreateUser } from '@/lib/user-helpers';
 
 // POST /api/friends/reject - Reject a friend request
 export async function POST(request: Request) {
@@ -18,14 +19,13 @@ export async function POST(request: Request) {
             return NextResponse.json({ error: 'Request ID required' }, { status: 400 });
         }
 
-        // Get current user
-        const currentUser = await prisma.user.findUnique({
-            where: { email: session.user.email },
-        });
+        // Get or create current user (handles guest users)
+        const currentUser = await getOrCreateUser(
+            session.user.email,
+            session.user.name,
+            session.user.image
+        );
 
-        if (!currentUser) {
-            return NextResponse.json({ error: 'User not found' }, { status: 404 });
-        }
 
         // Find the request
         const friendRequest = await prisma.friendRequest.findUnique({

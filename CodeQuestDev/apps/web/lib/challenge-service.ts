@@ -76,6 +76,46 @@ export const CHALLENGE_TYPES = {
         goals: [3, 5, 10],
         xpMultiplier: 2,
     },
+    // Course-specific challenges
+    html_quiz: {
+        name: 'Quiz HTML',
+        description: 'Domine X questões de HTML',
+        icon: '📄',
+        goals: [10, 25, 50],
+        xpMultiplier: 2,
+        course: 'html',
+    },
+    css_quiz: {
+        name: 'Quiz CSS',
+        description: 'Domine X questões de CSS',
+        icon: '🎨',
+        goals: [10, 25, 50],
+        xpMultiplier: 2,
+        course: 'css',
+    },
+    js_quiz: {
+        name: 'Quiz JavaScript',
+        description: 'Domine X questões de JavaScript',
+        icon: '⚡',
+        goals: [10, 25, 50],
+        xpMultiplier: 2,
+        course: 'javascript',
+    },
+    php_quiz: {
+        name: 'Quiz PHP',
+        description: 'Domine X questões de PHP',
+        icon: '🐘',
+        goals: [10, 25, 50],
+        xpMultiplier: 2,
+        course: 'php',
+    },
+    polyglot: {
+        name: 'Poliglota',
+        description: 'Complete lições em X linguagens diferentes',
+        icon: '🌍',
+        goals: [2, 3, 4],
+        xpMultiplier: 5,
+    },
 };
 
 // Mock data removed - will be replaced with real API calls

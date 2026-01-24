@@ -2,6 +2,7 @@
 import { NextResponse } from 'next/server';
 import { auth } from '@/lib/auth';
 import { prisma } from '@/lib/db';
+import { getOrCreateUser } from '@/lib/user-helpers';
 
 // GET /api/friends - List all friends
 export async function GET() {
@@ -12,14 +13,13 @@ export async function GET() {
             return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
         }
 
-        // Get current user
-        const currentUser = await prisma.user.findUnique({
-            where: { email: session.user.email },
-        });
+        // Get or create current user (handles guest users)
+        const currentUser = await getOrCreateUser(
+            session.user.email,
+            session.user.name,
+            session.user.image
+        );
 
-        if (!currentUser) {
-            return NextResponse.json({ error: 'User not found' }, { status: 404 });
-        }
 
         // Get all friendships where user is either the initiator or receiver
         const friendships = await prisma.friendship.findMany({
@@ -79,14 +79,13 @@ export async function DELETE(request: Request) {
             return NextResponse.json({ error: 'Friend ID required' }, { status: 400 });
         }
 
-        // Get current user
-        const currentUser = await prisma.user.findUnique({
-            where: { email: session.user.email },
-        });
+        // Get or create current user (handles guest users)
+        const currentUser = await getOrCreateUser(
+            session.user.email,
+            session.user.name,
+            session.user.image
+        );
 
-        if (!currentUser) {
-            return NextResponse.json({ error: 'User not found' }, { status: 404 });
-        }
 
         // Delete both directions of friendship
         await prisma.friendship.deleteMany({
