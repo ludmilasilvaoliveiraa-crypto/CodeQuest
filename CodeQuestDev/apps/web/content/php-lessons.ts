@@ -163,23 +163,49 @@ export const PHP_FUNDAMENTOS: LearningModule = {
             xpReward: 100,
             estimatedTime: 15,
             content: {
-                introduction: 'Variáveis PHP armazenam dados e sempre começam com o símbolo $.',
+                introduction: 'Variáveis PHP armazenam dados e sempre começam com o símbolo $. PHP é uma linguagem de tipagem dinâmica - o tipo é determinado automaticamente pelo valor. Entender escopo, constantes e tipos é essencial para código organizado.',
                 sections: [
                     {
                         title: 'Declarando Variáveis',
-                        text: 'Em PHP, variáveis começam com $ e não precisam de declaração de tipo.',
-                        code: '<?php\n$nome = "Maria";\n$idade = 25;\n$preco = 19.99;\n$ativo = true;\n?>',
+                        text: 'Em PHP, variáveis começam com $ e não precisam de declaração de tipo. O tipo é inferido do valor atribuído. Você pode reatribuir valores de tipos diferentes.',
+                        code: '<?php\n// Tipos são inferidos automaticamente\n$nome = "Maria";      // string\n$idade = 25;          // integer\n$preco = 19.99;       // float\n$ativo = true;        // boolean\n$nulo = null;         // null\n\n// Reatribuição (tipagem dinâmica)\n$valor = 10;\n$valor = "dez";  // agora é string\n\n// Verificar tipo\nvar_dump($nome);  // string(5) "Maria"\ngettype($idade);  // "integer"\n?>',
                     },
                     {
                         title: 'Regras de Nomes',
-                        text: 'Devem começar com $ + letra ou underscore. São case-sensitive.',
-                        code: '<?php\n$nome = "Ana";\n$Nome = "João"; // diferente de $nome\n$_privado = "valor";\n// $1numero = "erro"; // inválido\n?>',
+                        text: 'Variáveis devem começar com $ + letra ou underscore. São case-sensitive ($nome ≠ $Nome). Não podem começar com número. Use nomes descritivos que indiquem o propósito.',
+                        code: '<?php\n// ✅ Válidos\n$nome = "Ana";\n$Nome = "João";        // diferente de $nome!\n$_privado = "valor";\n$preco_total = 100;\n$precoTotal = 100;     // camelCase também ok\n\n// ❌ Inválidos\n// $1numero = "erro";   // não pode começar com número\n// $pre-co = 10;        // hífen não permitido\n\n// Convenções comuns\n$totalDeItens = 5;     // camelCase\n$total_de_itens = 5;   // snake_case (mais comum em PHP)\n?>',
                     },
                     {
-                        title: 'Concatenação',
-                        text: 'Use o ponto (.) para concatenar strings.',
-                        code: '<?php\n$nome = "Maria";\n$sobrenome = "Silva";\necho $nome . " " . $sobrenome;\n// Ou com aspas duplas:\necho "$nome $sobrenome";\n?>',
+                        title: 'Constantes',
+                        text: 'Constantes são valores que não mudam. Use define() ou const. Convenção: MAIÚSCULAS com underscore. Não usam $. Úteis para configurações e valores fixos.',
+                        code: '<?php\n// Forma tradicional\ndefine("PI", 3.14159);\ndefine("SITE_NOME", "CodeQuest");\n\n// Forma moderna (dentro de classes também)\nconst VERSAO = "2.0";\nconst MAX_USUARIOS = 100;\n\n// Usando constantes\necho PI;           // 3.14159\necho SITE_NOME;    // CodeQuest\n\n// Constantes mágicas (built-in)\necho __FILE__;     // caminho do arquivo\necho __LINE__;     // número da linha\necho __DIR__;      // diretório do arquivo\necho __FUNCTION__; // nome da função\necho __CLASS__;    // nome da classe\n?>',
                     },
+                    {
+                        title: 'Escopo de Variáveis',
+                        text: 'PHP tem escopo global e local. Variáveis de função são locais. Use global para acessar globais dentro de função (evite!) ou $GLOBALS. Parâmetros são sempre locais.',
+                        code: '<?php\n$global = "Sou global";\n\nfunction teste() {\n    $local = "Sou local";\n    echo $local;  // funciona\n    // echo $global; // ❌ erro! não existe aqui\n    \n    // Acessar global (evite se possível)\n    global $global;\n    echo $global;  // agora funciona\n    \n    // Ou via $GLOBALS\n    echo $GLOBALS[\"global\"];\n}\n\nteste();\n// echo $local; // ❌ erro! só existe dentro da função\n\n// Variáveis estáticas (mantém valor entre chamadas)\nfunction contador() {\n    static $count = 0;\n    $count++;\n    return $count;\n}\necho contador(); // 1\necho contador(); // 2\necho contador(); // 3\n?>',
+                    },
+                    {
+                        title: 'Concatenação e Interpolação',
+                        text: 'Use ponto (.) para concatenar. Aspas duplas permitem interpolação ($var dentro da string). Aspas simples são literais. Para arrays use chaves {}.',
+                        code: '<?php\n$nome = "Maria";\n$idade = 25;\n\n// Concatenação com .\necho "Olá, " . $nome . "!";\necho "Idade: " . $idade;\n\n// Interpolação (aspas duplas)\necho "Olá, $nome!";        // Olá, Maria!\necho "Idade: $idade anos";\n\n// Aspas simples (literal)\necho \'Olá, $nome!\';        // Olá, $nome! (literal)\n\n// Arrays - use chaves\n$user = ["nome" => "João"];\necho "Usuário: {$user[\"nome\"]}";\n\n// Heredoc (strings longas)\n$html = <<<HTML\n<div>\n    <h1>$nome</h1>\n    <p>Idade: $idade</p>\n</div>\nHTML;\n?>',
+                    },
+                    {
+                        title: 'Type Casting',
+                        text: 'Converta tipos explicitamente com casting: (int), (float), (string), (bool), (array). Funções: intval(), floatval(), strval() também funcionam.',
+                        code: '<?php\n// Casting explícito\n$numero = "42";\n$int = (int) $numero;      // 42 (integer)\n$float = (float) "3.14";   // 3.14\n$string = (string) 100;    // "100"\n$bool = (bool) 1;          // true\n$array = (array) "texto";  // ["texto"]\n\n// Funções de conversão\n$valor = intval("99");     // 99\n$preco = floatval("19.99"); // 19.99\n$texto = strval(42);       // "42"\n\n// Cuidado com conversões\n$x = (int) "10abc";  // 10\n$y = (int) "abc10";  // 0\n$z = (bool) "";      // false\n$w = (bool) "0";     // false\n$v = (bool) "false"; // true! (string não vazia)\n\n// Verificar tipos\nis_int($int);      // true\nis_string($texto); // true\nis_array($array);  // true\n?>',
+                    },
+                    {
+                        title: 'Variáveis Superglobais',
+                        text: 'PHP tem variáveis globais especiais acessíveis em qualquer escopo: $_GET, $_POST, $_SESSION, $_COOKIE, $_SERVER, $_FILES, $_ENV, $_REQUEST.',
+                        code: '<?php\n// Dados de formulário GET (URL)\n$busca = $_GET["q"] ?? "";  // ?q=termo\n\n// Dados de formulário POST\n$email = $_POST["email"] ?? "";\n\n// Sessão (dados entre páginas)\nsession_start();\n$_SESSION["usuario"] = "João";\n\n// Cookies\n$tema = $_COOKIE["tema"] ?? "light";\n\n// Informações do servidor\n$ip = $_SERVER["REMOTE_ADDR"];\n$url = $_SERVER["REQUEST_URI"];\n$metodo = $_SERVER["REQUEST_METHOD"];\n\n// Arquivos enviados\n$arquivo = $_FILES["documento"];\n$nomeArq = $arquivo["name"];\n$tamanho = $arquivo["size"];\n\n// Sempre valide dados externos!\n$email = filter_input(INPUT_POST, \"email\", FILTER_VALIDATE_EMAIL);\n?>',
+                    },
+                ],
+                tips: [
+                    'Use const para constantes em classes',
+                    'Evite global - passe parâmetros para funções',
+                    'Valide sempre $_GET e $_POST antes de usar',
+                    'static mantém valor entre chamadas de função',
                 ],
             },
             quiz: [

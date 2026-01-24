@@ -473,33 +473,49 @@ export const CSS_CORES: LearningModule = {
             xpReward: 100,
             estimatedTime: 15,
             content: {
-                introduction: 'CSS oferece várias formas de definir cores: nomes, hexadecimal (HEX), RGB, RGBA, HSL e HSLA.',
+                introduction: 'Cores são fundamentais no design. CSS oferece várias formas de defini-las: nomes, HEX, RGB, HSL e modernamente color-mix(). Dominar cores inclui entender transparência, gradientes e como criar paletas harmoniosas.',
                 sections: [
                     {
-                        title: 'Cores por Nome',
-                        text: 'CSS reconhece 140 nomes de cores em inglês como red, blue, green, yellow, etc.',
-                        code: 'p {\n  color: red;\n  background-color: lightblue;\n}',
-                    },
-                    {
-                        title: 'Cores Hexadecimais (HEX)',
-                        text: 'Formato #RRGGBB onde cada par representa vermelho, verde e azul de 00 a FF.',
-                        code: 'h1 {\n  color: #ff0000; /* vermelho */\n  background: #3498db; /* azul */\n}\n\n/* Forma curta */\np {\n  color: #f00; /* vermelho */\n}',
+                        title: 'Nomes e HEX',
+                        text: 'CSS reconhece 140 nomes de cores. HEX usa #RRGGBB (vermelho, verde, azul em hexadecimal 00-FF). Forme curta #RGB quando dígitos se repetem.',
+                        code: '/* Nomes de cores */\np { color: red; }\nh1 { color: dodgerblue; }\n\n/* Hexadecimal completo */\n.header {\n  background: #3498db;  /* azul */\n  color: #ffffff;       /* branco */\n}\n\n/* Forma curta (quando dígitos se repetem) */\n.box {\n  color: #f00;    /* = #ff0000 vermelho */\n  background: #abc; /* = #aabbcc */\n}\n\n/* HEX com alpha (transparência) */\n.overlay {\n  background: #00000080;  /* preto 50% */\n}',
                     },
                     {
                         title: 'RGB e RGBA',
-                        text: 'RGB usa valores de 0-255 para vermelho, verde e azul. RGBA adiciona transparência (alpha) de 0 a 1.',
-                        code: '.box {\n  background: rgb(255, 0, 0);\n}\n\n.transparent {\n  background: rgba(0, 0, 0, 0.5); /* 50% transparente */\n}',
+                        text: 'RGB usa valores 0-255 para vermelho, verde e azul. RGBA adiciona canal alpha (0-1) para transparência. Sintaxe moderna não precisa de vírgulas.',
+                        code: '/* RGB clássico */\n.box {\n  background: rgb(255, 0, 0);     /* vermelho */\n  color: rgb(52, 152, 219);       /* azul */\n}\n\n/* RGBA - com transparência */\n.overlay {\n  background: rgba(0, 0, 0, 0.5); /* preto 50% */\n}\n\n/* Sintaxe moderna (CSS4) */\n.modern {\n  background: rgb(255 0 0);       /* sem vírgulas */\n  color: rgb(0 0 0 / 50%);        /* alpha como % */\n}\n\n/* Composição */\n.shadow {\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);\n}',
                     },
                     {
                         title: 'HSL e HSLA',
-                        text: 'HSL define cores por Matiz (0-360), Saturação (0-100%) e Luminosidade (0-100%).',
-                        code: '.hsl-example {\n  color: hsl(120, 100%, 50%); /* verde */\n  background: hsla(240, 100%, 50%, 0.3);\n}',
+                        text: 'HSL é mais intuitivo: Hue (0-360°, círculo de cores), Saturation (0-100%), Lightness (0-100%). Fácil criar variações de uma cor alterando apenas S ou L.',
+                        code: '/* HSL básico */\n.verde { color: hsl(120, 100%, 50%); }  /* verde puro */\n.azul { color: hsl(240, 100%, 50%); }   /* azul puro */\n\n/* Variações da mesma cor (mesmo H) */\n.btn {\n  background: hsl(210, 80%, 50%);  /* azul normal */\n}\n.btn:hover {\n  background: hsl(210, 80%, 40%);  /* mais escuro */\n}\n.btn:active {\n  background: hsl(210, 80%, 35%);  /* ainda mais escuro */\n}\n\n/* Com transparência */\n.overlay {\n  background: hsla(210, 80%, 50%, 0.3);\n}\n\n/* Cores harmônicas (mudar só o H) */\n:root {\n  --cor1: hsl(0, 70%, 50%);    /* vermelho */\n  --cor2: hsl(120, 70%, 50%);  /* verde (complementar) */\n  --cor3: hsl(240, 70%, 50%);  /* azul (tríade) */\n}',
+                    },
+                    {
+                        title: 'Gradientes',
+                        text: 'Gradientes criam transições suaves entre cores. linear-gradient() para direção, radial-gradient() para círculos. Adicione múltiplas cores e controle posições.',
+                        code: '/* Linear básico */\n.header {\n  background: linear-gradient(to right, #3498db, #8e44ad);\n}\n\n/* Com ângulo */\n.diagonal {\n  background: linear-gradient(45deg, red, blue);\n}\n\n/* Múltiplas cores */\n.arcoiris {\n  background: linear-gradient(\n    90deg,\n    red 0%,\n    orange 20%,\n    yellow 40%,\n    green 60%,\n    blue 80%,\n    purple 100%\n  );\n}\n\n/* Radial */\n.spotlight {\n  background: radial-gradient(circle, white, black);\n}\n\n/* Gradiente de texto */\n.gradient-text {\n  background: linear-gradient(90deg, #f00, #00f);\n  -webkit-background-clip: text;\n  -webkit-text-fill-color: transparent;\n}',
+                    },
+                    {
+                        title: 'Opacity e Transparência',
+                        text: 'opacity afeta o elemento inteiro (incluindo conteúdo). Use RGBA/HSLA para transparência só do background. currentColor herda a cor do texto.',
+                        code: '/* Opacity - afeta TUDO */\n.card {\n  opacity: 0.5;  /* tudo fica 50% transparente */\n}\n\n/* RGBA - só o background */\n.card {\n  background: rgba(0, 0, 0, 0.5);  /* bg transparente */\n  color: white;  /* texto continua opaco */\n}\n\n/* currentColor - herda color */\n.icon {\n  color: blue;\n  border: 2px solid currentColor;  /* borda azul */\n  fill: currentColor;  /* SVG azul */\n}\n\n/* Transição de opacidade */\n.btn {\n  opacity: 1;\n  transition: opacity 0.3s;\n}\n.btn:hover {\n  opacity: 0.8;\n}',
+                    },
+                    {
+                        title: 'color-mix() e Recursos Modernos',
+                        text: 'color-mix() mistura duas cores com porcentagens. accent-color estiliza inputs. Novos espaços de cores como oklch oferecem mais precisão perceptual.',
+                        code: '/* color-mix() - misturar cores */\n.mixed {\n  /* 30% vermelho + 70% azul */\n  background: color-mix(in srgb, red 30%, blue);\n}\n\n/* Clarear/escurecer */\n.lighter {\n  background: color-mix(in srgb, blue, white 30%);\n}\n.darker {\n  background: color-mix(in srgb, blue, black 30%);\n}\n\n/* accent-color para inputs */\ninput[type="checkbox"],\ninput[type="radio"],\ninput[type="range"] {\n  accent-color: #3498db;\n}\n\n/* oklch - espaço perceptualmente uniforme */\n.oklch {\n  color: oklch(70% 0.15 250);  /* L C H */\n}\n\n/* Cores do sistema */\n.system {\n  color: CanvasText;\n  background: Canvas;\n}',
+                    },
+                    {
+                        title: 'Paletas e Boas Práticas',
+                        text: 'Crie paletas com variáveis CSS. Use HSL para variações fáceis. Garanta contraste acessível (WCAG 4.5:1 para texto). Teste em modo escuro.',
+                        code: '/* Sistema de cores com variáveis */\n:root {\n  /* Paleta primária */\n  --primary-h: 210;\n  --primary-s: 80%;\n  --primary-l: 50%;\n  \n  --primary: hsl(var(--primary-h), var(--primary-s), var(--primary-l));\n  --primary-light: hsl(var(--primary-h), var(--primary-s), 70%);\n  --primary-dark: hsl(var(--primary-h), var(--primary-s), 30%);\n  \n  /* Neutros */\n  --gray-50: #f9fafb;\n  --gray-900: #111827;\n  \n  /* Semânticas */\n  --success: #10b981;\n  --warning: #f59e0b;\n  --error: #ef4444;\n}\n\n/* Tema escuro */\n@media (prefers-color-scheme: dark) {\n  :root {\n    --primary-l: 60%;  /* ajusta luminosidade */\n    --text: var(--gray-50);\n    --bg: var(--gray-900);\n  }\n}',
                     },
                 ],
                 tips: [
-                    'Use HEX para cores simples',
-                    'Use RGBA quando precisar de transparência',
-                    'HSL é mais intuitivo para ajustes de cor',
+                    'Use HSL para criar variações de uma cor facilmente',
+                    'RGBA para background transparente sem afetar conteúdo',
+                    'Mantenha contraste mínimo 4.5:1 para acessibilidade',
+                    'Variáveis CSS facilitam temas claros/escuros',
                 ],
             },
             quiz: [
