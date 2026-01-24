@@ -66,8 +66,12 @@ export default function FriendsPage() {
 
         try {
             const result = await sendFriendRequest(email);
-            setMessage({ type: 'success', text: result.message });
-            setEmail('');
+            if (result.success) {
+                setMessage({ type: 'success', text: result.message });
+                setEmail('');
+            } else {
+                setMessage({ type: 'error', text: result.message });
+            }
         } catch (error) {
             setMessage({ type: 'error', text: 'Erro ao enviar solicitação' });
         }
