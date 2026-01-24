@@ -455,7 +455,7 @@ export const JS_FUNDAMENTOS: LearningModule = {
 export const JS_TIPOS: LearningModule = {
     id: 'js-tipos',
     name: 'Tipos de Dados',
-    description: 'Strings, numbers, booleans, arrays e objetos',
+    description: 'Strings, numbers, booleans, arrays e objetos em profundidade',
     icon: '📊',
     difficulty: 'beginner',
     requiredXP: 200,
@@ -463,32 +463,58 @@ export const JS_TIPOS: LearningModule = {
         {
             id: 'tipos-primitivos',
             title: 'Tipos Primitivos',
-            description: 'String, Number, Boolean, null, undefined',
-            xpReward: 100,
-            estimatedTime: 15,
+            description: 'String, Number, Boolean, null, undefined e Symbol',
+            xpReward: 150,
+            estimatedTime: 25,
             content: {
-                introduction: 'JavaScript tem tipos primitivos que são imutáveis e tipos de referência como objetos.',
+                introduction: 'JavaScript tem tipos primitivos (imutáveis) e tipos de referência (objetos). Os primitivos são: string, number, boolean, undefined, null, symbol e bigint. Entender a diferença entre eles é crucial para evitar bugs e escrever código eficiente.',
                 sections: [
                     {
-                        title: 'String',
-                        text: 'Texto entre aspas simples, duplas ou crases (template literals).',
-                        code: 'let nome = "Maria";\nlet sobrenome = \'Silva\';\nlet completo = `${nome} ${sobrenome}`; // Template literal',
+                        title: 'String - Texto',
+                        text: 'Strings representam texto e podem usar aspas simples, duplas ou crases (template literals). Strings são imutáveis: métodos retornam novas strings, não modificam a original. Template literals permitem interpolação e múltiplas linhas.',
+                        code: '// Três formas de criar strings\nlet simples = \'Olá\';\nlet duplas = "Mundo";\nlet template = `${simples} ${duplas}!`; // "Olá Mundo!"\n\n// Template literals - múltiplas linhas\nlet html = `\n  <div>\n    <h1>${titulo}</h1>\n    <p>${descricao}</p>\n  </div>\n`;\n\n// Strings são imutáveis\nlet nome = "Ana";\nnome.toUpperCase(); // retorna "ANA"\nconsole.log(nome);  // ainda "Ana"',
                     },
                     {
-                        title: 'Number',
-                        text: 'JavaScript tem apenas um tipo numérico que inclui inteiros e decimais.',
-                        code: 'let idade = 25;\nlet preco = 19.99;\nlet infinito = Infinity;\nlet naoNumero = NaN; // Not a Number',
+                        title: 'Métodos de String',
+                        text: 'Strings têm muitos métodos úteis: length (tamanho), toUpperCase/toLowerCase (maiúsculas/minúsculas), slice/substring (extrair parte), split (dividir em array), includes/indexOf (buscar), trim (remover espaços), replace (substituir).',
+                        code: 'let texto = "  JavaScript é incrível!  ";\n\n// Informações\ntexto.length;           // 26\ntexto.indexOf("Script"); // 6\ntexto.includes("Java"); // true\n\n// Transformações\ntexto.trim();           // "JavaScript é incrível!"\ntexto.toUpperCase();    // "  JAVASCRIPT É INCRÍVEL!  "\ntexto.toLowerCase();    // "  javascript é incrível!  "\n\n// Extração\ntexto.slice(2, 12);     // "JavaScript"\ntexto.split(" ");       // ["", "", "JavaScript", "é", "incrível!", "", ""]\n\n// Substituição\ntexto.replace("incrível", "fantástico");',
                     },
                     {
-                        title: 'Boolean',
-                        text: 'Verdadeiro ou falso, usado em condições.',
-                        code: 'let ativo = true;\nlet logado = false;\nlet maior = 10 > 5; // true',
+                        title: 'Number - Números',
+                        text: 'JavaScript tem apenas um tipo numérico que inclui inteiros e decimais (ponto flutuante 64-bit). Valores especiais: Infinity, -Infinity e NaN (Not a Number). Cuidado com precisão decimal: 0.1 + 0.2 !== 0.3 devido a representação binária.',
+                        code: '// Inteiros e decimais são o mesmo tipo\nlet idade = 25;\nlet preco = 19.99;\nlet negativo = -10;\nlet cientifico = 3.14e2; // 314\n\n// Valores especiais\nlet infinito = Infinity;     // 1/0\nlet negInfinito = -Infinity; // -1/0\nlet naoNumero = NaN;         // 0/0, parseInt("abc")\n\n// Cuidado com decimais!\nconsole.log(0.1 + 0.2);      // 0.30000000000000004\nconsole.log(0.1 + 0.2 === 0.3); // false!\n\n// Solução: arredondar ou usar inteiros (centavos)\nlet total = (0.1 * 100 + 0.2 * 100) / 100; // 0.3',
+                    },
+                    {
+                        title: 'Métodos de Number',
+                        text: 'Use toFixed() para casas decimais, parseInt/parseFloat para converter strings, Number() para conversão estrita, e isNaN/isFinite para validar valores. O objeto Math contém funções matemáticas.',
+                        code: '// Formatação\nlet preco = 19.999;\npreco.toFixed(2);      // "20.00" (string!)\npreco.toPrecision(3);  // "20.0"\n\n// Conversão de string para número\nparseInt("42");        // 42\nparseInt("42px");      // 42 (ignora resto)\nparseFloat("3.14");    // 3.14\nNumber("42");          // 42\nNumber("42px");        // NaN (mais estrito)\n\n// Validação\nisNaN(NaN);            // true\nisNaN("texto");        // true (converte primeiro)\nNumber.isNaN(NaN);     // true (não converte)\nNumber.isFinite(100);  // true\n\n// Math\nMath.round(4.5);  // 5\nMath.floor(4.9);  // 4\nMath.ceil(4.1);   // 5\nMath.random();    // 0-1',
+                    },
+                    {
+                        title: 'Boolean - Verdadeiro/Falso',
+                        text: 'Booleans representam verdadeiro (true) ou falso (false). São usados em condições e comparações. JavaScript converte outros tipos para boolean em contextos condicionais: valores "falsy" (0, "", null, undefined, NaN, false) viram false; todo resto é "truthy".',
+                        code: '// Booleans literais\nlet ativo = true;\nlet logado = false;\n\n// Resultado de comparações\nlet maior = 10 > 5;    // true\nlet igual = 5 === "5"; // false (tipos diferentes)\n\n// Valores Falsy (se tornam false)\nBoolean(0);          // false\nBoolean("");         // false\nBoolean(null);       // false\nBoolean(undefined);  // false\nBoolean(NaN);        // false\n\n// Valores Truthy (se tornam true)\nBoolean(1);          // true\nBoolean("texto");    // true\nBoolean([]);         // true (array vazio!)\nBoolean({});         // true (objeto vazio!)\n\n// Conversão rápida para boolean\nlet existe = !!usuario; // converte para boolean',
                     },
                     {
                         title: 'null e undefined',
-                        text: 'null: ausência intencional. undefined: não definido.',
-                        code: 'let vazio = null; // intencionalmente vazio\nlet indefinido; // undefined\nconsole.log(indefinido); // undefined',
+                        text: 'null representa ausência intencional de valor - você define explicitamente. undefined significa que algo não foi definido: variáveis não inicializadas, propriedades inexistentes, parâmetros não passados. Use null para limpar valores; undefined é do sistema.',
+                        code: '// undefined - não definido\nlet x;                   // undefined\nlet obj = {};\nconsole.log(obj.nome);   // undefined\nfunction fn(param) {\n  console.log(param);    // undefined se não passar\n}\n\n// null - intencionalmente vazio\nlet usuario = null;      // não há usuário\nlet resultado = null;    // será preenchido depois\n\n// Comparação\nnull == undefined;       // true (valor similar)\nnull === undefined;      // false (tipos diferentes)\n\n// Verificação segura\nif (usuario !== null && usuario !== undefined) {\n  // usuario existe\n}\n// Ou mais moderno:\nif (usuario != null) {\n  // usuario não é null nem undefined\n}',
                     },
+                    {
+                        title: 'typeof - Verificando Tipos',
+                        text: 'O operador typeof retorna uma string indicando o tipo do valor. Cuidado: typeof null retorna "object" (bug histórico), e arrays também são "object". Para arrays, use Array.isArray().',
+                        code: '// typeof retorna string do tipo\ntypeof "texto";      // "string"\ntypeof 42;           // "number"\ntypeof true;         // "boolean"\ntypeof undefined;    // "undefined"\ntypeof Symbol();     // "symbol"\ntypeof BigInt(10);   // "bigint"\n\n// Cuidados!\ntypeof null;         // "object" (bug histórico!)\ntypeof [];           // "object" (array é objeto)\ntypeof {};           // "object"\ntypeof function(){}; // "function"\n\n// Verificações corretas\nArray.isArray([]);           // true\nArray.isArray({});           // false\nvalor === null;              // verificar null\nvalor instanceof Date;       // verificar Date',
+                    },
+                    {
+                        title: 'Conversão de Tipos',
+                        text: 'JavaScript converte tipos automaticamente (coerção) em certas operações. Conversão explícita usa String(), Number(), Boolean(). Coerção implícita pode causar bugs: "5" + 3 = "53" mas "5" - 3 = 2. Sempre converta explicitamente para evitar surpresas.',
+                        code: '// Conversão explícita (recomendado)\nString(123);         // "123"\nNumber("42");        // 42\nBoolean(1);          // true\n\n// Coerção implícita (cuidado!)\n"5" + 3;             // "53" (+ concatena strings)\n"5" - 3;             // 2 (- converte para número)\n"5" * "2";           // 10\n10 + "";             // "10" (número vira string)\n+"42";               // 42 (string vira número)\n\n// Comparação com coerção\n5 == "5";            // true (converte tipos)\n5 === "5";           // false (tipos diferentes)\n\n// Recomendação: seja explícito\nconst entrada = "42";\nconst numero = Number(entrada);\nif (!isNaN(numero)) {\n  console.log(numero * 2); // 84\n}',
+                    },
+                ],
+                tips: [
+                    'Use === para comparações (sem coerção)',
+                    'Sempre converta tipos explicitamente',
+                    'Template literals (``) são mais legíveis',
+                    'Use Number.isNaN() ao invés de isNaN()',
                 ],
             },
             quiz: [
@@ -540,27 +566,53 @@ export const JS_TIPOS: LearningModule = {
         {
             id: 'arrays-js',
             title: 'Arrays',
-            description: 'Listas ordenadas de valores',
-            xpReward: 120,
-            estimatedTime: 18,
+            description: 'Listas ordenadas, métodos e iteração',
+            xpReward: 150,
+            estimatedTime: 25,
             content: {
-                introduction: 'Arrays armazenam múltiplos valores em uma única variável.',
+                introduction: 'Arrays são estruturas de dados fundamentais que armazenam múltiplos valores em uma única variável. Em JavaScript, arrays podem conter qualquer tipo de dado e têm métodos poderosos para manipulação. Dominar arrays é essencial - você usará em praticamente todo projeto.',
                 sections: [
                     {
                         title: 'Criando Arrays',
-                        text: 'Arrays são listas ordenadas, começando do índice 0.',
-                        code: 'let frutas = ["maçã", "banana", "laranja"];\nlet numeros = [1, 2, 3, 4, 5];\nlet misto = [1, "dois", true, null];',
+                        text: 'Arrays são listas ordenadas de valores, identificados por índices numéricos começando em 0. Podem conter qualquer tipo de dado, inclusive misturado. Use colchetes [] para criar e acessar elementos.',
+                        code: '// Formas de criar arrays\nlet frutas = ["maçã", "banana", "laranja"];\nlet numeros = [1, 2, 3, 4, 5];\nlet misto = [1, "dois", true, null, {nome: "obj"}];\nlet vazio = [];\n\n// Construtor (menos comum)\nlet arr = new Array(3);  // [undefined, undefined, undefined]\nlet arr2 = Array.of(1, 2, 3); // [1, 2, 3]\n\n// Array de intervalo (útil)\nlet range = Array.from({length: 5}, (_, i) => i + 1);\n// [1, 2, 3, 4, 5]',
                     },
                     {
-                        title: 'Acessando Elementos',
-                        text: 'Use índices para acessar elementos. Índices começam em 0.',
-                        code: 'let frutas = ["maçã", "banana", "laranja"];\nconsole.log(frutas[0]); // "maçã"\nconsole.log(frutas[2]); // "laranja"\nconsole.log(frutas.length); // 3',
+                        title: 'Acessando e Modificando',
+                        text: 'Use índices para acessar elementos (começa em 0). O último elemento está em length - 1. Use at() para índices negativos (conta do final). Arrays são mutáveis: você pode alterar elementos diretamente.',
+                        code: 'let frutas = ["maçã", "banana", "laranja"];\n\n// Acessando\nfrutas[0];       // "maçã" (primeiro)\nfrutas[2];       // "laranja" (terceiro)\nfrutas[10];      // undefined (não existe)\nfrutas.length;   // 3\n\n// Último elemento\nfrutas[frutas.length - 1]; // "laranja"\nfrutas.at(-1);             // "laranja" (moderno)\nfrutas.at(-2);             // "banana"\n\n// Modificando\nfrutas[0] = "morango";  // ["morango", "banana", "laranja"]\nfrutas[3] = "uva";      // adiciona no índice 3',
                     },
                     {
-                        title: 'Métodos Básicos',
-                        text: 'push adiciona ao final, pop remove do final.',
-                        code: 'let lista = [1, 2, 3];\nlista.push(4); // [1, 2, 3, 4]\nlista.pop(); // [1, 2, 3]\nlista.unshift(0); // [0, 1, 2, 3]',
+                        title: 'Métodos de Modificação',
+                        text: 'push/pop trabalham no final, shift/unshift no início. splice() é versátil: remove, adiciona ou substitui em qualquer posição. Estes métodos MODIFICAM o array original.',
+                        code: 'let arr = [1, 2, 3];\n\n// Final do array\narr.push(4, 5);      // [1, 2, 3, 4, 5] - adiciona\narr.pop();           // 5 (removido) - arr é [1, 2, 3, 4]\n\n// Início do array\narr.unshift(0);      // [0, 1, 2, 3, 4] - adiciona\narr.shift();         // 0 (removido) - arr é [1, 2, 3, 4]\n\n// splice(início, quantos, ...novos)\narr.splice(1, 2);           // remove 2 itens a partir do índice 1\narr.splice(1, 0, "a", "b"); // insere "a", "b" no índice 1\narr.splice(1, 1, "x");      // substitui 1 item no índice 1\n\n// Outros\narr.reverse();   // inverte ordem\narr.sort();      // ordena (cuidado: ordena como string!)\narr.fill(0);     // preenche tudo com 0',
                     },
+                    {
+                        title: 'Métodos de Busca',
+                        text: 'indexOf() e includes() buscam valores. find() e findIndex() buscam com condição. filter() retorna todos que passam no teste. Estes NÃO modificam o array original.',
+                        code: 'let nums = [10, 20, 30, 40, 50];\n\n// Busca simples\nnums.indexOf(30);    // 2 (índice)\nnums.indexOf(99);    // -1 (não encontrou)\nnums.includes(30);   // true\nnums.includes(99);   // false\n\n// Busca com condição\nnums.find(n => n > 25);      // 30 (primeiro que passa)\nnums.findIndex(n => n > 25); // 2 (índice do primeiro)\n\n// Todos que passam no teste\nnums.filter(n => n > 25);    // [30, 40, 50]\n\n// Verificações\nnums.some(n => n > 40);      // true (algum passa?)\nnums.every(n => n > 5);      // true (todos passam?)',
+                    },
+                    {
+                        title: 'map, filter, reduce',
+                        text: 'Os três métodos mais poderosos: map() transforma cada elemento, filter() seleciona elementos, reduce() combina tudo em um valor. São a base da programação funcional em JS. Nenhum modifica o original.',
+                        code: '// map - transforma cada elemento\nlet nums = [1, 2, 3, 4, 5];\nlet dobro = nums.map(n => n * 2);  // [2, 4, 6, 8, 10]\nlet nomes = ["ana", "bia"].map(n => n.toUpperCase());\n// ["ANA", "BIA"]\n\n// filter - seleciona elementos\nlet pares = nums.filter(n => n % 2 === 0);  // [2, 4]\nlet usuarios = [{nome: "Ana", ativo: true}, {nome: "Bia", ativo: false}];\nlet ativos = usuarios.filter(u => u.ativo);\n\n// reduce - combina em um valor\nlet soma = nums.reduce((acc, n) => acc + n, 0);  // 15\nlet produto = nums.reduce((acc, n) => acc * n, 1); // 120\n\n// Encadeamento\nlet resultado = nums\n  .filter(n => n > 2)\n  .map(n => n * 2)\n  .reduce((acc, n) => acc + n, 0); // 24',
+                    },
+                    {
+                        title: 'Spread e Desestruturação',
+                        text: 'O operador spread (...) expande arrays em elementos individuais. Desestruturação extrai valores em variáveis. Ambos são essenciais no JavaScript moderno para código limpo e expressivo.',
+                        code: '// Spread - expande array\nlet arr1 = [1, 2, 3];\nlet arr2 = [4, 5, 6];\nlet combinado = [...arr1, ...arr2];  // [1, 2, 3, 4, 5, 6]\nlet copia = [...arr1];               // cópia independente\n\n// Spread em funções\nlet nums = [5, 2, 8, 1, 9];\nMath.max(...nums);  // 9 (passa cada elemento)\n\n// Desestruturação\nlet [primeiro, segundo, ...resto] = [1, 2, 3, 4, 5];\nconsole.log(primeiro); // 1\nconsole.log(segundo);  // 2\nconsole.log(resto);    // [3, 4, 5]\n\n// Ignorar elementos\nlet [a, , c] = [1, 2, 3];  // a=1, c=3\n\n// Valores padrão\nlet [x, y, z = 0] = [1, 2];  // z=0',
+                    },
+                    {
+                        title: 'Iteração com forEach e for...of',
+                        text: 'forEach() executa função para cada elemento. for...of itera diretamente sobre valores. Ambos são mais legíveis que for tradicional. Use forEach quando não precisa de break; for...of quando precisa.',
+                        code: '// forEach - executa função para cada\nlet frutas = ["maçã", "banana", "uva"];\nfrutas.forEach((fruta, indice) => {\n  console.log(`${indice}: ${fruta}`);\n});\n// 0: maçã\n// 1: banana\n// 2: uva\n\n// for...of - itera sobre valores\nfor (let fruta of frutas) {\n  console.log(fruta);\n}\n// Pode usar break/continue\nfor (let fruta of frutas) {\n  if (fruta === "banana") break;\n  console.log(fruta);\n}\n\n// entries() - índice e valor\nfor (let [i, fruta] of frutas.entries()) {\n  console.log(`${i}: ${fruta}`);\n}',
+                    },
+                ],
+                tips: [
+                    'Use map/filter/reduce ao invés de loops manuais',
+                    'Spread [...arr] cria cópia, = apenas referência',
+                    'sort() ordena como strings por padrão!',
+                    'find() retorna undefined se não achar',
                 ],
             },
             quiz: [
@@ -671,27 +723,53 @@ export const JS_CONTROLE: LearningModule = {
         {
             id: 'condicionais-js',
             title: 'Condicionais',
-            description: 'if, else, else if e operador ternário',
-            xpReward: 120,
-            estimatedTime: 18,
+            description: 'if/else, switch, ternário e truthy/falsy',
+            xpReward: 150,
+            estimatedTime: 25,
             content: {
-                introduction: 'Condicionais permitem executar código baseado em condições.',
+                introduction: 'Condicionais controlam o fluxo do programa baseado em condições. Elas permitem que seu código tome decisões e execute diferentes blocos dependendo de valores. Dominar condicionais é fundamental para criar lógica complexa e aplicações interativas.',
                 sections: [
                     {
-                        title: 'if e else',
-                        text: 'if executa código se a condição for verdadeira.',
-                        code: 'let idade = 18;\n\nif (idade >= 18) {\n  console.log("Maior de idade");\n} else {\n  console.log("Menor de idade");\n}',
-                    },
-                    {
-                        title: 'else if',
-                        text: 'Para múltiplas condições.',
-                        code: 'let nota = 75;\n\nif (nota >= 90) {\n  console.log("A");\n} else if (nota >= 70) {\n  console.log("B");\n} else {\n  console.log("C");\n}',
+                        title: 'if, else e else if',
+                        text: 'A estrutura if executa código se a condição for verdadeira. Combine com else para executar código alternativo, ou else if para múltiplas condições. Sempre use chaves {} mesmo para uma linha.',
+                        code: 'let idade = 20;\n\n// if simples\nif (idade >= 18) {\n  console.log("Maior de idade");\n}\n\n// if/else\nif (idade >= 18) {\n  console.log("Pode votar");\n} else {\n  console.log("Não pode votar");\n}\n\n// if/else if/else\nlet nota = 75;\nif (nota >= 90) {\n  console.log("A - Excelente");\n} else if (nota >= 70) {\n  console.log("B - Bom");\n} else if (nota >= 50) {\n  console.log("C - Regular");\n} else {\n  console.log("D - Reprovado");\n}',
                     },
                     {
                         title: 'Operador Ternário',
-                        text: 'Forma curta de if/else.',
-                        code: 'let idade = 20;\nlet status = idade >= 18 ? "adulto" : "menor";\nconsole.log(status); // "adulto"',
+                        text: 'O operador ternário é uma forma concisa de if/else para atribuições simples. Sintaxe: condição ? valorSeVerdade : valorSeFalso. Use para decisões simples; evite aninhar múltiplos ternários.',
+                        code: '// Ternário básico\nlet idade = 20;\nlet status = idade >= 18 ? "adulto" : "menor";\nconsole.log(status); // "adulto"\n\n// Em template string\nlet logado = true;\nconsole.log(`Usuário ${logado ? "online" : "offline"}`);\n\n// Com funções\nfunction saudacao(hora) {\n  return hora < 12 ? "Bom dia" : hora < 18 ? "Boa tarde" : "Boa noite";\n}\n// ⚠️ Evite aninhar demais - fica difícil de ler\n\n// Ternário vs if/else\n// Use ternário para atribuições simples\n// Use if/else para lógica complexa',
                     },
+                    {
+                        title: 'switch/case',
+                        text: 'Use switch quando comparar um valor contra múltiplas opções. É mais legível que vários else if quando há muitos casos. Não esqueça do break para evitar "fall-through" (execução em cascata).',
+                        code: 'let dia = 3;\nlet nomeDia;\n\nswitch (dia) {\n  case 1:\n    nomeDia = "Segunda";\n    break;\n  case 2:\n    nomeDia = "Terça";\n    break;\n  case 3:\n    nomeDia = "Quarta";\n    break;\n  case 4:\n    nomeDia = "Quinta";\n    break;\n  case 5:\n    nomeDia = "Sexta";\n    break;\n  default:\n    nomeDia = "Fim de semana";\n}\n\n// Agrupando casos (fall-through intencional)\nswitch (dia) {\n  case 1:\n  case 2:\n  case 3:\n  case 4:\n  case 5:\n    console.log("Dia útil");\n    break;\n  case 6:\n  case 7:\n    console.log("Fim de semana");\n}',
+                    },
+                    {
+                        title: 'Valores Truthy e Falsy',
+                        text: 'JavaScript converte qualquer valor em boolean em contextos condicionais. Valores "falsy" são tratados como false: false, 0, "", null, undefined, NaN. Tudo mais é "truthy". Entender isso evita bugs comuns.',
+                        code: '// Valores FALSY (são considerados false)\nif (false) {}     // false\nif (0) {}         // número zero\nif ("") {}        // string vazia\nif (null) {}      // null\nif (undefined) {} // undefined\nif (NaN) {}       // Not a Number\n\n// Valores TRUTHY (são considerados true)\nif (true) {}      // true\nif (1) {}         // qualquer número != 0\nif ("texto") {}   // string não vazia\nif ([]) {}        // array vazio (cuidado!)\nif ({}) {}        // objeto vazio (cuidado!)\nif (function(){}) {} // funções\n\n// Uso prático\nlet usuario = null;\nif (usuario) {\n  console.log("Usuário logado");\n} else {\n  console.log("Faça login"); // executa\n}\n\n// Verificar array com itens\nlet lista = [];\nif (lista.length) { // 0 é falsy\n  console.log("Lista tem itens");\n}',
+                    },
+                    {
+                        title: 'Operadores Lógicos em Condições',
+                        text: 'Combine condições com && (AND), || (OR) e ! (NOT). JavaScript usa "avaliação de curto-circuito": && para se um valor é falsy; || retorna o primeiro truthy. Isso permite padrões elegantes.',
+                        code: '// && (AND) - todas devem ser true\nlet idade = 25;\nlet temCNH = true;\nif (idade >= 18 && temCNH) {\n  console.log("Pode dirigir");\n}\n\n// || (OR) - pelo menos uma true\nlet admin = false;\nlet moderador = true;\nif (admin || moderador) {\n  console.log("Tem permissão");\n}\n\n// ! (NOT) - inverte boolean\nlet logado = false;\nif (!logado) {\n  console.log("Faça login"); // executa\n}\n\n// Curto-circuito para valores padrão\nlet nome = "";\nlet saudacao = nome || "Visitante";  // "Visitante"\n\n// Curto-circuito para execução condicional\nlet usuario = {nome: "Ana"};\nusuario && console.log(usuario.nome); // "Ana"\n// Só executa se usuario existir',
+                    },
+                    {
+                        title: 'Nullish Coalescing (??)',
+                        text: 'O operador ?? é similar ao ||, mas só considera null e undefined como "falsy". Isso é importante quando 0 ou "" são valores válidos que você quer preservar.',
+                        code: '// Problema com ||\nlet quantidade = 0;\nlet qtd1 = quantidade || 10; // 10 (0 é falsy!)\n\n// Solução com ??\nlet qtd2 = quantidade ?? 10; // 0 (preserva zero)\n\n// Diferença:\n// ||  → usa fallback se valor for FALSY (0, "", null, undefined)\n// ??  → usa fallback APENAS se for null/undefined\n\nlet config = {\n  timeout: 0,\n  nome: "",\n  opcao: null\n};\n\nconfig.timeout || 5000;  // 5000 (0 é falsy)\nconfig.timeout ?? 5000;  // 0 (preserva)\n\nconfig.nome || "Padrão"; // "Padrão" ("" é falsy)\nconfig.nome ?? "Padrão"; // "" (preserva)\n\nconfig.opcao || "default"; // "default"\nconfig.opcao ?? "default"; // "default" (null)',
+                    },
+                    {
+                        title: 'Boas Práticas com Condicionais',
+                        text: 'Escreva condições claras e evite aninhamento excessivo. Prefira retornos antecipados (early return) para reduzir else. Use guard clauses para validações. Código legível é mais importante que código curto.',
+                        code: '// ❌ Aninhamento excessivo\nfunction processarPedido(pedido) {\n  if (pedido) {\n    if (pedido.itens.length > 0) {\n      if (pedido.pago) {\n        // processar...\n      }\n    }\n  }\n}\n\n// ✅ Guard clauses (retorno antecipado)\nfunction processarPedido(pedido) {\n  if (!pedido) return;\n  if (pedido.itens.length === 0) return;\n  if (!pedido.pago) return;\n  // processar...\n}\n\n// ✅ Condições descritivas via variáveis\nconst podeAcessar = usuario.ativo && usuario.verificado;\nconst temPermissao = usuario.admin || usuario.moderador;\n\nif (podeAcessar && temPermissao) {\n  // muito mais legível\n}\n\n// ❌ Comparação com true/false\nif (ativo === true) {}\n// ✅ Apenas use o boolean\nif (ativo) {}',
+                    },
+                ],
+                tips: [
+                    'Use === ao invés de == para comparações seguras',
+                    'Switch é mais legível quando há 3+ casos',
+                    'Guard clauses evitam pirâmides de if',
+                    'Use ?? quando 0 ou "" são valores válidos',
                 ],
             },
             quiz: [
@@ -787,32 +865,53 @@ export const JS_CONTROLE: LearningModule = {
         {
             id: 'loops-js',
             title: 'Loops',
-            description: 'for, while e forEach',
-            xpReward: 120,
-            estimatedTime: 18,
+            description: 'for, while, do-while e controle de iteração',
+            xpReward: 150,
+            estimatedTime: 25,
             content: {
-                introduction: 'Loops repetem código múltiplas vezes.',
+                introduction: 'Loops permitem executar código repetidamente. JavaScript oferece várias formas de iteração, cada uma ideal para diferentes situações. Escolher o loop certo torna seu código mais legível e eficiente. Vamos explorar todos os tipos e quando usar cada um.',
                 sections: [
                     {
-                        title: 'for',
-                        text: 'Loop clássico com contador.',
-                        code: 'for (let i = 0; i < 5; i++) {\n  console.log(i); // 0, 1, 2, 3, 4\n}',
+                        title: 'for Clássico',
+                        text: 'O loop for tradicional é ideal quando você sabe quantas iterações precisa. Tem três partes: inicialização (executa uma vez), condição (verificada antes de cada iteração), e incremento (executa após cada iteração).',
+                        code: '// Estrutura: for (início; condição; incremento)\nfor (let i = 0; i < 5; i++) {\n  console.log(i); // 0, 1, 2, 3, 4\n}\n\n// Contagem regressiva\nfor (let i = 10; i >= 0; i--) {\n  console.log(i); // 10, 9, ..., 0\n}\n\n// Pular de 2 em 2\nfor (let i = 0; i <= 10; i += 2) {\n  console.log(i); // 0, 2, 4, 6, 8, 10\n}\n\n// Acessar array por índice\nlet nomes = ["Ana", "Bia", "Carlos"];\nfor (let i = 0; i < nomes.length; i++) {\n  console.log(`${i}: ${nomes[i]}`);\n}',
                     },
                     {
-                        title: 'while',
-                        text: 'Repete enquanto condição for verdadeira.',
-                        code: 'let i = 0;\nwhile (i < 5) {\n  console.log(i);\n  i++;\n}',
+                        title: 'while e do-while',
+                        text: 'Use while quando não sabe quantas iterações serão necessárias. A condição é verificada ANTES de cada execução. do-while garante pelo menos UMA execução, verificando a condição DEPOIS.',
+                        code: '// while - verifica ANTES\nlet contador = 0;\nwhile (contador < 5) {\n  console.log(contador);\n  contador++;\n}\n// Se contador >= 5, não executa nada\n\n// do-while - verifica DEPOIS (executa pelo menos 1x)\nlet numero = 0;\ndo {\n  console.log(numero);\n  numero++;\n} while (numero < 5);\n\n// do-while útil para validação\nlet entrada;\ndo {\n  entrada = prompt("Digite um número > 0:");\n} while (entrada <= 0);\n// Continua pedindo até ser válido\n\n// Cuidado com loops infinitos!\n// while (true) { } // ⚠️ Trava o navegador!',
                     },
                     {
-                        title: 'for...of',
-                        text: 'Itera sobre valores de arrays.',
-                        code: 'let frutas = ["maçã", "banana", "laranja"];\nfor (let fruta of frutas) {\n  console.log(fruta);\n}',
+                        title: 'for...of e for...in',
+                        text: 'for...of itera sobre VALORES de arrays e iteráveis. for...in itera sobre CHAVES/ÍNDICES de objetos. Não confunda! Use for...of para arrays, for...in para objetos.',
+                        code: '// for...of - valores de arrays\nlet frutas = ["maçã", "banana", "uva"];\nfor (let fruta of frutas) {\n  console.log(fruta); // "maçã", "banana", "uva"\n}\n\n// for...of com strings\nfor (let letra of "ABC") {\n  console.log(letra); // "A", "B", "C"\n}\n\n// for...in - chaves de objetos\nlet pessoa = { nome: "Ana", idade: 25 };\nfor (let chave in pessoa) {\n  console.log(`${chave}: ${pessoa[chave]}`);\n}\n// "nome: Ana", "idade: 25"\n\n// ⚠️ Evite for...in em arrays!\nlet arr = ["a", "b"];\nfor (let i in arr) {\n  // i é string "0", "1", não número!\n  console.log(typeof i); // "string"\n}',
                     },
                     {
-                        title: 'forEach',
-                        text: 'Método de array para iterar.',
-                        code: 'let numeros = [1, 2, 3];\nnumeros.forEach(num => {\n  console.log(num * 2);\n});',
+                        title: 'break e continue',
+                        text: 'break sai completamente do loop. continue pula para a próxima iteração. Ambos funcionam em todos os tipos de loop. Use para controle mais fino da execução.',
+                        code: '// break - sai do loop\nfor (let i = 0; i < 10; i++) {\n  if (i === 5) break;\n  console.log(i); // 0, 1, 2, 3, 4\n}\n\n// continue - pula iteração\nfor (let i = 0; i < 5; i++) {\n  if (i === 2) continue;\n  console.log(i); // 0, 1, 3, 4 (pula 2)\n}\n\n// Buscar e parar quando encontrar\nlet numeros = [1, 5, 3, 8, 2];\nlet encontrado = null;\nfor (let num of numeros) {\n  if (num > 5) {\n    encontrado = num;\n    break; // para assim que acha\n  }\n}\n\n// Pular valores inválidos\nlet dados = [1, null, 3, undefined, 5];\nfor (let valor of dados) {\n  if (valor == null) continue;\n  console.log(valor); // 1, 3, 5\n}',
                     },
+                    {
+                        title: 'forEach e Métodos de Array',
+                        text: 'forEach é um método de array para iterar. Diferente de for, não pode usar break/continue. Para transformar ou filtrar, prefira map, filter, reduce. Escolha baseado na operação necessária.',
+                        code: '// forEach - executa função para cada\nlet numeros = [1, 2, 3, 4, 5];\nnumeros.forEach((num, indice) => {\n  console.log(`${indice}: ${num}`);\n});\n\n// ⚠️ forEach não aceita break/continue\n// Use for...of se precisar de break\n\n// Quando usar cada um:\n// forEach → efeitos colaterais (console.log, atualizar DOM)\n// map → transformar em novo array\n// filter → filtrar elementos\n// reduce → combinar em um valor\n\nlet dobros = numeros.map(n => n * 2);\nlet pares = numeros.filter(n => n % 2 === 0);\nlet soma = numeros.reduce((acc, n) => acc + n, 0);\n\n// find() + break embutido\nlet maior = numeros.find(n => n > 3); // 4 (para ao encontrar)',
+                    },
+                    {
+                        title: 'Loops Aninhados e Labels',
+                        text: 'Loops dentro de loops são comuns para matrizes e combinações. Labels permitem break/continue em loops específicos (útil para sair de loops aninhados de uma vez).',
+                        code: '// Loops aninhados\nfor (let i = 1; i <= 3; i++) {\n  for (let j = 1; j <= 3; j++) {\n    console.log(`${i},${j}`);\n  }\n}\n// 1,1  1,2  1,3  2,1  2,2  2,3  3,1  3,2  3,3\n\n// Matriz (array de arrays)\nlet matriz = [\n  [1, 2, 3],\n  [4, 5, 6],\n  [7, 8, 9]\n];\nfor (let linha of matriz) {\n  for (let valor of linha) {\n    console.log(valor);\n  }\n}\n\n// Labels - sair de múltiplos loops\nexterno: for (let i = 0; i < 3; i++) {\n  for (let j = 0; j < 3; j++) {\n    if (i === 1 && j === 1) {\n      break externo; // sai de AMBOS loops\n    }\n    console.log(i, j);\n  }\n}',
+                    },
+                    {
+                        title: 'Qual Loop Escolher?',
+                        text: 'Não existe "melhor" loop - depende da situação. Use for quando precisa do índice, for...of para arrays simples, forEach para métodos chain, while quando a condição é dinâmica.',
+                        code: '// 🎯 Guia de escolha:\n\n// Índice necessário? → for clássico\nfor (let i = 0; i < arr.length; i++) {\n  console.log(`Índice ${i}: ${arr[i]}`);\n}\n\n// Só valores? → for...of\nfor (let item of arr) {\n  console.log(item);\n}\n\n// Objeto? → for...in ou Object.entries\nfor (let [chave, valor] of Object.entries(obj)) {\n  console.log(`${chave}: ${valor}`);\n}\n\n// Transformar/filtrar? → map/filter\nlet resultado = arr.filter(x => x > 0).map(x => x * 2);\n\n// Condição dinâmica? → while\nwhile (temMaisDados) {\n  processar();\n}\n\n// Pelo menos 1 execução? → do-while\ndo {\n  tentativa++;\n} while (!sucesso && tentativa < 3);',
+                    },
+                ],
+                tips: [
+                    'for...of é mais limpo que for clássico para arrays',
+                    'Use break para sair cedo e evitar trabalho desnecessário',
+                    'forEach não aceita break - use for...of se precisar',
+                    'Cuidado com loops infinitos - sempre tenha uma saída!',
                 ],
             },
             quiz: [
@@ -923,27 +1022,53 @@ export const JS_FUNCOES: LearningModule = {
         {
             id: 'funcoes-basicas',
             title: 'Funções Básicas',
-            description: 'Declarando e chamando funções',
-            xpReward: 120,
-            estimatedTime: 18,
+            description: 'Funções, arrow functions, closures e callbacks',
+            xpReward: 160,
+            estimatedTime: 30,
             content: {
-                introduction: 'Funções são blocos de código reutilizáveis.',
+                introduction: 'Funções são o coração do JavaScript. Elas permitem encapsular lógica reutilizável, organizar código e criar abstrações poderosas. JavaScript trata funções como cidadãs de primeira classe - podem ser passadas como valores, retornadas de outras funções e armazenadas em variáveis.',
                 sections: [
                     {
                         title: 'Declarando Funções',
-                        text: 'Use function para declarar uma função.',
-                        code: 'function saudacao(nome) {\n  return "Olá, " + nome + "!";\n}\n\nconsole.log(saudacao("Maria")); // "Olá, Maria!"',
+                        text: 'Existem três formas principais de criar funções: declaração (hoisted), expressão (não hoisted) e arrow function (ES6). Cada uma tem suas características e casos de uso.',
+                        code: '// 1. Declaração de função (hoisted)\nfunction saudacao(nome) {\n  return `Olá, ${nome}!`;\n}\n\n// 2. Expressão de função (não hoisted)\nconst somar = function(a, b) {\n  return a + b;\n};\n\n// 3. Arrow function (ES6)\nconst multiplicar = (a, b) => a * b;\n\n// Hoisting: declarações podem ser chamadas antes\nsaudar("Ana"); // funciona!\nfunction saudar(nome) {\n  console.log("Oi, " + nome);\n}\n\n// Expressões NÃO podem\n// cumprimentar("Ana"); // ❌ erro!\nconst cumprimentar = function(nome) {};',
                     },
                     {
                         title: 'Parâmetros e Retorno',
-                        text: 'Funções recebem parâmetros e retornam valores.',
-                        code: 'function soma(a, b) {\n  return a + b;\n}\n\nlet resultado = soma(5, 3); // 8',
+                        text: 'Funções recebem parâmetros e retornam valores com return. Parâmetros padrão evitam undefined. Rest parameter (...args) captura argumentos extras como array.',
+                        code: '// Parâmetros básicos\nfunction area(largura, altura) {\n  return largura * altura;\n}\narea(5, 3); // 15\n\n// Parâmetros padrão\nfunction saudar(nome = "Visitante", horario = "dia") {\n  return `Bom ${horario}, ${nome}!`;\n}\nsaudar();           // "Bom dia, Visitante!"\nsaudar("Ana");      // "Bom dia, Ana!"\nsaudar("Ana", "tarde"); // "Boa tarde, Ana!"\n\n// Rest parameter (...)\nfunction somaTotal(...numeros) {\n  return numeros.reduce((acc, n) => acc + n, 0);\n}\nsomaTotal(1, 2, 3, 4); // 10\n\n// Retorno implícito vs explícito\nfunction semRetorno() {\n  console.log("Olá");\n} // retorna undefined implicitamente',
                     },
                     {
-                        title: 'Parâmetros Padrão',
-                        text: 'Defina valores padrão para parâmetros.',
-                        code: 'function saudar(nome = "Visitante") {\n  return "Olá, " + nome;\n}\n\nsaudar(); // "Olá, Visitante"\nsaudar("Ana"); // "Olá, Ana"',
+                        title: 'Arrow Functions',
+                        text: 'Arrow functions são concisas e não têm próprio this (herdam do contexto). Ideais para callbacks e funções curtas. Sintaxe: com um parâmetro não precisa de (), com corpo de uma linha não precisa de {}.',
+                        code: '// Sintaxe completa\nconst soma = (a, b) => {\n  return a + b;\n};\n\n// Um parâmetro: parênteses opcionais\nconst dobro = n => n * 2;\n\n// Sem parâmetros: parênteses obrigatórios\nconst aleatorio = () => Math.random();\n\n// Retorno implícito (uma linha, sem {})\nconst quadrado = x => x * x;\n\n// Retornando objeto: use parênteses\nconst criarPessoa = (nome, idade) => ({ nome, idade });\n\n// ⚠️ Arrow functions e this\nconst obj = {\n  nome: "Ana",\n  tradicional: function() {\n    return this.nome; // "Ana" - this do obj\n  },\n  arrow: () => {\n    return this.nome; // undefined - this do contexto externo\n  }\n};\n// Use arrow em callbacks, função tradicional em métodos de objeto',
                     },
+                    {
+                        title: 'Callbacks e Higher-Order Functions',
+                        text: 'Funções que recebem ou retornam outras funções são "higher-order". Callbacks são funções passadas como argumento para serem executadas depois. Base de programação assíncrona e funcional.',
+                        code: '// Callback básico\nfunction processar(valor, callback) {\n  const resultado = callback(valor);\n  console.log(resultado);\n}\nprocessar(5, n => n * 2); // 10\n\n// Higher-order function que retorna função\nfunction multiplicador(fator) {\n  return n => n * fator;\n}\nconst triplo = multiplicador(3);\ntriplo(5); // 15\n\n// Callbacks em métodos de array\nlet nums = [1, 2, 3, 4, 5];\nnums.map(n => n * 2);      // [2, 4, 6, 8, 10]\nnums.filter(n => n > 2);    // [3, 4, 5]\nnums.find(n => n > 3);      // 4\n\n// setTimeout com callback\nsetTimeout(() => {\n  console.log("Executado após 1 segundo");\n}, 1000);',
+                    },
+                    {
+                        title: 'Closures',
+                        text: 'Closure é quando uma função "lembra" das variáveis do escopo onde foi criada, mesmo após esse escopo terminar. Permite criar funções com estado privado e fábricas de funções.',
+                        code: '// Closure básico\nfunction criarContador() {\n  let contador = 0; // variável "fechada"\n  return function() {\n    contador++;\n    return contador;\n  };\n}\n\nconst contar = criarContador();\ncontar(); // 1\ncontar(); // 2\ncontar(); // 3\n// contador não é acessível de fora!\n\n// Closure para configuração\nfunction criarLogger(prefixo) {\n  return function(msg) {\n    console.log(`[${prefixo}] ${msg}`);\n  };\n}\n\nconst logInfo = criarLogger("INFO");\nconst logErro = criarLogger("ERRO");\nlogInfo("Iniciando"); // [INFO] Iniciando\nlogErro("Falhou");    // [ERRO] Falhou',
+                    },
+                    {
+                        title: 'IIFE e Módulos',
+                        text: 'IIFE (Immediately Invoked Function Expression) executa imediatamente e cria escopo privado. Era muito usada antes de ES6 modules. Ainda útil para evitar poluição do escopo global.',
+                        code: '// IIFE - executa imediatamente\n(function() {\n  let privado = "não acessível fora";\n  console.log("Executei!");\n})();\n\n// IIFE com arrow function\n(() => {\n  console.log("IIFE arrow");\n})();\n\n// IIFE para criar módulo (padrão antigo)\nconst calculadora = (function() {\n  // privado\n  let historico = [];\n  \n  // público (retornado)\n  return {\n    somar(a, b) {\n      historico.push(`${a}+${b}`);\n      return a + b;\n    },\n    getHistorico() {\n      return [...historico];\n    }\n  };\n})();\n\ncalculadora.somar(2, 3); // 5\ncalculadora.historico;   // undefined (privado)\ncalculadora.getHistorico(); // ["2+3"]',
+                    },
+                    {
+                        title: 'Boas Práticas com Funções',
+                        text: 'Funções devem fazer UMA coisa bem feita. Nomes devem ser verbos claros. Limite parâmetros (use objeto se muitos). Funções puras (sem side effects) são mais testáveis e previsíveis.',
+                        code: '// ❌ Função faz muitas coisas\nfunction processarUsuario(dados) {\n  validar(dados);\n  salvarNoBanco(dados);\n  enviarEmail(dados);\n  loggar(dados);\n}\n\n// ✅ Funções pequenas e focadas\nfunction validarDados(dados) { /*...*/ }\nfunction salvarUsuario(dados) { /*...*/ }\nfunction notificarUsuario(email) { /*...*/ }\n\n// ❌ Muitos parâmetros\nfunction criarUsuario(nome, email, idade, cidade, pais, tel) {...}\n\n// ✅ Objeto de opções\nfunction criarUsuario({ nome, email, idade, cidade, pais, tel }) {...}\ncriarUsuario({ nome: "Ana", email: "ana@ex.com" });\n\n// ✅ Função pura (sem side effects)\nconst dobrar = n => n * 2;\n// Mesma entrada = mesma saída, sem modificar estado externo',
+                    },
+                ],
+                tips: [
+                    'Arrow functions não têm próprio this - herdam do contexto',
+                    'Use parâmetros padrão ao invés de verificar undefined',
+                    'Closures são poderosas mas podem causar memory leaks',
+                    'Funções pequenas e focadas são mais fáceis de testar',
                 ],
             },
             quiz: [
@@ -1121,27 +1246,53 @@ export const JS_DOM: LearningModule = {
         {
             id: 'selecionando-dom',
             title: 'Selecionando Elementos',
-            description: 'querySelector, getElementById e mais',
-            xpReward: 120,
-            estimatedTime: 18,
+            description: 'querySelector, navegação DOM e performance',
+            xpReward: 150,
+            estimatedTime: 25,
             content: {
-                introduction: 'O DOM (Document Object Model) é a representação da página HTML como objetos JavaScript.',
+                introduction: 'O DOM (Document Object Model) representa a página HTML como uma árvore de objetos JavaScript. Saber selecionar elementos eficientemente é a base de toda manipulação da página. Vamos explorar desde métodos básicos até técnicas avançadas de navegação e performance.',
                 sections: [
                     {
-                        title: 'querySelector',
-                        text: 'Seleciona o primeiro elemento que corresponde ao seletor CSS.',
-                        code: 'const titulo = document.querySelector("h1");\nconst botao = document.querySelector(".btn");\nconst form = document.querySelector("#formulario");',
-                    },
-                    {
-                        title: 'querySelectorAll',
-                        text: 'Seleciona todos os elementos correspondentes.',
-                        code: 'const paragrafos = document.querySelectorAll("p");\nparagrafos.forEach(p => {\n  console.log(p.textContent);\n});',
+                        title: 'querySelector e querySelectorAll',
+                        text: 'querySelector retorna o PRIMEIRO elemento que corresponde ao seletor CSS. querySelectorAll retorna TODOS os elementos como NodeList. São os métodos mais versáteis e modernos.',
+                        code: '// querySelector - primeiro elemento\nconst titulo = document.querySelector("h1");\nconst botao = document.querySelector(".btn");\nconst form = document.querySelector("#formulario");\nconst link = document.querySelector("nav a[href=\\"/sobre\\"]");\n\n// querySelectorAll - todos os elementos\nconst paragrafos = document.querySelectorAll("p");\nconst cards = document.querySelectorAll(".card");\n\n// NodeList é iterável\nparagrafos.forEach(p => {\n  console.log(p.textContent);\n});\n\n// Converter para array (mais métodos)\nconst arr = [...document.querySelectorAll("li")];\narr.filter(li => li.classList.contains("ativo"));',
                     },
                     {
                         title: 'Métodos Clássicos',
-                        text: 'getElementById e getElementsByClassName.',
-                        code: 'const header = document.getElementById("header");\nconst cards = document.getElementsByClassName("card");',
+                        text: 'getElementById é o mais rápido para IDs. getElementsByClassName e getElementsByTagName retornam coleções "vivas" (atualizam automaticamente). Use quando performance for crítica.',
+                        code: '// getElementById - mais rápido para IDs\nconst header = document.getElementById("header");\n\n// getElementsByClassName - retorna HTMLCollection\nconst cards = document.getElementsByClassName("card");\n// ⚠️ HTMLCollection não tem forEach!\nfor (let card of cards) {\n  console.log(card);\n}\n\n// getElementsByTagName - por tag\nconst links = document.getElementsByTagName("a");\n\n// Coleções "vivas" - atualizam automaticamente\nconst items = document.getElementsByClassName("item");\nconsole.log(items.length); // 3\n// Se adicionar novo .item ao DOM:\nconsole.log(items.length); // 4 (atualiza!)\n\n// querySelectorAll é "estático" (snapshot)\nconst items2 = document.querySelectorAll(".item");\n// Não atualiza se DOM mudar',
                     },
+                    {
+                        title: 'Navegação no DOM',
+                        text: 'A partir de um elemento, você pode navegar para pais, filhos e irmãos. Use parentElement, children, firstElementChild, nextElementSibling. Evite versões com "Node" que incluem texto/comentários.',
+                        code: 'const item = document.querySelector(".item");\n\n// Navegação para cima\nitem.parentElement;           // elemento pai\nitem.closest(".container");   // ancestral mais próximo\n\n// Navegação para baixo\nitem.children;                // HTMLCollection de filhos\nitem.firstElementChild;       // primeiro filho elemento\nitem.lastElementChild;        // último filho elemento\nitem.querySelector(".child"); // busca dentro\n\n// Navegação lateral\nitem.nextElementSibling;      // próximo irmão\nitem.previousElementSibling;  // irmão anterior\n\n// ⚠️ Evite: incluem nós de texto\nitem.parentNode;     // pode ser texto\nitem.childNodes;     // inclui texto, comentários\nitem.firstChild;     // pode ser \\n\n\n// closest() é muito útil!\nbutton.closest("form"); // encontra formulário pai',
+                    },
+                    {
+                        title: 'matches() e closest()',
+                        text: 'matches() verifica se elemento corresponde a um seletor. closest() encontra o ancestral mais próximo. Ambos são essenciais para delegação de eventos e verificações eficientes.',
+                        code: '// matches - verifica se corresponde ao seletor\nconst link = document.querySelector("a");\nlink.matches(".nav-link");  // true ou false\nlink.matches("[href^=\\"/\\"]"); // true se href começa com /\n\n// Uso com filtro\nconst items = document.querySelectorAll("li");\nconst ativos = [...items].filter(el => el.matches(".ativo"));\n\n// closest - encontra ancestral\nconst btn = document.querySelector("button");\nbtn.closest("form");      // formulário pai\nbtn.closest(".container"); // container ancestral\nbtn.closest("button");     // o próprio btn!\n\n// null se não encontrar\nbtn.closest(".inexistente"); // null\n\n// Padrão comum em delegação de eventos\ndocument.addEventListener("click", e => {\n  const card = e.target.closest(".card");\n  if (card) {\n    console.log("Clicou em um card");\n  }\n});',
+                    },
+                    {
+                        title: 'Contexto de Busca',
+                        text: 'Você pode chamar querySelector/querySelectorAll em qualquer elemento, não só em document. Isso limita a busca aos descendentes, melhorando performance e precisão.',
+                        code: '// Busca global\nconst inputs = document.querySelectorAll("input");\n\n// Busca dentro de um elemento\nconst form = document.querySelector("#meuForm");\nconst inputs = form.querySelectorAll("input");\n// Só inputs DENTRO do form\n\n// Muito útil para componentes\nconst modal = document.querySelector(".modal");\nconst titulo = modal.querySelector("h2");\nconst btnFechar = modal.querySelector(".btn-fechar");\n\n// getElementById só funciona em document\n// ❌ element.getElementById() não existe\n\n// contains() verifica se é descendente\nconst container = document.querySelector(".container");\nconst botao = document.querySelector("button");\ncontainer.contains(botao); // true se botão está dentro',
+                    },
+                    {
+                        title: 'Verificando Existência',
+                        text: 'Sempre verifique se um elemento existe antes de manipulá-lo. Use if, optional chaining (?.) ou atribuição condicional. Evite erros de "Cannot read property of null".',
+                        code: '// Problema comum\nconst el = document.querySelector(".talvez-exista");\nel.classList.add("ativo"); // ❌ Erro se el é null!\n\n// Solução 1: if\nif (el) {\n  el.classList.add("ativo");\n}\n\n// Solução 2: optional chaining (moderno)\nel?.classList.add("ativo"); // não faz nada se null\nel?.style.color = "red";    // seguro\n\n// Solução 3: curto-circuito\nel && el.classList.add("ativo");\n\n// Para NodeList vazia, forEach não executa\nconst items = document.querySelectorAll(".nao-existe");\nitems.forEach(i => i.remove()); // OK, não faz nada\n\n// Verificar se NodeList tem items\nif (items.length > 0) {\n  console.log("Encontrou elementos");\n}',
+                    },
+                    {
+                        title: 'Performance e Caching',
+                        text: 'Cache elementos que você usa repetidamente. Evite querySelector em loops. Prefira getElementById para IDs. Limite a busca ao contexto necessário.',
+                        code: '// ❌ Lento: busca repetida\nfor (let i = 0; i < 1000; i++) {\n  document.querySelector(".contador").textContent = i;\n}\n\n// ✅ Rápido: cache do elemento\nconst contador = document.querySelector(".contador");\nfor (let i = 0; i < 1000; i++) {\n  contador.textContent = i;\n}\n\n// ✅ Cache de elementos frequentes\nconst DOM = {\n  header: document.querySelector("header"),\n  nav: document.querySelector("nav"),\n  main: document.querySelector("main"),\n  footer: document.querySelector("footer")\n};\n// Uso: DOM.header, DOM.nav, etc.\n\n// Comparação de velocidade:\n// getElementById > querySelector > querySelectorAll\n// Use getElementById quando possível para IDs\nconst el = document.getElementById("app"); // mais rápido\nconst el2 = document.querySelector("#app"); // mais versátil',
+                    },
+                ],
+                tips: [
+                    'querySelector é versátil; getElementById é mais rápido',
+                    'Sempre cache elementos usados repetidamente',
+                    'Use ?. para evitar erros com elementos null',
+                    'closest() é essencial para delegação de eventos',
                 ],
             },
             quiz: [
@@ -1193,27 +1344,53 @@ export const JS_DOM: LearningModule = {
         {
             id: 'eventos-js',
             title: 'Eventos',
-            description: 'Responda a cliques, teclas e mais',
-            xpReward: 150,
-            estimatedTime: 20,
+            description: 'addEventListener, propagação e delegação',
+            xpReward: 160,
+            estimatedTime: 28,
             content: {
-                introduction: 'Eventos permitem que seu código responda às ações do usuário.',
+                introduction: 'Eventos permitem que seu código responda às ações do usuário e do sistema. Do clique de um botão ao carregamento da página, eventos são a ponte entre a interface e a lógica. Entender propagação e delegação é essencial para código eficiente e organizado.',
                 sections: [
                     {
                         title: 'addEventListener',
-                        text: 'Adiciona um listener de evento a um elemento.',
-                        code: 'const botao = document.querySelector("button");\n\nbotao.addEventListener("click", () => {\n  alert("Clicado!");\n});',
-                    },
-                    {
-                        title: 'Eventos Comuns',
-                        text: 'click, submit, keydown, mouseover, change, load.',
-                        code: 'form.addEventListener("submit", (e) => {\n  e.preventDefault();\n  console.log("Formulário enviado");\n});\n\ninput.addEventListener("change", (e) => {\n  console.log(e.target.value);\n});',
+                        text: 'addEventListener é a forma moderna de ligar eventos a elementos. Recebe o tipo de evento e uma função callback. Você pode adicionar múltiplos listeners ao mesmo elemento, diferente de onclick que sobrescreve.',
+                        code: 'const btn = document.querySelector("button");\n\n// Forma moderna\nbtn.addEventListener("click", () => {\n  console.log("Clicado!");\n});\n\n// Múltiplos listeners no mesmo evento\nbtn.addEventListener("click", () => console.log("Handler 1"));\nbtn.addEventListener("click", () => console.log("Handler 2"));\n// Ambos executam!\n\n// ❌ Forma antiga (evite)\nbtn.onclick = () => console.log("Click");\n// Sobrescreve handlers anteriores\n\n// Evento com opções\nbtn.addEventListener("click", handler, {\n  once: true,      // executa só uma vez\n  passive: true    // melhora performance de scroll\n});',
                     },
                     {
                         title: 'Objeto Event',
-                        text: 'O evento contém informações sobre a ação.',
-                        code: 'document.addEventListener("keydown", (e) => {\n  console.log("Tecla:", e.key);\n  console.log("Código:", e.code);\n});',
+                        text: 'Todo handler recebe um objeto Event com informações sobre o evento. e.target é o elemento que disparou, e.currentTarget é onde o listener foi anexado. e.type indica o tipo de evento.',
+                        code: 'btn.addEventListener("click", (e) => {\n  console.log(e.type);          // "click"\n  console.log(e.target);        // elemento clicado\n  console.log(e.currentTarget); // elemento com o listener\n  console.log(e.timeStamp);     // quando ocorreu\n});\n\n// Eventos de teclado\ndocument.addEventListener("keydown", (e) => {\n  console.log(e.key);   // "Enter", "a", "ArrowUp"\n  console.log(e.code);  // "Enter", "KeyA", "ArrowUp"\n  console.log(e.ctrlKey); // true se Ctrl pressionado\n  console.log(e.shiftKey); // true se Shift pressionado\n});\n\n// Eventos de mouse\nelem.addEventListener("mousemove", (e) => {\n  console.log(e.clientX, e.clientY); // posição do mouse\n});',
                     },
+                    {
+                        title: 'Eventos Comuns',
+                        text: 'Há dezenas de tipos de eventos. Os mais usados: click, submit, change, input, keydown/keyup, mouseenter/mouseleave, load, DOMContentLoaded. Escolha o evento certo para cada situação.',
+                        code: '// Formulário\nform.addEventListener("submit", (e) => {\n  e.preventDefault(); // impede envio padrão\n  console.log("Formulário enviado");\n});\n\n// Input - a cada caractere\ninput.addEventListener("input", (e) => {\n  console.log(e.target.value);\n});\n\n// Change - ao perder foco com alteração\ninput.addEventListener("change", (e) => {\n  console.log("Valor final:", e.target.value);\n});\n\n// Página carregada\nwindow.addEventListener("DOMContentLoaded", () => {\n  console.log("DOM pronto!");\n});\n\n// Mouse hover\nelem.addEventListener("mouseenter", () => console.log("Entrou"));\nelem.addEventListener("mouseleave", () => console.log("Saiu"));',
+                    },
+                    {
+                        title: 'Propagação: Bubbling e Capturing',
+                        text: 'Eventos propagam em duas fases: capturing (descendo) e bubbling (subindo). Por padrão, listeners executam na fase bubbling. Use stopPropagation() para parar a propagação.',
+                        code: '// HTML: <div id="pai"><button id="filho">Click</button></div>\n\nconst pai = document.querySelector("#pai");\nconst filho = document.querySelector("#filho");\n\n// Bubbling (padrão) - de dentro para fora\nfilho.addEventListener("click", () => console.log("1. Filho"));\npai.addEventListener("click", () => console.log("2. Pai"));\n// Clique no filho: "1. Filho", "2. Pai"\n\n// Capturing - de fora para dentro\npai.addEventListener("click", () => console.log("0. Pai cap"), true);\n// Clique no filho: "0. Pai cap", "1. Filho", "2. Pai"\n\n// Parar propagação\nfilho.addEventListener("click", (e) => {\n  e.stopPropagation(); // pai não recebe\n  console.log("Só filho");\n});',
+                    },
+                    {
+                        title: 'Delegação de Eventos',
+                        text: 'Em vez de anexar eventos a cada elemento, anexe ao pai e use e.target para identificar qual filho foi clicado. Mais eficiente quando há muitos elementos ou quando são adicionados dinamicamente.',
+                        code: '// ❌ Ineficiente: listener para cada item\nconst items = document.querySelectorAll(".item");\nitems.forEach(item => {\n  item.addEventListener("click", () => {...});\n});\n\n// ✅ Delegação: um listener no pai\nconst lista = document.querySelector(".lista");\nlista.addEventListener("click", (e) => {\n  // Verifica se clicou em um item\n  if (e.target.matches(".item")) {\n    console.log("Item clicado:", e.target.textContent);\n  }\n  \n  // Ou encontra o item mais próximo\n  const item = e.target.closest(".item");\n  if (item) {\n    console.log("Item:", item.dataset.id);\n  }\n});\n\n// Vantagens:\n// - Funciona para elementos adicionados depois\n// - Menos listeners = melhor performance\n// - Código mais centralizado',
+                    },
+                    {
+                        title: 'Removendo Event Listeners',
+                        text: 'Use removeEventListener para remover listeners. A função deve ser a MESMA referência usada no addEventListener. Por isso, não use arrow functions anônimas se precisar remover depois.',
+                        code: '// ❌ Não funciona - funções diferentes\nbtn.addEventListener("click", () => console.log("A"));\nbtn.removeEventListener("click", () => console.log("A"));\n// São funções distintas na memória!\n\n// ✅ Funciona - mesma referência\nfunction handleClick() {\n  console.log("Click!");\n}\nbtn.addEventListener("click", handleClick);\nbtn.removeEventListener("click", handleClick); // remove\n\n// Alternativa: once\nbtn.addEventListener("click", () => {\n  console.log("Só uma vez");\n}, { once: true }); // auto-remove após executar\n\n// AbortController (moderno)\nconst controller = new AbortController();\nbtn.addEventListener("click", handler, { signal: controller.signal });\ncontroller.abort(); // remove o listener',
+                    },
+                    {
+                        title: 'preventDefault e Padrões',
+                        text: 'preventDefault() impede o comportamento padrão do navegador: links navegarem, forms enviarem, teclas digitarem. Use para criar comportamentos customizados.',
+                        code: '// Links - prevenir navegação\nlink.addEventListener("click", (e) => {\n  e.preventDefault();\n  console.log("Link interceptado");\n  // Fazer algo customizado\n});\n\n// Forms - prevenir envio\nform.addEventListener("submit", (e) => {\n  e.preventDefault();\n  // Validar e enviar via fetch\n  const data = new FormData(form);\n  fetch("/api", { method: "POST", body: data });\n});\n\n// Teclas - prevenir digitação\ninput.addEventListener("keydown", (e) => {\n  if (e.key === "e") {\n    e.preventDefault(); // impede "e" de ser digitado\n  }\n});\n\n// Scroll - prevenir rolagem\nelem.addEventListener("wheel", (e) => {\n  e.preventDefault();\n}, { passive: false }); // passive: false necessário',
+                    },
+                ],
+                tips: [
+                    'Use delegação quando há muitos elementos similares',
+                    'stopPropagation para a propagação; preventDefault para o comportamento',
+                    'Guarde referência da função se precisar remover depois',
+                    'e.target é onde clicou; e.currentTarget é onde está o listener',
                 ],
             },
             quiz: [
