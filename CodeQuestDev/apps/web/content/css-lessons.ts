@@ -1223,18 +1223,54 @@ export const CSS_FLEXBOX: LearningModule = {
             xpReward: 120,
             estimatedTime: 18,
             content: {
-                introduction: 'Display controla o tipo de caixa de renderização. Position controla o posicionamento.',
+                introduction: 'Display controla o tipo de caixa de renderização. Position controla o posicionamento no documento. CSS Grid é o sistema de layout bidimensional. Dominar esses conceitos é essencial para layouts complexos e responsivos.',
                 sections: [
                     {
-                        title: 'Display',
-                        text: 'block, inline, inline-block, flex, grid, none.',
-                        code: '.block { display: block; }\n.inline { display: inline; }\n.flex { display: flex; }\n.hidden { display: none; }',
+                        title: 'Display: Block, Inline e Inline-Block',
+                        text: 'block ocupa linha inteira e aceita dimensões. inline fica na linha mas NÃO aceita width/height. inline-block combina ambos: fica na linha E aceita dimensões.',
+                        code: '/* Block: ocupa linha toda */\ndiv, p, h1, section, article {\n  display: block;\n  /* Aceita width, height, margin, padding */\n}\n\n/* Inline: fica na linha do texto */\nspan, a, strong, em {\n  display: inline;\n  /* NÃO aceita width/height */\n  /* margin/padding só horizontal */\n}\n\n/* Inline-block: combo perfeito */\n.badge {\n  display: inline-block;\n  width: 100px;\n  height: 30px;\n  padding: 5px 10px;\n  /* Fica na linha MAS aceita dimensões */\n}\n\n/* None vs Hidden */\n.oculto {\n  display: none;  /* remove do fluxo */\n}\n.invisivel {\n  visibility: hidden;  /* esconde mas OCUPA espaço */\n}',
                     },
                     {
-                        title: 'Position',
-                        text: 'static (padrão), relative, absolute, fixed, sticky.',
-                        code: '.absolute {\n  position: absolute;\n  top: 0;\n  right: 0;\n}\n\n.fixed {\n  position: fixed;\n  bottom: 20px;\n}',
+                        title: 'Position: Static e Relative',
+                        text: 'static é o padrão - segue o fluxo normal. relative permite deslocar o elemento de sua posição original SEM afetar outros elementos.',
+                        code: '/* Static: padrão, fluxo normal */\n.normal {\n  position: static;\n  /* top/left/right/bottom NÃO funcionam */\n}\n\n/* Relative: desloca de sua posição original */\n.deslocado {\n  position: relative;\n  top: 20px;    /* desce 20px de onde estaria */\n  left: 10px;   /* vai 10px para direita */\n  /* Espaço original continua ocupado! */\n}\n\n/* Útil para: */\n/* 1. Deslocar levemente */\n/* 2. Criar contexto para absolute */\n.card {\n  position: relative;  /* contexto para filhos absolute */\n}\n.card .badge {\n  position: absolute;\n  top: -10px;\n  right: -10px;\n}',
                     },
+                    {
+                        title: 'Position: Absolute',
+                        text: 'absolute remove o elemento do fluxo e posiciona relativo ao ancestral posicionado mais próximo (ou ao body). Essencial para overlays, badges, tooltips.',
+                        code: '/* Absolute: sai do fluxo, relativo ao contexto */\n.tooltip {\n  position: absolute;\n  top: 100%;     /* logo abaixo do pai */\n  left: 50%;\n  transform: translateX(-50%);  /* centraliza */\n}\n\n/* Precisa de contexto posicionado! */\n.container {\n  position: relative;  /* ← contexto */\n}\n.container .overlay {\n  position: absolute;\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;  /* preenche todo o pai */\n  /* OU: inset: 0; (shorthand moderno) */\n}\n\n/* Centralização com absolute */\n.center-absolute {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate(-50%, -50%);\n}',
+                    },
+                    {
+                        title: 'Position: Fixed e Sticky',
+                        text: 'fixed é relativo à viewport (janela) - não se move com scroll. sticky alterna entre relative e fixed baseado no scroll. Perfeito para headers e sidebars.',
+                        code: '/* Fixed: relativo à viewport */\n.header-fixo {\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  z-index: 100;\n  /* Sempre visível, não rola */\n}\n\n/* Botão flutuante */\n.fab {\n  position: fixed;\n  bottom: 20px;\n  right: 20px;\n}\n\n/* Sticky: gruda quando rola */\n.sidebar {\n  position: sticky;\n  top: 20px;  /* gruda quando chegar a 20px do topo */\n  /* Precisa de height no pai ou overflow */\n}\n\n/* Header sticky */\nheader {\n  position: sticky;\n  top: 0;\n  background: white;\n  z-index: 10;\n}',
+                    },
+                    {
+                        title: 'Z-Index e Stacking Context',
+                        text: 'z-index controla ordem de empilhamento (o que fica "na frente"). Só funciona em elementos posicionados (não static). Cuidado com stacking contexts!',
+                        code: '/* z-index: quem fica na frente */\n.atras {\n  position: relative;\n  z-index: 1;\n}\n.frente {\n  position: relative;\n  z-index: 10;  /* maior = mais na frente */\n}\n\n/* Só funciona com position! */\n.nao-funciona {\n  /* position: static; (padrão) */\n  z-index: 999;  /* ignorado! */\n}\n\n/* Stacking context comum */\n:root {\n  --z-dropdown: 100;\n  --z-modal: 200;\n  --z-toast: 300;\n}\n\n.modal {\n  position: fixed;\n  z-index: var(--z-modal);\n}\n\n/* Novo stacking context é criado por:\n   - position + z-index\n   - opacity < 1\n   - transform, filter\n   - isolation: isolate */\n',
+                    },
+                    {
+                        title: 'CSS Grid: Conceitos Básicos',
+                        text: 'Grid é layout bidimensional (linhas E colunas). Container com display: grid. Defina colunas com grid-template-columns e linhas com grid-template-rows.',
+                        code: '/* Ativar Grid */\n.grid {\n  display: grid;\n  gap: 20px;  /* espaço entre células */\n}\n\n/* Colunas fixas */\n.grid-3col {\n  display: grid;\n  grid-template-columns: 200px 200px 200px;\n}\n\n/* Colunas flexíveis com fr (fração) */\n.grid-flex {\n  display: grid;\n  grid-template-columns: 1fr 2fr 1fr;  /* proporção 1:2:1 */\n}\n\n/* repeat() para repetir */\n.grid-repeat {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);  /* 4 colunas iguais */\n}\n\n/* auto-fill/auto-fit para responsivo */\n.grid-auto {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));\n  /* Quantas colunas couberem, mínimo 250px */\n}',
+                    },
+                    {
+                        title: 'CSS Grid: Posicionando Itens',
+                        text: 'Itens podem ocupar múltiplas células com grid-column e grid-row. Use span para expandir. Nomeie áreas com grid-template-areas para layouts semânticos.',
+                        code: '/* Expandir colunas/linhas */\n.item-wide {\n  grid-column: span 2;  /* ocupa 2 colunas */\n}\n.item-tall {\n  grid-row: span 2;  /* ocupa 2 linhas */\n}\n\n/* Posição específica */\n.item {\n  grid-column: 1 / 3;  /* da coluna 1 até 3 */\n  grid-row: 2 / 4;     /* da linha 2 até 4 */\n}\n\n/* Grid Areas (semântico) */\n.layout {\n  display: grid;\n  grid-template-areas:\n    \"header header header\"\n    \"nav    main   aside\"\n    \"footer footer footer\";\n  grid-template-rows: auto 1fr auto;\n}\n\nheader { grid-area: header; }\nnav    { grid-area: nav; }\nmain   { grid-area: main; }\naside  { grid-area: aside; }\nfooter { grid-area: footer; }',
+                    },
+                    {
+                        title: 'Grid vs Flexbox: Quando Usar',
+                        text: 'Flexbox é unidimensional (linha OU coluna). Grid é bidimensional (linhas E colunas). Combine ambos! Grid para layout geral, Flex para componentes internos.',
+                        code: '/* Flexbox: unidimensional */\n.navbar {\n  display: flex;  /* itens em linha */\n  justify-content: space-between;\n}\n\n.card-content {\n  display: flex;\n  flex-direction: column;  /* itens em coluna */\n}\n\n/* Grid: bidimensional */\n.page-layout {\n  display: grid;\n  grid-template-columns: 250px 1fr 300px;\n  grid-template-rows: auto 1fr auto;\n}\n\n.gallery {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n}\n\n/* Combinando! */\n.dashboard {\n  display: grid;  /* layout geral */\n  grid-template-columns: 250px 1fr;\n}\n\n.dashboard nav {\n  display: flex;  /* menu interno */\n  flex-direction: column;\n}',
+                    },
+                ],
+                tips: [
+                    'relative cria contexto para absolute',
+                    'sticky precisa de top/left definido para funcionar',
+                    'z-index só funciona em elementos posicionados',
+                    'Grid para layouts, Flexbox para componentes',
                 ],
             },
             quiz: [
