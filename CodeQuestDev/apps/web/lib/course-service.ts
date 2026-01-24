@@ -46,11 +46,19 @@ export interface CoursesData {
     courses: Course[];
 }
 
-// Import JSON data statically (Turbopack doesn't support dynamic import with alias)
-import coursesData from '../data/w3schools_courses.json';
-
 // Cache for course data
 let coursesCache: CoursesData | null = null;
+
+// Base URL for fetching data (works in both server and client)
+const getBaseUrl = () => {
+    if (typeof window !== 'undefined') {
+        return ''; // Client-side: relative URL
+    }
+    // Server-side: use environment variable or default
+    return process.env.NEXT_PUBLIC_SITE_URL || process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : 'http://localhost:3000';
+};
 
 /**
  * Load all courses from the JSON file
@@ -61,7 +69,14 @@ export async function loadCourses(): Promise<CoursesData> {
     }
 
     try {
-        coursesCache = coursesData as CoursesData;
+        const baseUrl = getBaseUrl();
+        const response = await fetch(`${baseUrl}/data/w3schools_courses.json`);
+
+        if (!response.ok) {
+            throw new Error(`Failed to fetch courses: ${response.status}`);
+        }
+
+        coursesCache = await response.json() as CoursesData;
         return coursesCache;
     } catch (error) {
         console.error('Error loading courses:', error);
