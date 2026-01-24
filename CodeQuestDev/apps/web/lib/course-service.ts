@@ -46,6 +46,9 @@ export interface CoursesData {
     courses: Course[];
 }
 
+// Import JSON data statically (Turbopack doesn't support dynamic import with alias)
+import coursesData from '../data/w3schools_courses.json';
+
 // Cache for course data
 let coursesCache: CoursesData | null = null;
 
@@ -58,9 +61,7 @@ export async function loadCourses(): Promise<CoursesData> {
     }
 
     try {
-        // Dynamic import for the JSON data
-        const data = await import('@/data/w3schools_courses.json');
-        coursesCache = data.default as CoursesData;
+        coursesCache = coursesData as CoursesData;
         return coursesCache;
     } catch (error) {
         console.error('Error loading courses:', error);
